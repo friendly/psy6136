@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>
+Psychology 6136: R Examples
+</title>
+<link rel="stylesheet" href="../doc.css" type="text/css">
+<!-- Author: Michael Friendly York University  Copyright 2015 -->
+</head>
+<!--
+grep 'title:' *.R |perl -pe "s|^(.*\.R):#\'|<tr><td><a href='\1'> \1</a></td>|;" -e 's|title: "(.*)".*$|<td>\1</td></tr>|' | perl  -pe 's|<td>|\n\t<td>|g;s|</tr>|\n</tr>|' > ind.html
+-->
+
+<body>
+
+<h2>Psychology 6136: R Examples</h2>
+
+<table>
+<tr>
+	<td>File</td>
+	<td>Title</td>
+</tr>
+<tr>
+	<td><a href='Arrests-effects.R'> Arrests-effects.R</a></td> 
+	<td>Arrests data: Effects plots</td>
+</tr>
+<tr>
+	<td><a href='Arrests-logistic.R'> Arrests-logistic.R</a></td> 
+	<td>Arrests data: Logistic regression</td>
+</tr>
+<tr>
+	<td><a href='arthritis-diag.R'> arthritis-diag.R</a></td> 
+	<td>Arthritis data: diagnostic plots</td>
+</tr>
+<tr>
+	<td><a href='arthritis-logistic.R'> arthritis-logistic.R</a></td> 
+	<td>Arthritis data: Logistic regression</td>
+</tr>
+<tr>
+	<td><a href='arthritis-propodds.R'> arthritis-propodds.R</a></td> 
+	<td>Arthritis data: Proportional odds model</td>
+</tr>
+<tr>
+	<td><a href='berk-4fold.R'> berk-4fold.R</a></td> 
+	<td>UCBAdmissions: fourfold displays and odds ratios</td>
+</tr>
+<tr>
+	<td><a href='berkeley-diag.R'> berkeley-diag.R</a></td> 
+	<td>Diagnostic plots for berkeley data</td>
+</tr>
+<tr>
+	<td><a href='berkeley-glm.R'> berkeley-glm.R</a></td> 
+	<td>UCBAdmissions: Fitting models with loglm() and glm()</td>
+</tr>
+<tr>
+	<td><a href='berkeley-logit.R'> berkeley-logit.R</a></td> 
+	<td>UCB data: logit models for admission</td>
+</tr>
+<tr>
+	<td><a href='cowles-effect.R'> cowles-effect.R</a></td> 
+	<td>Cowles data: Effect plots</td>
+</tr>
+<tr>
+	<td><a href='cowles-logistic.R'> cowles-logistic.R</a></td> 
+	<td>Cowles data: Logistic regression</td>
+</tr>
+<tr>
+	<td><a href='mental-ca.R'> mental-ca.R</a></td> 
+	<td>Mental health data: Correspondence analaysis</td>
+</tr>
+<tr>
+	<td><a href='mental-glm.R'> mental-glm.R</a></td> 
+	<td>Mental health data: glm() for ordinal variables </td>
+</tr>
+<tr>
+	<td><a href='msdiag-agree.R'> msdiag-agree.R</a></td> 
+	<td>MSPatients: Agreement</td>
+</tr>
+<tr>
+	<td><a href='sexfun-chisq.R'> sexfun-chisq.R</a></td> 
+	<td>Tests for association in two-way tables</td>
+</tr>
+<tr>
+	<td><a href='titanic-loglin.R'> titanic-loglin.R</a></td> 
+	<td>Survival on the titanic, using loglm()</td>
+</tr>
+<tr>
+	<td><a href='vision-quasi.R'> vision-quasi.R</a></td> 
+	<td>VisualAcuity: Quasi-independence and quasi-symmetry</td>
+</tr>
+<tr>
+	<td><a href='vision-sieve.R'> vision-sieve.R</a></td> 
+	<td>VisualAcuity data: sieve diagrams</td>
+</tr>
+<tr>
+	<td><a href='wlf-glogit.R'> wlf-glogit.R</a></td> 
+	<td>Multinomial logistic regression</td>
+</tr>
+<tr>
+	<td><a href='wlf-nested.R'> wlf-nested.R</a></td> 
+	<td>Polytomous Data: nested dichotomies</td>
+</tr>
+</table>

@@ -1,0 +1,2 @@
+#! /bin/sh
+pdfnup --nup 2x2 --landscape --suffix 2x2 --paper letterpaper --frame true --delta "2mm 2mm" --scale 0.96 $1
