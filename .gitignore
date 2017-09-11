@@ -3,3 +3,5 @@ ClassOnly/
 *~
 *.Rproj
 
+.Rproj.user
+Rplots.pdf
