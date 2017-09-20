@@ -4,34 +4,60 @@
 #' date: "20/01/15 15:48:41"
 #' ---
 
+
 #' ## Exercise 2.2
 
-data(UCBAdmissions)
-UCB <- UCBAdmissions   # save typing
-ftable(UCB)
+data(Abortion, package="vcdExtra")
+str(Abortion)
 
-sum(UCB)
+#' Support_Abortion} is the response, Sex and Status are binary, nominal explanatory variables. 
+#' Q: How does support for abortion depend on sex and status?
 
-# total applicants for each dept
-margin.table(UCB, 3)
-apply(UCBAdmissions, 3, sum)
-
-# proportion admited for each dept
-tab1 <- margin.table(UCB , c(1,3))
-tab1
-tab1[1,] / margin.table(UCB, 3)
-# or, using prop.table
-prop.table(margin.table(UCB, c(1, 3)),2)
+# similarly for other data sets
 
 
-# proportion in each cell admitted
-admit <- UCB[1,,]
-reject <- UCB[2,,]
+#' ## Exercise 2.4: Danish Welfare
 
-admit / (admit+reject)
+library(vcdExtra)
+data(DanishWelfare)
+str(DanishWelfare)
+sum(DanishWelfare$Freq)  # total cases
+
+#' ### Ordering Alcohol and Income
+levels(DanishWelfare$Alcohol)
+DanishWelfare$Alcohol <- ordered(DanishWelfare$Alcohol, levels=c("<1", "1-2", ">2"))
+
+levels(DanishWelfare$Income)
+DanishWelfare$Income <- ordered(DanishWelfare$Income, levels=c("0-50","50-100","100-150",">150"))
+
+#' or, simpler, using as.ordered():
+DanishWelfare$Alcohol <- as.ordered(DanishWelfare$Alcohol)
+DanishWelfare$Income <- as.ordered(DanishWelfare$Income)
+
+#' now they are **ordered factors**
+str(DanishWelfare)
+
+#' ### convert to table form
+Danish.tab <- xtabs(DanishWelfare)
+# same, using formula method
+Danish.tab <- xtabs(Freq ~ ., data=DanishWelfare)
+
+str(Danish.tab)
+structable(Danish.tab)
+
+#' ### Urban factor
+margin.table(DanishWelfare.tab, 4)
+
+#' Collapse categories
+Danish.tab2 <- collapse.table(Danish.tab, Urban=c("City","City","City","City","NonCity"))
+
+structable(Danish.tab2)
+
+structable(Alcohol ~ Urban+Status+Income,  Danish.tab2)
 
 
-#'  ## Exercise 2.4
+
+#'  ## Exercise 2.5
 
 data(UKSoccer, package="vcd")
 # total games

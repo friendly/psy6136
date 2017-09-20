@@ -4,44 +4,31 @@
 #' date: "27 Jan 2015"
 #' ---
 
-#' ## Exercise 2.3: Danish Welfare
+#' ## Exercise 2.3
 
-library(vcdExtra)
-data(DanishWelfare)
-str(DanishWelfare)
-sum(DanishWelfare$Freq)  # total cases
+data(UCBAdmissions)
+UCB <- UCBAdmissions   # save typing
+ftable(UCB)
 
-#' ### Ordering Alcohol and Income
-levels(DanishWelfare$Alcohol)
-DanishWelfare$Alcohol <- ordered(DanishWelfare$Alcohol, levels=c("<1", "1-2", ">2"))
+sum(UCB)
 
-levels(DanishWelfare$Income)
-DanishWelfare$Income <- ordered(DanishWelfare$Income, levels=c("0-50","50-100","100-150",">150"))
+# total applicants for each dept
+margin.table(UCB, 3)
+apply(UCBAdmissions, 3, sum)
 
-#' or, simpler, using as.ordered():
-DanishWelfare$Alcohol <- as.ordered(DanishWelfare$Alcohol)
-DanishWelfare$Income <- as.ordered(DanishWelfare$Income)
+# proportion admited for each dept
+tab1 <- margin.table(UCB , c(1,3))
+tab1
+tab1[1,] / margin.table(UCB, 3)
+# or, using prop.table
+prop.table(margin.table(UCB, c(1, 3)),2)
 
-#' now they are **ordered factors**
-str(DanishWelfare)
 
-#' ### convert to table form
-Danish.tab <- xtabs(DanishWelfare)
-# same, using formula method
-Danish.tab <- xtabs(Freq ~ ., data=DanishWelfare)
+# proportion in each cell admitted
+admit <- UCB[1,,]
+reject <- UCB[2,,]
 
-str(Danish.tab)
-structable(Danish.tab)
-
-#' ### Urban factor
-margin.table(DanishWelfare.tab, 4)
-
-#' Collapse categories
-Danish.tab2 <- collapse.table(Danish.tab, Urban=c("City","City","City","City","NonCity"))
-
-structable(Danish.tab2)
-
-structable(Alcohol ~ Urban+Status+Income,  Danish.tab2)
+admit / (admit+reject)
 
 #' ## Exercise 3.1: Arbuthnot data
 data(Arbuthnot, package="HistData")
