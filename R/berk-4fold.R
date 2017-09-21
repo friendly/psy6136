@@ -1,7 +1,7 @@
 #' ---
 #' title: "UCBAdmissions: fourfold displays and odds ratios"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "21 Sep 2017"
 #' ---
 
 
@@ -12,7 +12,15 @@ data("UCBAdmissions")
 #' ## rearrange dimensions 
 UCB <- aperm(UCBAdmissions, c(2,1,3))
 # marginal table, collapsing over Dept
-fourfold(margin.table(UCB, c(1,2)))
+(UCB2 <- margin.table(UCB, c(1,2)))
+
+#' Chisquare test
+chisq.test(UCB2)
+
+#' Fourfold plots
+fourfold(UCB2)
+# unstandardized version
+fourfold(UCB2, std="ind.max")
 
 #' ## 3-way table, stratified by Dept
 fourfold(UCB, mfrow=c(2,3))
