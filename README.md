@@ -1,6 +1,9 @@
 ## Psychology 6136: Categorical Data Analysis
 
-This is the github repo for my course, Psychology 6136: Categorical Data Analysis taught at York University
+This is the github repo for the web pages of my course, *Psychology 6136: Categorical Data Analysis* taught at York University.
+It uses my book, *Discrete Data Analysis with R: Visualization and Modeling Techniques for Categorical and Count Data*,
+http://ddar.datavis.ca.
 
-The canonical web page for the course is: http://www.yorku.ca/friendly/psy6136
+
+The canonical URL for the course is: http://www.yorku.ca/friendly/psy6136 
 
