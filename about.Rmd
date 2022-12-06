@@ -60,54 +60,56 @@ It progresses to generalized linear models, for which log-linear models provide 
 
 Throughout, there is a strong emphasis on associated graphical methods for visualizing categorical data, checking model assumptions, etc. Lab sessions will familiarize the student with software using R for carrying out these analyses.
 
+## Assignments {#assign}
+
+There will be occasional short assignments posted here and announced in class. These assignments are
+ungraded, unless a graded assignment is announced in advance.  Details regarding a useful way of
+formatting R exercises are described in <a href="assign/assign1.pdf">Assignment 1</a>.
+See [Render an R script to a report](https://bookdown.org/yihui/rmarkdown-cookbook/spin.html),
+which describes how to compile HTML, PDF, or MS Word notebooks from R scripts for further details.
+
+Please submit your assignments to me by email, as a PDF, Word, or HTML attachment
+(together with the associated R file),
+with
+a Subject: line "**PSYC 6136: Assignment XX**".
+To help me keep them straight, it would be most convenient to name them something like
+"YourName-AssignXX.{pdf,docx,html}".
+
+
+* [Assignment 1](assign/assign1.pdf) 
+  <!-- [Answers](assign/ans1.R) -->
+* [Assignment 2](assign/assign2.pdf) 
+  <!-- [Answers](assign/ans2.R) -->
+* [Assignment 3](assign/assign3.pdf) 
+  <!-- [Answers](assign/ans3.R) -->
+* [Assignment 4](assign/assign4.pdf) 
+  <!-- [Answers](assign/ans4.R) -->
+
 
 ## Evaluation {#evaluation}
 
-<!--
-Grades will be based on the following components:
+There are three  components to your evaluation in the course: two take-home projects (each worth 40%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
 
-* **Discussion leader** (20%)
-Each session, 1-2 of you will lead a brief discussion on one of the readings, sub-topics or an application related
-to the topic. (~ 5 min.).  
+Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
+you can use if you are working in RStudio and want to
+write in R markdown.
 
-    + It may be helpful to prepare a one-page handout, or your slides, or or other visual materials. 
-    + You can send these to the [class listserv](mailto:psyc6135@yorku.ca).
-    <!-- post these on [eClass](https://eclass.yorku.ca/eclass/user/index.php?id=37950)  -->
-    <!-- + With your permission, I will post these to the [students page](students.html) -->
+1. [Project 1](assign/project1.pdf):
+a selection of data sets for the material up to and including logistic regression. Due date: Feb. 13???
 
-<!--
-* **Class presentation** (40%)
-  In the last week, each person will give a ~ 20-25 min presentation on a topic of research, application, or software related to data visualization. The topic is not restricted to things covered in the lectures. You'll find a few random suggested topics on the [Resources page](resources.html), but you can also get a sense of the range and scope of projects from
-  those listed on the [Students page](students.html)
-  <!-- You are permitted to do this work with one other person. -->
+2. [Project 2](assign/project2.pdf):
+a selection of data sets for the material from logistic regression to the end of the course. Due date: Mar. 15???
 
-    + You should prepare a brief **topic proposal** and send it to me by email by the end of Reading Week, Feb. 26.
-    <!-- post it to eClass or discuss it with one of us by email by Jun 1. -->
-    This is ungraded, but intended to help you shape your topic.
+3. The remaining 20% can be earned either as
 
-    + Your in-class presentation should be accompanied by a slide show or other visual materials. It would be best to
-    post your presentation materials _in advance_, preferably by a link to cloud storage or as an email attachment to
-    the [class listserv](mailto:psyc6135@yorku.ca).
-    <!-- We encourage students to prepare -->
-    <!-- and record an audio/video of your presentation _in advance_ and upload to eClass or share a link.  -->
-    <!-- We would prefer to do this offline, in advance --- meaning you can record an audio/video of your presentation in advance and upload to eClass or share a link. In class discussion can then be abbreviated. -->
-    <!-- Those who do post their presentation in advance will be given extra credit. -->
-    
-    + Evaluation of the presentation will be done by peer review as well as by the instructor. A rating form will provided.
+  * an assignment portfolio, containing a selection of your best work (possibly edited/enhanced) on a selection of assignment questions, or by
+  * reading and discussing a journal article related to theory or application of categorical data analysis. For the latter, you can volunteer to give a brief (~15 min) presentation to the class (sometime in Nov.) to earn bonus marks. Due date: Apr 5???
 
-
-* **Research proposal** (40%)
-  Prepare a brief research proposal (~ 5-8 pages) on a data visualization topic. This can an empirical study of
-  some aspect of data visualization, an historical review, or a proposal for development or implementation of
-  a graphical method. The topic should not be identical to that of your presentation.
-  <!-- You are permitted to do this work with one other person.  -->
-  This will be due on  Friday, April 22, the week following the last class.
--->
 
 ## Re-use policy
 
 ![](icons/cc-by-nc-sa-icon.png){width="20%"}
 
-The lecture slides, tutorials and R scripts linked here are available under a Creative Commons Attribution-NonCommercial-ShareAlike license. They are available to everybody under the terms of this license and can be shared.
+The lecture slides, tutorials and R scripts linked here are available under a [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. They are available to everybody under the terms of this license and can be shared.
 
 All other materials, notably course videos and support material files, should not be copied beyond your personal machines and hence are not available for redisitrbution.
