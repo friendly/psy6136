@@ -54,9 +54,13 @@ This course is designed as a lecture/seminar dealing with the analysis of catego
 
 ## Course Description {#description}
 
-This course is designed as a broad, applied introduction to the statistical analysis of categorical (or discrete) data, such as counts, proportions, nominal variables, ordinal variables, discrete variables with few values, continuous variables grouped into a small number of categories, etc. The course begins with methods designed for cross-classified table of counts, (i.e., contingency tables), using simple chi square-based methods. 
+This course is designed as a broad, applied introduction to the statistical analysis of categorical (or discrete) data, such as counts, proportions, nominal variables, ordinal variables, discrete variables with few values, continuous variables grouped into a small number of categories, etc. 
 
-It progresses to generalized linear models, for which log-linear models provide a natural extension of simple chi square-based methods. This framework is then extended to comprise logit and logistic regression models for binary responses and generalizations of these models for polytomous (multicategory) outcomes.
+* The course begins with methods designed for cross-classified table of counts, (i.e., contingency tables), using simple chi square-based methods. 
+
+* It progresses to generalized linear models, for which log-linear models provide a natural extension of simple chi square-based methods. 
+
+* This framework is then extended to comprise logit and logistic regression models for binary responses and generalizations of these models for polytomous (multicategory) outcomes.
 
 Throughout, there is a strong emphasis on associated graphical methods for visualizing categorical data, checking model assumptions, etc. Lab sessions will familiarize the student with software using R for carrying out these analyses.
 
@@ -72,8 +76,8 @@ Please submit your assignments to me by email, as a PDF, Word, or HTML attachmen
 (together with the associated R file),
 with
 a Subject: line "**PSYC 6136: Assignment XX**".
-To help me keep them straight, it would be most convenient to name them something like
-"YourName-AssignXX.{pdf,docx,html}".
+To help me keep them straight, it would be most convenient to name them in a consistent style, something like
+"YourName-AssignXX.{pdf,docx,html}". 
 
 
 * [Assignment 1](assign/assign1.pdf) 
