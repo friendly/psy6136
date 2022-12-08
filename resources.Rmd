@@ -1,0 +1,83 @@
+---
+title: "Resources"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: yes
+    css: assets/styles.css
+    includes:
+      after_body: footer.html
+---
+
+```{r tabfig, echo=FALSE}
+source("assets/tabfig.R")
+```
+
+## Books {#books}
+
+### Main texts {#texts}
+
+```{r do-books, echo=FALSE}
+width <- "180px"
+tab(class="cellpadding", width="800px",
+  tr(
+  	tabfig("FriendlyMeyer", "icons/ddar-cover.png", 
+  	       "https://www.taylorfrancis.com/books/mono/10.1201/b19022/discrete-data-analysis-michael-friendly-david-meyer", width=width),
+  	tabtxt("Friendly & Meyer (2016),",  a("Discrete Data Analysis with R: Visualization and Modeling Techniques for  
+  	Categorical and Count Data",
+  	                         href="https://www.taylorfrancis.com/books/mono/10.1201/b19022/discrete-data-analysis-michael-friendly-david-meyer"),
+  	       ". This book provides the syllabus and main content for the course.", 
+  	       "Use the code ADC22 for a 30% discount from the publisher's web site.", br(),
+           "Web site for the book:", aself("http://ddar.datavis.ca/"))
+  	),
+  tr(
+  	tabfig("Agresti", "icons/agresti-intro-3rd.jpg", 
+  	       "https://www.wiley.com/en-us/An+Introduction+to+Categorical+Data+Analysis%2C+3rd+Edition-p-9781119405283", width=width),
+  	tabtxt("Alan Agresti (2019),",  a("Introduction to Categorical Data Analysis, 3rd Ed.",
+  	                         href="https://www.wiley.com/en-us/An+Introduction+to+Categorical+Data+Analysis%2C+3rd+Edition-p-9781119405283"),
+  	       ". A somewhat parallel book, offering a different perspective on categorical data analysis.", br(),
+           "An ebook version is available to students in this course.")
+  	)
+)
+```
+
+### Supplementary readings {#supp}
+
+```{r do-books2, echo=FALSE}
+width <- "180px"
+tab(class="cellpadding", width="800px",
+  tr(
+  	tabfig("Agresti", "icons/agresti-cover-3rd.jpg", 
+  	       "https://www.wiley.com/en-us/Categorical+Data+Analysis,+3rd+Edition-p-9780470463635", width=width),
+  	tabtxt("Agresti (2013)",  a("Categorical Data Analysis",
+  	       href="https://www.wiley.com/en-us/Categorical+Data+Analysis,+3rd+Edition-p-9780470463635"),
+  	       ". A much more technical book, that many consider the 'bible' for categorical data analysis methods.", br(),
+  	       a("Web site for the book", "http://www.stat.ufl.edu/~aa/cda/cda.html"), br(),
+  	       a("Solutions manual for R", "https://home.comcast.net/~lthompson221/Splusdiscrete2.pdf"), br(),
+  	       "A PDF copy of this book is available to students in this course."
+           )
+  	),
+  tr(
+  	tabfig("Fox", "icons/Fox-APR3rd.jpg", 
+  	       "https://us.sagepub.com/en-us/nam/applied-regression-analysis-and-generalized-linear-models/book237254", width=width),
+  	tabtxt("Fox (2015)",  a("Applied Regression Analysis and Generalized Linear Models",
+  	       href="https://us.sagepub.com/en-us/nam/applied-regression-analysis-and-generalized-linear-models/book237254"),
+  	       ". An excellent text on linear models; Part IV on Generalized Linear Models provides a clear and comprehensive discussion.")
+  	)
+  )
+
+
+## Software {#software}
+
+In lectures and lab sessions I will be using [R](http://www.r-project.org)
+software exclusively, together with the [R Studio](http://www.rstudio.com/)
+user interface for R.
+You are well-advised to download and install these to your computer so you can follow along.
+
+* Instructions to install R and R Studio for [Windows](tutorials/installing-r-rstudio-windows.pdf) and [Mac](tutorials/installing-r-rstudio-mac.pdf). 
+
+* My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course.
+
+* [R Studio cheatsheets](tutorials/rstudio-cheat-sheets.pdf) A handy collection of cheat sheets for R, R Studio and a number of the most useful R packages.
+
