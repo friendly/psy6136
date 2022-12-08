@@ -1,15 +1,23 @@
 #' ---
 #' title: "VisualAcuity: Quasi-independence and quasi-symmetry"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
 
-#' ## Load datra
+#' ## Load packages & data
 library(vcdExtra)
-library(gnm)
+library(gnm)      # for Diag(), Symm()
+
+data(VisualAcuity, package="vcd")
+
+#' ## Work with the data for females
 women <- subset(VisualAcuity, gender=="female", select=-gender)
 
+#' ## Fit the independence model
 indep <- glm(Freq ~ right + left,  data = women, family=poisson)
 mosaic(indep, residuals_type="rstandard", gp=shading_Friendly,
        main="Vision data: Independence (women)"  )
@@ -22,7 +30,7 @@ mosaic(quasi.indep, residuals_type="rstandard", gp=shading_Friendly,
        main="Quasi-Independence (women)"  )
 
 #' ##  Symmetry:  test F[i,j] = F[j,i].  
-#' Note that the model does not include the 'main' effects of right and left, so assumes marginal homogeneity
+#' Note that this model does not include the 'main' effects of right and left, so assumes marginal homogeneity
 
 symmetry <- glm(Freq ~ Symm(right, left), 
        data = women, family = poisson)
@@ -36,10 +44,10 @@ quasi.symm <- glm(Freq ~ right + left + Symm(right, left),
 mosaic(quasi.symm, residuals_type="rstandard", gp=shading_Friendly,
        main="Quasi-Symmetry model (women)")
 
-#' model comparisons: for *nested* models
+#' ## model comparisons: for *nested* models
 anova(indep, quasi.indep, quasi.symm, test="Chisq")
 anova(symmetry, quasi.symm, test="Chisq")
 
-#' model summaries, with AIC and BIC
+#' ## model summaries, with AIC and BIC
 models <- glmlist(indep, quasi.indep, symmetry, quasi.symm)
 LRstats(models)

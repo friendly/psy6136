@@ -43,17 +43,19 @@ plot(phd.pois, which=c(1,5))
 par(op)
 
 #'  ### component-plus-residual plot for non-linearity
-crPlot(phd.pois, "mentor", pch=16, lwd=4, id.n=2)
+crPlot(phd.pois, "mentor", pch=16, lwd=4, id = list(n=2))
 
 #' ### better version
-crPlot(phd.pois, "mentor", pch=16, lwd=4, id.n=2, 
+op <- par(mar=c(4,4,2,1)+.1)
+crPlot(phd.pois, "mentor", pch=16, lwd=4, id = list(n=2), 
 	cex.lab=1.4, xlab="mentor publications" )
 text(70, 2.5, paste("b =",round( coef(phd.pois)["mentor"], 3)), col="red", cex=1.5)
+par(op)
 
 #'  ### Influence plot
-influencePlot(phd.pois, id.n=2)
+influencePlot(phd.pois, id = list(n=2))
 
-#' Effect plots
+#' ## Effect plots
 library(effects)
 plot(allEffects(phd.pois))
 
@@ -73,6 +75,8 @@ phd.qpois <- glm(articles ~ ., data=PhdPubs, family=quasipoisson)
 
 #' Fit the negative-binomial model
 phd.nbin  <- glm.nb(articles ~ ., data=PhdPubs)
+#' Estimate of theta
+summary(phd.nbin)$theta
 
 #'  ## compare models
 

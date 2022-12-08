@@ -1,15 +1,27 @@
 #' ---
 #' title: "Arthritis data: diagnostic plots"
 #' author: "Michael Friendly"
-#' date: "22 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 library(vcd)
-#' ## main effects model
+library(car)
 data(Arthritis)
-# define Better
+
+#' ## define Better
 Arthritis$Better <- Arthritis$Improved > 'None'
+
+#' ## main effects model for the binary response
 arth.mod1 <- glm(Better ~ Age + Sex + Treatment , data=Arthritis, family='binomial')
 Anova(arth.mod1)
 
@@ -18,6 +30,5 @@ op <- par(mfrow=c(2,2))
 plot(arth.mod1)
 par(op)
 
-library(car)
 #' ## influence plot
 influencePlot(arth.mod1, main="Arthritis data: influencePlot")

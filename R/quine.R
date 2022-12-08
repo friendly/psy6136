@@ -1,14 +1,22 @@
 #' ---
 #' title: "Count data models: School absenteeism"
 #' author: "Michael Friendly"
-#' date: "20 Nov 2017"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
-data("quine", package="MASS")
+
 library(car)       # for Anova()
 library(AER)       # dispersiontest
 library(lmtest)    # coeftest()
 library(effects)   # effect plots
+
+#' ## Load the data
+data("quine", package="MASS")
+
 
 #' ## Fixup the data for ease of use
 #'  Age should be treated as an ordered factor; use better labels for `Lrn`
@@ -27,7 +35,6 @@ summary(quine.mod1)
 Anova(quine.mod1)
 
 #' ## Plot effects
-library(effects)
 plot(allEffects(quine.mod1), ci.style='bands')
 
 #' ## Test for overdispersion
@@ -37,7 +44,8 @@ dispersiontest(quine.mod1)
 quine.mod1q <- glm(Days ~ ., data=quine, family=quasipoisson)
 coeftest(quine.mod1q)
 Anova(quine.mod1q)
-#' Visualize effects
+
+#' ## Visualize effects
 plot(allEffects(quine.mod1q), ci.style="bands")
 
 
@@ -47,7 +55,7 @@ quine.mod2q <- glm(Days ~ .^2, data=quine, family=quasipoisson)
 summary(quine.mod2q)
 car::Anova(quine.mod2q)
 
-#' Try adding interactions
+#' ## Try adding interactions
 quine.mod3 <- update(quine.mod1q, . ~ . + Eth:Age)
 plot(allEffects(quine.mod3))
 

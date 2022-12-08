@@ -1,12 +1,16 @@
 #' ---
 #' title: "Cowles data: Logistic regression"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
 library(effects)   ## load the effects package
 library(car)       ## for Anova: type II tests
-data(Cowles)
+data(Cowles, package = "carData")
 
 #' ## Main effects model
 mod.cowles0 <- glm(volunteer ~ sex + neuroticism + extraversion, 

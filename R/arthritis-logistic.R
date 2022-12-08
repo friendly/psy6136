@@ -1,11 +1,22 @@
 #' ---
 #' title: "Arthritis data: Logistic regression"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
+
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 library(vcd)
 library(car)
-data(Arthritis)
+data(Arthritis, package = "vcd")
 
 #' ## define Better from ordinal Improved
 Arthritis$Better <- Arthritis$Improved > 'None'
@@ -14,7 +25,7 @@ Arthritis$Better <- Arthritis$Improved > 'None'
 arth.mod0 <- glm(Better ~ Age, data=Arthritis, family='binomial')
 anova(arth.mod0)
 
-# plot, with +-1 SE
+#' ## plot, with +-1 SE
 plot(Better ~ Age, data=Arthritis, ylab="Prob (Better)")
 pred <- predict(arth.mod0, type="response", se.fit=TRUE)
 ord <-order(Arthritis$Age)
@@ -31,7 +42,7 @@ lines(lowess(Arthritis$Age[ord], Arthritis$Better[ord]), lwd=2, col="red")
 arth.mod1 <- glm(Better ~ Age + Sex + Treatment , data=Arthritis, family='binomial')
 Anova(arth.mod1)
 
-# same, using update()
+#' same, using update()
 arth.mod1 <- update(arth.mod0, . ~ . + Sex + Treatment)
 Anova(arth.mod1)
 

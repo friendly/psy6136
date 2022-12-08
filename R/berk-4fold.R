@@ -1,9 +1,18 @@
 #' ---
 #' title: "UCBAdmissions: fourfold displays and odds ratios"
 #' author: "Michael Friendly"
-#' date: "21 Sep 2017"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 #' ## Load data
 library(vcd)
@@ -14,10 +23,10 @@ UCB <- aperm(UCBAdmissions, c(2,1,3))
 # marginal table, collapsing over Dept
 (UCB2 <- margin.table(UCB, c(1,2)))
 
-#' Chisquare test
+#'##  Chisquare test
 chisq.test(UCB2)
 
-#' Fourfold plots
+#' ## Fourfold plots
 fourfold(UCB2)
 # unstandardized version
 fourfold(UCB2, std="ind.max")
@@ -30,5 +39,8 @@ woolf_test(UCB)
 
 #' ## calculate odds ratios
 oddsratio(UCBAdmissions, log=FALSE)
-# plot log odds ratios
-plot(oddsratio(UCBAdmissions), xlab="Department", ylab="Log Odds Ratio (Admit|Gender)")
+
+# ## plot log odds ratios
+plot(oddsratio(UCBAdmissions), 
+     xlab="Department", 
+     ylab="Log Odds Ratio (Admit|Gender)")

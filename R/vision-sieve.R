@@ -1,8 +1,19 @@
 #' ---
 #' title: "VisualAcuity data: sieve diagrams"
 #' author: "Michael Friendly"
-#' date: "21 Sep 2017"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
+
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 
 library(vcd)
 
@@ -25,12 +36,13 @@ sieve(Freq ~ right + left,  data = men,
 
 #' ## plot both together
 #+ fig.width=8, fig.height=4
-cotabplot(Freq ~ right + left | gender, data=VisualAcuity, panel=cotab_sieve, gp=shading_Friendly)
+cotabplot(Freq ~ right + left | gender, data=VisualAcuity, 
+          panel=cotab_sieve, gp=shading_Friendly)
 
 #' ## Some statistical tests for association
 chisq.test(xtabs(Freq ~ left + right, data=women))
 chisq.test(xtabs(Freq ~ left + right, data=men))
 
-# mutual independence of gender, right, left
+#' mutual independence of gender, right, left
 MASS::loglm(Freq ~ gender + right + left, data=VisualAcuity)
 

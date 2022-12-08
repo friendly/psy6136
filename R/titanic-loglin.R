@@ -1,11 +1,15 @@
 #' ---
 #' title: "Survival on the titanic, using loglm()"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
 
-# Exercises: survival on the titanic, using loglm()
+#' ## Exercises: survival on the titanic, using loglm()
 
 library(MASS)     # for loglm()
 library(vcd)      # for mosaic, aka plot.loglm()
@@ -23,12 +27,14 @@ titanic.mod2 <- loglm(~ (Class * Age * Sex) + Survived*(Class + Age + Sex), data
 titanic.mod2
 plot(titanic.mod2,  main="Model [AGC][AS][GS][CS]")
 
+#' ## update() is a simpler way:
+update(titanic.mod1, . ~ .+ Survived*(Class+Age+Sex))
+
 titanic.mod3 <- loglm(~ (Class * Age * Sex) + Survived*(Class + Age * Sex), data=Titanic)
 titanic.mod3
-plot(titanic.mod3, ,  main="Model [AGC][AS][GS][CS][AGS]")
+plot(titanic.mod3, main="Model [AGC][AS][GS][CS][AGS]")
 
-#' compare models
+#' ## compare models
 anova(titanic.mod1, titanic.mod2, titanic.mod3, test="chisq")
-
 
 

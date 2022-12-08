@@ -1,54 +1,55 @@
 #' ---
 #' title: "Multinomial logistic regression"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
-# multinomial logistic regression
+#' ## Fit models for women's labor force participation
 
 library(car)
-data(Womenlf)
-attach(Womenlf)
+library(nnet)   # for `multinom()`
+library(dplyr)
+data(Womenlf, package = "carData")
 
-# make ordered factor
-participation <- ordered(partic, 
-    levels=c('not.work', 'parttime', 'fulltime'))
+#' #### make `not.work` the reference category
 
-#' ## Fit model
-library(nnet)
-mod.multinom <- multinom(participation ~ hincome + children)
-summary(mod.multinom, Wald=TRUE)
-Anova(mod.multinom)
+Womenlf <- within (Womenlf, {
+  partic <- ordered(partic, levels=c('not.work', 'parttime', 'fulltime'))})
 
-#' Plot fitted values
-predictors <- expand.grid(hincome=1:45, children=c('absent', 'present'))
-p.fit <- predict(mod.multinom, predictors, type='probs')
+#' ## Fit model with main effects
+wlf.multinom <- multinom(partic ~ hincome + children, 
+                         data=Womenlf, Hess=TRUE)
+summary(wlf.multinom, Wald=TRUE)
+Anova(wlf.multinom)
 
-Hinc <- 1:max(hincome)
-plot(range(hincome), c(0,1), 
-    type='n', xlab="Husband's Income", ylab='Fitted Probability',
-    main="Children absent")
-lines(Hinc, p.fit[Hinc, 'not.work'], lty=1, lwd=3, col="black")
-lines(Hinc, p.fit[Hinc, 'parttime'], lty=2, lwd=3, col="blue")
-lines(Hinc, p.fit[Hinc, 'fulltime'], lty=3, lwd=3, col="red")
+# overall test?
+#car::linearHypothesis(wlf.multinom, "parttime, fulltime")
 
-legend(5, 0.97, lty=1:3, lwd=3, col=c("black", "blue", "red"),
-    legend=c('not working', 'part-time', 'full-time'))  
-
-plot(range(hincome), c(0,1), 
-    type='n', xlab="Husband's Income", ylab='Fitted Probability',
-    main="Children present")
-lines(Hinc, p.fit[46:90, 'not.work'], lty=1, lwd=3, col="black")
-lines(Hinc, p.fit[46:90, 'parttime'], lty=2, lwd=3, col="blue")
-lines(Hinc, p.fit[46:90, 'fulltime'], lty=3, lwd=3, col="red")
+#' ## Examine coefficients
+coef(wlf.multinom)
+exp(coef(wlf.multinom))
 
 
-# a more general way to make the plot
+#' ## Wald tests & p-values
+stats <- summary(wlf.multinom, Wald=TRUE)
+z <- stats$Wald.ratios
+p <- 2 * (1 - pnorm(abs(z)))
+zapsmall(p)
+
+
+#' ## Plot fitted values in two panels
 op <- par(mfrow=c(1,2))
-Hinc <- 1:max(hincome)
+
+predictors <- expand.grid(hincome=1:45, children=c('absent', 'present'))
+p.fit <- predict(wlf.multinom, predictors, type='probs')
+Hinc <- 1:max(predictors$hincome)
 for ( kids in c("absent", "present") ) {
 	data <- subset(data.frame(predictors, p.fit), children==kids)
-	plot( range(hincome), c(0,1), type="n",
+	plot( range(Hinc), c(0,1), type="n",
 		xlab="Husband's Income", ylab='Fitted Probability',
 		main = paste("Children", kids))
 	lines(Hinc, data[, 'not.work'], lwd=3, col="black", lty=1)
@@ -62,4 +63,47 @@ for ( kids in c("absent", "present") ) {
 par(op)
 
 
-detach(Womenlf)
+
+#' ## Effect plots
+#' 
+wlf.effects <- allEffects(wlf.multinom)
+plot(wlf.effects, style='stacked')
+
+plot(Effect(c("hincome", "children"), wlf.multinom), 
+     style = "stacked", key.args=list(x=.75, y=.25),
+     colors = c(grey(.85), "pink", "lightblue")
+     )
+
+
+#' ## plotting probabilities
+
+#' get fitted probabilities
+options(digits=3)
+predictors <- expand.grid(hincome=1:50, children=c('absent', 'present'))
+fit <- data.frame(predictors, 
+                  predict(wlf.multinom, predictors, type='probs'))
+
+
+#' ## Re-shape for plotting
+library(tidyr)
+
+#' tidyr::gather()
+plotdat <- fit |>
+  gather(key="Level", value="Probability", not.work:fulltime) 
+
+
+plotdat <- fit |>
+  pivot_longer(not.work:fulltime, 
+               names_to = "Level",
+               values_to = "Probability") 
+head(plotdat)
+
+library(directlabels)
+gg <-
+ggplot(plotdat, aes(x = hincome, y = Probability, colour = Level)) + 
+  geom_line(size=1.5) + theme_bw() + 
+  facet_grid(~ children, labeller = label_both) +
+  theme_bw(base_size = 14)
+direct.label(gg, list("top.bumptwice", dl.trans(y = y + 0.2)))
+
+

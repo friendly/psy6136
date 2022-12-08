@@ -1,9 +1,18 @@
 #' ---
 #' title: "Mental health data: Correspondence analaysis"
 #' author: "Michael Friendly"
-#' date: "21 Jan 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 library(vcdExtra)
 library(ca)
@@ -14,6 +23,8 @@ Mental.tab <- xtabs(Freq ~ mental+ses, data=Mental)
 
 #' ## correspondence analysis
 ca(Mental.tab)
-plot(ca(Mental.tab))
+
+#' ## Plot the ca solution
+plot(ca(Mental.tab), lines = TRUE)
 
 

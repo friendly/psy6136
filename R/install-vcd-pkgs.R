@@ -9,18 +9,19 @@
 #   
 
 # main packages for the VCD short course
-vcdpkgs <-c("vcdExtra", "ca", "car", "catspec", "coin", "corrgram", "effects", 
-            "gmodels", "gnm", "reshape", "vcd")
+vcdpkgs <-c("vcd", "vcdExtra", "ca", "car", "catspec", "coin", "corrgram", "effects", 
+            "gmodels", "gnm", "reshape")
 
 # other useful packages
 otherpkgs <-c("ade4", "candisc", "ggplot2", "heplots", "HH", "rms", "latticeExtra", 
-"lme4", "dplyr", "Rcmdr", "RcmdrPlugin.HH", "reshape", "rgl", "sem", "TeachingDemos",
-"tidyverse", "knitr", "psych", "lavaan" )
+              "lme4", "dplyr", "reshape", "rgl", "sem", "TeachingDemos",
+              "tidyverse", "knitr", "psych", "lavaan" )
 
 allpkgs <- union(vcdpkgs, otherpkgs)
 
 # install the above, along with any dependencies
 install.packages(allpkgs, dependencies=TRUE)
+
 # update any recently modified packages
 update.packages(ask='graphics')
 
