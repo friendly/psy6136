@@ -32,7 +32,18 @@ broom::tidy(wlf.multinom)
 #' ## Anova tests
 Anova(wlf.multinom)
 
-# overall test?
+#' ## Overall test B = 0
+#' Test the hypothesis that all coefficients = 0.
+#' For `linearHypothesis()`, need to construct the combinations of
+#' the dichotomies and the predictors.
+(H <- outer(c("parttime:", "fulltime:"),
+           c("childrenpresent", "hincome"),
+           paste0))
+
+car::linearHypothesis(wlf.multinom, as.vector(H)) 
+
+
+
 car::linearHypothesis(wlf.multinom, "hincome, childrenpresent")
 
 #' ## Examine coefficients
