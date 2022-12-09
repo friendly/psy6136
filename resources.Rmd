@@ -73,6 +73,7 @@ tab(class="cellpadding", width="800px",
 In lectures and lab sessions I will be using [R](http://www.r-project.org)
 software exclusively, together with the [R Studio](http://www.rstudio.com/)
 user interface for R.
+
 You are well-advised to download and install these to your computer so you can follow along.
 
 * Instructions to install R and R Studio for [Windows](tutorials/installing-r-rstudio-windows.pdf) and [Mac](tutorials/installing-r-rstudio-mac.pdf). 
@@ -81,3 +82,4 @@ You are well-advised to download and install these to your computer so you can f
 
 * [R Studio cheatsheets](tutorials/rstudio-cheat-sheets.pdf) A handy collection of cheat sheets for R, R Studio and a number of the most useful R packages.
 
+* [An Introduction to R Graphics](http://www.datavis.ca/courses/RGraphics/) Notes from my SCS short course on R Graphics. 

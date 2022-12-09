@@ -1,0 +1,26 @@
+name: "psy6136"
+exclude: ["admin", "notes", "private", "lectures-old",  "*.pptx", "*.bak", "*.doc"]
+output_dir: "docs"   #for GH pages: docs directory of main branch
+
+output:
+  html_document:
+    theme: cosmo
+
+navbar:
+  logo:
+    image: icons/favicon_io/favicon-32x32.png
+  title: "Psychology 6136: Categorical Data Analysis"
+  type: inverse
+  left:
+    - text: "Home"
+      icon: fa-home fa-2x   # handy way to use FontAwesome icons in nav!
+      href: index.html
+    - text: "About"
+      icon: fa-file  fa-2x
+      href: about.html
+    - text: "Resources"
+      icon: fa-book  fa-2x
+      href: resources.html
+  right:
+    - icon: fab fa-twitter fa-2x
+      href: https://twitter.com/datavisFriendly
