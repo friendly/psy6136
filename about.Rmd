@@ -2,7 +2,7 @@
 title: "About This Course"
 output:
   html_document:
-    css: styles.css
+    css: assets/styles.css
     includes:
       after_body: footer.html
 ---
@@ -12,7 +12,7 @@ output:
 
 * Michael Friendly [datavis.ca home page](http://datavis.ca)
 * Email: friendly AT yorku DOT ca
-* Twitter: [@datavisFriendly](http://twitter.com/datavisFriendly); [#psy6135](https://twitter.com/search?q=%23psy6135)
+* Twitter: [@datavisFriendly](http://twitter.com/datavisFriendly); [#psy6136](https://twitter.com/search?q=%23psy6136)
 * Office: 226 BSB
 * Phone: x66249
 * Office hour: Wednesday: 11:30-12:30, but by appointment

@@ -15,6 +15,9 @@ navbar:
     - text: "Home"
       icon: fa-home fa-2x   # handy way to use FontAwesome icons in nav!
       href: index.html
+    - text: "Schedule"
+      icon: fa-calendar  fa-2x
+      href: schedule.html
     - text: "About"
       icon: fa-file  fa-2x
       href: about.html

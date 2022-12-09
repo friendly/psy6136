@@ -1,0 +1,51 @@
+<style type="text/css">
+
+/*Credits: Dynamic Drive CSS Library */
+/*URL: http://www.dynamicdrive.com/style/ */
+
+.basictab{
+padding: 3px 0;
+margin-left: 0;
+font: bold 12px Verdana;
+border-bottom: 1px solid gray;
+list-style-type: none;
+text-align: center; /*set to left, center, or right to align the menu as desired*/
+}
+
+.basictab li{
+display: inline;
+margin: 0;
+}
+
+.basictab li a{
+text-decoration: none;
+padding: 3px 7px;
+margin-right: 3px;
+border: 1px solid gray;
+border-bottom: 1px solid gray;
+background-color: #f6ffd5;
+color: #2d2b2b;
+}
+
+.basictab li a:visited{
+color: #2d2b2b;
+}
+
+.basictab li a:hover{
+background-color: #B5C0D3; /* #DBFF6C; */
+color: black;
+}
+
+.basictab li a:active{
+color: black;
+}
+
+.basictab li.selected a{ /*selected tab effect*/
+position: relative;
+top: 1px;
+padding-top: 4px;
+background-color: #B5C0D3; /* #DBFF6C; */
+color: black;
+}
+
+</style>
