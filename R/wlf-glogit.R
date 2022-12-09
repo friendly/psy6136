@@ -23,11 +23,17 @@ Womenlf <- within (Womenlf, {
 #' ## Fit model with main effects
 wlf.multinom <- multinom(partic ~ hincome + children, 
                          data=Womenlf, Hess=TRUE)
+#' ## Summaries
 summary(wlf.multinom, Wald=TRUE)
+
+#' `broom::tidy()` puts this in a more convenient format
+broom::tidy(wlf.multinom)
+
+#' ## Anova tests
 Anova(wlf.multinom)
 
 # overall test?
-#car::linearHypothesis(wlf.multinom, "parttime, fulltime")
+car::linearHypothesis(wlf.multinom, "hincome, childrenpresent")
 
 #' ## Examine coefficients
 coef(wlf.multinom)
