@@ -2,6 +2,9 @@
 title: "About This Course"
 output:
   html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: yes
     css: assets/styles.css
     includes:
       after_body: footer.html
@@ -48,10 +51,6 @@ Students in the course are automatically subscribed.
 The link is: https://eclass.yorku.ca/eclass/user/index.php?id=37950
 -->
 
-## Summary
-
-This course is designed as a lecture/seminar dealing with the analysis of categorical data
-
 ## Course Description {#description}
 
 This course is designed as a broad, applied introduction to the statistical analysis of categorical (or discrete) data, such as counts, proportions, nominal variables, ordinal variables, discrete variables with few values, continuous variables grouped into a small number of categories, etc. 
@@ -68,7 +67,7 @@ Throughout, there is a strong emphasis on associated graphical methods for visua
 
 There will be occasional short assignments posted here and announced in class. These assignments are
 ungraded, unless a graded assignment is announced in advance.  Details regarding a useful way of
-formatting R exercises are described in <a href="assign/assign1.pdf">Assignment 1</a>.
+formatting R exercises are described in [Assignment 1](assign/assign1.pdf).
 See [Render an R script to a report](https://bookdown.org/yihui/rmarkdown-cookbook/spin.html),
 which describes how to compile HTML, PDF, or MS Word notebooks from R scripts for further details.
 

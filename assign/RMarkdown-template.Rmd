@@ -4,13 +4,9 @@ author: "Your Name"
 date: "`r Sys.Date()`"
 output: 
   html_document:
-    fig_height: 3
-    fig_width: 5
     toc: true
     toc_depth: 2
-  word_document:
-    fig_height: 3
-    fig_width: 5
+  word_document: default
 ---
 
 <!-- if you include more than one output format, you'll be offered a choice
@@ -26,8 +22,8 @@ output:
 knitr::opts_chunk$set(
   warning = FALSE,   # avoid warnings and messages in the output
   message = FALSE,
-  tidy=FALSE,     # display code as typed
-  size="small")   # slightly smaller font for code than usual
+  fig.height = 5,    # set the default height/width for figures
+  fig.width = 5)
 
 # R global options
 options(digits=4) # set default # of digits in output
@@ -46,7 +42,7 @@ You should get the [R Markdown cheatsheet](http://www.rstudio.com/resources/chea
 
 You can get something like this from RStudio, via the menu options **File -> New File -> R Markdown ...**,
 then choose **Document**.  This template adds some additional stuff in the default header,
-and sets some knitr options that I find useful.  If you use this, simplly delete everything
+and sets some knitr options that I find useful.  If you use this, simply delete everything
 from this section title to the end!
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
@@ -85,7 +81,7 @@ Here, I used backticks (\` \`) around "mtcars" to have it appear as verbatim cod
 ## Graphics
 
 If the code of an R chunk produces a plot, this plot will be displayed in the resulting file.
-```{r}
+```{r plot-mpg, fig.height=5, fig.width=5}
 plot(mpg ~ disp, data=mtcars, 
      pch=16, 
      xlab="Engine displacement",
@@ -95,9 +91,9 @@ plot(mpg ~ disp, data=mtcars,
 
 You can control the size of figures using chunk options, `fig.width`, `fig.height`.
 There are different ways to show several figures side-by-side. Here, I
-used `fig.show="hold"`.
+used `fig.show="hold"` and `out.width="49%"` to size them to fit side-by-side.
 
-```{r fig.height=4, fig.width=4, fig.show="hold"}
+```{r two-plots, fig.height=4, fig.width=4, out.width="49%", fig.show="hold"}
 plot(1:10)
 plot(10:1)
 ```
