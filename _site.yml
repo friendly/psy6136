@@ -25,7 +25,7 @@ navbar:
       icon: fa-book  fa-2x
       href: resources.html
     - text: "R examples"
-      icon: fa-display-code  fa-2x
+      icon: fa-code  fa-2x
       href: R/index.html
   right:
     - icon: fab fa-twitter fa-2x

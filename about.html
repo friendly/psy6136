@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>About This Course</title>
+
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Psychology 6136: Categorical Data Analysis</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home fa-2x"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="schedule.html">
+    <span class="fa fa-calendar  fa-2x"></span>
+     
+    Schedule
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-file  fa-2x"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fa fa-book  fa-2x"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="R/index.html">
+    <span class="fa fa-code  fa-2x"></span>
+     
+    R examples
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://twitter.com/datavisFriendly">
+    <span class="fab fa-twitter fa-2x"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://github.com/friendly/psy6136">
+    <span class="fab fa-github fa-2x"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">About This Course</h1>
+
+</div>
+
+
+<div id="instructor" class="section level2">
+<h2>Instructor</h2>
+<ul>
+<li>Michael Friendly <a href="http://datavis.ca">datavis.ca home
+page</a></li>
+<li>Email: friendly AT yorku DOT ca</li>
+<li>Twitter: <a href="http://twitter.com/datavisFriendly"><span
+class="citation">@datavisFriendly</span></a>; <a
+href="https://twitter.com/search?q=%23psy6136">#psy6136</a></li>
+<li>Office: 226 BSB</li>
+<li>Phone: x66249</li>
+<li>Office hour: Wednesday: 11:30-12:30, but by appointment</li>
+<li>Course web site: <a
+href="https://friendly.github.io/psy6136/">https://friendly.github.io/psy6136/</a>
+<!--
+* TAs: 
+  + Nataly Beribisky <natalyb1 AR yorku DOT ca>
+  + Justeena Zaki-Azat <justeena AT yorku DOT ca>
+--></li>
+</ul>
+<!-- ```{r, out.width = "400px"} -->
+<!-- knitr::include_graphics("images/MichaelFriendly-Mosaic-50pct-cropped.jpg") -->
+<!-- ``` -->
+<ul>
+<li>Photo mosaic of me (composed of images from the history of data
+vis); click on the image for a larger version</li>
+</ul>
+<p><a href="icons/MichaelFriendly-Mosaic-50pct-cropped.jpg"><img src="icons/MichaelFriendly-Mosaic-50pct-cropped.jpg" width="300px"></a></p>
+</div>
+<div id="meetings" class="section level2">
+<h2>Class meetings</h2>
+<ul>
+<li>Tuesday 2:30 pm - 5:30 pm, in 014A BSB. Lab sessions will be held in
+the Hebb Computer lab, 159 BSB.</li>
+</ul>
+<!--
+## Class discussion forum
+
+This term we will be using eClass for class discussion. The system is designed to make it
+easier to communicate with your classmates, the TA, and myself.
+Rather than emailing questions to a listserv or to us individually, 
+I encourage you to post your questions on eClass. 
+
+Students in the course are automatically subscribed.
+The link is: https://eclass.yorku.ca/eclass/user/index.php?id=37950
+-->
+</div>
+<div id="description" class="section level2">
+<h2>Course Description</h2>
+<p>This course is designed as a broad, applied introduction to the
+statistical analysis of categorical (or discrete) data, such as counts,
+proportions, nominal variables, ordinal variables, discrete variables
+with few values, continuous variables grouped into a small number of
+categories, etc.</p>
+<ul>
+<li><p>The course begins with methods designed for cross-classified
+table of counts, (i.e., contingency tables), using simple chi
+square-based methods.</p></li>
+<li><p>It progresses to generalized linear models, for which log-linear
+models provide a natural extension of simple chi square-based
+methods.</p></li>
+<li><p>This framework is then extended to comprise logit and logistic
+regression models for binary responses and generalizations of these
+models for polytomous (multicategory) outcomes.</p></li>
+</ul>
+<p>Throughout, there is a strong emphasis on associated graphical
+methods for visualizing categorical data, checking model assumptions,
+etc. Lab sessions will familiarize the student with software using R for
+carrying out these analyses.</p>
+</div>
+<div id="assign" class="section level2">
+<h2>Assignments</h2>
+<p>There will be occasional short assignments posted here and announced
+in class. These assignments are ungraded, unless a graded assignment is
+announced in advance. Details regarding a useful way of formatting R
+exercises are described in <a href="assign/assign1.pdf">Assignment
+1</a>. See <a
+href="https://bookdown.org/yihui/rmarkdown-cookbook/spin.html">Render an
+R script to a report</a>, which describes how to compile HTML, PDF, or
+MS Word notebooks from R scripts for further details.</p>
+<p>Please submit your assignments to me by email, as a PDF, Word, or
+HTML attachment (together with the associated R file), with a Subject:
+line “<strong>PSYC 6136: Assignment XX</strong>”. To help me keep them
+straight, it would be most convenient to name them in a consistent
+style, something like “YourName-AssignXX.{pdf,docx,html}”.</p>
+<ul>
+<li><a href="assign/assign1.pdf">Assignment 1</a>
+<!-- [Answers](assign/ans1.R) --></li>
+<li><a href="assign/assign2.pdf">Assignment 2</a>
+<!-- [Answers](assign/ans2.R) --></li>
+<li><a href="assign/assign3.pdf">Assignment 3</a>
+<!-- [Answers](assign/ans3.R) --></li>
+<li><a href="assign/assign4.pdf">Assignment 4</a>
+<!-- [Answers](assign/ans4.R) --></li>
+</ul>
+</div>
+<div id="evaluation" class="section level2">
+<h2>Evaluation</h2>
+<p>There are three components to your evaluation in the course: two
+take-home projects (each worth 40%) that will involve analysis of one or
+more data sets together with a research report describing the
+background, your analyses, results and conclusions. For these, you can
+use any software you like, although R is strongly encouraged.</p>
+<p>Here is a <a href="assign/RMarkdown-template.Rmd">template for a
+markdown .Rmd file</a> you can use if you are working in RStudio and
+want to write in R markdown.</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="assign/project1.pdf">Project 1</a>: a selection of data
+sets for the material up to and including logistic regression. Due date:
+Feb. 13???</p></li>
+<li><p><a href="assign/project2.pdf">Project 2</a>: a selection of data
+sets for the material from logistic regression to the end of the course.
+Due date: Mar. 15???</p></li>
+<li><p>The remaining 20% can be earned either as</p></li>
+</ol>
+<ul>
+<li>an assignment portfolio, containing a selection of your best work
+(possibly edited/enhanced) on a selection of assignment questions, or
+by</li>
+<li>reading and discussing a journal article related to theory or
+application of categorical data analysis. For the latter, you can
+volunteer to give a brief (~15 min) presentation to the class (sometime
+in Nov.) to earn bonus marks. Due date: Apr 5???</li>
+</ul>
+</div>
+<div id="re-use-policy" class="section level2">
+<h2>Re-use policy</h2>
+<p><img src="icons/cc-by-nc-sa-icon.png" style="width:20.0%" /></p>
+<p>The lecture slides, tutorials and R scripts linked here are available
+under a <a
+href="https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode">Creative
+Commons Attribution-NonCommercial-ShareAlike</a> license. They are
+available to everybody under the terms of this license and can be
+shared.</p>
+<p>All other materials, notably course videos and support material
+files, should not be copied beyond your personal machines and hence are
+not available for redisitrbution.</p>
+</div>
+
+&nbsp;
+<hr />
+<p style="text-align: center;">Copyright &copy; 2018 Michael Friendly. All rights reserved. ||
+  lastModified : 
+  <script>document.write( document.lastModified );</script>
+</p>
+<p style="text-align: center;"><span style="color: #808080;"><em>friendly AT yorku DOT ca</em></span></p>
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="http://www.datavis.ca" class="fa fa-firefox"></a>&nbsp; &nbsp; &nbsp;
+    <a href="https://twitter.com/datavisFriendly?lang=en" class="fa fa-twitter"></a>&nbsp; &nbsp; &nbsp;
+    <a href="https://github.com/friendly/" class="fa fa-github"></a>&nbsp; &nbsp; &nbsp;
+    <a itemprop="sameAs" content="https://orcid.org/0000-0002-3237-0941" href="https://orcid.org/0000-0002-3237-0941" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-3237-0941</a>
+</p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
