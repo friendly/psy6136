@@ -1,5 +1,5 @@
 # Psychology 6136 <img src="icons/psy6136.png" align="right" width="150px"/>
-Categorical Data Analysis
+**Categorical Data Analysis**
 
 <!-- badges: start -->
 <!-- badges: end -->
