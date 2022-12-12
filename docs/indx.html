@@ -12,7 +12,7 @@
 <meta name="author" content="Michael Friendly" />
 
 
-<title>Psyc 6136: Categorical Data Analysis</title>
+<title>Psy 6136: Categorical Data Analysis</title>
 
 <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -36,8 +36,7 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.3.1/css/fontawesome-all.min.css" rel="stylesheet" />
 <link rel="shortcut icon" href="icons/favicon_io/favicon-32x32.png" />
 
 <style type="text/css">
@@ -368,7 +367,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Psyc 6136: Categorical Data Analysis</h1>
+<h1 class="title toc-ignore">Psy 6136: Categorical Data Analysis</h1>
 <h4 class="author">Michael Friendly</h4>
 <h4 class="date">Winter, 2023</h4>
 
@@ -400,28 +399,225 @@ models for polytomous (multicategory) outcomes.</p></li>
 methods for visualizing categorical data, checking model assumptions,
 etc. Lab sessions will familiarize the student with software using R for
 carrying out these analyses.</p>
-<p>Course topics are listed below. See the <a
-href="schedule.html">Course schedule</a> for details.</p>
+<p>Course and lecture topics are listed below, in a visual overview.</p>
+<ul>
+<li>See the <a href="schedule.html">Course schedule</a> for details of
+readings, lecture notes, R scripts, etc.</li>
+<li>For students, see <a href="about.html#assign">Assignments</a> and
+[Evaluation](about.html(#evaluation)</li>
+</ul>
 </div>
 <div id="overview" class="section level2">
 <h2>Overview &amp; Introduction</h2>
 <p><img src="images/headers/bertifier.png" /></p>
+<div id="topics" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Course outline, books, R</li>
+<li>What is categorical data?</li>
+<li>Categorical data analysis: methods &amp; models</li>
+<li>Graphical methods</li>
+</ul>
+</div>
+<div id="lecture-notes" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/01-Overview.pdf">1up PDF</a> || <a
+href="lectures/01-Overview-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
 </div>
 <div id="discrete-distributions" class="section level2">
 <h2>Discrete Distributions</h2>
 <p><img src="images/headers/dpois-xyplot.png" /></p>
+<div id="topics-1" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Discrete distributions: Basic ideas</li>
+<li>Fitting discrete distributions</li>
+<li>Graphical methods: Rootograms, Ord plots</li>
+<li>Robust distribution plots</li>
+<li>Looking ahead</li>
+</ul>
+</div>
+<div id="lecture-notes-1" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/02-Discrete.pdf">1up PDF</a> || <a
+href="lectures/02-Discrete-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
 </div>
 <div id="two-way-tables" class="section level2">
 <h2>Two-way Tables</h2>
 <p><img src="images/headers/twoway.png" /></p>
+<div id="topics-2" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Overview: <span class="math inline">\(2 \times 2\)</span>, <span
+class="math inline">\(r \times c\)</span>, ordered tables</li>
+<li>Independence</li>
+<li>Visualizing association</li>
+<li>Ordinal factors</li>
+<li>Square tables: Observer agreement</li>
+<li>Looking ahead: models</li>
+</ul>
+</div>
+<div id="lecture-notes-2" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/03-Twoway1.pdf">1up PDF</a> || <a
+href="lectures/03-Twoway1-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
 </div>
 <div id="loglinear-models-mosaic-displays" class="section level2">
 <h2>Loglinear models &amp; mosaic displays</h2>
 <p><img src="images/headers/loglin.png" /></p>
+<div id="topics-3" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Mosaic displays: Basic ideas</li>
+<li>Loglinear models</li>
+<li>Model-based methods: Fitting &amp; graphing</li>
+<li>Mosaic displays: Visual fitting</li>
+<li>survival on the <em>Titanic</em></li>
+<li>Sequential plots &amp; models</li>
+</ul>
+</div>
+<div id="lecture-notes-3" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/04-Loglin.pdf">1up PDF</a> || <a
+href="lectures/04-Loglin-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
 </div>
 <div id="correspondence-analysis" class="section level2">
 <h2>Correspondence Analysis</h2>
 <p><img src="images/headers/corresp.png" /></p>
+<div id="topics-4" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>CA: Basic ideas</li>
+<li>Singular value decomposition (SVD)</li>
+<li>Optimal category scores</li>
+<li>Multiway tables: MCA</li>
+</ul>
+</div>
+<div id="lecture-notes-4" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/05-Corresp.pdf">1up PDF</a> || <a
+href="lectures/05-Corresp-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
+</div>
+<div id="logistic-regression" class="section level2">
+<h2>Logistic regression</h2>
+<p><img src="images/headers/logistic.png" /></p>
+<div id="topics-5" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Model-based methods: Overview</li>
+<li>Logistic regression: one predictor, multiple predictors,
+fitting</li>
+<li>Visualizing logistic regression</li>
+<li>Effect plots</li>
+<li>Case study: Racial profiling</li>
+<li>Model diagnostics</li>
+</ul>
+</div>
+<div id="lecture-notes-5" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/06-Logistic.pdf">1up PDF</a> || <a
+href="lectures/06-Logistic-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
+</div>
+<div id="logistic-regression-extensions" class="section level2">
+<h2>Logistic regression: Extensions</h2>
+<p><img src="images/headers/logistic2.png" /></p>
+<div id="topics-6" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Case study: Survival in the Donner party</li>
+<li>Polytomous response models
+<ul>
+<li>Proportional odds model</li>
+<li>Nested dichotomies</li>
+<li>Multinomial models</li>
+</ul></li>
+</ul>
+</div>
+<div id="lecture-notes-6" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/07-Logistic2.pdf">1up PDF</a> || <a
+href="lectures/07-Logistic2-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
+</div>
+<div id="extending-loglinear-models" class="section level2">
+<h2>Extending loglinear models</h2>
+<p><img src="images/headers/loglin2.png" /></p>
+<div id="topics-7" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Logit models for response variables</li>
+<li>Models for ordinal factors</li>
+<li>RC models, estimating row/col scores</li>
+<li>Models for square tables</li>
+<li>More complex models</li>
+</ul>
+</div>
+<div id="lecture-notes-7" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/08-Loglin2.pdf">1up PDF</a> || <a
+href="lectures/08-Loglin2-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
+</div>
+<div id="glms-for-count-data" class="section level2">
+<h2>GLMs for count data</h2>
+<p><img src="images/headers/countdata.png" /></p>
+<div id="topics-8" class="section level4">
+<h4>Topics:</h4>
+<i class="fas  fa-list " style="color:darkgreen;"></i>
+<ul>
+<li>Generalized linear models: Families &amp; links</li>
+<li>GLMs for count data</li>
+<li>Model diagnostics</li>
+<li>Overdispersion</li>
+<li>Excess zeros</li>
+</ul>
+</div>
+<div id="lecture-notes-8" class="section level4">
+<h4>Lecture notes</h4>
+<i class="fas  fa-file-pdf " style="color:red;"></i>
+<ul>
+<li><a href="lectures/09-CountData.pdf">1up PDF</a> || <a
+href="lectures/09-CountData-2x2.pdf">4up PDF</a></li>
+</ul>
+</div>
 </div>
 
 &nbsp;
