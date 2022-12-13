@@ -9,7 +9,7 @@ output:
 navbar:
   logo:
     image: icons/favicon_io/favicon-32x32.png
-  title: "Psychology 6136: Categorical Data Analysis"
+  title: "Psy 6136: Categorical Data Analysis"
   type: inverse
   left:
     - text: "Home"
