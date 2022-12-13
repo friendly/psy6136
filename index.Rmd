@@ -46,7 +46,7 @@ Throughout, there is a strong emphasis on associated graphical methods for visua
 Course and lecture topics are listed below, in a visual overview. 
 
 * See the [Course schedule](schedule.html) for details of readings, lecture notes, R scripts, etc.
-* For students, see [Assignments](about.html#assign) and [Evaluation](about.html(#evaluation)
+* For students, see [Assignments](about.html#assign) and [Evaluation](about.html#evaluation)
 
 ## Overview & Introduction {#overview}
 
