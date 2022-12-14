@@ -1,5 +1,5 @@
 #' ---
-#' title: "Mental health data: Correspondence analaysis"
+#' title: "Mental health data: Correspondence analysis"
 #' author: "Michael Friendly"
 #' date: "`r format(Sys.Date())`"
 #' output:
