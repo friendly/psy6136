@@ -1,6 +1,8 @@
 name: "psy6136"
 exclude: ["admin", "notes", "private", "lectures-old",  "*.pptx", "*.bak", "*.doc"]
 output_dir: "docs"   #for GH pages: docs directory of main branch
+favicon: icons/favicon_io/favicon-32x32.png
+base_url: https://friendly.github.io/psy6136/
 
 output:
   html_document:
