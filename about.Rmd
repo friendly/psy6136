@@ -8,6 +8,7 @@ output:
     css: assets/styles.css
     includes:
       after_body: footer.html
+      in_header: header.html
 ---
 
 
