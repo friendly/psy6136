@@ -9,6 +9,12 @@
 #' ---
 
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 library(car)   # for data and Anova()
 library(dplyr)
 data(Womenlf, package = "carData")
@@ -16,6 +22,7 @@ some(Womenlf, 8)
 
 
 #' ## Recode to create dichotomies
+#' Create binary variables `working` (working or not working), and `fulltime` (only for those working).
 Womenlf <- Womenlf |>
   mutate(working = ifelse(partic=="not.work", 0, 1)) |>
   mutate(fulltime = case_when(
@@ -25,7 +32,7 @@ Womenlf <- Womenlf |>
 some(Womenlf, 8)
 
 
-#' ## fit models for each dichotomy
+#' ## Fit models for each dichotomy
 Womenlf <- within(Womenlf, contrasts(children)<- 'contr.treatment')
 mod.working <- glm(working ~ hincome + children, family=binomial, data=Womenlf)
 mod.fulltime <- glm(fulltime ~ hincome + children, family=binomial, data=Womenlf)
@@ -74,7 +81,7 @@ lines(1:45, p.part[46:90], lty=2, lwd=3, col="blue")
 lines(1:45, p.full[46:90], lty=3, lwd=3, col="red")
 par(op)
 
-#' ## a more general way to make the plot
+#' ## A more general way to make the plot
 op <- par(mfrow=c(1,2))
 plotdata <- data.frame(predictors, p.full, p.part, p.not)
 Hinc <- 1:max(plotdata$hincome)

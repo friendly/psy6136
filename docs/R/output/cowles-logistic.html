@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>Cowles data: Logistic regression</title>
 
@@ -469,14 +469,17 @@ display: none;
 
 <h1 class="title toc-ignore">Cowles data: Logistic regression</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
 
+<div id="load-packages-and-data" class="section level2">
+<h2>Load packages and data</h2>
 <pre class="r"><code>library(effects)   ## load the effects package
 library(car)       ## for Anova: type II tests
 data(Cowles, package = &quot;carData&quot;)</code></pre>
+</div>
 <div id="main-effects-model" class="section level2">
 <h2>Main effects model</h2>
 <pre class="r"><code>mod.cowles0 &lt;- glm(volunteer ~ sex + neuroticism + extraversion, 
@@ -488,15 +491,15 @@ summary(mod.cowles0)</code></pre>
 ##     data = Cowles)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.3977  -1.0454  -0.9084   1.2601   1.6849  
+##    Min      1Q  Median      3Q     Max  
+## -1.398  -1.045  -0.908   1.260   1.685  
 ## 
 ## Coefficients:
-##               Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)  -1.116496   0.249057  -4.483 7.36e-06 ***
-## sexmale      -0.235161   0.111185  -2.115   0.0344 *  
-## neuroticism   0.006362   0.011357   0.560   0.5754    
-## extraversion  0.066325   0.014260   4.651 3.30e-06 ***
+##              Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)  -1.11650    0.24906   -4.48  7.4e-06 ***
+## sexmale      -0.23516    0.11118   -2.12    0.034 *  
+## neuroticism   0.00636    0.01136    0.56    0.575    
+## extraversion  0.06633    0.01426    4.65  3.3e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -504,7 +507,7 @@ summary(mod.cowles0)</code></pre>
 ## 
 ##     Null deviance: 1933.5  on 1420  degrees of freedom
 ## Residual deviance: 1906.1  on 1417  degrees of freedom
-## AIC: 1914.1
+## AIC: 1914
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <pre class="r"><code>Anova(mod.cowles0)</code></pre>
@@ -512,9 +515,9 @@ summary(mod.cowles0)</code></pre>
 ## 
 ## Response: volunteer
 ##              LR Chisq Df Pr(&gt;Chisq)    
-## sex            4.4861  1    0.03417 *  
-## neuroticism    0.3139  1    0.57532    
-## extraversion  22.1372  1  2.538e-06 ***
+## sex              4.49  1      0.034 *  
+## neuroticism      0.31  1      0.575    
+## extraversion    22.14  1    2.5e-06 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -529,18 +532,18 @@ summary(mod.cowles1)</code></pre>
 ##     family = binomial, data = Cowles)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.4981  -1.0545  -0.8958   1.2597   1.9670  
+##    Min      1Q  Median      3Q     Max  
+## -1.498  -1.054  -0.896   1.260   1.967  
 ## 
 ## Coefficients:
-##                           Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)              -2.498183   0.575546  -4.341 1.42e-05 ***
-## sexmale                  -0.021976   0.491866  -0.045  0.96436    
-## neuroticism               0.115450   0.039370   2.932  0.00336 ** 
-## extraversion              0.176503   0.042725   4.131 3.61e-05 ***
-## sexmale:neuroticism      -0.003680   0.023020  -0.160  0.87300    
-## sexmale:extraversion     -0.014661   0.029381  -0.499  0.61778    
-## neuroticism:extraversion -0.008809   0.002987  -2.949  0.00319 ** 
+##                          Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)              -2.49818    0.57555   -4.34  1.4e-05 ***
+## sexmale                  -0.02198    0.49187   -0.04   0.9644    
+## neuroticism               0.11545    0.03937    2.93   0.0034 ** 
+## extraversion              0.17650    0.04273    4.13  3.6e-05 ***
+## sexmale:neuroticism      -0.00368    0.02302   -0.16   0.8730    
+## sexmale:extraversion     -0.01466    0.02938   -0.50   0.6178    
+## neuroticism:extraversion -0.00881    0.00299   -2.95   0.0032 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -548,7 +551,7 @@ summary(mod.cowles1)</code></pre>
 ## 
 ##     Null deviance: 1933.5  on 1420  degrees of freedom
 ## Residual deviance: 1897.2  on 1414  degrees of freedom
-## AIC: 1911.2
+## AIC: 1911
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <pre class="r"><code>Anova(mod.cowles1)</code></pre>
@@ -556,12 +559,12 @@ summary(mod.cowles1)</code></pre>
 ## 
 ## Response: volunteer
 ##                          LR Chisq Df Pr(&gt;Chisq)    
-## sex                        4.9184  1   0.026572 *  
-## neuroticism                0.3150  1   0.574642    
-## extraversion              22.1016  1  2.586e-06 ***
-## sex:neuroticism            0.0256  1   0.873001    
-## sex:extraversion           0.2491  1   0.617718    
-## neuroticism:extraversion   8.8117  1   0.002993 ** 
+## sex                          4.92  1      0.027 *  
+## neuroticism                  0.31  1      0.575    
+## extraversion                22.10  1    2.6e-06 ***
+## sex:neuroticism              0.03  1      0.873    
+## sex:extraversion             0.25  1      0.618    
+## neuroticism:extraversion     8.81  1      0.003 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -576,16 +579,16 @@ summary(mod.cowles)</code></pre>
 ##     data = Cowles)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -1.4749  -1.0602  -0.8934   1.2609   1.9978  
+##    Min      1Q  Median      3Q     Max  
+## -1.475  -1.060  -0.893   1.261   1.998  
 ## 
 ## Coefficients:
-##                           Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)              -2.358207   0.501320  -4.704 2.55e-06 ***
-## sexmale                  -0.247152   0.111631  -2.214  0.02683 *  
-## neuroticism               0.110777   0.037648   2.942  0.00326 ** 
-## extraversion              0.166816   0.037719   4.423 9.75e-06 ***
-## neuroticism:extraversion -0.008552   0.002934  -2.915  0.00355 ** 
+##                          Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)              -2.35821    0.50132   -4.70  2.6e-06 ***
+## sexmale                  -0.24715    0.11163   -2.21   0.0268 *  
+## neuroticism               0.11078    0.03765    2.94   0.0033 ** 
+## extraversion              0.16682    0.03772    4.42  9.7e-06 ***
+## neuroticism:extraversion -0.00855    0.00293   -2.92   0.0036 ** 
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -593,7 +596,7 @@ summary(mod.cowles)</code></pre>
 ## 
 ##     Null deviance: 1933.5  on 1420  degrees of freedom
 ## Residual deviance: 1897.4  on 1416  degrees of freedom
-## AIC: 1907.4
+## AIC: 1907
 ## 
 ## Number of Fisher Scoring iterations: 4</code></pre>
 <pre class="r"><code>anova(mod.cowles0, mod.cowles, mod.cowles1)</code></pre>
@@ -603,12 +606,12 @@ summary(mod.cowles)</code></pre>
 ## Model 2: volunteer ~ sex + neuroticism * extraversion
 ## Model 3: volunteer ~ (sex + neuroticism + extraversion)^2
 ##   Resid. Df Resid. Dev Df Deviance
-## 1      1417     1906.1            
-## 2      1416     1897.4  1   8.6213
-## 3      1414     1897.2  2   0.2579</code></pre>
+## 1      1417       1906            
+## 2      1416       1897  1     8.62
+## 3      1414       1897  2     0.26</code></pre>
 </div>
 
-<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIkNvd2xlcyBkYXRhOiBMb2dpc3RpYyByZWdyZXNzaW9uIg0KIycgYXV0aG9yOiAiTWljaGFlbCBGcmllbmRseSINCiMnIGRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSlgIg0KIycgb3V0cHV0Og0KIycgICBodG1sX2RvY3VtZW50Og0KIycgICAgIHRoZW1lOiByZWFkYWJsZQ0KIycgICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiMnIC0tLQ0KDQpsaWJyYXJ5KGVmZmVjdHMpICAgIyMgbG9hZCB0aGUgZWZmZWN0cyBwYWNrYWdlDQpsaWJyYXJ5KGNhcikgICAgICAgIyMgZm9yIEFub3ZhOiB0eXBlIElJIHRlc3RzDQpkYXRhKENvd2xlcywgcGFja2FnZSA9ICJjYXJEYXRhIikNCg0KIycgIyMgTWFpbiBlZmZlY3RzIG1vZGVsDQptb2QuY293bGVzMCA8LSBnbG0odm9sdW50ZWVyIH4gc2V4ICsgbmV1cm90aWNpc20gKyBleHRyYXZlcnNpb24sIA0KICAgIGRhdGE9Q293bGVzLCBmYW1pbHk9Ymlub21pYWwpDQpzdW1tYXJ5KG1vZC5jb3dsZXMwKQ0KQW5vdmEobW9kLmNvd2xlczApDQoNCg0KIycgIyMgVGVzdCBhbGwgaW50ZXJhY3Rpb25zDQptb2QuY293bGVzMSA8LSBnbG0odm9sdW50ZWVyIH4gKHNleCArIG5ldXJvdGljaXNtICsgZXh0cmF2ZXJzaW9uKV4yLCANCiAgICBkYXRhPUNvd2xlcywgZmFtaWx5PWJpbm9taWFsKQ0Kc3VtbWFyeShtb2QuY293bGVzMSkNCkFub3ZhKG1vZC5jb3dsZXMxKQ0KDQojJyAjIyBBZGQgb25lIGludGVyYWN0aW9uDQptb2QuY293bGVzIDwtIGdsbSh2b2x1bnRlZXIgfiBzZXggKyBuZXVyb3RpY2lzbSAqIGV4dHJhdmVyc2lvbiwgDQogICAgZGF0YT1Db3dsZXMsIGZhbWlseT1iaW5vbWlhbCkNCnN1bW1hcnkobW9kLmNvd2xlcykNCg0KYW5vdmEobW9kLmNvd2xlczAsIG1vZC5jb3dsZXMsIG1vZC5jb3dsZXMxKQ0KDQoNCg0KDQo=</div>
+<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIkNvd2xlcyBkYXRhOiBMb2dpc3RpYyByZWdyZXNzaW9uIg0KIycgYXV0aG9yOiAiTWljaGFlbCBGcmllbmRseSINCiMnIGRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSlgIg0KIycgb3V0cHV0Og0KIycgICBodG1sX2RvY3VtZW50Og0KIycgICAgIHRoZW1lOiByZWFkYWJsZQ0KIycgICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiMnIC0tLQ0KDQojKyBlY2hvPUZBTFNFDQprbml0cjo6b3B0c19jaHVuayRzZXQoDQogIHdhcm5pbmcgPSBGQUxTRSwgICAjIGF2b2lkIHdhcm5pbmdzIGFuZCBtZXNzYWdlcyBpbiB0aGUgb3V0cHV0DQogIG1lc3NhZ2UgPSBGQUxTRQ0KKQ0KDQojJyAjIyBMb2FkIHBhY2thZ2VzIGFuZCBkYXRhDQpsaWJyYXJ5KGVmZmVjdHMpICAgIyMgbG9hZCB0aGUgZWZmZWN0cyBwYWNrYWdlDQpsaWJyYXJ5KGNhcikgICAgICAgIyMgZm9yIEFub3ZhOiB0eXBlIElJIHRlc3RzDQpkYXRhKENvd2xlcywgcGFja2FnZSA9ICJjYXJEYXRhIikNCg0KIycgIyMgTWFpbiBlZmZlY3RzIG1vZGVsDQptb2QuY293bGVzMCA8LSBnbG0odm9sdW50ZWVyIH4gc2V4ICsgbmV1cm90aWNpc20gKyBleHRyYXZlcnNpb24sIA0KICAgIGRhdGE9Q293bGVzLCBmYW1pbHk9Ymlub21pYWwpDQpzdW1tYXJ5KG1vZC5jb3dsZXMwKQ0KQW5vdmEobW9kLmNvd2xlczApDQoNCg0KIycgIyMgVGVzdCBhbGwgaW50ZXJhY3Rpb25zDQptb2QuY293bGVzMSA8LSBnbG0odm9sdW50ZWVyIH4gKHNleCArIG5ldXJvdGljaXNtICsgZXh0cmF2ZXJzaW9uKV4yLCANCiAgICBkYXRhPUNvd2xlcywgZmFtaWx5PWJpbm9taWFsKQ0Kc3VtbWFyeShtb2QuY293bGVzMSkNCkFub3ZhKG1vZC5jb3dsZXMxKQ0KDQojJyAjIyBBZGQgb25lIGludGVyYWN0aW9uDQptb2QuY293bGVzIDwtIGdsbSh2b2x1bnRlZXIgfiBzZXggKyBuZXVyb3RpY2lzbSAqIGV4dHJhdmVyc2lvbiwgDQogICAgZGF0YT1Db3dsZXMsIGZhbWlseT1iaW5vbWlhbCkNCnN1bW1hcnkobW9kLmNvd2xlcykNCg0KYW5vdmEobW9kLmNvd2xlczAsIG1vZC5jb3dsZXMsIG1vZC5jb3dsZXMxKQ0KDQoNCg0KDQo=</div>
 
 
 

@@ -4,18 +4,18 @@
 #' ---
 
 #' ## Simple calculations
-#' Results of expressions are printed; assignments are not
+#' Results of expressions are printed; assignments (`<-`) are not
 
-# Circumference and area of a circle of radius=3
+#' Circumference and area of a circle of radius=3
 2 * pi * 3
 pi * 3^2
 
-# Assigning variables
+#' Assigning variables
 radius <- 3
 circumference <- 2 * pi * radius
 circumference
 
-# Assign, and print
+#' Assign, and print
 (area <- pi * radius^2)
 
 area/circumference
@@ -26,7 +26,7 @@ degreesC <- c(0, 5, 10, 20, 25, 30)
 degreesF <- (9/5) * degreesC + 32
 degreesF
 
-# a simple plot(x,y)
+#' a simple plot(x,y)
 plot(degreesC, degreesF, type="b")
 
 #' ### shorthand functions: :, seq(), rep()
@@ -58,7 +58,7 @@ arrayA
 
 str(arrayA)
 
-# assign dimension names
+#' assign dimension names
 dimnames(arrayA) <- list(sex = c("M", "F"),
                          group = letters[1:4],
                          time = c("Pre", "Post"))

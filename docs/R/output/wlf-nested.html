@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>Polytomous Data: nested dichotomies</title>
 
@@ -469,26 +469,24 @@ display: none;
 
 <h1 class="title toc-ignore">Polytomous Data: nested dichotomies</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
 
-<pre class="r"><code>library(car)   # for data and Anova()
-library(dplyr)
-data(Womenlf, package = &quot;carData&quot;)
-some(Womenlf, 8)</code></pre>
 <pre><code>##       partic hincome children   region
-## 117 not.work      19   absent       BC
-## 122 not.work      23  present Atlantic
-## 123 fulltime       9   absent  Ontario
-## 144 not.work      13  present  Prairie
-## 178 fulltime      13   absent  Ontario
-## 223 not.work      11  present   Quebec
-## 244 fulltime       6  present   Quebec
-## 259 not.work      15   absent   Quebec</code></pre>
+## 3   not.work      45  present  Ontario
+## 56  not.work      17   absent Atlantic
+## 94  parttime       9  present  Ontario
+## 98  fulltime      15   absent  Ontario
+## 108 not.work      19  present  Ontario
+## 171 fulltime       7  present  Prairie
+## 177 not.work      15  present  Ontario
+## 252 not.work      23   absent   Quebec</code></pre>
 <div id="recode-to-create-dichotomies" class="section level2">
 <h2>Recode to create dichotomies</h2>
+<p>Create binary variables <code>working</code> (working or not
+working), and <code>fulltime</code> (only for those working).</p>
 <pre class="r"><code>Womenlf &lt;- Womenlf |&gt;
   mutate(working = ifelse(partic==&quot;not.work&quot;, 0, 1)) |&gt;
   mutate(fulltime = case_when(
@@ -496,18 +494,18 @@ some(Womenlf, 8)</code></pre>
     working &amp; partic == &quot;parttime&quot; ~ 0)
   )
 some(Womenlf, 8)</code></pre>
-<pre><code>##       partic hincome children  region working fulltime
-## 23  fulltime      10   absent Prairie       1        1
-## 42  parttime       4  present Ontario       1        0
-## 74  not.work      17  present Ontario       0       NA
-## 91  not.work      35   absent Ontario       0       NA
-## 153 not.work       5   absent      BC       0       NA
-## 211 not.work      19  present  Quebec       0       NA
-## 212 not.work      13  present  Quebec       0       NA
-## 227 not.work      11  present  Quebec       0       NA</code></pre>
+<pre><code>##       partic hincome children   region working fulltime
+## 4   not.work      23  present  Ontario       0       NA
+## 9   not.work      15  present  Ontario       0       NA
+## 30  fulltime      14  present  Prairie       1        1
+## 114 not.work       1  present Atlantic       0       NA
+## 136 fulltime      11  present  Ontario       1        1
+## 154 parttime      28  present       BC       1        0
+## 177 not.work      15  present  Ontario       0       NA
+## 180 fulltime      13   absent       BC       1        1</code></pre>
 </div>
 <div id="fit-models-for-each-dichotomy" class="section level2">
-<h2>fit models for each dichotomy</h2>
+<h2>Fit models for each dichotomy</h2>
 <pre class="r"><code>Womenlf &lt;- within(Womenlf, contrasts(children)&lt;- &#39;contr.treatment&#39;)
 mod.working &lt;- glm(working ~ hincome + children, family=binomial, data=Womenlf)
 mod.fulltime &lt;- glm(fulltime ~ hincome + children, family=binomial, data=Womenlf)
@@ -640,7 +638,7 @@ lines(1:45, p.full[46:90], lty=3, lwd=3, col=&quot;red&quot;)</code></pre>
 <pre class="r"><code>par(op)</code></pre>
 </div>
 <div id="a-more-general-way-to-make-the-plot" class="section level2">
-<h2>a more general way to make the plot</h2>
+<h2>A more general way to make the plot</h2>
 <pre class="r"><code>op &lt;- par(mfrow=c(1,2))
 plotdata &lt;- data.frame(predictors, p.full, p.part, p.not)
 Hinc &lt;- 1:max(plotdata$hincome)
@@ -665,7 +663,7 @@ for ( kids in c(&quot;absent&quot;, &quot;present&quot;) ) {
 detach(Womenlf)</code></pre>
 </div>
 
-<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIlBvbHl0b21vdXMgRGF0YTogbmVzdGVkIGRpY2hvdG9taWVzIg0KIycgYXV0aG9yOiAiTWljaGFlbCBGcmllbmRseSINCiMnIGRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSlgIg0KIycgb3V0cHV0Og0KIycgICBodG1sX2RvY3VtZW50Og0KIycgICAgIHRoZW1lOiByZWFkYWJsZQ0KIycgICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiMnIC0tLQ0KDQoNCmxpYnJhcnkoY2FyKSAgICMgZm9yIGRhdGEgYW5kIEFub3ZhKCkNCmxpYnJhcnkoZHBseXIpDQpkYXRhKFdvbWVubGYsIHBhY2thZ2UgPSAiY2FyRGF0YSIpDQpzb21lKFdvbWVubGYsIDgpDQoNCg0KIycgIyMgUmVjb2RlIHRvIGNyZWF0ZSBkaWNob3RvbWllcw0KV29tZW5sZiA8LSBXb21lbmxmIHw+DQogIG11dGF0ZSh3b3JraW5nID0gaWZlbHNlKHBhcnRpYz09Im5vdC53b3JrIiwgMCwgMSkpIHw+DQogIG11dGF0ZShmdWxsdGltZSA9IGNhc2Vfd2hlbigNCiAgICB3b3JraW5nICYgcGFydGljID09ICJmdWxsdGltZSIgfiAxLA0KICAgIHdvcmtpbmcgJiBwYXJ0aWMgPT0gInBhcnR0aW1lIiB+IDApDQogICkNCnNvbWUoV29tZW5sZiwgOCkNCg0KDQojJyAjIyBmaXQgbW9kZWxzIGZvciBlYWNoIGRpY2hvdG9teQ0KV29tZW5sZiA8LSB3aXRoaW4oV29tZW5sZiwgY29udHJhc3RzKGNoaWxkcmVuKTwtICdjb250ci50cmVhdG1lbnQnKQ0KbW9kLndvcmtpbmcgPC0gZ2xtKHdvcmtpbmcgfiBoaW5jb21lICsgY2hpbGRyZW4sIGZhbWlseT1iaW5vbWlhbCwgZGF0YT1Xb21lbmxmKQ0KbW9kLmZ1bGx0aW1lIDwtIGdsbShmdWxsdGltZSB+IGhpbmNvbWUgKyBjaGlsZHJlbiwgZmFtaWx5PWJpbm9taWFsLCBkYXRhPVdvbWVubGYpDQoNCnN1bW1hcnkobW9kLndvcmtpbmcpDQpzdW1tYXJ5KG1vZC5mdWxsdGltZSkNCg0KbG10ZXN0Ojpjb2VmdGVzdChtb2Qud29ya2luZykNCmxtdGVzdDo6Y29lZnRlc3QobW9kLmZ1bGx0aW1lKQ0KDQpBbm92YShtb2Qud29ya2luZykgIA0KQW5vdmEobW9kLmZ1bGx0aW1lKQ0KDQojJyAjIyBQcmVwYXJlIGZvciBwbG90dGluZw0KIycgQ3JlYXRlIGEgZ3JpZCBvZiB2YWx1ZXMgb2YgYGhpbmNvbWVgIGFuZCBgY2hpbGRyZW5gLiBHZW5lcmF0ZSBwcmVkaWN0ZWQgdmFsdWVzIGZyb20gdGhlIG1vZGVscw0KYXR0YWNoKFdvbWVubGYpDQpwcmVkaWN0b3JzIDwtIGV4cGFuZC5ncmlkKGhpbmNvbWU9MTo0NSwgY2hpbGRyZW49YygnYWJzZW50JywgJ3ByZXNlbnQnKSkNCiMgZ2V0IGZpdHRlZCB2YWx1ZXMgZm9yIGJvdGggc3ViLW1vZGVscw0KcC53b3JrICAgICA8LSBwcmVkaWN0KG1vZC53b3JraW5nLCBwcmVkaWN0b3JzLCB0eXBlPSdyZXNwb25zZScpDQpwLmZ1bGx0aW1lIDwtIHByZWRpY3QobW9kLmZ1bGx0aW1lLCBwcmVkaWN0b3JzLCB0eXBlPSdyZXNwb25zZScpDQoNCiMnIGNhbGN1bGF0ZSB1bmNvbmRpdGlvbmFsIHByb2JzIGZvciB0aGUgdGhyZWUgcmVzcG9uc2UgY2F0ZWdvcmllcw0KcC5mdWxsIDwtIHAud29yayAqIHAuZnVsbHRpbWUNCnAucGFydCA8LSBwLndvcmsgKiAoMSAtIHAuZnVsbHRpbWUpDQpwLm5vdCA8LSAxIC0gcC53b3JrDQoNCiMnIE5COiB0aGUgcGxvdCBsb29rcyBiZXN0IGlmIHRoZSBwbG90IHdpbmRvdyBpcyBtYWRlIHdpZGVyIHRoYW4gdGFsbA0Kb3AgPC0gcGFyKG1mcm93PWMoMSwyKSkNCiMgY2hpbGRyZW4gYWJzZW50IHBhbmVsDQpwbG90KGMoMSw0NSksIGMoMCwxKSwgDQogICAgdHlwZT0nbicsIHhsYWI9Ikh1c2JhbmQncyBJbmNvbWUiLCB5bGFiPSdGaXR0ZWQgUHJvYmFiaWxpdHknLA0KICAgIG1haW49IkNoaWxkcmVuIGFic2VudCIpDQpsaW5lcygxOjQ1LCBwLm5vdFsxOjQ1XSwgIGx0eT0xLCBsd2Q9MywgY29sPSJibGFjayIpDQpsaW5lcygxOjQ1LCBwLnBhcnRbMTo0NV0sIGx0eT0yLCBsd2Q9MywgY29sPSJibHVlIikNCmxpbmVzKDE6NDUsIHAuZnVsbFsxOjQ1XSwgbHR5PTMsIGx3ZD0zLCBjb2w9InJlZCIpDQoNCmxlZ2VuZCg1LCAwLjk3LCBsdHk9MTozLCBsd2Q9MywgY29sPWMoImJsYWNrIiwgImJsdWUiLCAicmVkIiksDQogICAgbGVnZW5kPWMoJ25vdCB3b3JraW5nJywgJ3BhcnQtdGltZScsICdmdWxsLXRpbWUnKSkgIA0KDQojIGNoaWxkcmVuIHByZXNlbnQgcGFuZWwNCnBsb3QoYygxLDQ1KSwgYygwLDEpLCANCiAgICB0eXBlPSduJywgeGxhYj0iSHVzYmFuZCdzIEluY29tZSIsIHlsYWI9J0ZpdHRlZCBQcm9iYWJpbGl0eScsDQogICAgbWFpbj0iQ2hpbGRyZW4gcHJlc2VudCIpDQpsaW5lcygxOjQ1LCBwLm5vdFs0Njo5MF0sICBsdHk9MSwgbHdkPTMsIGNvbD0iYmxhY2siKQ0KbGluZXMoMTo0NSwgcC5wYXJ0WzQ2OjkwXSwgbHR5PTIsIGx3ZD0zLCBjb2w9ImJsdWUiKQ0KbGluZXMoMTo0NSwgcC5mdWxsWzQ2OjkwXSwgbHR5PTMsIGx3ZD0zLCBjb2w9InJlZCIpDQpwYXIob3ApDQoNCiMnICMjIGEgbW9yZSBnZW5lcmFsIHdheSB0byBtYWtlIHRoZSBwbG90DQpvcCA8LSBwYXIobWZyb3c9YygxLDIpKQ0KcGxvdGRhdGEgPC0gZGF0YS5mcmFtZShwcmVkaWN0b3JzLCBwLmZ1bGwsIHAucGFydCwgcC5ub3QpDQpIaW5jIDwtIDE6bWF4KHBsb3RkYXRhJGhpbmNvbWUpDQpmb3IgKCBraWRzIGluIGMoImFic2VudCIsICJwcmVzZW50IikgKSB7DQoJZGF0YSA8LSBzdWJzZXQocGxvdGRhdGEsIGNoaWxkcmVuPT1raWRzKQ0KCXBsb3QoIHJhbmdlKGRhdGEkaGluY29tZSksIGMoMCwxKSwgdHlwZT0ibiIsDQoJCXhsYWI9Ikh1c2JhbmQncyBJbmNvbWUiLCB5bGFiPSdGaXR0ZWQgUHJvYmFiaWxpdHknLA0KCQltYWluID0gcGFzdGUoIkNoaWxkcmVuIiwga2lkcyksDQoJCWNleC5sYWIgPSAxLjMpDQoJbGluZXMoSGluYywgZGF0YSRwLm5vdCwgIGx3ZD0zLCBjb2w9ImJsYWNrIiwgbHR5PTEpDQoJbGluZXMoSGluYywgZGF0YSRwLnBhcnQsIGx3ZD0zLCBjb2w9ImJsdWUiLCAgbHR5PTIpDQoJbGluZXMoSGluYywgZGF0YSRwLmZ1bGwsIGx3ZD0zLCBjb2w9InJlZCIsICAgbHR5PTMpDQogIGlmIChraWRzPT0iYWJzZW50Iikgew0KICBsZWdlbmQoMTUsIDAuOTcsIGx0eT0xOjMsIGx3ZD0zLCBjb2w9YygiYmxhY2siLCAiYmx1ZSIsICJyZWQiKSwNCiAgICBsZWdlbmQ9Yygnbm90IHdvcmtpbmcnLCAncGFydC10aW1lJywgJ2Z1bGwtdGltZScpKQ0KICAgIH0NCn0NCnBhcihvcCkNCg0KDQpkZXRhY2goV29tZW5sZikNCiAgDQo=</div>
+<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIlBvbHl0b21vdXMgRGF0YTogbmVzdGVkIGRpY2hvdG9taWVzIg0KIycgYXV0aG9yOiAiTWljaGFlbCBGcmllbmRseSINCiMnIGRhdGU6ICJgciBmb3JtYXQoU3lzLkRhdGUoKSlgIg0KIycgb3V0cHV0Og0KIycgICBodG1sX2RvY3VtZW50Og0KIycgICAgIHRoZW1lOiByZWFkYWJsZQ0KIycgICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiMnIC0tLQ0KDQoNCiMrIGVjaG89RkFMU0UNCmtuaXRyOjpvcHRzX2NodW5rJHNldCgNCiAgd2FybmluZyA9IEZBTFNFLCAgICMgYXZvaWQgd2FybmluZ3MgYW5kIG1lc3NhZ2VzIGluIHRoZSBvdXRwdXQNCiAgbWVzc2FnZSA9IEZBTFNFDQopDQoNCmxpYnJhcnkoY2FyKSAgICMgZm9yIGRhdGEgYW5kIEFub3ZhKCkNCmxpYnJhcnkoZHBseXIpDQpkYXRhKFdvbWVubGYsIHBhY2thZ2UgPSAiY2FyRGF0YSIpDQpzb21lKFdvbWVubGYsIDgpDQoNCg0KIycgIyMgUmVjb2RlIHRvIGNyZWF0ZSBkaWNob3RvbWllcw0KIycgQ3JlYXRlIGJpbmFyeSB2YXJpYWJsZXMgYHdvcmtpbmdgICh3b3JraW5nIG9yIG5vdCB3b3JraW5nKSwgYW5kIGBmdWxsdGltZWAgKG9ubHkgZm9yIHRob3NlIHdvcmtpbmcpLg0KV29tZW5sZiA8LSBXb21lbmxmIHw+DQogIG11dGF0ZSh3b3JraW5nID0gaWZlbHNlKHBhcnRpYz09Im5vdC53b3JrIiwgMCwgMSkpIHw+DQogIG11dGF0ZShmdWxsdGltZSA9IGNhc2Vfd2hlbigNCiAgICB3b3JraW5nICYgcGFydGljID09ICJmdWxsdGltZSIgfiAxLA0KICAgIHdvcmtpbmcgJiBwYXJ0aWMgPT0gInBhcnR0aW1lIiB+IDApDQogICkNCnNvbWUoV29tZW5sZiwgOCkNCg0KDQojJyAjIyBGaXQgbW9kZWxzIGZvciBlYWNoIGRpY2hvdG9teQ0KV29tZW5sZiA8LSB3aXRoaW4oV29tZW5sZiwgY29udHJhc3RzKGNoaWxkcmVuKTwtICdjb250ci50cmVhdG1lbnQnKQ0KbW9kLndvcmtpbmcgPC0gZ2xtKHdvcmtpbmcgfiBoaW5jb21lICsgY2hpbGRyZW4sIGZhbWlseT1iaW5vbWlhbCwgZGF0YT1Xb21lbmxmKQ0KbW9kLmZ1bGx0aW1lIDwtIGdsbShmdWxsdGltZSB+IGhpbmNvbWUgKyBjaGlsZHJlbiwgZmFtaWx5PWJpbm9taWFsLCBkYXRhPVdvbWVubGYpDQoNCnN1bW1hcnkobW9kLndvcmtpbmcpDQpzdW1tYXJ5KG1vZC5mdWxsdGltZSkNCg0KbG10ZXN0Ojpjb2VmdGVzdChtb2Qud29ya2luZykNCmxtdGVzdDo6Y29lZnRlc3QobW9kLmZ1bGx0aW1lKQ0KDQpBbm92YShtb2Qud29ya2luZykgIA0KQW5vdmEobW9kLmZ1bGx0aW1lKQ0KDQojJyAjIyBQcmVwYXJlIGZvciBwbG90dGluZw0KIycgQ3JlYXRlIGEgZ3JpZCBvZiB2YWx1ZXMgb2YgYGhpbmNvbWVgIGFuZCBgY2hpbGRyZW5gLiBHZW5lcmF0ZSBwcmVkaWN0ZWQgdmFsdWVzIGZyb20gdGhlIG1vZGVscw0KYXR0YWNoKFdvbWVubGYpDQpwcmVkaWN0b3JzIDwtIGV4cGFuZC5ncmlkKGhpbmNvbWU9MTo0NSwgY2hpbGRyZW49YygnYWJzZW50JywgJ3ByZXNlbnQnKSkNCiMgZ2V0IGZpdHRlZCB2YWx1ZXMgZm9yIGJvdGggc3ViLW1vZGVscw0KcC53b3JrICAgICA8LSBwcmVkaWN0KG1vZC53b3JraW5nLCBwcmVkaWN0b3JzLCB0eXBlPSdyZXNwb25zZScpDQpwLmZ1bGx0aW1lIDwtIHByZWRpY3QobW9kLmZ1bGx0aW1lLCBwcmVkaWN0b3JzLCB0eXBlPSdyZXNwb25zZScpDQoNCiMnIGNhbGN1bGF0ZSB1bmNvbmRpdGlvbmFsIHByb2JzIGZvciB0aGUgdGhyZWUgcmVzcG9uc2UgY2F0ZWdvcmllcw0KcC5mdWxsIDwtIHAud29yayAqIHAuZnVsbHRpbWUNCnAucGFydCA8LSBwLndvcmsgKiAoMSAtIHAuZnVsbHRpbWUpDQpwLm5vdCA8LSAxIC0gcC53b3JrDQoNCiMnIE5COiB0aGUgcGxvdCBsb29rcyBiZXN0IGlmIHRoZSBwbG90IHdpbmRvdyBpcyBtYWRlIHdpZGVyIHRoYW4gdGFsbA0Kb3AgPC0gcGFyKG1mcm93PWMoMSwyKSkNCiMgY2hpbGRyZW4gYWJzZW50IHBhbmVsDQpwbG90KGMoMSw0NSksIGMoMCwxKSwgDQogICAgdHlwZT0nbicsIHhsYWI9Ikh1c2JhbmQncyBJbmNvbWUiLCB5bGFiPSdGaXR0ZWQgUHJvYmFiaWxpdHknLA0KICAgIG1haW49IkNoaWxkcmVuIGFic2VudCIpDQpsaW5lcygxOjQ1LCBwLm5vdFsxOjQ1XSwgIGx0eT0xLCBsd2Q9MywgY29sPSJibGFjayIpDQpsaW5lcygxOjQ1LCBwLnBhcnRbMTo0NV0sIGx0eT0yLCBsd2Q9MywgY29sPSJibHVlIikNCmxpbmVzKDE6NDUsIHAuZnVsbFsxOjQ1XSwgbHR5PTMsIGx3ZD0zLCBjb2w9InJlZCIpDQoNCmxlZ2VuZCg1LCAwLjk3LCBsdHk9MTozLCBsd2Q9MywgY29sPWMoImJsYWNrIiwgImJsdWUiLCAicmVkIiksDQogICAgbGVnZW5kPWMoJ25vdCB3b3JraW5nJywgJ3BhcnQtdGltZScsICdmdWxsLXRpbWUnKSkgIA0KDQojIGNoaWxkcmVuIHByZXNlbnQgcGFuZWwNCnBsb3QoYygxLDQ1KSwgYygwLDEpLCANCiAgICB0eXBlPSduJywgeGxhYj0iSHVzYmFuZCdzIEluY29tZSIsIHlsYWI9J0ZpdHRlZCBQcm9iYWJpbGl0eScsDQogICAgbWFpbj0iQ2hpbGRyZW4gcHJlc2VudCIpDQpsaW5lcygxOjQ1LCBwLm5vdFs0Njo5MF0sICBsdHk9MSwgbHdkPTMsIGNvbD0iYmxhY2siKQ0KbGluZXMoMTo0NSwgcC5wYXJ0WzQ2OjkwXSwgbHR5PTIsIGx3ZD0zLCBjb2w9ImJsdWUiKQ0KbGluZXMoMTo0NSwgcC5mdWxsWzQ2OjkwXSwgbHR5PTMsIGx3ZD0zLCBjb2w9InJlZCIpDQpwYXIob3ApDQoNCiMnICMjIEEgbW9yZSBnZW5lcmFsIHdheSB0byBtYWtlIHRoZSBwbG90DQpvcCA8LSBwYXIobWZyb3c9YygxLDIpKQ0KcGxvdGRhdGEgPC0gZGF0YS5mcmFtZShwcmVkaWN0b3JzLCBwLmZ1bGwsIHAucGFydCwgcC5ub3QpDQpIaW5jIDwtIDE6bWF4KHBsb3RkYXRhJGhpbmNvbWUpDQpmb3IgKCBraWRzIGluIGMoImFic2VudCIsICJwcmVzZW50IikgKSB7DQoJZGF0YSA8LSBzdWJzZXQocGxvdGRhdGEsIGNoaWxkcmVuPT1raWRzKQ0KCXBsb3QoIHJhbmdlKGRhdGEkaGluY29tZSksIGMoMCwxKSwgdHlwZT0ibiIsDQoJCXhsYWI9Ikh1c2JhbmQncyBJbmNvbWUiLCB5bGFiPSdGaXR0ZWQgUHJvYmFiaWxpdHknLA0KCQltYWluID0gcGFzdGUoIkNoaWxkcmVuIiwga2lkcyksDQoJCWNleC5sYWIgPSAxLjMpDQoJbGluZXMoSGluYywgZGF0YSRwLm5vdCwgIGx3ZD0zLCBjb2w9ImJsYWNrIiwgbHR5PTEpDQoJbGluZXMoSGluYywgZGF0YSRwLnBhcnQsIGx3ZD0zLCBjb2w9ImJsdWUiLCAgbHR5PTIpDQoJbGluZXMoSGluYywgZGF0YSRwLmZ1bGwsIGx3ZD0zLCBjb2w9InJlZCIsICAgbHR5PTMpDQogIGlmIChraWRzPT0iYWJzZW50Iikgew0KICBsZWdlbmQoMTUsIDAuOTcsIGx0eT0xOjMsIGx3ZD0zLCBjb2w9YygiYmxhY2siLCAiYmx1ZSIsICJyZWQiKSwNCiAgICBsZWdlbmQ9Yygnbm90IHdvcmtpbmcnLCAncGFydC10aW1lJywgJ2Z1bGwtdGltZScpKQ0KICAgIH0NCn0NCnBhcihvcCkNCg0KDQpkZXRhY2goV29tZW5sZikNCiAgDQo=</div>
 
 
 

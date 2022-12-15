@@ -1,8 +1,9 @@
 #' ---
-#' title: "Two way tables tutorial"
-#' date: "27 Sep 2017"
+#' title: "Two way tables tutorial: Solutions"
+#' date: "27 Jan 2023"
 #' ---
 
+library(vcdExtra)    # for CMHtest & plots
 data("Hospital", package="vcd")
 Hospital
 
@@ -17,18 +18,18 @@ prop.table(Hospital, 1)
 
 #' ## tests of association
 #' chisquare test
-chisq.text(Hospital)
+chisq.test(Hospital)
 
-chisq.text(Hospital, simulate=TRUE)
+chisq.test(Hospital, simulate=TRUE)
 
 MASS::loglm(~ 1+2, data=Hospital)
 
 assocstats(Hospital)
 
-#' ordinal tests
+#' ## ordinal tests
 CMHtest(Hospital)
 
-# get chisq / df
+#' ## get chisq / df
 
 cc <- CMHtest(Hospital)
 names(cc)

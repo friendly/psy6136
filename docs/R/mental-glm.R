@@ -4,16 +4,22 @@
 #' date: "21 Jan 2015"
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 #' ## Mental health data
 library(gnm)
 library(vcdExtra)
 library(corrplot)
 data(Mental)
 
-#' display the frequency table
+#' Display the frequency table
 (Mental.tab <- xtabs(Freq ~ mental + ses, data=Mental))
 
-#' ## fit independence model
+#' ## Fit the independence model
 #' Residual deviance: 47.418 on 15 degrees of freedom
 indep <- glm(Freq ~ mental+ses,
                 family = poisson, data = Mental)
@@ -29,23 +35,23 @@ long.labels <- list(set_varnames = c(mental="Mental Health Status", ses="Parent 
 mosaic(indep, residuals_type="rstandard", labeling_args = long.labels, labeling=labeling_residuals,
        main="Mental health data: Independence")
 
-#' as a sieve diagram
+#' As a sieve diagram
 mosaic(indep, labeling_args = long.labels, panel=sieve, gp=shading_Friendly,
        main="Mental health data: Independence")
  
-#' ## fit linear x linear (uniform) association.  
+#' ## Fit linear x linear (uniform) association.  
 #' Use integer scores for rows/cols 
 Cscore <- as.numeric(Mental$ses)
 Rscore <- as.numeric(Mental$mental)
 
-#' ## column effects model (ses)
+#' ## Column effects model (ses)
 coleff <- glm(Freq ~ mental + ses + Rscore:ses,
                 family = poisson, data = Mental)
 mosaic(coleff,residuals_type="rstandard", 
  labeling_args = long.labels, labeling=labeling_residuals, suppress=1, gp=shading_Friendly,
  main="Mental health data: Col effects (ses)")
 
-#' ## row effects model (mental)
+#' ## Row effects model (mental)
 roweff <- glm(Freq ~ mental + ses + mental:Cscore,
                 family = poisson, data = Mental)
 mosaic(roweff,residuals_type="rstandard", 
@@ -56,7 +62,7 @@ mosaic(roweff,residuals_type="rstandard",
 linlin <- glm(Freq ~ mental + ses + Rscore:Cscore,
                 family = poisson, data = Mental)
 
-#' ## compare models
+#' ## Compare models
 anova(indep, roweff, coleff, linlin)
 AIC(indep, roweff, coleff, linlin)
             

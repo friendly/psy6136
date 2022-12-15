@@ -8,6 +8,13 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
+#' ## Load packages
 library(car)       # for Anova()
 library(ggplot2)
 library(effects)   # effect plots
@@ -29,14 +36,15 @@ Anova(berk.logit2, test="Wald")
 summary(berk.logit2)
 
 #' ## Plots for logit models
+#' Calculate the observed and fitted log odds
 obs <- log(UCBAdmissions[1,,] / UCBAdmissions[2,,])
 pred2 <- cbind(berkeley[,1:3], fit=predict(berk.logit2))
 pred2 <- cbind(subset(pred2, Admit=="Admitted"), obs=as.vector(obs))
 head(pred2)
 
 ggplot(pred2, aes(x=Dept, y=fit, group=Gender, color=Gender)) +
-  geom_line(size=1.4) +
-  geom_point(aes(y=obs), size=3) +
+  geom_line(linewidth = 1.4) +
+  geom_point(aes(y=obs), size = 3) +
   labs(y="Log odds (Admitted") +
   theme_bw(base_size = 16) +
   theme(legend.position = c(.75, .80))

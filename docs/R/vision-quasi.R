@@ -7,6 +7,11 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 #' ## Load packages & data
 library(vcdExtra)
@@ -44,7 +49,7 @@ quasi.symm <- glm(Freq ~ right + left + Symm(right, left),
 mosaic(quasi.symm, residuals_type="rstandard", gp=shading_Friendly,
        main="Quasi-Symmetry model (women)")
 
-#' ## model comparisons: for *nested* models
+#' ## Model comparisons: for *nested* models
 anova(indep, quasi.indep, quasi.symm, test="Chisq")
 anova(symmetry, quasi.symm, test="Chisq")
 

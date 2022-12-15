@@ -8,6 +8,12 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 library(effects)   ## load the effects package
 data(Cowles, package = "carData")
 

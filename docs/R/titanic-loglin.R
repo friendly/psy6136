@@ -8,6 +8,11 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 #' ## Exercises: survival on the titanic, using loglm()
 

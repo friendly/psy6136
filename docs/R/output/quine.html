@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>Count data models: School absenteeism</title>
 
@@ -469,11 +469,12 @@ display: none;
 
 <h1 class="title toc-ignore">Count data models: School absenteeism</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
 
+<p>Load packages</p>
 <pre class="r"><code>library(car)       # for Anova()
 library(AER)       # dispersiontest
 library(lmtest)    # coeftest()
@@ -513,17 +514,17 @@ summary(quine.mod1)</code></pre>
 ## 
 ## Deviance Residuals: 
 ##    Min      1Q  Median      3Q     Max  
-## -6.808  -3.065  -1.119   1.818   9.909  
+##  -6.81   -3.06   -1.12    1.82    9.91  
 ## 
 ## Coefficients:
 ##             Estimate Std. Error z value Pr(&gt;|z|)    
-## (Intercept)  2.80329    0.04343  64.551  &lt; 2e-16 ***
-## EthN        -0.53360    0.04188 -12.740  &lt; 2e-16 ***
-## SexM         0.16160    0.04253   3.799 0.000145 ***
-## Age.L        0.41922    0.04710   8.900  &lt; 2e-16 ***
-## Age.Q        0.25188    0.04974   5.064 4.11e-07 ***
-## Age.C       -0.30131    0.04103  -7.345 2.07e-13 ***
-## LrnSlow      0.34894    0.05204   6.705 2.02e-11 ***
+## (Intercept)   2.8033     0.0434   64.55  &lt; 2e-16 ***
+## EthN         -0.5336     0.0419  -12.74  &lt; 2e-16 ***
+## SexM          0.1616     0.0425    3.80  0.00015 ***
+## Age.L         0.4192     0.0471    8.90  &lt; 2e-16 ***
+## Age.Q         0.2519     0.0497    5.06  4.1e-07 ***
+## Age.C        -0.3013     0.0410   -7.34  2.1e-13 ***
+## LrnSlow       0.3489     0.0520    6.70  2.0e-11 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
@@ -531,7 +532,7 @@ summary(quine.mod1)</code></pre>
 ## 
 ##     Null deviance: 2073.5  on 145  degrees of freedom
 ## Residual deviance: 1696.7  on 139  degrees of freedom
-## AIC: 2299.2
+## AIC: 2299
 ## 
 ## Number of Fisher Scoring iterations: 5</code></pre>
 <pre class="r"><code>Anova(quine.mod1)</code></pre>
@@ -539,10 +540,10 @@ summary(quine.mod1)</code></pre>
 ## 
 ## Response: Days
 ##     LR Chisq Df Pr(&gt;Chisq)    
-## Eth  166.845  1  &lt; 2.2e-16 ***
-## Sex   14.404  1  0.0001475 ***
-## Age  168.324  3  &lt; 2.2e-16 ***
-## Lrn   45.798  1  1.311e-11 ***
+## Eth    166.8  1    &lt; 2e-16 ***
+## Sex     14.4  1    0.00015 ***
+## Age    168.3  3    &lt; 2e-16 ***
+## Lrn     45.8  1    1.3e-11 ***
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -558,11 +559,11 @@ summary(quine.mod1)</code></pre>
 ##  Overdispersion test
 ## 
 ## data:  quine.mod1
-## z = 5.469, p-value = 2.263e-08
+## z = 5, p-value = 2e-08
 ## alternative hypothesis: true dispersion is greater than 1
 ## sample estimates:
 ## dispersion 
-##   12.53013</code></pre>
+##       12.5</code></pre>
 </div>
 <div id="re-fit-as-quasi-poisson" class="section level2">
 <h2>Re-fit as quasi-poisson</h2>
@@ -571,14 +572,14 @@ coeftest(quine.mod1q)</code></pre>
 <pre><code>## 
 ## z test of coefficients:
 ## 
-##             Estimate Std. Error z value  Pr(&gt;|z|)    
-## (Intercept)  2.80329    0.15758 17.7893 &lt; 2.2e-16 ***
-## EthN        -0.53360    0.15198 -3.5111 0.0004463 ***
-## SexM         0.16160    0.15434  1.0470 0.2950968    
-## Age.L        0.41922    0.17092  2.4528 0.0141760 *  
-## Age.Q        0.25188    0.18050  1.3955 0.1628792    
-## Age.C       -0.30131    0.14886 -2.0240 0.0429650 *  
-## LrnSlow      0.34894    0.18884  1.8478 0.0646345 .  
+##             Estimate Std. Error z value Pr(&gt;|z|)    
+## (Intercept)    2.803      0.158   17.79  &lt; 2e-16 ***
+## EthN          -0.534      0.152   -3.51  0.00045 ***
+## SexM           0.162      0.154    1.05  0.29510    
+## Age.L          0.419      0.171    2.45  0.01418 *  
+## Age.Q          0.252      0.181    1.40  0.16288    
+## Age.C         -0.301      0.149   -2.02  0.04297 *  
+## LrnSlow        0.349      0.189    1.85  0.06463 .  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <pre class="r"><code>Anova(quine.mod1q)</code></pre>
@@ -586,10 +587,10 @@ coeftest(quine.mod1q)</code></pre>
 ## 
 ## Response: Days
 ##     LR Chisq Df Pr(&gt;Chisq)    
-## Eth  12.6715  1  0.0003713 ***
-## Sex   1.0940  1  0.2955952    
-## Age  12.7839  3  0.0051281 ** 
-## Lrn   3.4783  1  0.0621799 .  
+## Eth    12.67  1    0.00037 ***
+## Sex     1.09  1    0.29560    
+## Age    12.78  3    0.00513 ** 
+## Lrn     3.48  1    0.06218 .  
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -608,34 +609,34 @@ summary(quine.mod2q)</code></pre>
 ## glm(formula = Days ~ .^2, family = quasipoisson, data = quine)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -7.6533  -2.7796  -0.5301   1.5749   8.1955  
+##    Min      1Q  Median      3Q     Max  
+##  -7.65   -2.78   -0.53    1.57    8.20  
 ## 
 ## Coefficients: (1 not defined because of singularities)
-##                Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)    2.861979   0.199381  14.354  &lt; 2e-16 ***
-## EthN          -0.767818   0.273599  -2.806  0.00579 ** 
-## SexM          -0.163705   0.292751  -0.559  0.57701    
-## Age.L         -0.112322   0.277112  -0.405  0.68591    
-## Age.Q         -0.011937   0.339923  -0.035  0.97204    
-## Age.C         -0.004925   0.369837  -0.013  0.98940    
-## LrnSlow        0.654578   0.608579   1.076  0.28414    
-## EthN:SexM      0.439024   0.301523   1.456  0.14783    
-## EthN:Age.L    -0.165996   0.311575  -0.533  0.59512    
-## EthN:Age.Q     1.075223   0.352102   3.054  0.00275 ** 
-## EthN:Age.C     0.246600   0.298024   0.827  0.40952    
-## EthN:LrnSlow   0.264152   0.372599   0.709  0.47965    
-## SexM:Age.L     1.036092   0.316983   3.269  0.00139 ** 
-## SexM:Age.Q     0.057859   0.426556   0.136  0.89232    
-## SexM:Age.C    -0.515580   0.334144  -1.543  0.12530    
-## SexM:LrnSlow   0.041427   0.449197   0.092  0.92666    
-## Age.L:LrnSlow  1.126061   1.172251   0.961  0.33857    
-## Age.Q:LrnSlow  0.633778   0.921995   0.687  0.49308    
-## Age.C:LrnSlow        NA         NA      NA       NA    
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    2.86198    0.19938   14.35   &lt;2e-16 ***
+## EthN          -0.76782    0.27360   -2.81   0.0058 ** 
+## SexM          -0.16370    0.29275   -0.56   0.5770    
+## Age.L         -0.11232    0.27711   -0.41   0.6859    
+## Age.Q         -0.01194    0.33992   -0.04   0.9720    
+## Age.C         -0.00492    0.36984   -0.01   0.9894    
+## LrnSlow        0.65458    0.60858    1.08   0.2841    
+## EthN:SexM      0.43902    0.30152    1.46   0.1478    
+## EthN:Age.L    -0.16600    0.31157   -0.53   0.5951    
+## EthN:Age.Q     1.07522    0.35210    3.05   0.0027 ** 
+## EthN:Age.C     0.24660    0.29802    0.83   0.4095    
+## EthN:LrnSlow   0.26415    0.37260    0.71   0.4796    
+## SexM:Age.L     1.03609    0.31698    3.27   0.0014 ** 
+## SexM:Age.Q     0.05786    0.42656    0.14   0.8923    
+## SexM:Age.C    -0.51558    0.33414   -1.54   0.1253    
+## SexM:LrnSlow   0.04143    0.44920    0.09   0.9267    
+## Age.L:LrnSlow  1.12606    1.17225    0.96   0.3386    
+## Age.Q:LrnSlow  0.63378    0.92199    0.69   0.4931    
+## Age.C:LrnSlow       NA         NA      NA       NA    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
-## (Dispersion parameter for quasipoisson family taken to be 10.72308)
+## (Dispersion parameter for quasipoisson family taken to be 10.7)
 ## 
 ##     Null deviance: 2073.5  on 145  degrees of freedom
 ## Residual deviance: 1368.7  on 128  degrees of freedom
@@ -647,16 +648,16 @@ summary(quine.mod2q)</code></pre>
 ## 
 ## Response: Days
 ##         LR Chisq Df Pr(&gt;Chisq)    
-## Eth      13.6944  1  0.0002151 ***
-## Sex       1.7636  1  0.1841801    
-## Age      15.5242  3  0.0014193 ** 
-## Lrn       6.5018  1  0.0107768 *  
-## Eth:Sex   2.1371  1  0.1437742    
-## Eth:Age  12.0090  3  0.0073524 ** 
-## Eth:Lrn   0.5091  1  0.4755290    
-## Sex:Age  13.9482  3  0.0029765 ** 
-## Sex:Lrn   0.0085  1  0.9265531    
-## Age:Lrn   1.0828  2  0.5819202    
+## Eth        13.69  1    0.00022 ***
+## Sex         1.76  1    0.18418    
+## Age        15.52  3    0.00142 ** 
+## Lrn         6.50  1    0.01078 *  
+## Eth:Sex     2.14  1    0.14377    
+## Eth:Age    12.01  3    0.00735 ** 
+## Eth:Lrn     0.51  1    0.47553    
+## Sex:Age    13.95  3    0.00298 ** 
+## Sex:Lrn     0.01  1    0.92655    
+## Age:Lrn     1.08  2    0.58192    
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
@@ -679,15 +680,15 @@ plot(allEffects(quine.mod4))</code></pre>
 ## Model 3: Days ~ Eth + Sex + Age + Lrn + Eth:Age + Sex:Age
 ## Model 4: Days ~ (Eth + Sex + Age + Lrn)^2
 ##   Resid. Df Resid. Dev Df Deviance Pr(&gt;Chi)   
-## 1       139     1696.7                        
-## 2       136     1542.8  3  153.870 0.002466 **
-## 3       133     1410.0  3  132.782 0.006180 **
-## 4       128     1368.7  5   41.386 0.569820   
+## 1       139       1697                        
+## 2       136       1543  3    153.9   0.0025 **
+## 3       133       1410  3    132.8   0.0062 **
+## 4       128       1369  5     41.4   0.5698   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 
-<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIkNvdW50IGRhdGEgbW9kZWxzOiBTY2hvb2wgYWJzZW50ZWVpc20iDQojJyBhdXRob3I6ICJNaWNoYWVsIEZyaWVuZGx5Ig0KIycgZGF0ZTogImByIGZvcm1hdChTeXMuRGF0ZSgpKWAiDQojJyBvdXRwdXQ6DQojJyAgIGh0bWxfZG9jdW1lbnQ6DQojJyAgICAgdGhlbWU6IHJlYWRhYmxlDQojJyAgICAgY29kZV9kb3dubG9hZDogdHJ1ZQ0KIycgLS0tDQoNCg0KbGlicmFyeShjYXIpICAgICAgICMgZm9yIEFub3ZhKCkNCmxpYnJhcnkoQUVSKSAgICAgICAjIGRpc3BlcnNpb250ZXN0DQpsaWJyYXJ5KGxtdGVzdCkgICAgIyBjb2VmdGVzdCgpDQpsaWJyYXJ5KGVmZmVjdHMpICAgIyBlZmZlY3QgcGxvdHMNCg0KIycgIyMgTG9hZCB0aGUgZGF0YQ0KZGF0YSgicXVpbmUiLCBwYWNrYWdlPSJNQVNTIikNCg0KDQojJyAjIyBGaXh1cCB0aGUgZGF0YSBmb3IgZWFzZSBvZiB1c2UNCiMnICBBZ2Ugc2hvdWxkIGJlIHRyZWF0ZWQgYXMgYW4gb3JkZXJlZCBmYWN0b3I7IHVzZSBiZXR0ZXIgbGFiZWxzIGZvciBgTHJuYA0KcXVpbmUkQWdlIDwtIG9yZGVyZWQocXVpbmUkQWdlKQ0KbGV2ZWxzKHF1aW5lJExybikgPC0gYygiQXZlcmFnZSIsICJTbG93IikNCg0KIycgIyMgZXhhbWluZSBzYW1wbGUgc2l6ZXMgaW4gdGFibGUgb2YgcHJlZGljdG9ycw0KcXVpbmUudGFiIDwtIHh0YWJzKH4gTHJuICsgQWdlICsgU2V4ICsgRXRoLCBkYXRhPXF1aW5lKQ0KZnRhYmxlKEFnZSArIFNleCB+IExybiArIEV0aCwgZGF0YT1xdWluZS50YWIpDQoNCiMnICMjIEZpdCBtb2RlbCB3aXRoIGFsbCBwcmVkaWN0b3JzDQojJyAgQWdlIHNob3VsZCBiZSB0cmVhdGVkIGFzIGFuIG9yZGVyZWQgZmFjdG9yDQpxdWluZSRBZ2UgPC0gb3JkZXJlZChxdWluZSRBZ2UpDQpxdWluZS5tb2QxIDwtIGdsbShEYXlzIH4gLiwgZGF0YT1xdWluZSwgZmFtaWx5PXBvaXNzb24pDQpzdW1tYXJ5KHF1aW5lLm1vZDEpDQpBbm92YShxdWluZS5tb2QxKQ0KDQojJyAjIyBQbG90IGVmZmVjdHMNCnBsb3QoYWxsRWZmZWN0cyhxdWluZS5tb2QxKSwgY2kuc3R5bGU9J2JhbmRzJykNCg0KIycgIyMgVGVzdCBmb3Igb3ZlcmRpc3BlcnNpb24NCmRpc3BlcnNpb250ZXN0KHF1aW5lLm1vZDEpDQoNCiMnICMjIFJlLWZpdCBhcyBxdWFzaS1wb2lzc29uDQpxdWluZS5tb2QxcSA8LSBnbG0oRGF5cyB+IC4sIGRhdGE9cXVpbmUsIGZhbWlseT1xdWFzaXBvaXNzb24pDQpjb2VmdGVzdChxdWluZS5tb2QxcSkNCkFub3ZhKHF1aW5lLm1vZDFxKQ0KDQojJyAjIyBWaXN1YWxpemUgZWZmZWN0cw0KcGxvdChhbGxFZmZlY3RzKHF1aW5lLm1vZDFxKSwgY2kuc3R5bGU9ImJhbmRzIikNCg0KDQojJyAjIyBmdXJ0aGVyIGFuYWx5c2VzOiB0ZXN0IGZvciBpbnRlcmFjdGlvbnMNCnF1aW5lLm1vZDJxIDwtIGdsbShEYXlzIH4gLl4yLCBkYXRhPXF1aW5lLCBmYW1pbHk9cXVhc2lwb2lzc29uKQ0KDQpzdW1tYXJ5KHF1aW5lLm1vZDJxKQ0KY2FyOjpBbm92YShxdWluZS5tb2QycSkNCg0KIycgIyMgVHJ5IGFkZGluZyBpbnRlcmFjdGlvbnMNCnF1aW5lLm1vZDMgPC0gdXBkYXRlKHF1aW5lLm1vZDFxLCAuIH4gLiArIEV0aDpBZ2UpDQpwbG90KGFsbEVmZmVjdHMocXVpbmUubW9kMykpDQoNCnF1aW5lLm1vZDQgPC0gdXBkYXRlKHF1aW5lLm1vZDMsIC4gfiAuICsgU2V4OkFnZSkNCnBsb3QoYWxsRWZmZWN0cyhxdWluZS5tb2Q0KSkNCg0KIycgIyMgQ29tcGFyZSBtb2RlbHMNCmFub3ZhKHF1aW5lLm1vZDFxLCBxdWluZS5tb2QzLCBxdWluZS5tb2Q0LCBxdWluZS5tb2QycSwgdGVzdD0iQ2hpc3EiKQ0KDQoNCg0K</div>
+<div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIkNvdW50IGRhdGEgbW9kZWxzOiBTY2hvb2wgYWJzZW50ZWVpc20iDQojJyBhdXRob3I6ICJNaWNoYWVsIEZyaWVuZGx5Ig0KIycgZGF0ZTogImByIGZvcm1hdChTeXMuRGF0ZSgpKWAiDQojJyBvdXRwdXQ6DQojJyAgIGh0bWxfZG9jdW1lbnQ6DQojJyAgICAgdGhlbWU6IHJlYWRhYmxlDQojJyAgICAgY29kZV9kb3dubG9hZDogdHJ1ZQ0KIycgLS0tDQoNCiMrIGVjaG89RkFMU0UNCmtuaXRyOjpvcHRzX2NodW5rJHNldCgNCiAgd2FybmluZyA9IEZBTFNFLCAgICMgYXZvaWQgd2FybmluZ3MgYW5kIG1lc3NhZ2VzIGluIHRoZSBvdXRwdXQNCiAgbWVzc2FnZSA9IEZBTFNFDQopDQoNCiMnIExvYWQgcGFja2FnZXMNCmxpYnJhcnkoY2FyKSAgICAgICAjIGZvciBBbm92YSgpDQpsaWJyYXJ5KEFFUikgICAgICAgIyBkaXNwZXJzaW9udGVzdA0KbGlicmFyeShsbXRlc3QpICAgICMgY29lZnRlc3QoKQ0KbGlicmFyeShlZmZlY3RzKSAgICMgZWZmZWN0IHBsb3RzDQoNCiMnICMjIExvYWQgdGhlIGRhdGENCmRhdGEoInF1aW5lIiwgcGFja2FnZT0iTUFTUyIpDQoNCg0KIycgIyMgRml4dXAgdGhlIGRhdGEgZm9yIGVhc2Ugb2YgdXNlDQojJyAgQWdlIHNob3VsZCBiZSB0cmVhdGVkIGFzIGFuIG9yZGVyZWQgZmFjdG9yOyB1c2UgYmV0dGVyIGxhYmVscyBmb3IgYExybmANCnF1aW5lJEFnZSA8LSBvcmRlcmVkKHF1aW5lJEFnZSkNCmxldmVscyhxdWluZSRMcm4pIDwtIGMoIkF2ZXJhZ2UiLCAiU2xvdyIpDQoNCiMnICMjIGV4YW1pbmUgc2FtcGxlIHNpemVzIGluIHRhYmxlIG9mIHByZWRpY3RvcnMNCnF1aW5lLnRhYiA8LSB4dGFicyh+IExybiArIEFnZSArIFNleCArIEV0aCwgZGF0YT1xdWluZSkNCmZ0YWJsZShBZ2UgKyBTZXggfiBMcm4gKyBFdGgsIGRhdGE9cXVpbmUudGFiKQ0KDQojJyAjIyBGaXQgbW9kZWwgd2l0aCBhbGwgcHJlZGljdG9ycw0KIycgIEFnZSBzaG91bGQgYmUgdHJlYXRlZCBhcyBhbiBvcmRlcmVkIGZhY3Rvcg0KcXVpbmUkQWdlIDwtIG9yZGVyZWQocXVpbmUkQWdlKQ0KcXVpbmUubW9kMSA8LSBnbG0oRGF5cyB+IC4sIGRhdGE9cXVpbmUsIGZhbWlseT1wb2lzc29uKQ0Kc3VtbWFyeShxdWluZS5tb2QxKQ0KQW5vdmEocXVpbmUubW9kMSkNCg0KIycgIyMgUGxvdCBlZmZlY3RzDQpwbG90KGFsbEVmZmVjdHMocXVpbmUubW9kMSksIGNpLnN0eWxlPSdiYW5kcycpDQoNCiMnICMjIFRlc3QgZm9yIG92ZXJkaXNwZXJzaW9uDQpkaXNwZXJzaW9udGVzdChxdWluZS5tb2QxKQ0KDQojJyAjIyBSZS1maXQgYXMgcXVhc2ktcG9pc3Nvbg0KcXVpbmUubW9kMXEgPC0gZ2xtKERheXMgfiAuLCBkYXRhPXF1aW5lLCBmYW1pbHk9cXVhc2lwb2lzc29uKQ0KY29lZnRlc3QocXVpbmUubW9kMXEpDQpBbm92YShxdWluZS5tb2QxcSkNCg0KIycgIyMgVmlzdWFsaXplIGVmZmVjdHMNCnBsb3QoYWxsRWZmZWN0cyhxdWluZS5tb2QxcSksIGNpLnN0eWxlPSJiYW5kcyIpDQoNCg0KIycgIyMgZnVydGhlciBhbmFseXNlczogdGVzdCBmb3IgaW50ZXJhY3Rpb25zDQpxdWluZS5tb2QycSA8LSBnbG0oRGF5cyB+IC5eMiwgZGF0YT1xdWluZSwgZmFtaWx5PXF1YXNpcG9pc3NvbikNCg0Kc3VtbWFyeShxdWluZS5tb2QycSkNCmNhcjo6QW5vdmEocXVpbmUubW9kMnEpDQoNCiMnICMjIFRyeSBhZGRpbmcgaW50ZXJhY3Rpb25zDQpxdWluZS5tb2QzIDwtIHVwZGF0ZShxdWluZS5tb2QxcSwgLiB+IC4gKyBFdGg6QWdlKQ0KcGxvdChhbGxFZmZlY3RzKHF1aW5lLm1vZDMpKQ0KDQpxdWluZS5tb2Q0IDwtIHVwZGF0ZShxdWluZS5tb2QzLCAuIH4gLiArIFNleDpBZ2UpDQpwbG90KGFsbEVmZmVjdHMocXVpbmUubW9kNCkpDQoNCiMnICMjIENvbXBhcmUgbW9kZWxzDQphbm92YShxdWluZS5tb2QxcSwgcXVpbmUubW9kMywgcXVpbmUubW9kNCwgcXVpbmUubW9kMnEsIHRlc3Q9IkNoaXNxIikNCg0KDQoNCg==</div>
 
 
 
