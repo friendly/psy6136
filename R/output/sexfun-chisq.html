@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>Tests for association in two-way tables</title>
 
@@ -470,7 +470,7 @@ display: none;
 <h1 class="title toc-ignore">Tests for association in two-way
 tables</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
@@ -502,7 +502,7 @@ SexualFun                # show the table</code></pre>
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
 ## data:  SexualFun
-## p-value = 0.09578
+## p-value = 0.1
 ## alternative hypothesis: two.sided</code></pre>
 </div>
 <div id="tests-for-ordered-factors" class="section level2">
@@ -510,11 +510,11 @@ SexualFun                # show the table</code></pre>
 <pre class="r"><code>CMHtest(SexualFun)       # CMH tests</code></pre>
 <pre><code>## Cochran-Mantel-Haenszel Statistics for Husband by Wife 
 ## 
-##                  AltHypothesis  Chisq Df      Prob
-## cor        Nonzero correlation 10.014  1 0.0015534
-## rmeans  Row mean scores differ 12.568  3 0.0056702
-## cmeans  Col mean scores differ 12.319  3 0.0063653
-## general    General association 16.769  9 0.0524600</code></pre>
+##                  AltHypothesis Chisq Df    Prob
+## cor        Nonzero correlation  10.0  1 0.00155
+## rmeans  Row mean scores differ  12.6  3 0.00567
+## cmeans  Col mean scores differ  12.3  3 0.00637
+## general    General association  16.8  9 0.05246</code></pre>
 </div>
 
 <div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIlRlc3RzIGZvciBhc3NvY2lhdGlvbiBpbiB0d28td2F5IHRhYmxlcyINCiMnIGF1dGhvcjogIk1pY2hhZWwgRnJpZW5kbHkiDQojJyBkYXRlOiAiYHIgZm9ybWF0KFN5cy5EYXRlKCkpYCINCiMnIG91dHB1dDoNCiMnICAgaHRtbF9kb2N1bWVudDoNCiMnICAgICB0aGVtZTogcmVhZGFibGUNCiMnICAgICBjb2RlX2Rvd25sb2FkOiB0cnVlDQojJyAtLS0NCg0KIysgZWNobz1GQUxTRQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KA0KICB3YXJuaW5nID0gRkFMU0UsICAgIyBhdm9pZCB3YXJuaW5ncyBhbmQgbWVzc2FnZXMgaW4gdGhlIG91dHB1dA0KICBtZXNzYWdlID0gRkFMU0UNCikNCg0KIycgIyMgTG9hZCBhbmQgZXhhbWluZSBkYXRhDQpsaWJyYXJ5KHZjZEV4dHJhKQ0KZGF0YShTZXh1YWxGdW4pDQpTZXh1YWxGdW4gICAgICAgICAgICAgICAgIyBzaG93IHRoZSB0YWJsZQ0KDQojJyAjIyBUZXN0IGFzc29jaWF0aW9uDQphc3NvY3N0YXRzKFNleHVhbEZ1bikgICAgIyBhc3NvY2lhdGlvbiBzdGF0aXN0aWNzDQpmaXNoZXIudGVzdChTZXh1YWxGdW4pICAgIyBleGFjdCB0ZXN0DQoNCiMnICMjIFRlc3RzIGZvciBvcmRlcmVkIGZhY3RvcnMNCkNNSHRlc3QoU2V4dWFsRnVuKSAgICAgICAjIENNSCB0ZXN0cw0K</div>

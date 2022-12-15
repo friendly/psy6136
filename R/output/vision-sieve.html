@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>VisualAcuity data: sieve diagrams</title>
 
@@ -469,7 +469,7 @@ display: none;
 
 <h1 class="title toc-ignore">VisualAcuity data: sieve diagrams</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
@@ -531,22 +531,22 @@ structable(~right + left, data=men)</code></pre>
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  xtabs(Freq ~ left + right, data = women)
-## X-squared = 8096.9, df = 9, p-value &lt; 2.2e-16</code></pre>
+## X-squared = 8097, df = 9, p-value &lt;2e-16</code></pre>
 <pre class="r"><code>chisq.test(xtabs(Freq ~ left + right, data=men))</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  xtabs(Freq ~ left + right, data = men)
-## X-squared = 3304.4, df = 9, p-value &lt; 2.2e-16</code></pre>
+## X-squared = 3304, df = 9, p-value &lt;2e-16</code></pre>
 <p>mutual independence of gender, right, left</p>
 <pre class="r"><code>MASS::loglm(Freq ~ gender + right + left, data=VisualAcuity)</code></pre>
 <pre><code>## Call:
 ## MASS::loglm(formula = Freq ~ gender + right + left, data = VisualAcuity)
 ## 
 ## Statistics:
-##                        X^2 df P(&gt; X^2)
-## Likelihood Ratio  9685.509 24        0
-## Pearson          11913.131 24        0</code></pre>
+##                    X^2 df P(&gt; X^2)
+## Likelihood Ratio  9686 24        0
+## Pearson          11913 24        0</code></pre>
 </div>
 
 <div id="rmd-source-code">IycgLS0tDQojJyB0aXRsZTogIlZpc3VhbEFjdWl0eSBkYXRhOiBzaWV2ZSBkaWFncmFtcyINCiMnIGF1dGhvcjogIk1pY2hhZWwgRnJpZW5kbHkiDQojJyBkYXRlOiAiYHIgZm9ybWF0KFN5cy5EYXRlKCkpYCINCiMnIG91dHB1dDoNCiMnICAgaHRtbF9kb2N1bWVudDoNCiMnICAgICB0aGVtZTogcmVhZGFibGUNCiMnICAgICBjb2RlX2Rvd25sb2FkOiB0cnVlDQojJyAtLS0NCg0KIysgZWNobz1GQUxTRQ0Ka25pdHI6Om9wdHNfY2h1bmskc2V0KA0KICB3YXJuaW5nID0gRkFMU0UsICAgIyBhdm9pZCB3YXJuaW5ncyBhbmQgbWVzc2FnZXMgaW4gdGhlIG91dHB1dA0KICBtZXNzYWdlID0gRkFMU0UNCikNCg0KDQpsaWJyYXJ5KHZjZCkNCg0KIycgIyMgVmlldyB0aGUgZGF0YQ0Kc3RydWN0YWJsZSh+Z2VuZGVyICsgcmlnaHQgKyBsZWZ0LCBkYXRhPVZpc3VhbEFjdWl0eSkNCg0KIycgIyMgU2VsZWN0IGFuZCBwcm9jZXNzIHdvbWVuDQp3b21lbiA8LSBzdWJzZXQoVmlzdWFsQWN1aXR5LCBnZW5kZXI9PSJmZW1hbGUiLCBzZWxlY3Q9LWdlbmRlcikNCnN0cnVjdGFibGUofnJpZ2h0ICsgbGVmdCwgZGF0YT13b21lbikNCnNpZXZlKEZyZXEgfiByaWdodCArIGxlZnQsICBkYXRhID0gd29tZW4sIA0KICAgICAgZ3A9c2hhZGluZ19GcmllbmRseSwgbGFiZWxpbmc9bGFiZWxpbmdfdmFsdWVzLA0KICAgICAgbWFpbj0iVmlzaW9uIGRhdGE6IFdvbWVuIikNCg0KIycgIyMgU2VsZWN0IGFuZCBwcm9jZXNzIG1lbg0KbWVuIDwtIHN1YnNldChWaXN1YWxBY3VpdHksIGdlbmRlcj09Im1hbGUiLCBzZWxlY3Q9LWdlbmRlcikNCnN0cnVjdGFibGUofnJpZ2h0ICsgbGVmdCwgZGF0YT1tZW4pDQpzaWV2ZShGcmVxIH4gcmlnaHQgKyBsZWZ0LCAgZGF0YSA9IG1lbiwgDQogICAgICBncD1zaGFkaW5nX0ZyaWVuZGx5LCBsYWJlbGluZz1sYWJlbGluZ192YWx1ZXMsDQogICAgICBtYWluPSJWaXNpb24gZGF0YTogTWVuIikNCg0KIycgIyMgcGxvdCBib3RoIHRvZ2V0aGVyDQojKyBmaWcud2lkdGg9OCwgZmlnLmhlaWdodD00DQpjb3RhYnBsb3QoRnJlcSB+IHJpZ2h0ICsgbGVmdCB8IGdlbmRlciwgZGF0YT1WaXN1YWxBY3VpdHksIA0KICAgICAgICAgIHBhbmVsPWNvdGFiX3NpZXZlLCBncD1zaGFkaW5nX0ZyaWVuZGx5KQ0KDQojJyAjIyBTb21lIHN0YXRpc3RpY2FsIHRlc3RzIGZvciBhc3NvY2lhdGlvbg0KY2hpc3EudGVzdCh4dGFicyhGcmVxIH4gbGVmdCArIHJpZ2h0LCBkYXRhPXdvbWVuKSkNCmNoaXNxLnRlc3QoeHRhYnMoRnJlcSB+IGxlZnQgKyByaWdodCwgZGF0YT1tZW4pKQ0KDQojJyBtdXR1YWwgaW5kZXBlbmRlbmNlIG9mIGdlbmRlciwgcmlnaHQsIGxlZnQNCk1BU1M6OmxvZ2xtKEZyZXEgfiBnZW5kZXIgKyByaWdodCArIGxlZnQsIGRhdGE9VmlzdWFsQWN1aXR5KQ0KDQo=</div>

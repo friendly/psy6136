@@ -8,6 +8,12 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
 library(vcdExtra)
 library(MASS)
 data("UCBAdmissions")
@@ -19,12 +25,14 @@ berk.mod0 <- loglm(~ Dept + Gender + Admit, data=UCBAdmissions)
 berk.mod0
 mosaic(berk.mod0, gp=shading_Friendly)
 
-#' ## conditional independence in UCB admissions data
+#' ## Conditional independence in UCB admissions data
+#' This model allows associations of `Dept` with both `Gender` and `Admit`, but asserts that
+#' `Gender` is independent of `Admit`, given `Dept`.
 berk.mod1 <- loglm(~ Dept * (Gender + Admit), data=UCBAdmissions)
 berk.mod1
 mosaic(berk.mod1, gp=shading_Friendly)
 
-#' ## all two-way model
+#' ## All two-way model
 berk.mod2 <-loglm(~(Admit+Dept+Gender)^2, data=UCBAdmissions)
 berk.mod2
 mosaic(berk.mod2, gp=shading_Friendly)
@@ -41,18 +49,18 @@ berk.glm1 <- glm(Freq ~ Dept * (Gender+Admit), data=berkeley, family="poisson")
 summary(berk.glm1)
 
 #' ## Mosaic plot
-#' note use of `formula` to reorder factors in the mosaic
+#' Note the use of `formula` to reorder factors in the mosaic
 mosaic(berk.glm1, gp=shading_Friendly, 
        labeling=labeling_residuals, 
        formula=~Admit+Dept+Gender)
 
-#' the same, displaying studentized residuals.
+#' The same, displaying studentized residuals.
 mosaic(berk.glm1, residuals_type="rstandard", 
        labeling=labeling_residuals, shade=TRUE, 
        formula=~Admit+Dept+Gender, 
        main="Model: [DeptGender][DeptAdmit]")
 
-## all two-way model
+## All two-way model
 berk.glm2 <- glm(Freq ~ (Dept + Gender + Admit)^2, data=berkeley, family="poisson")
 summary(berk.glm2)
 mosaic.glm(berk.glm2, residuals_type="rstandard", 

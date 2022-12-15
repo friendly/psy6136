@@ -8,6 +8,13 @@
 #'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
+#' Load packages and data
 library(vcd)
 data(MSPatients, package="vcd")
 

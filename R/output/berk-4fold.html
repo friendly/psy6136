@@ -11,7 +11,7 @@
 
 <meta name="author" content="Michael Friendly" />
 
-<meta name="date" content="2022-12-08" />
+<meta name="date" content="2022-12-15" />
 
 <title>UCBAdmissions: fourfold displays and odds ratios</title>
 
@@ -470,7 +470,7 @@ display: none;
 <h1 class="title toc-ignore">UCBAdmissions: fourfold displays and odds
 ratios</h1>
 <h4 class="author">Michael Friendly</h4>
-<h4 class="date">2022-12-08</h4>
+<h4 class="date">2022-12-15</h4>
 
 </div>
 
@@ -497,7 +497,7 @@ data(&quot;UCBAdmissions&quot;)</code></pre>
 ##  Pearson&#39;s Chi-squared test with Yates&#39; continuity correction
 ## 
 ## data:  UCB2
-## X-squared = 91.61, df = 1, p-value &lt; 2.2e-16</code></pre>
+## X-squared = 92, df = 1, p-value &lt;2e-16</code></pre>
 </div>
 <div id="fourfold-plots" class="section level2">
 <h2>Fourfold plots</h2>
@@ -519,15 +519,15 @@ fourfold(UCB2, std=&quot;ind.max&quot;)</code></pre>
 ##  Woolf-test on Homogeneity of Odds Ratios (no 3-Way assoc.)
 ## 
 ## data:  UCB
-## X-squared = 17.902, df = 5, p-value = 0.003072</code></pre>
+## X-squared = 18, df = 5, p-value = 0.003</code></pre>
 </div>
 <div id="calculate-odds-ratios" class="section level2">
 <h2>calculate odds ratios</h2>
 <pre class="r"><code>oddsratio(UCBAdmissions, log=FALSE)</code></pre>
 <pre><code>##  odds ratios for Admit and Gender by Dept 
 ## 
-##         A         B         C         D         E         F 
-## 0.3492120 0.8025007 1.1330596 0.9212838 1.2216312 0.8278727</code></pre>
+##     A     B     C     D     E     F 
+## 0.349 0.803 1.133 0.921 1.222 0.828</code></pre>
 <pre class="r"><code># ## plot log odds ratios
 plot(oddsratio(UCBAdmissions), 
      xlab=&quot;Department&quot;, 

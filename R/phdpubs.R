@@ -6,13 +6,21 @@
 # data from Long (1997)
 # see http://data.princeton.edu/wws509/stata/overdispersion.html for Stata analysis
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
+
+library(MASS)        # Support Functions and Datasets for Venables and Ripley's MASS
+library(countreg)    # Count Data Regression
+library(vcdExtra)    # 'vcd' Extensions and Additions
+library(car)         # Companion to Applied Regression # Companion to Applied Regression
+library(lmtest)      # for coeftest
+
 data("PhdPubs", package="vcdExtra")
 
-library(MASS)
-library(countreg)
-library(vcdExtra)
-library(car)
-library(lmtest)    # for coeftest
 
 #' ## a basic histogram of articles published
 hist(PhdPubs$articles, breaks=0:19, col="pink", xlim=c(0,20),
@@ -20,7 +28,7 @@ hist(PhdPubs$articles, breaks=0:19, col="pink", xlim=c(0,20),
 
 #' Fit the poisson model
 phd.pois <- glm(articles ~ ., data=PhdPubs, family=poisson)
-library(car)
+library(car) # Companion to Applied Regression # Companion to Applied Regression
 Anova(phd.pois)
 
 #' ## interpreting coefficients
@@ -56,7 +64,7 @@ par(op)
 influencePlot(phd.pois, id = list(n=2))
 
 #' ## Effect plots
-library(effects)
+library(effects) # Effect Displays for Linear, Generalized Linear, and Other Models
 plot(allEffects(phd.pois))
 
 #' ## Overdispersion
@@ -102,7 +110,7 @@ round(cbind(beta = coef(phd.nbin),
 #' ## zero-inflated and hurdle models
 
 if (!require(countreg)) install.packages("countreg", repos="http://R-Forge.R-project.org")
-# library(countreg)
+# library(countreg) # Count Data Regression
 
 #' ## plot zero articles
 
@@ -157,6 +165,7 @@ plot(allEffects(phd.zero), main="Mentor effect on not publishing")
 
 
           
+
 
 
 

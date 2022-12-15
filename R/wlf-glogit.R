@@ -8,11 +8,20 @@
 #'     code_download: true
 #' ---
 
-#' ## Fit models for women's labor force participation
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
+#' ## Load packages
 library(car)
 library(nnet)   # for `multinom()`
 library(dplyr)
+library(effects)
+library(ggplot2)
+
+#' ## Fit models for women's labor force participation
 data(Womenlf, package = "carData")
 
 #' #### make `not.work` the reference category
@@ -42,9 +51,6 @@ Anova(wlf.multinom)
 
 car::linearHypothesis(wlf.multinom, as.vector(H)) 
 
-
-
-car::linearHypothesis(wlf.multinom, "hincome, childrenpresent")
 
 #' ## Examine coefficients
 coef(wlf.multinom)
