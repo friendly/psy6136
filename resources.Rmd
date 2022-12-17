@@ -79,8 +79,15 @@ You are well-advised to download and install these to your computer so you can f
 
 * Instructions to install R and R Studio for [Windows](tutorials/installing-r-rstudio-windows.pdf) and [Mac](tutorials/installing-r-rstudio-mac.pdf). 
 
-* My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course.
+* My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course. Download and run this in your R or RStudio console.
 
-* [R Studio cheatsheets](tutorials/rstudio-cheat-sheets.pdf) A handy collection of cheat sheets for R, R Studio and a number of the most useful R packages.
+* [R Studio cheatsheets](tutorials/rstudio-cheat-sheets.pdf) A handy collection of cheat sheets for R, R Studio and a number of the most useful R packages. You can also get some of these in R Studio from the menu `Help -> Cheat sheets`.
 
 * [An Introduction to R Graphics](http://www.datavis.ca/courses/RGraphics/) Notes from my SCS short course on R Graphics. 
+
+* The [`vcdExtra` package](https://friendly.github.io/) contains a number of vignettes, each giving practical methods for working with categorical data and models.
+
+  + [Creating and manipulating frequency tables](https://friendly.github.io/vcdExtra/articles/creating.html)
+  + [Tests of Independence](https://friendly.github.io/vcdExtra/articles/tests.html)
+  + [Mosaic plots](https://friendly.github.io/vcdExtra/articles/mosaics.html)
+  + [Loglinear models](https://friendly.github.io/vcdExtra/articles/loglinear.html)
