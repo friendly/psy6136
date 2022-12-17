@@ -18,7 +18,7 @@ library(vcdExtra)
 library(ca)
 
 #' ## data
-data(Mental)
+data(Mental, package = "vcdExtra")
 Mental.tab <- xtabs(Freq ~ mental+ses, data=Mental)
 
 #' ## correspondence analysis
