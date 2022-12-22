@@ -78,6 +78,8 @@ user interface for R.
 You are well-advised to download and install these to your computer so you can follow along.
 
 * Instructions to install R and R Studio for [Windows](tutorials/installing-r-rstudio-windows.pdf) and [Mac](tutorials/installing-r-rstudio-mac.pdf). 
+There is also a [learnr tutorial](https://learnr-examples.shinyapps.io/ex-setup-r/)
+that guides you through the steps.
 
 * My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course. Download and run this in your R or RStudio console.
 
