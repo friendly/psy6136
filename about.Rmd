@@ -107,7 +107,7 @@ a selection of data sets for the material from logistic regression to the end of
 3. The remaining 20% can be earned either as
 
   * an assignment portfolio, containing a selection of your best work (possibly edited/enhanced) on a selection of assignment questions, or by
-  * reading and discussing a journal article related to theory or application of categorical data analysis. For the latter, you can volunteer to give a brief (~15 min) presentation to the class (sometime in Nov.) to earn bonus marks. Due date: Apr 5???
+  * reading and discussing a journal article related to theory or application of categorical data analysis. For the latter, you can volunteer to give a brief (~15 min) presentation to the class (sometime in March) to earn bonus marks. Due date: Apr 5???
 
 
 ## Re-use policy
