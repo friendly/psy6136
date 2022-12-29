@@ -19,7 +19,7 @@ library(effects)    # for effect plots
 library(car)        # for Anova()
 library(MASS)       # for stepAIC
 
-#' ## Load the data
+#' ## Load the  data
 data(Arrests, package = "carData")
 Arrests$year <- as.factor(Arrests$year)
 
