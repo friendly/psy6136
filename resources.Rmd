@@ -1,3 +1,4 @@
+
 ---
 title: "Resources"
 output:
@@ -93,3 +94,11 @@ that guides you through the steps.
   + [Tests of Independence](https://friendly.github.io/vcdExtra/articles/tests.html)
   + [Mosaic plots](https://friendly.github.io/vcdExtra/articles/mosaics.html)
   + [Loglinear models](https://friendly.github.io/vcdExtra/articles/loglinear.html)
+  
+### Papers, talks, blogs and others
+
+* Slides from a talk at CARME 2015, [General Models and Graphs for Log Odds and Log Odds Ratios](https://www.datavis.ca/papers/CARME2015-2x2.pdf). This re-considers some standard loglinear models and graphical methods (correspondence analysis, mosaic plots) from the
+perspective of models and visualization for log odds and log odds ratios.
+
+
+
