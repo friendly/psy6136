@@ -97,6 +97,13 @@ that guides you through the steps.
   
 ### Papers, talks, blogs and others
 
+* Friendly (2002). [A brief history of mosaic displays](https://www.datavis.ca/papers/mosaic-history.pdf), _JCGS_ **11**(1), 89-107.
+Traces the origin of visual and conceptual ideas leading to modern
+mosaic displays.
+
+* Slides from a talk at CARME 2011, [Advances in Visualizing Categorical Data Using the vcd, gnm and vcdExtra Packages in R](https://www.datavis.ca/papers/adv-vcd-4up.pdf)
+
+
 * Slides from a talk at CARME 2015, [General Models and Graphs for Log Odds and Log Odds Ratios](https://www.datavis.ca/papers/CARME2015-2x2.pdf). This re-considers some standard loglinear models and graphical methods (correspondence analysis, mosaic plots) from the
 perspective of models and visualization for log odds and log odds ratios.
 
