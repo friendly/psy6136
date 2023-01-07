@@ -39,7 +39,8 @@ tab(class="cellpadding", width="800px",
   	tabtxt("Alan Agresti (2019),",  a("Introduction to Categorical Data Analysis, 3rd Ed.",
   	                         href="https://www.wiley.com/en-us/An+Introduction+to+Categorical+Data+Analysis%2C+3rd+Edition-p-9781119405283"),
   	       ". A somewhat parallel book, offering a different perspective on categorical data analysis.", br(),
-           "An ebook version is available to students in this course.")
+           "An ebook version can be purchased from the York Bookstore. See ",
+  	       a("How to purchase your course materials for PSYC 6136", href="papers/YorkBookstore-PSYC6136.docx"))
   	)
 )
 ```
