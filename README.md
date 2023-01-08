@@ -1,4 +1,4 @@
-# Psychology 6136 <img src="icons/psy6136.png" align="right" width="150px"/>
+# Psychology 6136 <img src="icons/psy6136-highres.png" align="right" width="150px"/>
 **Categorical Data Analysis**
 
 <!-- badges: start -->
@@ -11,7 +11,7 @@ and accompanying web site http://ddar.datavis.ca.
 
 The web materials for this course were previously hosted at
 https://www.yorku.ca/friendly/psy6136/. For ease of maintenance, the website has now been moved
-to https://friendly.github.io/psy6136/.
+to https://friendly.github.io/psy6136/. 
 
 ### Course description
 
