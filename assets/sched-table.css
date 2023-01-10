@@ -1,0 +1,36 @@
+/*
+CSS used in schedule.html, from table generator
+*/
+
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+    }
+.tg td{font-family:Arial, 
+       sans-serif;
+       font-size:14px;
+       padding:5px 5px;
+       border-style:solid;
+       border-width:0px;
+       overflow:hidden;
+       word-break:normal;
+       }
+
+.tg th{font-family:Arial, sans-serif;
+       font-size:16px;
+       font-weight:bold;
+       padding:10px 5px;
+       border-style:solid;
+       border-width:0px;
+       overflow:hidden;
+       word-break:normal;
+       }
+
+.tg .tg-c7d0{background-color:#bbdaff}
+.tg .head{background-color:#bbdaff}
+.tg .tg-week{text-align:center}
+
+.tg .tg-cxkv{background-color:#ffffff}
+.tg .tg-R{font-family:monospace;
+      font-size:14px;}
+
