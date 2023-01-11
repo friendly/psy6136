@@ -41,7 +41,7 @@ This course is designed as a broad, applied introduction to the statistical anal
 
 * This framework is then extended to comprise logit and logistic regression models for binary responses and generalizations of these models for polytomous (multicategory) outcomes.
 
-Throughout, there is a strong emphasis on associated graphical methods for visualizing categorical data, checking model assumptions, etc. Lab sessions will familiarize the student with software using R for carrying out these analyses.
+Throughout, there is a strong emphasis on associated **graphical methods** for visualizing categorical data, checking model assumptions, etc. Lab sessions will familiarize the student with software using R for carrying out these analyses.
 
 Course and lecture topics are listed below, in a visual overview. 
 
@@ -93,7 +93,6 @@ Course and lecture topics are listed below, in a visual overview.
 
 #### Lecture notes  `r icon::fa("file-pdf", color="red")` 
 - [1up PDF](lectures/03-Twoway1.pdf) || [4up PDF](lectures/03-Twoway1-2x2.pdf)
-
 
 
 ## Loglinear models & mosaic displays

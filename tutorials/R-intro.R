@@ -3,8 +3,15 @@
 #' author: "Michael Friendly"
 #' ---
 
+#' This script provides a basic introduction to R. You should first download it to your computer,
+#' preferably to your `Psych6136` project.
+#' 
+#' It is designed for you to open it in an RStudio
+#' editor window. Then **run** each block of code by selecting/highlighting them, and click
+#' the Run button, or press Ctrl+Enter.  
+#' 
 #' ## Simple calculations
-#' Results of expressions are printed; assignments (`<-`) are not
+#' Results of expressions are printed; assignments are not
 
 #' Circumference and area of a circle of radius=3
 2 * pi * 3
@@ -26,7 +33,7 @@ degreesC <- c(0, 5, 10, 20, 25, 30)
 degreesF <- (9/5) * degreesC + 32
 degreesF
 
-#' a simple plot(x,y)
+# a simple plot(x,y)
 plot(degreesC, degreesF, type="b")
 
 #' ### shorthand functions: :, seq(), rep()
@@ -58,7 +65,7 @@ arrayA
 
 str(arrayA)
 
-#' assign dimension names
+# assign dimension names
 dimnames(arrayA) <- list(sex = c("M", "F"),
                          group = letters[1:4],
                          time = c("Pre", "Post"))
