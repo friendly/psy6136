@@ -92,6 +92,9 @@ To help me keep them straight, it would be most convenient to name them in a con
 
 ## Evaluation {#evaluation}
 
+**NB**: This description and weighting of components is under review, particularly the weighting for components and
+a final project. See [6136 Individual or Team Projects](assign/projects6136.html) for my current ideas.
+
 There are three  components to your evaluation in the course: two take-home projects (each worth 40%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
 
 Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
