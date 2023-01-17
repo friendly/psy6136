@@ -58,8 +58,10 @@ plot(art.table, shade=TRUE)
 #' arthritis <- read.csv(file.choose())  
 #' or, read the same data from a web URL ...
 arthritis <- read.csv("https://raw.githubusercontent.com/friendly/psy6136/master/data/Arthritis.csv")
+str(arthritis)
 
-levels(arthritis$Improved)
+#' `read.csv` doesn't make categorical variables factors. They are just character variables.
+levels(arthritis$Improved)    
 
 #' ## Make an ordered factor
 arthritis$Improved <- ordered(arthritis$Improved,
