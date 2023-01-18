@@ -2,6 +2,7 @@
 **Categorical Data Analysis**
 
 <!-- badges: start -->
+[![](https://img.shields.io/website?color=0ab9e6&style=flat-square&up_message=datavis.ca&url=https%3A%2F%2Fwww.datavis.ca)](https://www.datavis.ca)
 <!-- badges: end -->
 
 

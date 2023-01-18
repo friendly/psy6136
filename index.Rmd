@@ -16,6 +16,7 @@ output:
 
 <center>
 <img src="icons/psy6136-highres.png" width="100px"/>
+<img src="icons/psy6136-qr.png" width="100px"/>
 </center>
 
 ## Course Description 
