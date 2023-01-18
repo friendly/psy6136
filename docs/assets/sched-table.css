@@ -1,6 +1,7 @@
 /*
 CSS used in schedule.html, from table generator
 */
+<style type="text/css">
 
 .tg  {
     border-collapse:collapse;
@@ -33,4 +34,4 @@ CSS used in schedule.html, from table generator
 .tg .tg-cxkv{background-color:#ffffff}
 .tg .tg-R{font-family:monospace;
       font-size:14px;}
-
+</style>

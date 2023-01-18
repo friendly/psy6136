@@ -1,4 +1,4 @@
-# Psychology 6136 <img src="icons/psy6136-highres.png" align="right" width="150px"/>
+# Psychology 6136 <img src="icons/psy6136-highres.png" align="right" width="150px"/> <img src="icons/psy6136-qr.png" align="right" width="150px"/>
 **Categorical Data Analysis**
 
 <!-- badges: start -->
