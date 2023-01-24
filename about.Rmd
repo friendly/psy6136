@@ -81,7 +81,7 @@ To help me keep them straight, it would be most convenient to name them in a con
 
 
 * [Assignment 1](assign/assign1.pdf) 
-  <!-- [Answers](assign/ans1.R) -->
+  || Some answers: [ans1.R](assign/ans1.R) [ans1.html](assign/ans1.html) 
 * [Assignment 2](assign/assign2.pdf) 
   <!-- [Answers](assign/ans2.R) -->
 * [Assignment 3](assign/assign3.pdf) 

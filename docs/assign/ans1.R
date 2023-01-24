@@ -1,25 +1,36 @@
 #' ---
 #' title: "Some R solutions for Assign 1"
 #' author: "Michael Friendly"
-#' date: "20/01/15 15:48:41"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
 
 #' ## Exercise 2.2
 
+#' ### (a) Abortion opinion data
 data(Abortion, package="vcdExtra")
 str(Abortion)
 
-#' Support_Abortion} is the response, Sex and Status are binary, nominal explanatory variables. 
+#' `Support_Abortion` is the response, `Sex` and `Status` are binary, nominal explanatory variables. 
 #' Q: How does support for abortion depend on sex and status?
 
-# similarly for other data sets
+#' ## (b) Caesarian Births: Caesar
+data(Caesar, package = "vcdExtra")
 
+#' `Infection` is a 3-level response variable; the explanatory variables are
+#' `Risk` (a two-level nominal variable), whether `Antibiotics` were used (a two-level nominal variable), and whether the Caesarian section was `Planned` or not (a two-level nominal variable). 
+#' Q: How antibiotics, risk, and whether the operation was planned are associated with infection type (or no infection)?
+
+#' Similarly for the other two datasets
 
 #' ## Exercise 2.4: Danish Welfare
 
 library(vcdExtra)
-data(DanishWelfare)
+data(DanishWelfare, package="vcdExtra")
 str(DanishWelfare)
 sum(DanishWelfare$Freq)  # total cases
 
@@ -46,7 +57,7 @@ str(Danish.tab)
 structable(Danish.tab)
 
 #' ### Urban factor
-margin.table(DanishWelfare.tab, 4)
+margin.table(Danish.tab, 4)
 
 #' Collapse categories
 Danish.tab2 <- collapse.table(Danish.tab, Urban=c("City","City","City","City","NonCity"))

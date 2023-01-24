@@ -20,7 +20,7 @@ this section, and sufficient text description to give an overview of this
 topic. Taking it further, something like this might be publishable, or
 certainly a nice blog post.
 
-## Tidy CDA? 
+## Tidy CDA / Extending vcdExtra
 
 Categorical data simple for some purposes, but notoriously "untidy" --
 `table()`, `matrix()`, `array()`, `xtabs()`, ... and many functions for analysis
@@ -32,6 +32,11 @@ and manipulating catgegorical data, largely within base-R. The `vcdExtra` vignet
 
 A tidy CDA project might propose, test and implement some extensions to
 the [vcdExtra package](https://github.com/friendly/vcdExtra), designed to reduce these problems.
+
+More generally, a project to work on developing the [vcdExtra package](https://github.com/friendly/vcdExtra)
+in other ways might be quite useful.  For example, you might extend the vignettes,
+develop a scheme to classify the many datasets according to the types of methods (ordered factors, square tables, ...)
+the illustrate, and so forth.
 
 
 ## Interactive apps
@@ -63,8 +68,8 @@ describes some R packages for this.
 ### Confusion matrices 
 These arise in a variety of contexts, similar to the idea of agreement in square tables,
 but often with the idea of a predicted vs. actual classification. A paper by Kevin Johnson
-[Visual Presentation of Statistical Concepts in Diagnostic Testing: The 2 ? 2 Diagram](papers/2x2_paper_2014.pdf) sketches some ideas for
-2 x 2 tables. Another paper by David Lovell et al. [Taking the Confusion Out of Multinomial Confusion Matrices and Imbalanced Classes](papers/Lovell-2021-Confusion.pdf)
+[Visual Presentation of Statistical Concepts in Diagnostic Testing: The 2 x 2 Diagram](../papers/2x2_paper_2014.pdf) sketches some ideas for
+2 x 2 tables. Another paper by David Lovell et al. [Taking the Confusion Out of Multinomial Confusion Matrices and Imbalanced Classes](../papers/Lovell-2021-Confusion.pdf)
 considers larger tables, where the interest is on the 2 x 2 tables for each A, B pair of categories.
 
 ## Graphical models
@@ -76,7 +81,7 @@ A book on this topic:
 Roberato (2017) [Graphical Models for Categorical Data](https://www.cambridge.org/core/elements/abs/graphical-models-for-categorical-data/F9D4523D3559BC2BA9251CEF3077F20D)
 
 Develop this idea in some ways to make a contribution to the **practice** of categorical data
-analysis.
+analysis. 
 
 ## A consulting problem
 

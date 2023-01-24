@@ -6,13 +6,15 @@
 <!-- badges: end -->
 
 
-This is the github repo for the web pages of my course, *Psychology 6136: Categorical Data Analysis* taught at York University.
+This is the github repo for the web pages of my course, [*Psychology 6136: Categorical Data Analysis*](https://friendly.github.io/psy6136), a graduate-level course taught at York University.
+
 It uses my book, [*Discrete Data Analysis with R: Visualization and Modeling Techniques for Categorical and Count Data*](https://www.taylorfrancis.com/books/mono/10.1201/b19022/discrete-data-analysis-michael-friendly-david-meyer),
 and accompanying web site http://ddar.datavis.ca.
 
-The web materials for this course were previously hosted at
-https://www.yorku.ca/friendly/psy6136/. For ease of maintenance, the website has now been moved
-to https://friendly.github.io/psy6136/. 
+The web materials for this course are hosted on https://friendly.github.io/psy6136.
+A previous version of this course was at
+https://www.yorku.ca/friendly/psy6136/, now obsolete. 
+
 
 ### Course description
 
