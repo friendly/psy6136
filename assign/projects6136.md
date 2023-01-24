@@ -95,3 +95,16 @@ predicting the outcome.  There is a lot more meat in this project.
 
 I will make the data and other documents available on request.
 
+## Sequential analysis
+
+In clinical psychology, there is a large literature on methods for analyzing relations of dyads ([therapist, client],
+[husband, wife], [parent, child]) over time. Typically, behavioural interactions are recorded, and then
+coded by trained observers into some set of categories to
+identify patterns of behaviors and examine contingencies among data collected over time 
+([Bakeman & Gottman, 1997](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2955832/#B4)).
+
+Most often, such data are analyzed using simple measures of association (odds ratio, chisq) but with
+a moving window over time or session.  For a project review some of the literature on this topic and
+try to propose some alternatives, either in analysis or visualization.
+
+
