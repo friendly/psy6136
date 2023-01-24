@@ -95,7 +95,7 @@ To help me keep them straight, it would be most convenient to name them in a con
 **NB**: This description and weighting of components is under review, particularly the weighting for components and
 a final project. See [6136 Individual or Team Projects](assign/projects6136.html) for my current ideas.
 
-There are three  components to your evaluation in the course: two take-home projects (each worth 40%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
+There are three  components to your evaluation in the course: two take-home projects (each worth 30%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
 
 Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
 you can use if you are working in RStudio and want to
@@ -107,10 +107,12 @@ a selection of data sets for the material up to and including logistic regressio
 2. [Project 2](assign/project2.pdf):
 a selection of data sets for the material from logistic regression to the end of the course. Due date: Mar. 15???
 
-3. The remaining 20% can be earned either as
+3. The remaining 40% can be earned as one of the projects described in See [6136 Individual or Team Projects](assign/projects6136.html)
 
+<!--
   * an assignment portfolio, containing a selection of your best work (possibly edited/enhanced) on a selection of assignment questions, or by
   * reading and discussing a journal article related to theory or application of categorical data analysis. For the latter, you can volunteer to give a brief (~15 min) presentation to the class (sometime in March) to earn bonus marks. Due date: Apr 5???
+-->
 
 
 ## Re-use policy
