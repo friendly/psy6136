@@ -29,6 +29,9 @@ navbar:
     - text: "R examples"
       icon: fa-code  fa-2x
       href: R/index.html
+    - text: "Students"
+      href: students.html
+      icon: fa-users fa-2x
   right:
     - icon: fab fa-twitter fa-2x
       href: https://twitter.com/datavisFriendly

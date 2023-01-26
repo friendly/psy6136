@@ -38,7 +38,7 @@ output:
 ## Class meetings {#meetings}
 
 * Tuesday 2:30 pm - 5:30 pm, 
-in 014A BSB. Lab sessions will be held in the Hebb Computer lab, 159 BSB.
+in the Hebb Computer lab, 159 BSB.
 
 <!--
 ## Class discussion forum
@@ -63,6 +63,7 @@ This course is designed as a broad, applied introduction to the statistical anal
 * This framework is then extended to comprise logit and logistic regression models for binary responses and generalizations of these models for polytomous (multicategory) outcomes.
 
 Throughout, there is a strong emphasis on associated graphical methods for visualizing categorical data, checking model assumptions, etc. Lab sessions will familiarize the student with software using R for carrying out these analyses.
+
 
 ## Assignments {#assign}
 
