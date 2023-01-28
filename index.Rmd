@@ -51,11 +51,21 @@ Course and lecture topics are listed below, in a visual overview.
 - [1up PDF](lectures/01-Overview.pdf) || [4up PDF](lectures/01-Overview-2x2.pdf)
 
 
+#### Readings: `r icon::fa("book-reader", color="blue")` 
+**Bold face** items are considered essential. When there are assignments,
+some supplementary readings are mentioned there.
+
+- **DDAR**: [Ch 1](VCDR/chapter01.pdf); [Ch 2](VCDR/chapter02.pdf)
+- **Agresti**, Ch 1
+
+#### Assignment: `r icon::fa("building", color="brown")` 
+- [Assignment 1](assign/assign1.pdf)
+
 ## Discrete Distributions
 
 ![](images/headers/dpois-xyplot.png)
 
-#### Topics:  `r icon::fa("list", color="darkgreen")`
+#### Topics: `r icon::fa("list", color="darkgreen")` 
 
 - Discrete distributions: Basic ideas
 - Fitting discrete distributions
@@ -65,6 +75,17 @@ Course and lecture topics are listed below, in a visual overview.
 
 #### Lecture notes  `r icon::fa("file-pdf", color="red")` 
 - [1up PDF](lectures/02-Discrete.pdf) || [4up PDF](lectures/02-Discrete-2x2.pdf)
+
+#### Readings: `r icon::fa("book-reader", color="blue")` 
+**Bold face** items are considered essential. When there are assignments,
+some supplementary readings are mentioned there.
+
+- **DDAR**: [Ch 3](VCDR/chapter03.pdf)
+
+#### Assignment: `r icon::fa("building", color="brown")` 
+
+- [Quiz 1](quiz1-discrete.html)
+
 
 ## Two-way Tables
 
@@ -79,9 +100,14 @@ Course and lecture topics are listed below, in a visual overview.
 - Square tables: Observer agreement
 - Looking ahead: models
 
+
 #### Lecture notes  `r icon::fa("file-pdf", color="red")` 
 - [1up PDF](lectures/03-Twoway1.pdf) || [4up PDF](lectures/03-Twoway1-2x2.pdf)
 
+#### Readings: `r icon::fa("book-reader", color="blue")` 
+
+- **DDAR**: [Ch 1](VCDR/chapter01.pdf), [Ch 2](VCDR/chapter02.pdf)
+- **Agresti, Ch 1**
 
 ## Loglinear models & mosaic displays
 

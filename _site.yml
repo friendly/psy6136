@@ -33,7 +33,5 @@ navbar:
       href: students.html
       icon: fa-users fa-2x
   right:
-    - icon: fab fa-twitter fa-2x
-      href: https://twitter.com/datavisFriendly
     - icon: fab fa-github fa-2x
       href: https://github.com/friendly/psy6136

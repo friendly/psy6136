@@ -68,15 +68,17 @@ Throughout, there is a strong emphasis on associated graphical methods for visua
 ## Assignments {#assign}
 
 There will be occasional short assignments posted here and announced in class. These assignments are
-ungraded, unless a graded assignment is announced in advance.  Details regarding a useful way of
+ungraded, unless a graded assignment is announced in advance.  
+They are usually due in two weeks from when announced.
+Details regarding a useful way of
 formatting R exercises are described in [Assignment 1](assign/assign1.pdf).
 See [Render an R script to a report](https://bookdown.org/yihui/rmarkdown-cookbook/spin.html),
 which describes how to compile HTML, PDF, or MS Word notebooks from R scripts for further details.
 
 Please submit your assignments to me by email, as a PDF, Word, or HTML attachment
-(together with the associated R file),
+(together with the associated R or Rmd file),
 with
-a Subject: line "**PSYC 6136: Assignment XX**".
+a Subject: line "**PSY 6136: Assignment XX**".
 To help me keep them straight, it would be most convenient to name them in a consistent style, something like
 "YourName-AssignXX.{pdf,docx,html}". 
 
@@ -122,4 +124,4 @@ a selection of data sets for the material from logistic regression to the end of
 
 The lecture slides, tutorials and R scripts linked here are available under a [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. They are available to everybody under the terms of this license and can be shared.
 
-All other materials, notably course videos and support material files, should not be copied beyond your personal machines and hence are not available for redisitrbution.
+All other materials, notably course videos and support material files, should not be copied beyond your personal machines and hence are not available for redistribution.
