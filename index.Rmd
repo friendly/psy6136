@@ -84,7 +84,7 @@ some supplementary readings are mentioned there.
 
 #### Assignment: `r icon::fa("building", color="brown")` 
 
-- [Quiz 1](quiz1-discrete.html)
+- [Quiz 1](assign/quiz1-discrete.html)
 
 
 ## Two-way Tables
@@ -108,6 +108,10 @@ some supplementary readings are mentioned there.
 
 - **DDAR**: [Ch 1](VCDR/chapter01.pdf), [Ch 2](VCDR/chapter02.pdf)
 - **Agresti, Ch 1**
+
+#### Assignment: `r icon::fa("building", color="brown")` 
+
+- [Quiz 2](assign/quiz2-twoway.html)
 
 ## Loglinear models & mosaic displays
 

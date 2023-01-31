@@ -18,10 +18,10 @@ navbar:
       icon: fa-home fa-2x   # handy way to use FontAwesome icons in nav!
       href: index.html
     - text: "Schedule"
-      icon: fa-calendar  fa-2x
+      icon: fa-calendar
       href: schedule.html
     - text: "About"
-      icon: fa-file  fa-2x
+      icon: fa-file
       href: about.html
     - text: "Resources"
       icon: fa-book  fa-2x
@@ -33,5 +33,5 @@ navbar:
       href: students.html
       icon: fa-users fa-2x
   right:
-    - icon: fab fa-github fa-2x
+    - icon: fab fa-github
       href: https://github.com/friendly/psy6136
