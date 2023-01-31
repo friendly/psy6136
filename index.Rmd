@@ -82,7 +82,7 @@ some supplementary readings are mentioned there.
 
 - **DDAR**: [Ch 3](VCDR/chapter03.pdf)
 
-#### Assignment: `r icon::fa("building", color="brown")` 
+#### Quiz: `r icon::fa("building", color="brown")` 
 
 - [Quiz 1](assign/quiz1-discrete.html)
 
@@ -109,7 +109,7 @@ some supplementary readings are mentioned there.
 - **DDAR**: [Ch 1](VCDR/chapter01.pdf), [Ch 2](VCDR/chapter02.pdf)
 - **Agresti, Ch 1**
 
-#### Assignment: `r icon::fa("building", color="brown")` 
+#### Quiz: `r icon::fa("building", color="brown")` 
 
 - [Quiz 2](assign/quiz2-twoway.html)
 
