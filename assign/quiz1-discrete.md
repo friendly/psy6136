@@ -53,3 +53,14 @@ Test your knowledge of the material on [discrete distributions](../lectures/02-D
   d) Mean = λ, Variance = 1/λ^2
 
 
+## Answers
+
+1: d;
+2: c;
+3: b;
+4: a;
+5: b;
+6: c;
+7: b (bad question-- DDAR defines the geometric distribution in terms of the parameter _p_);
+8: d
+
