@@ -15,8 +15,11 @@ knitr::opts_chunk$set(
 #' is to try to connect model fit statistics with some visual representation as network diagrams,
 #' with nodes representing variables in a model and edges representing pairwise associations.
 #' 
-#' * `igraph` seems to be the base package for drawing network diagrams
-#' * `ggraph` uses such graph datasets to draw them better, within the `ggplot2` framework.
+#' ### Graph packages:
+#' 
+#' * [`igraph`](https://igraph.org/r/) seems to be the base package for constructing & drawing network diagrams
+#' * [`tidygraph`](https://tidygraph.data-imaginist.com/) provides a tidy API for graph/network manipulation
+#' * [`ggraph`](https://ggraph.data-imaginist.com/) uses such graph datasets to draw them better, within the `ggplot2` framework.
 #' 
 #' ### Model fitting:
 #' 
@@ -96,6 +99,10 @@ V(full)
 
 #' edges:
 E(full)
+
+#' ## `plot()`
+#' `igraph::plot()` plots the nodes and edges
+plot(full)
 
 #' ### Give nodes the names of the variables
 #' The `name` attribute of nodes is special in `igraph`.
