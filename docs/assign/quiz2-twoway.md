@@ -40,22 +40,25 @@ d) All of the above
   c) The variables are correlated
   d) The variables are uncorrelated
 
-8. **What is the null hypothesis for a chi-squared test for independence in a two-way frequency table?**
-  a) The variables are independent
-  b) The variables are dependent
-  c) The variables are not normally distributed
-  d) The variables have equal variances
-
-9. **How do you interpret the _p_-value in a chi-squared test for independence in a two-way frequency table?**
+7. **How do you interpret the _p_-value in a chi-squared test for independence in a two-way frequency table?**
   a) A small _p_-value indicates evidence against the null hypothesis
   b) A large _p_-value indicates evidence against the null hypothesis
   c) A small _p_-value indicates evidence in favor of the null hypothesis
   d) A large _p_-value indicates evidence in favor of the null hypothesis.
 
-10. **When both variables are _ordered_ in a two-way frequency table, the most focused test for association is:**
+8. **When both variables are _ordered_ in a two-way frequency table, the most focused test for association is:**
   a) The Pearson chi-squared test
   b) The Likelihood ratio chi-squared test
   c) The CMH test for general association
   d) The CMH test for non-zero correlation
 
+## Answers
 
+1: a;
+2: b;
+3: a;
+4: b;
+5: d;
+6: a;
+7: a;
+8: d

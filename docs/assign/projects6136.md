@@ -77,11 +77,13 @@ These are an approach to multivariate data where variables are represented as no
 network and systems of _conditional independence_ which can be described by undirected graphs.
 [Course lecture slides by Steffen Lauritzen](https://www.stats.ox.ac.uk/~steffen/teaching/fsmHT07/fsm07.pdf) describe the basic ideas.
 
-A book on this topic:
-Roberato (2017) [Graphical Models for Categorical Data](https://www.cambridge.org/core/elements/abs/graphical-models-for-categorical-data/F9D4523D3559BC2BA9251CEF3077F20D)
+~~A too mathy book on this topic:
+Roberato (2017) [Graphical Models for Categorical Data](https://www.cambridge.org/core/elements/abs/graphical-models-for-categorical-data/F9D4523D3559BC2BA9251CEF3077F20D)~~
 
 Develop this idea in some ways to make a contribution to the **practice** of categorical data
-analysis. 
+analysis. This might use the `igraph` and `ggraph` packages to draw network diagrams, combined
+with model fitting functions. A sketch of one beginning is given in [dayton-assoc-graph.R](dayton-assoc-graph.R);
+output in [dayton-assoc-graph.html](dayton-assoc-graph.html)
 
 ## A consulting problem
 
