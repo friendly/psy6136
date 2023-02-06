@@ -372,8 +372,8 @@ title of this section, and sufficient text description to give an
 overview of this topic. Taking it further, something like this might be
 publishable, or certainly a nice blog post.</p>
 </div>
-<div id="tidy-cda" class="section level2">
-<h2>Tidy CDA?</h2>
+<div id="tidy-cda-extending-vcdextra" class="section level2">
+<h2>Tidy CDA / Extending vcdExtra</h2>
 <p>Categorical data simple for some purposes, but notoriously “untidy” –
 <code>table()</code>, <code>matrix()</code>, <code>array()</code>,
 <code>xtabs()</code>, … and many functions for analysis or graphics
@@ -385,6 +385,11 @@ and manipulating frequency tables</a> gives some examples.</p>
 <p>A tidy CDA project might propose, test and implement some extensions
 to the <a href="https://github.com/friendly/vcdExtra">vcdExtra
 package</a>, designed to reduce these problems.</p>
+<p>More generally, a project to work on developing the <a href="https://github.com/friendly/vcdExtra">vcdExtra package</a> in
+other ways might be quite useful. For example, you might extend the
+vignettes, develop a scheme to classify the many datasets according to
+the types of methods (ordered factors, square tables, …) the illustrate,
+and so forth.</p>
 </div>
 <div id="interactive-apps" class="section level2">
 <h2>Interactive apps</h2>
@@ -418,9 +423,9 @@ this.</p>
 <h3>Confusion matrices</h3>
 <p>These arise in a variety of contexts, similar to the idea of
 agreement in square tables, but often with the idea of a predicted
-vs. actual classification. A paper by Kevin Johnson <a href="papers/2x2_paper_2014.pdf">Visual Presentation of Statistical
-Concepts in Diagnostic Testing: The 2 ? 2 Diagram</a> sketches some
-ideas for 2 x 2 tables. Another paper by David Lovell et al. <a href="papers/Lovell-2021-Confusion.pdf">Taking the Confusion Out of
+vs. actual classification. A paper by Kevin Johnson <a href="../papers/2x2_paper_2014.pdf">Visual Presentation of Statistical
+Concepts in Diagnostic Testing: The 2 x 2 Diagram</a> sketches some
+ideas for 2 x 2 tables. Another paper by David Lovell et al. <a href="../papers/Lovell-2021-Confusion.pdf">Taking the Confusion Out of
 Multinomial Confusion Matrices and Imbalanced Classes</a> considers
 larger tables, where the interest is on the 2 x 2 tables for each A, B
 pair of categories.</p>
@@ -432,10 +437,13 @@ pair of categories.</p>
 represented as nodes in a network and systems of <em>conditional
 independence</em> which can be described by undirected graphs. <a href="https://www.stats.ox.ac.uk/~steffen/teaching/fsmHT07/fsm07.pdf">Course
 lecture slides by Steffen Lauritzen</a> describe the basic ideas.</p>
-<p>A book on this topic: Roberato (2017) <a href="https://www.cambridge.org/core/elements/abs/graphical-models-for-categorical-data/F9D4523D3559BC2BA9251CEF3077F20D">Graphical
-Models for Categorical Data</a></p>
+<p><del>A too mathy book on this topic: Roberato (2017) <a href="https://www.cambridge.org/core/elements/abs/graphical-models-for-categorical-data/F9D4523D3559BC2BA9251CEF3077F20D">Graphical
+Models for Categorical Data</a></del></p>
 <p>Develop this idea in some ways to make a contribution to the
-<strong>practice</strong> of categorical data analysis.</p>
+<strong>practice</strong> of categorical data analysis. This might use
+the <code>igraph</code> and <code>ggraph</code> packages to draw network
+diagrams, combined with model fitting functions. A sketch of one
+beginning is given in <a href="dayton-assoc-graph.R">dayton-assoc-graph.R</a>; output in <a href="dayton-assoc-graph.html">dayton-assoc-graph.html</a></p>
 </div>
 <div id="a-consulting-problem" class="section level2">
 <h2>A consulting problem</h2>
@@ -449,6 +457,21 @@ of case, city, presiding judge, with whether / not the stay request was
 granted. An immediate goal is to help develop a plausible model
 predicting the outcome. There is a lot more meat in this project.</p>
 <p>I will make the data and other documents available on request.</p>
+</div>
+<div id="sequential-analysis" class="section level2">
+<h2>Sequential analysis</h2>
+<p>In clinical psychology, there is a large literature on methods for
+analyzing relations of dyads ([therapist, client], [husband, wife],
+[parent, child]) over time. Typically, behavioural interactions are
+recorded, and then coded by trained observers into some set of
+categories to identify patterns of behaviors and examine contingencies
+among data collected over time (<a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2955832/#B4">Bakeman
+&amp; Gottman, 1997</a>).</p>
+<p>Most often, such data are analyzed using simple measures of
+association (odds ratio, chisq) but with a moving window over time or
+session. For a project review some of the literature on this topic and
+try to propose some alternatives, either in analysis or
+visualization.</p>
 </div>
 </div>
 
