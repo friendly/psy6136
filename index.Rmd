@@ -19,7 +19,7 @@ output:
 <img src="icons/psy6136-qr.png" width="100px"/>
 </center>
 
-```{r setup}
+```{r setup, echo=FALSE}
 source("assets/div_heading.R")
 ```
 
@@ -137,6 +137,14 @@ div_heading("quiz")
 
 ## Two-way Tables
 
+How can we test for independence and measure the strength of association in two way tables?
+Get acquainted with some standard tests and statistics: Pearson $\chi^2$, Odds ratio,
+Cramer's $V$, Cohen's $\kappa$ and even Bangdiwal's $W$.
+
+More importantly, how can we _visualize_ association? We'll meet fourfold plots, sieve diagrams,
+spine plots.  Much of this is prep for understanding how to formulate, test and visualize
+models for categorical data.
+
 ![](images/headers/twoway.png)
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
@@ -182,8 +190,17 @@ div_heading("quiz")
 
 ## Loglinear models & mosaic displays
 
-![](images/headers/loglin.png)
+```
+  Some people think nothing is prettier
+  Than algebra of models log-linear.
+    But I've got the hots
+    For my mosaic plots
+  With all those squares in the interior.
+```
+  --- by Michael Greenacre (see his Statistical Songs, https://www.youtube.com/StatisticalSongs)
 
+
+![](images/headers/loglin.png)
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
