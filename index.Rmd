@@ -19,6 +19,11 @@ output:
 <img src="icons/psy6136-qr.png" width="100px"/>
 </center>
 
+```{r setup}
+source("assets/div_heading.R")
+```
+
+
 ## Course Description 
 
 This course is designed as a broad, applied introduction to the statistical analysis of categorical (or discrete) data, such as counts, proportions, nominal variables, ordinal variables, discrete variables with few values, continuous variables grouped into a small number of categories, etc. 
@@ -73,10 +78,22 @@ some supplementary readings are mentioned there.
 - **DDAR**: [Ch 1](VCDR/chapter01.pdf); [Ch 2](VCDR/chapter02.pdf)
 - **Agresti**, Ch 1
 
-#### Assignment: `r icon::fa("building", color="brown")` 
+<!-- #### Assignment: `r icon::fa("building", color="brown")` -->
+```{r asn1, results='asis', echo=FALSE}
+div_heading("assign")
+```
 - [Assignment 1](assign/assign1.pdf)
 
+
+
 ## Discrete Distributions
+
+Discrete distributions are the gateway drug for categorical data analysis. Meet some 
+--- binomial, Poisson, Negative Binomial, and others --- who will
+become your friends as you learn to analyze discrete data.
+
+More importantly, learn some nifty graphical methods for fitting these distributions
+and understanding why a given one might not fit well. 
 
 ![](images/headers/dpois-xyplot.png)
 
@@ -109,9 +126,13 @@ some supplementary readings are mentioned there.
 
 - **DDAR**: [Ch 3](VCDR/chapter03.pdf)
 
-#### Quiz: `r icon::fa("building", color="brown")` 
+<!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
 
-- [Quiz 1](assign/quiz1-discrete.html)
+```{r quiz1, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 1 - Discrete distributions](assign/quiz1-discrete.html)
 
 
 ## Two-way Tables
@@ -151,9 +172,13 @@ some supplementary readings are mentioned there.
 - **DDAR**: [Ch 4](VCDR/chapter04.pdf)
 - **Agresti, Ch 2**
 
-#### Quiz: `r icon::fa("building", color="brown")` 
+<!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
 
-- [Quiz 2](assign/quiz2-twoway.html)
+```{r quiz2, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 2 - Two-way tables](assign/quiz2-twoway.html)
 
 ## Loglinear models & mosaic displays
 
@@ -181,6 +206,13 @@ some supplementary readings are mentioned there.
 </div>
 
 - [1up PDF](lectures/04-Loglin.pdf) || [4up PDF](lectures/04-Loglin-2x2.pdf)
+
+```{r quiz3, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 3 - Loglinear models](assign/quiz3-loglin.html)
+
 
 ## Correspondence Analysis
 

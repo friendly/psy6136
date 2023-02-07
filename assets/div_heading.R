@@ -23,7 +23,7 @@
 #'
 #' @examples
 div_heading <- function(
-  type = c("topics", "lecture", "readings"),
+  type = c("topics", "lecture", "readings", "assign", "quiz"),
   level = 4,
   icon_size = "1.2em"
   )
@@ -31,10 +31,10 @@ div_heading <- function(
   type = match.arg(type)
 
   info <- tibble::tibble(
-    type =  c("topics", "lecture", "readings"),
-    title = c("Topics", "Lecture notes", "Readings"),
-    icon =  c("fas fa-list", "fas fa-file-pdf", "fas fa-book-reader"),
-    color = c("darkgreen", "red", "blue")
+    type =  c("topics", "lecture", "readings", "assign", "quiz"),
+    title = c("Topics", "Lecture notes", "Readings", "Assignment", "Quiz"),
+    icon =  c("fas fa-list", "fas fa-file-pdf", "fas fa-book-reader", "fas fa-building", "fas fa-question"),
+    color = c("darkgreen", "red", "blue", "brown", "purple")
   )
   
   item <- which(info$type == type)
@@ -55,7 +55,7 @@ div_heading <- function(
 }
 
 # test
-TEST <- TRUE
+TEST <- FALSE
 if(TEST) {
 div_heading("topics")
 
