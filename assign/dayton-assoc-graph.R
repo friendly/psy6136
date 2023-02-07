@@ -20,6 +20,10 @@ knitr::opts_chunk$set(
 #' * [`igraph`](https://igraph.org/r/) seems to be the base package for constructing & drawing network diagrams
 #' * [`tidygraph`](https://tidygraph.data-imaginist.com/) provides a tidy API for graph/network manipulation
 #' * [`ggraph`](https://ggraph.data-imaginist.com/) uses such graph datasets to draw them better, within the `ggplot2` framework.
+#' * [Introduction to Network Analysis with R](https://www.jessesadler.com/post/network-analysis-with-r/) -- a nice tutorial 
+#'   on using these packages.
+#' * See also the [CRAN Task View on Graphical Models](https://cran.r-project.org/web/views/GraphicalModels.html)
+#' 
 #' 
 #' ### Model fitting:
 #' 
