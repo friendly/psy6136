@@ -10,35 +10,50 @@ knitr::opts_chunk$set(
 
 #' ## Basic ideas
 #' 
-#' Exploring the idea of using association diagrams for fitting and understanding
+#' Exploring the idea of using **association diagrams** for fitting and understanding
 #' relationships in high-way categorical data fitted as loglinear models. The essential idea
 #' is to try to connect model fit statistics with some visual representation as network diagrams,
 #' with nodes representing variables in a model and edges representing pairwise associations.
+#' 
+#' One realization of this would be a function, say `assocgraph()` that takes a loglinear
+#' model (from `MASS::loglm()`, or `glm(, family=poisson)`) and builds the graph object
+#' corresponding to **all two-way** terms in the model. A weight for each edge could be obtained
+#' using the deviance for that pair, found using either
+#' 
+#' * `MASS::dropterm()` -- the change in model fit (deviance, LRT) due to dropping each term 
+#'    from a given model.
+#' * `MASS::addterm()` -- the change in model fit (deviance, LRT) due to adding each two-way
+#'    association to the model of mutual independence.
 #' 
 #' ### Graph packages:
 #' 
 #' * [`igraph`](https://igraph.org/r/) seems to be the base package for constructing & drawing network diagrams
 #' * [`tidygraph`](https://tidygraph.data-imaginist.com/) provides a tidy API for graph/network manipulation
 #' * [`ggraph`](https://ggraph.data-imaginist.com/) uses such graph datasets to draw them better, within the `ggplot2` framework.
+#' * See also the [CRAN Task View on Graphical Models](https://cran.r-project.org/web/views/GraphicalModels.html),
+#'   
+#' 
+#' ### Tutorials
+#' * [Graph analysis using the tidyverse](https://rviews.rstudio.com/2019/03/06/intro-to-graph-analysis/)
 #' * [Introduction to Network Analysis with R](https://www.jessesadler.com/post/network-analysis-with-r/) -- a nice tutorial 
 #'   on using these packages.
-#' * See also the [CRAN Task View on Graphical Models](https://cran.r-project.org/web/views/GraphicalModels.html)
 #' 
 #' 
 #' ### Model fitting:
 #' 
-#' * `vcdExtra::Kway()` fits a collection of loglinear models for all 0-, 1-, 2-, ... way associations in a K-way table
-#' * `vcdExtra::seq_loglm()` fits various sequential models to the  1-, 2-, ... n-way marginal tables, corresponding to a variety of types of loglinear models.
 #' * `MASS::dropterm()` tries fitting all models that differ from the current model by dropping a single term, maintaining marginality.
 #' * `MASS::addterm()` tries fitting all models that differ from the current model by adding a single term, maintaining marginality.
+#' * `vcdExtra::Kway()` fits a collection of loglinear models for all 0-, 1-, 2-, ... way associations in a K-way table
+#' * `vcdExtra::seq_loglm()` fits various sequential models to the  1-, 2-, ... n-way marginal tables, corresponding to a variety of types of loglinear models.
 #'
 
 
 #' ## Load packages
 library(vcdExtra)
 library(MASS)     # for loglm(), dropterm()
-library(ggraph)   # An Implementation of Grammar of Graphics for Graphs and Networks
 library(igraph)   # Network Analysis and Visualization
+library(ggraph)   # An Implementation of Grammar of Graphics for Graphs and Networks
+library(tidygraph)
 library(ggplot2)
 library(dplyr)
 

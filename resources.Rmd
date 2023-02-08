@@ -96,7 +96,33 @@ that guides you through the steps.
   + [Mosaic plots](https://friendly.github.io/vcdExtra/articles/mosaics.html)
   + [Loglinear models](https://friendly.github.io/vcdExtra/articles/loglinear.html)
   
-### Papers, talks, blogs and others
+### Making plots with ggplot2 {#ggplot}
+
+The majority of the graphs in [DDAR](https://www.taylorfrancis.com/books/mono/10.1201/b19022/discrete-data-analysis-michael-friendly-david-meyer) and in my lectures
+use custom graphic methods implemented in the `vcd`, `vcdExtra`, `ca` and other packages
+specific to categorical data analysis.
+Yet it is also helpful to learn
+how to make and customize graphs using `ggplot2`, the modern _lingua franca_ 
+for specifying and producing graphs.
+
+Here are a few links that I find useful:
+
+* The  [ggplot2 Book](https://ggplot2-book.org/) is the bible of graphing
+with the _Grammar of Graphics_ framework. It explains the logic of layers,
+geoms, scales, themes, etc.  It has many, many small, easily understood examples.
+
+* The [R Graphics Cookbook](https://r-graphics.org/) is a great resource of recipes for ggplot2, organized by type of graph (bar charts, line graphs, scatterplots, ...) and things you might want to do with them.
+
+* My favorite book on general ideas about graphs:
+Claus Wilke, [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/). 
+Well thought out, a wide range of topics, good practical advice, lots of examples, but no R code in the book.
+
+* My lecture slides from [Psy 6135: Psychology of Data Visualization](https://friendly.github.io/6135/) give a reasonable overview:
+	+ [Introduction to ggplot2](https://friendly.github.io/6135/lectures/ggplot-intro.pdf)
+	+ [ggplot2: Going further in the tidyverse](https://friendly.github.io/6135/lectures/ggplot-further.pdf)
+
+
+### Papers, talks, blogs and others {#papers}
 
 * Friendly (2002). [A brief history of mosaic displays](https://www.datavis.ca/papers/mosaic-history.pdf), _JCGS_ **11**(1), 89-107.
 Traces the origin of visual and conceptual ideas leading to modern
