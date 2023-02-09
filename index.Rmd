@@ -233,6 +233,15 @@ div_heading("quiz")
 
 ## Correspondence Analysis
 
+Correspondence analysis (CA) is one of the first things I think of when I meet a new frequency table and
+want to get a quick look at the relations among the row and column categories.
+Very much like PCA for quantitative data, think of CA as a **multivariate juicer** that takes a 
+high-dimensional data set and squeezes it into a 2D (or 3D) space that best accounts for the
+associations (Pearson $\chi^2$) between the row and column categories.
+The category scores on the dimensions are in fact the best numerical values that can be defined.
+They can be used to permute the categories in mosaic displays to make the pattern of associations
+as clear as possible.
+
 ![](images/headers/corresp.png)
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
