@@ -105,7 +105,7 @@ you can use if you are working in RStudio and want to
 write in R markdown.
 
 1. [Project 1](assign/project1.pdf):
-a selection of data sets for the material up to and including logistic regression. Due date: Feb. 13???
+a selection of data sets for the material up to and including logistic regression. Due date: Feb. 24 (but earlier appreciated)
 
 2. [Project 2](assign/project2.pdf):
 a selection of data sets for the material from logistic regression to the end of the course. Due date: Mar. 15???

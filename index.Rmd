@@ -47,10 +47,15 @@ Course and lecture topics are listed below, in a visual overview.
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
-<div style="display:flex">
-  <i class="fas fa-list" style="color:darkgreen; font-size: 1.25em;"></i> &nbsp;
-  <h4>Topics</h4>
-</div>
+<!-- <div style="display:flex"> -->
+<!--   <i class="fas fa-list" style="color:darkgreen; font-size: 1.25em;"></i> &nbsp; -->
+<!--   <h4>Topics</h4> -->
+<!-- </div> -->
+
+```{r topics1, results='asis', echo=FALSE}
+div_heading("topics")
+```
+
 
 - Course outline, books, R
 - What is categorical data?
