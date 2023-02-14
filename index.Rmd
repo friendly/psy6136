@@ -366,7 +366,7 @@ Here we consider generalized linear models more broadly, with emphasis on those 
 a count or frequency response variable in the Poisson family.
 Some extensions allow for **overdispersion**, including the _quasi-poisson_
 and _negative binomial_ model.  When the data exhibits a greater frequency of
-0 counts, **zero-infalted** versions of these models come to the rescue.
+0 counts, **zero-inflated** versions of these models come to the rescue.
 
 ![](images/headers/countdata.png)
 
