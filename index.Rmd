@@ -328,6 +328,7 @@ div_heading("topics")
 </div>
 
 - [1up PDF](lectures/07-Logistic2.pdf) || [4up PDF](lectures/07-Logistic2-2x2.pdf)
+- Bonus lecture: [Deep Questions of Data Visualization](lectures/DeepQuestions.pdf)
 
 
 ## Extending loglinear models
