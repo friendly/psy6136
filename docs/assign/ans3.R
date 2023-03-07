@@ -1,8 +1,18 @@
 #' ---
-#' title: "Assignment 3: Some solutions"
+#' title: "Assignment 2: Some solutions"
 #' author: "Michael Friendly"
-#' date: "4 Feb 2015"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
+
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
 
 #' ## Exercise 4.2: Abortion data
 
