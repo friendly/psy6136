@@ -15,7 +15,7 @@ navbar:
   type: inverse
   left:
     - text: "Home"
-      icon: fa-home fa-2x   # handy way to use FontAwesome icons in nav!
+      icon: fa-home    # use FontAwesome icons in nav!
       href: index.html
     - text: "Schedule"
       icon: fa-calendar
