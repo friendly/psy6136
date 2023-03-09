@@ -391,4 +391,29 @@ div_heading("topics")
 
 - [1up PDF](lectures/09-CountData.pdf) || [4up PDF](lectures/09-CountData-2x2.pdf)
 
+## Models and graphs for log odds and log odds ratios
 
+Logit models for a binary response simplify the specification and interpretation
+of loglinear models. In the same way, a model for a
+polytomous response can be simplified by considering a set of log odds
+defined for the set of adjacent categories.
+Similarly, when there are two response variables, models for their log odds
+ratios provide a new way to look at their associations in a structured way.
+
+![](images/headers/log-odds.png)
+
+<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
+```{r topics10, results='asis', echo=FALSE}
+div_heading("topics")
+```
+
+- Logit models -> log odds models
+- Generalized log odds ratios
+
+<!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
+<div style="display:flex">
+  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
+  <h4>Lecture notes</h4>
+</div>
+
+- [1up PDF](lectures/Log-Odds.pdf) || [4up PDF](lectures/Log-Odds-2x2.pdf)
