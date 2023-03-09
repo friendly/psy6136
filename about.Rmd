@@ -68,7 +68,9 @@ Throughout, there is a strong emphasis on associated graphical methods for visua
 ## Assignments {#assign}
 
 There will be occasional short assignments posted here and announced in class. These assignments are
-ungraded, unless a graded assignment is announced in advance.  
+ungraded. Like the tutorials, they are meant to give practice in working with categorical data,
+but give a chance for corrective feedback when you submit your work.
+
 They are usually due in two weeks from when announced.
 Details regarding a useful way of
 formatting R exercises are described in [Assignment 1](assign/assign1.pdf).
@@ -82,23 +84,26 @@ a Subject: line "**PSY 6136: Assignment XX**".
 To help me keep them straight, it would be most convenient to name them in a consistent style, something like
 "YourName-AssignXX.{pdf,docx,html}". 
 
+In the 2023 year, Assignments 3 & 4 are no longer necessary to submit.
+
 
 * [Assignment 1](assign/assign1.pdf) 
-  || Some answers: [ans1.R](assign/ans1.R) [ans1.html](assign/ans1.html) 
+  || Some answers: [ans1.R](assign/ans1.R) | [ans1.html](assign/ans1.html) 
 * [Assignment 2](assign/assign2.pdf) 
-  || Some answers: [ans2.R](assign/ans2.R) [ans2.html](assign/ans2.html) 
+  || Some answers: [ans2.R](assign/ans2.R) | [ans2.html](assign/ans2.html) 
 * [Assignment 3](assign/assign3.pdf) 
-  <!-- [Answers](assign/ans3.R) -->
+  || Some answers: [asn3.R](assign/ans3.R) | [ans3.html](assign/ans3.html)
 * [Assignment 4](assign/assign4.pdf) 
   <!-- [Answers](assign/ans4.R) -->
 
 
 ## Evaluation {#evaluation}
 
-**NB**: This description and weighting of components is under review, particularly the weighting for components and
-a final project. See [6136 Individual or Team Projects](assign/projects6136.html) for my current ideas.
 
 There are three  components to your evaluation in the course: two take-home projects (each worth 30%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
+
+A final project (worth 40%) is meant for you to spread your wings, and take up some topic of categorical
+data analysis, beyond the course materials, perhaps related to your area of research.
 
 Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
 you can use if you are working in RStudio and want to
@@ -108,9 +113,10 @@ write in R markdown.
 a selection of data sets for the material up to and including logistic regression. Due date: Feb. 24 (but earlier appreciated)
 
 2. [Project 2](assign/project2.pdf):
-a selection of data sets for the material from logistic regression to the end of the course. Due date: Mar. 15???
+a selection of data sets for the material from logistic regression to the end of the course. Due date: Mar. 31
 
-3. The remaining 40% can be earned as one of the projects described in See [6136 Individual or Team Projects](assign/projects6136.html)
+3. The remaining 40% can be earned as a research paper / project extending the scope of CDA in some way.
+Some sample project topics are described in  [6136 Individual or Team Projects](assign/projects6136.html)
 
 <!--
   * an assignment portfolio, containing a selection of your best work (possibly edited/enhanced) on a selection of assignment questions, or by
@@ -122,6 +128,8 @@ a selection of data sets for the material from logistic regression to the end of
 
 ![](icons/cc-by-nc-sa-icon.png){width="20%"}
 
-The lecture slides, tutorials and R scripts linked here are available under a [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. They are available to everybody under the terms of this license and can be shared.
+The lecture slides, tutorials and R scripts linked here are available under a [Creative Commons Attribution-NonCommercial-ShareAlike](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode) license. They are available to everybody under the terms of this license and can be shared. This means that you
+can re-use these materials for non-commercial purposes as long as all uses include an appropriate credit to 
+this source.
 
 All other materials, notably course videos and support material files, should not be copied beyond your personal machines and hence are not available for redistribution.
