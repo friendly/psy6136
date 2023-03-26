@@ -1,0 +1,29 @@
+### Summarizing models
+
+Here is just a very basic example:
+
+```{r modsummary3}
+#library(vcdExtra)
+data(Mental, package = "vcdExtra")
+indep <- glm(Freq ~ mental+ses,
+                family = poisson, data = Mental)
+modelsummary(anova(indep))
+```
+
+```{r modsummary4}
+# fit ordinal models
+Cscore <- as.numeric(Mental$ses)
+Rscore <- as.numeric(Mental$mental)
+coleff <- update(indep, . ~ . + Rscore:ses)
+roweff <- update(indep, . ~ .  + mental:Cscore)
+linlin <- update(indep, . ~ .  + Rscore:Cscore)
+
+models <- list(
+  "Indep" = indep, 
+  "Col eff" = coleff, 
+  "Row eff" = roweff, 
+  "Lin x Lin" = linlin)
+
+#modelsummary(models, coef_omit = "\*")
+```
+
