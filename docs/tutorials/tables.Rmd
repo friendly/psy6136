@@ -1,0 +1,179 @@
+---
+title: "Making tables in R"
+output: html_document
+date: "2023-03-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message = FALSE,
+                      warning = FALSE)
+```
+
+### Useful packages
+
+```{r load-packages}
+library(knitr)
+library(kableExtra)
+library(modelsummary)
+```
+
+
+### `rmarkdown`
+
+`rmarkdown` has the basic functionality to make very simple straightforward tables.
+Here are just a couple of examples, borrowing from [Derek Sonderegger, Section 15.2](https://dereksonderegger.github.io/570L/15-rmarkdown-tricks.html)
+
+I often use an online tool, such as [Table Maker](https://www.tablesgenerator.com/text_tables). I can copy/paste into the form and get output in markdown, html
+or LaTeX.
+
+
+#### Grid tables
+
+What are called "grid tables" use "|" to separate columns and
+lines like "+-------+----+" to separate rows.
+They don't support Left/Center/Right alignment
+
+```
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+```
+
+You **should not** make them into chunks in .Rmd files. Just
+insert as ordinary text. The above gives:
+
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+
+#### Pipe tables
+
+These rely on a special line just below the table header to control justification.
+Note the position of the ":"s to determine right, left, center.
+
+```
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+```
+
+This gives:
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+
+I often find these ugly, because I can't control the width of each column. However,
+you can include arbitrary markdown in the table cells.
+
+```
+|   Source    |  df  |   Sum of Sq   |    Mean Sq    |    F   |  $Pr(>F_{1,29})$    |
+|:------------|-----:|--------------:|--------------:|-------:|--------------------:|
+|  Girth      |  *1* |  7581.8       |  7581.8       | 419.26 |  **< 2.2e-16**      |
+|  Residual   |  29  |  524.3        |   18.1        |        |                     |
+```
+
+Giving this result. (Why is it formatted full-width??)
+
+
+|   Source    |  df  |   Sum of Sq   |    Mean Sq    |    F   |  $Pr(>F_{1,29})$    |
+|:------------|-----:|--------------:|--------------:|-------:|--------------------:|
+|  Girth      |  *1* |  7581.8       |  7581.8       | 419.26 |  **< 2.2e-16**      |
+|  Residual   |  29  |  524.3        |   18.1        |        |                     |
+
+
+
+### `kable` and `kableExtra`
+
+`knitr::kable()`: Does a reasonably better job of formatting, for HTML & PDF output.
+Often, you can just create an output and pipe it, `| kable()`. Great for showing
+a part of a data set.  This **must be in a code chunk**.
+
+```
+head(mtcars) |> dplyr::select(1:10) |> knitr::kable()
+```
+
+Output:
+
+```{r}
+head(mtcars) |> dplyr::select(1:10) |> knitr::kable()
+```
+
+Once you get the hang of this, you can take the next small steps to make your tables prettier with **styles**, **themes**, captions, etc. using `kableExtra`.
+See the vignette, [Create Awesome HTML Table with knitr::kable and kableExtra](https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html).
+
+
+```{r kable1}
+library(knitr)
+dat <- mtcars[1:8, 1:6]
+dat |> kable(caption = "Some data on some cars", padding = 4)
+```
+
+#### Add some style
+Add some style. Note the use of `full_width=FALSE` to avoid the table being spread
+across the whole page.  I haven't quite figured out how to add the footnotes to appropriate
+places in the table.
+
+```{r kable2}
+library(kableExtra)
+dat <- mtcars[1:8, 1:6]
+dat |> 
+  kable(caption = "**Some data on some cars**", padding = 5) |>
+  kable_classic(html_font = "Arial Narrow", full_width = FALSE) |>
+  add_footnote(label = c("footnote 1", "footnote 2"), notation = "symbol")
+```
+
+
+## `modelsummary` package
+
+The `modelsummary` package provides some quite comprenensive ways to summarize data and statistical models
+in R. See the paper [Journal of Statistical Software paper](https://www.jstatsoft.org/article/download/v103i01/4314).
+[vignette](https://vincentarelbundock.github.io/modelsummary/articles/datasummary.html)
+
+
+- `datsummary()`: flexible tool to draw (multi-level) crosstabs and statistical 
+	summaries of all kinds. There are also `datasummary_crosstab()`, `datasummary_correlation()`, and
+	other specialized versions.  See the [vignette](https://vincentarelbundock.github.io/modelsummary/articles/datasummary.html) for lots of
+	examples.
+	
+- `modelsummary()`: summarize one statistical model or multiple models side-by-side. It has tons
+of options: You can easily rename, reorder, subset or omit parameter estimates; choose the set of goodness-of-fit statistics to display; display various “robust” standard errors or confidence intervals; add titles, footnotes, or source notes, ...
+  See the [vignette](https://vincentarelbundock.github.io/modelsummary/articles/modelsummary.html).
+  
+
+### Simple crosstab
+
+The formula is similar to that used by `ftable`: row_variables ~ column variables.
+There is also a `statistic` formula to control what statistics are calculated.
+```{r modelsummary1}
+data("penguins", package = "palmerpenguins")
+datasummary_crosstab(island ~ sex * species, 
+                     statistic = 1 ~ 1 + N, 
+                     data = penguins)
+```
+
+By default, it also prints percents:
+
+```{r modelsummary2}
+data("penguins", package = "palmerpenguins")
+datasummary_crosstab(island ~ sex * species, 
+                     data = penguins)
+```
+
