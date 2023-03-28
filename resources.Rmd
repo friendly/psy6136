@@ -96,7 +96,7 @@ that guides you through the steps.
   + [Mosaic plots](https://friendly.github.io/vcdExtra/articles/mosaics.html)
   + [Loglinear models](https://friendly.github.io/vcdExtra/articles/loglinear.html)
 
-* Short [Making tables in R](tutorials/tables.html) tutorial.
+* Short [Making tables in R](tutorials/tables.html) tutorial. Also: Udi's [Psy3136 Tables](tutorials/Tables-brief.html) tutorial on making tables with the `rempsyc` and `apaTables` packages.
   
 ### Making plots with ggplot2 {#ggplot}
 
