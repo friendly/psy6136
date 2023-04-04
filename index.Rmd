@@ -427,7 +427,7 @@ div_heading("topics")
   <h4>Lecture notes</h4>
 </div>
 
-- [1up PDF](lectures/Log-Odds.pdf) || [4up PDF](lectures/Log-Odds-2x2.pdf)
+- [1up PDF](lectures/10-Log-Odds.pdf) || [4up PDF](lectures/10-Log-Odds-2x2.pdf)
 
 ```{r readings10, results='asis', echo=FALSE}
 div_heading("readings")
