@@ -33,5 +33,5 @@ navbar:
       href: students.html
       icon: fa-users
   right:
-    - icon: fab fa-github fa-2x
+    - icon: fab fa-github
       href: https://github.com/friendly/psy6136

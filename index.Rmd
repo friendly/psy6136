@@ -264,10 +264,9 @@ div_heading("topics")
 - Multiway tables: MCA
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture5, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/05-Corresp.pdf) || [4up PDF](lectures/05-Corresp-2x2.pdf)
 
@@ -300,10 +299,9 @@ div_heading("topics")
 - Model diagnostics
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture6, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/06-Logistic.pdf) || [4up PDF](lectures/06-Logistic-2x2.pdf)
 
@@ -333,10 +331,9 @@ div_heading("topics")
   + Multinomial models
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture7, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/07-Logistic2.pdf) || [4up PDF](lectures/07-Logistic2-2x2.pdf)
 - Bonus lecture: [Deep Questions of Data Visualization](lectures/DeepQuestions.pdf)
@@ -364,10 +361,9 @@ div_heading("topics")
 - More complex models
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture8, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/08-Loglin2.pdf) || [4up PDF](lectures/08-Loglin2-2x2.pdf)
 
@@ -395,10 +391,9 @@ div_heading("topics")
 - Excess zeros
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture9, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/09-CountData.pdf) || [4up PDF](lectures/09-CountData-2x2.pdf)
 
@@ -420,12 +415,12 @@ div_heading("topics")
 
 - Logit models -> log odds models
 - Generalized log odds ratios
+- Models for bivariate responses
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
-<div style="display:flex">
-  <i class="fas fa-file-pdf" style="color:red; font-size: 1.25em;"></i> &nbsp;
-  <h4>Lecture notes</h4>
-</div>
+```{r lecture10, results='asis', echo=FALSE}
+div_heading("lecture")
+```
 
 - [1up PDF](lectures/10-Log-Odds.pdf) || [4up PDF](lectures/10-Log-Odds-2x2.pdf)
 
@@ -435,3 +430,26 @@ div_heading("readings")
 
 - Friendly & Meyer (2015), [General Models and Graphs for Log Odds and Log
 Odds Ratios](https://www.datavis.ca/papers/CARME2015-2x2.pdf)
+
+## Wrapup & summary: The Last Waltz
+
+A brief summary of the course.
+
+![](images/headers/last-waltz.png)
+
+```{r topics99, results='asis', echo=FALSE}
+div_heading("topics")
+```
+
+- Course goals
+- What have I tried to teach?
+- Whirlwind course summary
+- Your turn: what did you like/dislike about the course?
+
+<!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
+```{r lecture99, results='asis', echo=FALSE}
+div_heading("lecture")
+```
+
+- [1up PDF](lectures/99-Summary.pdf) || [4up PDF](lectures/99-Summary-2x2.pdf)
+
