@@ -10,11 +10,13 @@ output:
 ## Team 6136
 Student in Psych 6136, Winter, 2023
 
-![](images/team6136.png)
+<!-- ![](images/team6136.png) -->
+<img src="images/team6136.png" width="70%" align="center">
 
 ## Final Projects
 
-![](images/JCDA-cover.png)
+<!-- ![](images/JCDA-cover.png) -->
+<img src="images/JCDA-cover.png" width="50%">
 
 The following projects were submitted in the course.  All were of sufficient quality to
 be forwarded to the nacent _Journal of Categorical Data Analysis_.
