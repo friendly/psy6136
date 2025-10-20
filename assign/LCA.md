@@ -1,6 +1,6 @@
 # Latent Class Analysis examples
 
-Here are a few examples of LCA I’ve found using R. One take on this is that LCA is similar to CDA for a polytomous outcome,
+Here are a few examples of LCA I've found using R. One take on this is that LCA is similar to CDA for a polytomous outcome,
 but where membership in the response categories latent (unobserved), rather than manifest. Thus, a possible project
 would be to explain the basics of LCA, illustrate with an example or two, and perhaps compare it with multinomial models.
 

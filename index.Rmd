@@ -1,7 +1,7 @@
 ---
 title: "Psy 6136: Categorical Data Analysis"
 author: "Michael Friendly"
-date: "Winter, 2023"
+date: "Winter, 2026"
 output:
   html_document:
     toc: true
