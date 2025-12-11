@@ -77,11 +77,34 @@ In lectures and lab sessions I will be using [R](http://www.r-project.org)
 software exclusively, together with the [R Studio](http://www.rstudio.com/)
 user interface for R.
 
-You are well-advised to download and install these to your computer so you can follow along.
+You are well-advised to [download and install](https://posit.co/download/rstudio-desktop/) these to your computer so you can follow along.
 
 * Instructions to install R and R Studio for [Windows](tutorials/installing-r-rstudio-windows.pdf) and [Mac](tutorials/installing-r-rstudio-mac.pdf). 
 There is also a [learnr tutorial](https://learnr-examples.shinyapps.io/ex-setup-r/)
 that guides you through the steps.
+
+* I recommend that you set up an RStudio project for your work in the course, where you can organize your notes and work on assignments, projects, etc.
+I created a template for this on GitHub: [my6136](https://github.com/friendly/my6136). You can simply download this to your computer, and then open
+it in RStudio (double-click on the file `my6136.Rproj`). 
+
+  * Alternatively, if use GitHub or you're willing to [create a GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) (**highly recommended**), you can [fork and clone this repo](https://github.com/rstats-tln/fork-and-clone-repo) into your own GitHub account. In the process, you'll learn something about version control
+and the
+
+  * The `my6136` project has the following folders set up for you to use, but change anything to suit your workflow.
+
+```
+fs::dir_tree(recurse = FALSE)
+#> .
+#> +-- assignments
+#> +-- data
+#> +-- images
+#> +-- lecture-notes
+#> +-- my6136.Rproj
+#> +-- R
+#> +-- README.md
+#> +-- README.Rmd
+#> +-- tutorials
+```
 
 * My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course. Download and run this in your R or RStudio console.
 

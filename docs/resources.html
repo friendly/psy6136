@@ -386,6 +386,7 @@ div.tocify {
 </div>
 
 
+<pre><code>## Warning: package &#39;htmltools&#39; was built under R version 4.5.2</code></pre>
 <div id="books" class="section level2">
 <h2>Books</h2>
 <div id="texts" class="section level3">
@@ -473,14 +474,44 @@ Fox (2015)
 href="http://www.r-project.org">R</a> software exclusively, together
 with the <a href="http://www.rstudio.com/">R Studio</a> user interface
 for R.</p>
-<p>You are well-advised to download and install these to your computer
-so you can follow along.</p>
+<p>You are well-advised to <a
+href="https://posit.co/download/rstudio-desktop/">download and
+install</a> these to your computer so you can follow along.</p>
 <ul>
 <li><p>Instructions to install R and R Studio for <a
 href="tutorials/installing-r-rstudio-windows.pdf">Windows</a> and <a
 href="tutorials/installing-r-rstudio-mac.pdf">Mac</a>. There is also a
 <a href="https://learnr-examples.shinyapps.io/ex-setup-r/">learnr
 tutorial</a> that guides you through the steps.</p></li>
+<li><p>I recommend that you set up an RStudio project for your work in
+the course, where you can organize your notes and work on assignments,
+projects, etc. I created a template for this on GitHub: <a
+href="https://github.com/friendly/my6136">my6136</a>. You can simply
+download this to your computer, and then open it in RStudio
+(double-click on the file <code>my6136.Rproj</code>).</p>
+<ul>
+<li><p>Alternatively, if use GitHub or you’re willing to <a
+href="https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github">create
+a GitHub account</a> (<strong>highly recommended</strong>), you can <a
+href="https://github.com/rstats-tln/fork-and-clone-repo">fork and clone
+this repo</a> into your own GitHub account. In the process, you’ll learn
+something about version control and the</p></li>
+<li><p>The <code>my6136</code> project has the following folders set up
+for you to use, but change anything to suit your workflow.</p></li>
+</ul></li>
+</ul>
+<pre><code>fs::dir_tree(recurse = FALSE)
+#&gt; .
+#&gt; +-- assignments
+#&gt; +-- data
+#&gt; +-- images
+#&gt; +-- lecture-notes
+#&gt; +-- my6136.Rproj
+#&gt; +-- R
+#&gt; +-- README.md
+#&gt; +-- README.Rmd
+#&gt; +-- tutorials</code></pre>
+<ul>
 <li><p>My <a href="R/install-vcd-pkgs.R">install-vcd-pkgs.R</a> R
 script, to install the most useful packages for this course. Download
 and run this in your R or RStudio console.</p></li>

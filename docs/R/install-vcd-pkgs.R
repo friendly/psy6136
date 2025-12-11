@@ -8,7 +8,7 @@
 
 # main packages for the VCD short course
 vcdpkgs <-c("vcd", "vcdExtra", "ca", "car", "catspec", "coin", "corrgram", "effects", 
-            "gmodels", "gnm", "reshape")
+            "gmodels", "gnm", "reshape", "catdata", "pscl")
 
 # other useful packages
 otherpkgs <-c("ade4", "candisc", "ggplot2", "heplots", "HH", "rms", "latticeExtra", 
