@@ -81,6 +81,7 @@ some supplementary readings are mentioned there.
 
 - **DDAR**: [Ch 1](VCDR/chapter01.pdf); [Ch 2](VCDR/chapter02.pdf)
 - **Agresti**, Ch 1
+- See [Supplementary resources](resources.html#week1) for this week.
 
 <!-- #### Assignment: `r icon::fa("building", color="brown")` -->
 ```{r asn1, results='asis', echo=FALSE}
@@ -88,7 +89,6 @@ div_heading("assign")
 ```
 - [Assignment 1](assign/assign1.pdf)
 
-- See [Supplementary resources](resources.html#week1) for this week.
 
 ## Discrete Distributions {#discrete}
 
