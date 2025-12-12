@@ -93,20 +93,16 @@ and the
   * The `my6136` project has the following folders set up for you to use, but change anything to suit your workflow.
 
 ```
-fs::dir_tree(recurse = FALSE)
-#> .
-#> +-- assignments
-#> +-- data
-#> +-- images
-#> +-- lecture-notes
-#> +-- my6136.Rproj
-#> +-- R
-#> +-- README.md
-#> +-- README.Rmd
-#> +-- tutorials
+my6136
+  ├── assign
+  ├── data
+  ├── images
+  ├── notes
+  ├── R
+  └── tutorials
 ```
 
-* My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) R script, to install the most useful packages for this course. Download and run this in your R or RStudio console.
+* My [install-vcd-pkgs.R](R/install-vcd-pkgs.R) script, to install the most useful packages for this course. Download and run this in your R or RStudio console.
 
 * [R Studio cheatsheets](tutorials/rstudio-cheat-sheets.pdf) A handy collection of cheat sheets for R, R Studio and a number of the most useful R packages. You can also get some of these in R Studio from the menu `Help -> Cheat sheets`.
 
@@ -159,5 +155,34 @@ mosaic displays.
 * Slides from a talk at CARME 2015, [General Models and Graphs for Log Odds and Log Odds Ratios](https://www.datavis.ca/papers/CARME2015-2x2.pdf). This re-considers some standard loglinear models and graphical methods (correspondence analysis, mosaic plots) from the
 perspective of models and visualization for log odds and log odds ratios.
 
+## Weekly Resources
+I'll post here other things of interest for the topic of the week.
 
+### Week 1 {#week1}
+
+* [A (very) short introduction to R](http://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) covers the basics of installing R and [RStudio](https://posit.co/download/rstudio-desktop/), the R Studio window layout, and an overview of R commands, data structures and functions.  If you haven’t already installed R and R Studio, do so now, and work through some of the examples.
+
+McNamara & Horton (2017), [Wrangling categorical data in R](https://doi.org/10.7287/peerj.preprints.3163v2)  describe some aspects of data import and tidying specific to categorical data.
+
+* The vcdExtra vignette, [Creating and manipulating frequency tables](https://friendly.github.io/vcdExtra/articles/a1-creating.html) covers a lot of the material from DDAR, Ch 2
+
+### Week 2 {#week2}
+
+### Week 3 {#week3}
+
+### Week 4 {#week4}
+
+### Week 5 {#week5}
+
+### Week 6 {#week6}
+
+### Week 7 {#week7}
+
+### Week 8 {#week8}
+
+### Week 9 {#week9}
+
+### Week 10 {#week10}
+
+### Week 11 {#week11}
 

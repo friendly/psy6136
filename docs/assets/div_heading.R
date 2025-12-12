@@ -34,6 +34,7 @@ div_heading <- function(
     type =  c("topics", "lecture", "readings", "assign", "quiz"),
     title = c("Topics", "Lecture notes", "Readings", "Assignment", "Quiz"),
     icon =  c("fas fa-list", "fas fa-file-pdf", "fas fa-book-reader", "fas fa-building", "fas fa-question"),
+#    emoji = c("📜", ),
     color = c("darkgreen", "red", "blue", "brown", "purple")
   )
   

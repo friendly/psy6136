@@ -7,13 +7,23 @@ output:
       after_body: footer.html
 ---
 
-## Team 6136
-Student in Psych 6136, Winter, 2023
+This page exists only to recognize the contributions of past students in this course and to serve as examples and guidance for current students. It is also a tribute to their work and enthusiasm!
+
+Any materials linked on this page are the intellectual property of the students in this course.  They may not be
+reproduced or used in any other manner without express permission of the student involved.
+Don't even think about it.
+
+## 2026 {#2026}
+
+## 2023 {#2023}
+
+### Team 6136
+Students in Psych 6136, Winter, 2023
 
 <!-- ![](images/team6136.png) -->
 <img src="images/team6136.png" width="70%" align="center">
 
-## Final Projects
+### Final Projects
 
 <!-- ![](images/JCDA-cover.png) -->
 <img src="images/JCDA-cover.png" width="50%">
