@@ -15,7 +15,7 @@ output:
 
 
 <center>
-<img src="icons/psy6136-highres.png" width="120px"/>
+<img src="icons/psy6136-highres.png" width="120px"/>&nbsp; &nbsp;
 <img src="icons/psy6136-qr.png" width="120px"/>
 </center>
 
@@ -42,6 +42,11 @@ Course and lecture topics are listed below, in a visual overview.
 * For students, see [Assignments](about.html#assign) and [Evaluation](about.html#evaluation)
 
 ## Overview & Introduction {#overview}
+
+Let's get started! I'll talk about the organization of the course, what is expected, and resouces for 
+learning. Then, provide an overview of methods and models for catgegorical data and the role
+of graphical methods in understanding and communicating results.
+
 
 ![](images/headers/bertifier.png)
 
