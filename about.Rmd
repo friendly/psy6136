@@ -72,6 +72,9 @@ There will be occasional short assignments posted here and announced in class. T
 ungraded. Like the tutorials, they are meant to give practice in working with categorical data,
 but give a chance for corrective feedback when you submit your work.
 
+In these assignments, you are free to collaborate / brainstorm with other students in the class,
+if you can help each other
+
 They are usually due in two weeks from when announced.
 Details regarding a useful way of
 formatting R exercises are described in [Assignment 1](assign/assign1.pdf).
@@ -85,15 +88,15 @@ a Subject: line "**PSY 6136: Assignment XX**".
 To help me keep them straight, it would be most convenient to name them in a consistent style, something like
 "YourName-AssignXX.{pdf,docx,html}". 
 
-In the 2023 year, Assignments 3 & 4 are no longer necessary to submit.
+<!-- In the 2023 year, Assignments 3 & 4 are no longer necessary to submit. -->
 
 
 * [Assignment 1](assign/assign1.pdf) 
-  || Some answers: [ans1.R](assign/ans1.R) | [ans1.html](assign/ans1.html) 
+  <!-- || Some answers: [ans1.R](assign/ans1.R) | [ans1.html](assign/ans1.html)  -->
 * [Assignment 2](assign/assign2.pdf) 
-  || Some answers: [ans2.R](assign/ans2.R) | [ans2.html](assign/ans2.html) 
+  <!-- || Some answers: [ans2.R](assign/ans2.R) | [ans2.html](assign/ans2.html)  -->
 * [Assignment 3](assign/assign3.pdf) 
-  || Some answers: [asn3.R](assign/ans3.R) | [ans3.html](assign/ans3.html)
+  <!-- || Some answers: [asn3.R](assign/ans3.R) | [ans3.html](assign/ans3.html) -->
 * [Assignment 4](assign/assign4.pdf) 
   <!-- [Answers](assign/ans4.R) -->
 
@@ -101,7 +104,7 @@ In the 2023 year, Assignments 3 & 4 are no longer necessary to submit.
 ## Evaluation {#evaluation}
 
 
-There are three  components to your evaluation in the course: two take-home projects (each worth 30%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged.
+There are three  components to your evaluation in the course: two take-home projects (each worth 30%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged. 
 
 A final project (worth 40%) is meant for you to spread your wings, and take up some topic of categorical
 data analysis, beyond the course materials, perhaps related to your area of research.
