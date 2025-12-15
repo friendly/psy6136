@@ -57,10 +57,13 @@ of graphical methods in understanding and communicating results.
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
-
+<!--
 ```{r topics1, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 
 - Course outline, books, R
@@ -82,12 +85,16 @@ div_heading("lecture")
 
 <!-- #### Readings: `r icon::fa("book-reader", color="blue")`  -->
 
+<!--
 ```{r readings1, results='asis', echo=FALSE}
 div_heading("readings")
 ```
+-->
+
+#### <img src="icons/book.png" height=20> Readings: 
 
 **Bold face** items are considered essential. When there are assignments,
-some supplementary readings are mentioned there.
+some supplementary readings are also mentioned there.
 
 - **DDAR**: [Ch 1](VCDR/chapter01.pdf); [Ch 2](VCDR/chapter02.pdf)
 - **Agresti**, Ch 1
@@ -113,9 +120,13 @@ and understanding why a given one might not fit well.
 
 <!-- #### Topics: `r icon::fa("list", color="darkgreen")`  -->
 
+<!--
 ```{r topics2, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Discrete distributions: Basic ideas
 - Fitting discrete distributions
@@ -136,10 +147,15 @@ div_heading("lecture")
 
 <!-- #### Readings: `r icon::fa("book-reader", color="blue")`  -->
 
+<!--
 <div style="display:flex">
   <i class="fas fa-book-reader" style="color:blue; font-size: 1.25em;"></i> &nbsp;
   <h4>Readings</h4>
 </div>
+-->
+
+#### <img src="icons/book.png" height=20> Readings: 
+
 
 - **DDAR**: [Ch 3](VCDR/chapter03.pdf)
 
@@ -164,11 +180,13 @@ models for categorical data.
 
 ![](images/headers/twoway.png)
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
-
+<!--
 ```{r topics3, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Overview: $2 \times 2$, $r \times c$, ordered tables
 - Independence
@@ -190,10 +208,14 @@ div_heading("lecture")
 - [Tutorial on two way tables](tutorials/twoway.pdf)
 
 <!-- #### Readings: `r icon::fa("book-reader", color="blue")`  -->
+<!--
 <div style="display:flex">
   <i class="fas fa-book-reader" style="color:blue; font-size: 1.25em;"></i> &nbsp;
   <h4>Readings</h4>
 </div>
+-->
+
+#### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 4](VCDR/chapter04.pdf)
 - **Agresti, Ch 2**
@@ -208,23 +230,26 @@ div_heading("quiz")
 
 ## Loglinear models & mosaic displays {#loglin}
 
-```
-  Some people think nothing is prettier
-  Than algebra of models log-linear.
-    But I've got the hots
-    For my mosaic plots
-  With all those squares in the interior.
-```
-  --- by Michael Greenacre (see his Statistical Songs, https://www.youtube.com/StatisticalSongs)
+
+>  Some people think nothing is prettier
+>  Than algebra of models log-linear.
+>    But I've got the hots
+>    For my mosaic plots
+>  With all those squares in the interior.
+>  --- by Michael Greenacre (see his Statistical Songs, https://www.youtube.com/StatisticalSongs)
 
 
 ![](images/headers/loglin.png)
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
+<!--
 ```{r topics4, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Mosaic displays: Basic ideas
 - Loglinear models
@@ -246,6 +271,7 @@ div_heading("lecture")
 ```{r readings4, results='asis', echo=FALSE}
 div_heading("readings")
 ```
+
 - **DDAR**: [Ch 5](VCDR/chapter05.pdf)
 - **Agresti, 2.7; Ch 7**
 
@@ -272,9 +298,13 @@ as clear as possible.
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
+<!--
 ```{r topics5, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - CA: Basic ideas
 - Singular value decomposition (SVD)
@@ -293,9 +323,14 @@ div_heading("lecture")
 
 - [1up PDF](lectures/05-Corresp.pdf) || [4up PDF](lectures/05-Corresp-2x2.pdf)
 
+<!--
 ```{r readings5, results='asis', echo=FALSE}
 div_heading("readings")
 ```
+-->
+
+#### <img src="icons/book.png" height=20> Readings: 
+
 - **DDAR**: [Ch 6](VCDR/chapter06.pdf)
 
 
@@ -310,9 +345,13 @@ with confidence bands representing uncertainty,
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
+<!--
 ```{r topics6, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Model-based methods: Overview
 - Logistic regression: one predictor, multiple predictors, fitting
@@ -332,6 +371,10 @@ div_heading("lecture")
 - [1up PDF](lectures/06-Logistic.pdf) || [4up PDF](lectures/06-Logistic-2x2.pdf)
 
 
+#### <img src="icons/book.png" height=20> Readings: 
+
+- **DDAR**: [Ch 7](VCDR/chapter07.pdf)
+
 ## Logistic regression: Extensions
 
 The ideas behind logistic regression can be extended in a variety of ways.
@@ -346,9 +389,13 @@ the general _multinomial_ logistic regression model.
 
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
+<!--
 ```{r topics7, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Case study: Survival in the Donner party
 - Polytomous response models
@@ -379,9 +426,13 @@ _quasi-independence_, _symmetry_ and _quasi-symmetry_.
 ![](images/headers/loglin2.png)
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
+<!--
 ```{r topics8, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Logit models for response variables
 - Models for ordinal factors
@@ -412,9 +463,13 @@ and _negative binomial_ model.  When the data exhibits a greater frequency of
 
 
 <!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
+<!--
 ```{r topics9, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Generalized linear models: Families & links
 - GLMs for count data
@@ -451,6 +506,8 @@ div_heading("topics")
 ```
 -->
 
+#### <img src="icons/list.png" height=20> Topics:  
+
 - Logit models -> log odds models
 - Generalized log odds ratios
 - Models for bivariate responses
@@ -477,9 +534,13 @@ A brief summary of the course.
 
 ![](images/headers/last-waltz.png)
 
+<!--
 ```{r topics99, results='asis', echo=FALSE}
 div_heading("topics")
 ```
+-->
+
+#### <img src="icons/list.png" height=20> Topics:  
 
 - Course goals
 - What have I tried to teach?
