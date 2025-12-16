@@ -1,9 +1,10 @@
 # 6136 Individual or Team Projects
 
-Here is a sketch of a couple of ideas that could be used for course evaluation
-replacing some of the components I had planned. You can work on one of these
-individually or with a partner. I would expect something more substantial for
-a team project than an individual one. 
+This year, I'm placing more weight on a final project for the course, an opportunity to show off what you have learned.
+
+Here is a sketch of a few ideas. Feel free to propose something other, with enough detail to give me a sense of your scope & purpose.
+
+You can work on one of these individually or with one partner. I would expect something more substantial for a team project than an individual one. 
 
 ## Recent developments in Categorical Data Analysis
 
@@ -13,7 +14,7 @@ attempting to go beyond what is covered in the course or my book.
 
 Each should have a bibliographical citation, brief description, why it is
 interesting or novel. Perhaps with subject / content / method tags or
-catrgories.
+categories.
 
 It could also be in the form of a methods review paper, with the title of
 this section, and sufficient text description to give an overview of this
@@ -32,6 +33,7 @@ and manipulating catgegorical data, largely within base-R. The `vcdExtra` vignet
 
 A tidy CDA project might propose, test and implement some extensions to
 the [vcdExtra package](https://github.com/friendly/vcdExtra), designed to reduce these problems.
+There is a sketch of some aspects of this in the vignette [tidyCat: Tidy Methods For Categorical Data Analysis](https://friendly.github.io/vcdExtra/articles/tidyCats.html).
 
 More generally, a project to work on developing the [vcdExtra package](https://github.com/friendly/vcdExtra)
 in other ways might be quite useful.  For example, you might extend the vignettes,

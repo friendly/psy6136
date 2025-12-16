@@ -63,7 +63,10 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
+
 
 
 - Course outline, books, R
@@ -126,7 +129,10 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
+
 
 - Discrete distributions: Basic ideas
 - Fitting discrete distributions
@@ -186,7 +192,9 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
 
 - Overview: $2 \times 2$, $r \times c$, ordered tables
 - Independence
@@ -249,7 +257,9 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
 
 - Mosaic displays: Basic ideas
 - Loglinear models
@@ -351,7 +361,10 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
+
 
 - Model-based methods: Overview
 - Logistic regression: one predictor, multiple predictors, fitting

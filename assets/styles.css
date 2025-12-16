@@ -35,4 +35,11 @@ BODY {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.emoji {
+  font-size: 1.5em;
+  vertical-align: middle;
+  margin-right: 0.2em;
+}
+
+
 </style>

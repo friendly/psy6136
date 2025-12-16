@@ -168,13 +168,17 @@ McNamara & Horton (2017), [Wrangling categorical data in R](https://doi.org/10.7
 
 ### Week 2 {#week2}
 
-* The function `MASS::fitdistr()` provides maximum likelihood fitting for a variety of univariate distributions, some for continuous
+* See the [DDAR web site, Chapter 3: Fitting and Graphing Discrete Distributions](http://ddar.datavis.ca/pages/chapters/ch03/) for the R code for figures in this chapter.
+
+* Several other R packages offer tools for fitting distributions:
+
+  * The function `MASS::fitdistr()` provides maximum likelihood fitting for a variety of univariate distributions, some for continuous
 ("beta", "cauchy", "chi-squared", "exponential", "gamma", "log-normal", "logistic", "normal", "t" and "weibull")
 others for discrete distributions: "geometric", "negative binomial", "Poisson". No graphical methods are available there.
 
-* The [`fitdistrplus` package](https://cran.r-project.org/package=fitdistrplus) provides a more comprehensive framework with the `fitdist()` function for fitting a wide range of distributions (both discrete and continuous) and offers various goodness-of-fit plots and statistics (AIC, BIC, etc.). See the [package vignette](https://cran.r-project.org/web/packages/fitdistrplus/vignettes/fitdistrplus_vignette.html)
+  * The [`fitdistrplus` package](https://cran.r-project.org/package=fitdistrplus) provides a more comprehensive framework with the `fitdist()` function for fitting a wide range of distributions (both discrete and continuous) and offers various goodness-of-fit plots and statistics (AIC, BIC, etc.). See the [package vignette](https://cran.r-project.org/web/packages/fitdistrplus/vignettes/fitdistrplus_vignette.html)
 
-* The [`discretefit` package](https://cran.r-project.org/package=discretefit) in implements fast Monte Carlo simulations for goodness-of-fit (GOF) tests for discrete distributions. See the [package vignette](https://cran.r-project.org/web/packages/discretefit/vignettes/package_introduction.html)
+  * The [`discretefit` package](https://cran.r-project.org/package=discretefit) in implements fast Monte Carlo simulations for goodness-of-fit (GOF) tests for discrete distributions. See the [package vignette](https://cran.r-project.org/web/packages/discretefit/vignettes/package_introduction.html)
 
 ### Week 3 {#week3}
 
