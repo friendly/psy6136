@@ -164,6 +164,7 @@ div_heading("lecture")
 
 
 - **DDAR**: [Ch 3](VCDR/chapter03.pdf)
+- See [Supplementary resources](resources.html#week2) for this week.
 
 <!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
 
@@ -227,6 +228,7 @@ div_heading("lecture")
 
 - **DDAR**: [Ch 4](VCDR/chapter04.pdf)
 - **Agresti, Ch 2**
+- See [Supplementary resources](resources.html#week3) for this week.
 
 <!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
 
@@ -239,13 +241,15 @@ div_heading("quiz")
 ## Loglinear models & mosaic displays {#loglin}
 
 
->  Some people think nothing is prettier
->  Than algebra of models log-linear.
->    But I've got the hots
->    For my mosaic plots
->  With all those squares in the interior.
->  --- by Michael Greenacre (see his Statistical Songs, https://www.youtube.com/StatisticalSongs)
-
+```
+༄˖°.🍂࿔*:･
+  Some people think nothing is prettier
+  Than algebra of models log-linear.
+    But I've got the hots
+    For my mosaic plots
+  With all those squares in the interior.
+  --- by Michael Greenacre (see his [Statistical Songs](https://www.youtube.com/StatisticalSongs))
+```
 
 ![](images/headers/loglin.png)
 
@@ -278,9 +282,13 @@ div_heading("lecture")
 
 - [1up PDF](lectures/04-Loglin.pdf) || [4up PDF](lectures/04-Loglin-2x2.pdf)
 
+<!--
 ```{r readings4, results='asis', echo=FALSE}
 div_heading("readings")
 ```
+-->
+
+#### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 5](VCDR/chapter05.pdf)
 - **Agresti, 2.7; Ch 7**
@@ -314,7 +322,9 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
 
 - CA: Basic ideas
 - Singular value decomposition (SVD)
@@ -401,14 +411,15 @@ the general _multinomial_ logistic regression model.
 ![](images/headers/logistic2.png)
 
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 <!--
 ```{r topics7, results='asis', echo=FALSE}
 div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
 
 - Case study: Survival in the Donner party
 - Polytomous response models
@@ -427,6 +438,9 @@ div_heading("lecture")
 - [1up PDF](lectures/07-Logistic2.pdf) || [4up PDF](lectures/07-Logistic2-2x2.pdf)
 - Bonus lecture: [Deep Questions of Data Visualization](lectures/DeepQuestions.pdf)
 
+#### <img src="icons/book.png" height=20> Readings: 
+
+- **DDAR**: [Ch 8](VCDR/chapter07.pdf)
 
 ## Extending loglinear models
 
@@ -438,14 +452,15 @@ _quasi-independence_, _symmetry_ and _quasi-symmetry_.
 
 ![](images/headers/loglin2.png)
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 <!--
 ```{r topics8, results='asis', echo=FALSE}
 div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="emoji">📌</span> Topics:
 
 - Logit models for response variables
 - Models for ordinal factors
@@ -463,6 +478,10 @@ div_heading("lecture")
 
 - [1up PDF](lectures/08-Loglin2.pdf) || [4up PDF](lectures/08-Loglin2-2x2.pdf)
 
+
+#### <img src="icons/book.png" height=20> Readings: 
+
+- **DDAR**: [Ch 10](VCDR/chapter10.pdf)
 
 ## GLMs for count data
 
@@ -482,7 +501,8 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+#### <span class="icon-emoji">📌</span> Topics:
 
 - Generalized linear models: Families & links
 - GLMs for count data
@@ -500,6 +520,11 @@ div_heading("lecture")
 #### <img src="icons/PDF_icon.png" height=20> Lecture notes   
 
 - [1up PDF](lectures/09-CountData.pdf) || [4up PDF](lectures/09-CountData-2x2.pdf)
+
+#### <img src="icons/book.png" height=20> Readings: 
+
+- **DDAR**: [Ch 11](VCDR/chapter11.pdf)
+
 
 ## Models and graphs for log odds and log odds ratios
 
@@ -519,16 +544,20 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="icon-emoji">📌</span> Topics:
 
 - Logit models -> log odds models
 - Generalized log odds ratios
 - Models for bivariate responses
 
 <!-- #### Lecture notes  `r icon::fa("file-pdf", color="red")`  -->
+<!--
 ```{r lecture10, results='asis', echo=FALSE}
 div_heading("lecture")
 ```
+-->
 
 #### <img src="icons/PDF_icon.png" height=20> Lecture notes   
 
@@ -553,7 +582,10 @@ div_heading("topics")
 ```
 -->
 
-#### <img src="icons/list.png" height=20> Topics:  
+<!-- #### <img src="icons/list.png" height=20> Topics:   -->
+
+#### <span class="icon-emoji">📌</span> Topics:
+
 
 - Course goals
 - What have I tried to teach?

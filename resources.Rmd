@@ -182,6 +182,10 @@ others for discrete distributions: "geometric", "negative binomial", "Poisson". 
 
 ### Week 3 {#week3}
 
+* See the [DDAR web site, Chapter 4: Two-Way Contingency Tables](http://ddar.datavis.ca/pages/chapters/ch04/) for the R code for figures in this chapter.
+
+* [How To Build 2-Way and 3-Way Tables In R](https://medium.com/@ai.mlresearcher/how-to-build-2-way-and-3-way-tables-in-r-2b980e733b82)
+
 ### Week 4 {#week4}
 
 ### Week 5 {#week5}

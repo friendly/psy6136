@@ -106,8 +106,12 @@ To help me keep them straight, it would be most convenient to name them in a con
 
 There are three  components to your evaluation in the course: two take-home projects (each worth 30%) that will involve analysis of one or more data sets together with a research report describing the background, your analyses, results and conclusions. For these, you can use any software you like, although R is strongly encouraged. 
 
-A final project (worth 40%) is meant for you to spread your wings, and take up some topic of categorical
-data analysis, beyond the course materials, perhaps related to your area of research.
+A final project (worth 40%) is meant for you to spread your wings, and take up some topic of categorical data analysis, beyond the course materials, perhaps related to your area of research. 
+
+This year, I'd also like to welcome any of you who want to earn their
+grade (or a portion) by taking a role in development of software for categorical
+data analysis, with the [`vcdExtra` package](https://friendly.github.io/vcdExtra/), or something else. More on this later.
+
 
 Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
 you can use if you are working in RStudio and want to

@@ -1,0 +1,315 @@
+---
+#############################################################
+# Open this .Rmd file in an RStudio editor window, then
+# Click on "Run Document" in RStudio to run these exercises. 
+#############################################################
+title: "Introduction to R"
+output: learnr::tutorial
+runtime: shiny_prerendered
+---
+
+```{r setup, include=FALSE, purl=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE,
+                      message = FALSE,
+                      comment = "")
+knitr::set_alias(w = "fig.width", h = "fig.height")
+options(digits=3)
+```
+
+**Introduction**
+
+The purpose of this exercise is to introduce you to basic concepts and techniques using R.
+It uses the [**learnr**](https://rstudio.github.io/learnr/) package. 
+
+For each exercise, enter R code in the box, then click **Run code** to see the result.
+Where you see a blank, `____`, replace this with some code.
+
+## Simple calculations
+
+The R console evaluates and prints any expression.
+
+### Exercise 
+
+Write the R code required to add two plus two:
+
+```{r two-plus-two, exercise=TRUE}
+
+```
+
+In the R or RStudio console, results of **expressions** are printed.
+But, when you assign a result (`<-`) to a name, that is **not** automatically printed.
+
+### Exercise: Circumference
+
+The circumference of a circle of radius $r$ is $2 \pi r$.
+Write an expression to find the area of a circle of radius = 3.
+[Hint: in R, the constant $\pi$ is `pi`]
+
+```{r circle, exercise=TRUE}
+
+```
+
+### Exercise: Assigning variables
+
+Write expressions to assign `3` to a variable `radius`,
+then calculate the `circumference` from that and print the resulting value.
+
+```{r circle-assign, exercise=TRUE, exercise.lines = 4}
+
+```
+
+Now write an expression to **assign and print** the area of a circle of radius 2
+to a variable `area`.  [Hint: surround the expression with `()`]
+
+```{r area-assign, exercise=TRUE}
+
+```
+
+
+## Vectors
+
+Vectors can be created in different ways: 
+
+* With a function like `seq()` that creates a sequence, e.g., `seq(1,5)` or `seq(10, 50, 10)`
+* `rep(x, times)` replicates the  `x` values `times` times
+* With the `c()` function that lists a series of numbers, separated by commas.
+
+### Exercise: Celcius -> Fahrenheight
+
+Here, create a vector of temperatures in $^o$C, and calculate a new variable `degreesF` in
+Fahrenheit. [Hint: F = (9/5)C + 32]
+
+```{r degrees, exercise=TRUE, exercise.blanks = "___+"}
+degreesC <- c(0, 5, 10, 20, 25, 30)
+degreesF <- ____
+degreesF
+```
+
+<!-- Now, write a **function** that calculates degrees Fahrenheit for a vector (`x`) of -->
+<!-- Celsius degrees. Run that function on the vector `seq(0, 30, by = 5)` -->
+
+<!-- ```{r degrees-function, exercise=TRUE, exercise.lines = 5} -->
+<!-- C2F <- function(x) { -->
+
+<!-- } -->
+<!-- ``` -->
+
+### Exercise: Plotting
+
+The plot function, `plot(x, y)` plots one vector against another. The option `type=`
+can take several values, `"p"` for points, `"l"` for lines, `"b"` for both points and lines, and more.
+Fill in the arguments for `plot()` and try several different values for `type`.
+
+```{r plot, exercise=TRUE}
+x <- 1:10
+y <- x + rnorm(10)
+plot(  )
+```
+
+See `help(plot)` for further information.  
+
+```{r plot-quiz}
+quiz(
+  question("What plot argument would you use to change the plotting symbol(s)?",
+    answer("cex"),
+    answer("pch", correct = TRUE),
+    answer("xlim"),
+    answer("asp")
+  )
+)
+```
+
+## Matrices
+
+`matrix(values, nrow, ncol)` reshapes the `values` to a matrix with `nrow` rows and `ncol` columns.
+Write code to create and print a matrix, `matA`, with 2 rows and 4 columns containing the values 1, 2, ..., 8.
+
+```{r matA, exercise=TRUE, exercise.lines = 4}
+
+```
+```{r matA-solution}
+(matA <- matrix(1:8, nrow = 2, ncol = 4))
+```
+
+
+An additional argument, `byrow`, if `TRUE` fills in the values by rows. Create `matB` with the same numbers, but with `1:4` in the first row.
+```{r matB, exercise=TRUE, exercise.lines = 4}
+
+```
+```{r matB-solution}
+(matB <- matrix(1:8, nrow = 2, ncol = 4, byrow = TRUE))
+```
+
+Modify the code below to print a matrix of **4 rows and 4 columns** containing the numbers
+`1:16`.
+
+```{r mat44, exercise=TRUE}
+matrix(1:4, nrow = 2, ncol = 2, byrow = TRUE)
+```
+```{r mat44-solution, exercise=TRUE}
+matrix(1:16, nrow = 4, ncol = 4, byrow = TRUE)
+```
+
+
+### row and column labels: `dimnames()`
+
+You can assign names for the dimensions and labels for the rows and columns using `dimnames()`.
+This takes a **list* of two elements. For the matrix `matA`, assign `sex = c("M", "F")`
+for the rows and `group = LETTERS[1:4]` to the columns.
+
+```{r dimnames, exercise=TRUE, exercise.lines=4, exercise.blanks = "___+"}
+matA <- matrix(1:8, nrow = 2, ncol = 4)
+dimnames(matA) <- list(sex = ____, group = ____)
+```
+
+
+```{r dimnames-solution}
+matA <- matrix(1:8, nrow = 2, ncol = 4)
+dimnames(matA) <- list(sex=c("M", "F"), group=LETTERS[1:4])
+matA
+```
+
+## Arrays
+
+Arrays can have two or more dimensions: rows, columns, layers, ...
+`array(values, dim)` reshapes the values into an array with the dimensions given in the
+vector `dim`. For example:
+
+```{r, echo=TRUE}
+array(8:1, dim = c(2, 2, 2))
+```
+
+### Exercise
+
+Create an array of 2 rows, 4 columns and 2 layers containing the numbers 1 to 16.
+
+```{r arrayA, exercise = TRUE, exercise.lines = 6}
+
+```
+```{r arrayA-solution}
+array(1:16, dim = c(2, 4, 2))
+```
+
+## Object structure: `str()`
+
+`str()` shows the structure of an R object. Check that you understand the output for matrices and arrays by calling it on the objects `matA` and `arrayA`.
+
+```{r str, exercise = TRUE, exercise.lines=9, exercise.blanks = "___+"}
+matA <- matrix(1:8, nrow = 2, ncol = 4)
+dimnames(matA) <- list(sex=c("M", "F"), group=LETTERS[1:4])
+____
+
+arrayA <- array(1:16, dim=c(2, 4, 2))
+dimnames(arrayA) <- list(sex = c("M", "F"),
+                         group = letters[1:4],
+                         time = c("Pre", "Post"))
+____
+```
+
+<!-- Load the dataset `UCBAdmissions` -->
+
+## Functions
+
+Write a function that adds any two numbers, `a` and `b` and then call it:
+
+```{r addfunction, exercise=TRUE, exercise.lines = 5}
+add <- function() {
+  
+}
+```
+
+```{r addfunction-solution}
+add <- function(a, b) {
+  a + b
+}
+
+add(5,3)
+add(1:5, 3)
+add(1:5, seq(10, 50, 10))
+```
+
+Write a function that takes a vector `x` and returns $x^2$. Call it for `x = 1:5`.
+
+```{r sqfunction, exercise=TRUE, exercise.lines = 5}
+square <- function() {
+  
+}
+```
+```{r sqfunction-solution}
+square <- function(x) {
+  x^2
+}
+
+square(1:5)
+```
+
+### Exercise: Logistic distribution
+
+We'll make a lot of use of the **logistic distribution** in the course. These are defined in the
+`stats` package, with functions `dlogis()`, `plogis()`,`qlogis()`, and `rlogis()`. Read the
+`help(Logistic)`.
+
+```{r logis-quiz}
+quiz(
+  question("Which function transforms a probabilities, `p`, into logistic quantiles?",
+    answer("dlogis"),
+    answer("plogis", correct = TRUE),
+    answer("qlogis"),
+    answer("rlogis")
+  ),
+  question("Which function transforms logistic quantiles, `q`, into probabilities?",
+    answer("dlogis"),
+    answer("plogis"),
+    answer("qlogis", correct = TRUE),
+    answer("rlogis")
+  )
+)
+```
+
+Run the following functions and see what happens. Why do you get `Inf` ?
+```{r logis-gen, exercise=TRUE}
+qlogis(seq(0, 1, by = 0.2))
+```
+
+
+<!-- ## Topic 2 -->
+
+<!-- ### Exercise with Hint -->
+
+<!-- *Here's an exercise where the chunk is pre-evaluated via the `exercise.eval` option (so the user can see the default output we'd like them to customize). We also add a "hint" to the correct solution via the chunk immediate below labeled `print-limit-hint`.* -->
+
+<!-- Modify the following code to limit the number of rows printed to 5: -->
+
+<!-- ```{r print-limit, exercise=TRUE, exercise.eval=TRUE} -->
+<!-- mtcars -->
+<!-- ``` -->
+
+<!-- ```{r print-limit-hint} -->
+<!-- head(mtcars) -->
+<!-- ``` -->
+
+
+<!-- ### Quiz -->
+
+<!-- Some questions to verify that you understand the purposes of various base and recommended R packages: -->
+
+<!-- ```{r quiz} -->
+<!-- quiz( -->
+<!--   question("Which package contains functions for installing other R packages?", -->
+<!--     answer("base"), -->
+<!--     answer("tools"), -->
+<!--     answer("utils", correct = TRUE), -->
+<!--     answer("codetools") -->
+<!--   ), -->
+<!--   question("Which of the R packages listed below are used to create plots?", -->
+<!--     answer("lattice", correct = TRUE), -->
+<!--     answer("tools"), -->
+<!--     answer("stats"), -->
+<!--     answer("ggplot2", correct = TRUE) -->
+<!--   ) -->
+<!-- ) -->
+<!-- ``` -->
+

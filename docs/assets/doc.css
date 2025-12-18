@@ -1,0 +1,6 @@
+H1 { text-align: center; }
+H1, H2, H3 { font-family: Arial, Helvetica, sans-serif; }
+BODY { background: white; font-family: Arial, Helvetica, sans-serif;}
+PRE, CODE, TT { color: red; font-family: SAS Monospace, courier, monospace;}
+DD { font-family: Arial, Helvetica, sans-serif; }
+TD { font-family: Arial, Helvetica, sans-serif; }

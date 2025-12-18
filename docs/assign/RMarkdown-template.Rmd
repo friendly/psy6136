@@ -1,0 +1,123 @@
+---
+title: "Document Title"
+author: "Your Name"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    toc: true
+    toc_depth: 2
+  word_document: default
+---
+
+<!-- if you include more than one output format, you'll be offered a choice
+     when you knit the document.  To avoid this, remove one format from
+     the header.
+     These lines are a markdown comment, as in HTML.  They are ignored.
+-->
+
+```{r knitr-options, echo=FALSE}
+# include this code chunk to set other knitr options
+# note: these options express my preferences, which may differ from yours!
+#    Comment out or change options as you like
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE,
+  fig.height = 5,    # set the default height/width for figures
+  fig.width = 5)
+
+# R global options
+options(digits=4) # set default # of digits in output
+```
+
+```{r load-packages, echo=FALSE}
+library(vcdExtra)   # Load additional packages here 
+library(ggplot2)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML,
+ PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+You should get the [R Markdown cheatsheet](http://www.rstudio.com/resources/cheatsheets).
+
+You can get something like this from RStudio, via the menu options **File -> New File -> R Markdown ...**,
+then choose **Document**.  This template adds some additional stuff in the default header,
+and sets some knitr options that I find useful.  If you use this, simply delete everything
+from this section title to the end!
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. 
+
+## Text
+
+Text can be decorated with **bold** or *italics*, or even ~~crossed-out~~.  It is also possible to 
+
+* create [links](http://rmarkdown.rstudio.com/) 
+* include mathematics like $e=mc^2$ or a display equation,
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2$$
+
+Be sure to put a space after the * when you are creating bullets and a space after # when 
+creating section headers, but **not** between $ and the mathematical formulas.
+
+Numbered lists:
+
+1. First item
+2. second item
+
+Definition lists, sometime useful:
+
+foo
+: Something arbitrary I want to to talk about
+
+bar
+: foo's partner, another highlighted topic
+
+
+## Inline R code
+
+Did you know that the `mtcars` data set has
+`r nrow(mtcars)` observations and `r ncol(mtcars)` variables?
+Here, I used backticks (\` \`) around "mtcars" to have it appear as verbatim code, `mtcars`.
+
+## Graphics
+
+If the code of an R chunk produces a plot, this plot will be displayed in the resulting file.
+```{r plot-mpg, fig.height=5, fig.width=5}
+plot(mpg ~ disp, data=mtcars, 
+     pch=16, 
+     xlab="Engine displacement",
+     ylab="Gas mileage (mpg)")
+```
+
+
+You can control the size of figures using chunk options, `fig.width`, `fig.height`.
+There are different ways to show several figures side-by-side. Here, I
+used `fig.show="hold"` and `out.width="49%"` to size them to fit side-by-side.
+
+```{r two-plots, fig.height=4, fig.width=4, out.width="49%", fig.show="hold"}
+plot(1:10)
+plot(10:1)
+```
+
+
+### Subsection title
+
+* Intersperse R code chunks with explanatory text as needed.
+
+* Press the `Knit` button in the toolbar to process the `.Rmd` file into an `.html` (or `.pdf` or `.docx`) file.
+
+* For more information on using R Markdown in RStudio press the ? button in the toolbar or visit <http://rmarkdown.rstudio.com/>.
+
+### Documenting file creation 
+
+It's sometimes useful to record some information about how your file was created.  You don't need to use
+this unless it is important.
+
+  * File creation date: `r Sys.Date()`
+  * Using `r R.version.string`
+  * R version (short form): `r getRversion()`
+  * `vcdExtra` package version: `r packageVersion("vcdExtra")`
+  * Additional session information
+  
+```{r echo=FALSE}
+sessionInfo()  # could use devtools::session_info() if you prefer that
+```

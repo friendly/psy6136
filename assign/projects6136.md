@@ -40,6 +40,8 @@ in other ways might be quite useful.  For example, you might extend the vignette
 develop a scheme to classify the many datasets according to the types of methods (ordered factors, square tables, ...)
 the illustrate, and so forth.
 
+There are some notes on this topic at [Extending Categorical Data Analysis](https://github.com/friendly/vcdExtra/blob/master/issues/vcd-extensions.html)
+
 
 ## Interactive apps
 
