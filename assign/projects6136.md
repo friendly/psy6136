@@ -1,27 +1,33 @@
 # 6136 Individual or Team Projects
 
-This year, I'm placing more weight on a final project for the course, an opportunity to show off what you have learned.
+This year, I'm placing more weight on a final project for the course, an opportunity to show off what you have learned,
+or something that would be useful to others, or contribute to the **use, usability or application** of methods for
+categorical data analysis.
 
-Here is a sketch of a few ideas. Feel free to propose something other, with enough detail to give me a sense of your scope & purpose.
+Here is a sketch of a few ideas. Feel free to propose something other, with enough detail to give me a sense of your scope & purpose. 
+Please speak to me or, better yet, send me an email by the end of Reading Week with a brief sketch of what you want to do.
 
 You can work on one of these individually or with one partner. I would expect something more substantial for a team project than an individual one. 
 
+**Use of AI**: I haven't quite decided on a policy for this, but will do so shortly. However, I will require you to cite as sources any assistance
+you obtained from AI agents.
+
 ## Recent developments in Categorical Data Analysis
 
-Compile a list of recent research papers illustrating interesting applications, 
+Compile an overview of recent research papers illustrating interesting applications, 
 modelling developments, graphical methods, ... of categorical data analysis,
 attempting to go beyond what is covered in the course or my book.
 
 Each should have a bibliographical citation, brief description, why it is
 interesting or novel. Perhaps with subject / content / method tags or
-categories.
+categories. Or maybe organized by themes.
 
 It could also be in the form of a methods review paper, with the title of
 this section, and sufficient text description to give an overview of this
 topic. Taking it further, something like this might be publishable, or
 certainly a nice blog post.
 
-## Tidy CDA / Extending vcdExtra
+## Tidy CDA <img src="https://github.com/friendly/vcdExtra/blob/master/vignettes/fig/tidyCat-logo.png" height=80>
 
 Categorical data simple for some purposes, but notoriously "untidy" --
 `table()`, `matrix()`, `array()`, `xtabs()`, ... and many functions for analysis
@@ -35,12 +41,23 @@ A tidy CDA project might propose, test and implement some extensions to
 the [vcdExtra package](https://github.com/friendly/vcdExtra), designed to reduce these problems.
 There is a sketch of some aspects of this in the vignette [tidyCat: Tidy Methods For Categorical Data Analysis](https://friendly.github.io/vcdExtra/articles/tidyCats.html).
 
+### Extending `vcdExtra` and Categorical Data Analysis
 More generally, a project to work on developing the [vcdExtra package](https://github.com/friendly/vcdExtra)
 in other ways might be quite useful.  For example, you might extend the vignettes,
 develop a scheme to classify the many datasets according to the types of methods (ordered factors, square tables, ...)
 the illustrate, and so forth.
 
-There are some notes on this topic at [Extending Categorical Data Analysis](https://github.com/friendly/vcdExtra/blob/master/issues/vcd-extensions.html)
+One way to think about this is: What analysis/graphics steps were hard for me, that I could make easier for others by writing a tutorial
+or developing new R functions?
+
+There are some notes on this topic at [Extending Categorical Data Analysis](https://github.com/friendly/vcdExtra/blob/master/issues/vcd-extensions.html).
+These include:
+
+* Creating a [CRAN task view](https://cran.r-project.org/web/views/) for Categorical Data Analysis. These help the R community to find the packages related to different aspects of a topic, e.g., [CRAN Task View: Probability Distributions](https://cran.r-project.org/web/views/Distributions.html),
+[Psychometric Models and Methods](https://cran.r-project.org/web/views/Psychometrics.html), and so forth.
+
+* `vcd` and `vcdExtra` documentation. A big part of developing software is to provide sufficient documentation, examples, tutorials, etc. to allow people to actually **use** what you've developed. It's what I've tried to do for all my packages. I describe some ways you could contribute to the effort 
+in [Extending Categorical Data Analysis](https://github.com/friendly/vcdExtra/blob/master/issues/vcd-extensions.html)
 
 
 ## Interactive apps
@@ -62,6 +79,7 @@ There are a couple of simple ones for [categorical data](https://sites.psu.edu/s
 
 There is a wide range of other areas in which categorical data arises, but are not treated
 directly in this course. Choose one or more and write a paper describing and illustrating them.
+Perhaps in the form of a tutorial? But that's up to you.
 
 ### Latent class analysis
 LCA is a statistical method for finding subtypes of related cases ("latent classes") from
@@ -89,6 +107,7 @@ analysis. This might use the `igraph` and `ggraph` packages to draw network diag
 with model fitting functions. A sketch of one beginning is given in [dayton-assoc-graph.R](dayton-assoc-graph.R);
 output in [dayton-assoc-graph.html](dayton-assoc-graph.html)
 
+<!--
 ## A consulting problem
 
 Sean Rehag is director of the Center for Refugee Studies at Osgood Hall. He is currently
@@ -100,6 +119,7 @@ whether / not the stay request was granted.  An immediate goal is to help develo
 predicting the outcome.  There is a lot more meat in this project.
 
 I will make the data and other documents available on request.
+-->
 
 ## Sequential analysis
 
