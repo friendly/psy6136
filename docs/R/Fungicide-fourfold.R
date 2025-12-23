@@ -22,7 +22,7 @@ str(Fungicide)
 Fungicide <- Fungicide[2:1, , , ]
 
 
-ftable(sex + strain ~ outcome + group, data=Fungicide)
+ftable(sex + strain ~ group + outcome, data=Fungicide)
 
 fourfold(Fungicide, p_adjust_method="none")
 
