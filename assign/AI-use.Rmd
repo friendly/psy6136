@@ -1,0 +1,86 @@
+---
+title: "Use of Artificial Intelligence Tools in Psy 6136"
+output:
+  html_document:
+    css: ../assets/styles.css
+---
+
+## Overview
+
+As statistical computing and R programming are increasingly supported by AI-assisted tools, this course permits limited use of generative AI (such as ChatGPT, Claude, GitHub Copilot, or similar tools) with the following guidelines:
+
+## Permitted Uses (with mandatory disclosure)
+
+You may use AI tools to assist with **R programming and statistical computing tasks**, including:
+
+- Debugging R code and identifying syntax errors
+- Finding solutions to specific programming problems
+- Understanding R package documentation and function usage
+- Generating code snippets for data manipulation or visualization
+- Troubleshooting error messages
+
+To be clear: one goal of this course is to teach you **how to use R tools** to carry out statistical analyses of categorical data,
+with well-designed output and graphics for publishable reports. You can't do this if you simply ask an AI agent to answer a question
+for you.
+
+It is also important that you:
+
+* **Understand any code** produced by AI, so that you would be able to do something similar youself without any assistance. That might mean looking up the documentation for functions used and understanding the arguments that control the output.
+
+* **Be able to verify** that an AI-assisted result actually works and is correct for the problem at hand. AI often refers to packages that don't or no longer exist, or writes truly ugly code, or gives solutions that don't quite answer the question given.
+
+### Disclosure Requirement
+
+When you use AI for coding assistance, you must include a brief statement in your submission indicating:
+
+1. Which AI tool(s) you used (e.g., ChatGPT-4, GitHub Copilot)
+2. What specific problems or tasks you used it for
+3. How you verified the AI-generated code was correct
+
+### Example Disclosure Format
+
+> *AI Disclosure: I used ChatGPT to help debug an error in my ggplot2 code for Figure 2 and to understand how to reshape data using tidyr. I tested all generated code with my own data and verified the output.*
+
+## Prohibited Uses
+
+You may **NOT** use AI tools to:
+
+- Write, draft, or substantially generate the text of your reports, interpretations, or conclusions
+- Generate complete data analysis narratives or research summaries
+- Write interpretations of statistical results
+- Create your discussion of findings or implications
+- Draft answers to conceptual or theoretical questions
+
+### Rationale
+
+The primary learning objectives of this course include developing your ability to interpret statistical analyses, communicate findings clearly, and think critically about categorical data. These skills can only be developed through your own writing and reasoning. While AI can assist with the mechanics of coding, it cannot replace the development of your statistical reasoning and scientific communication skills.
+
+## Academic Integrity
+
+- All submitted work must represent your own understanding, regardless of whether AI was used for coding assistance
+- You are responsible for all code and analyses you submit, even if portions were AI-assisted
+- Using AI in prohibited ways or failing to disclose AI use as required constitutes a violation of academic integrity
+- **When in doubt about whether a particular use is appropriate, ask before submitting**
+
+## Additional Guidance
+
+### Verifying AI-Generated Code
+
+When using AI assistance for coding:
+
+1. Always test AI-generated code with your own data
+2. Verify that the statistical methods are appropriate for your analysis
+3. Understand what each line of code does - do not include code you cannot explain
+4. Check that the output makes sense given your data and research question
+
+### Why These Restrictions?
+
+Research has shown that AI tools can sometimes produce incorrect statistical analyses or interpretations. As developing statisticians, you need to build the critical thinking skills to evaluate whether code and analyses are correct. This is only possible if you engage deeply with the material yourself.
+
+---
+
+*This policy may be updated during the term. Any changes will be announced in class and posted to the course website.*
+
+```{r echo=FALSE}
+cat("Last updated:", format(Sys.Date(), "%B %d, %Y"))
+```

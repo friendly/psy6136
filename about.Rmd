@@ -117,6 +117,8 @@ Here is a [template for a markdown .Rmd file](assign/RMarkdown-template.Rmd)
 you can use if you are working in RStudio and want to
 write in R markdown.
 
+**AI Usage Policy**: Students may use AI tools for R programming assistance with proper disclosure. See the [AI Usage Guidelines](assign/AI-use.html) for complete details on permitted and prohibited uses.
+
 **The details of these projects** will likely be revised! The links show what they were in the previous version of this course.
 
 1. [Project 1](assign/project1.pdf):
