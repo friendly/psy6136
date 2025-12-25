@@ -1,0 +1,198 @@
+---
+title: "Quiz: Logistic Regression 📊"
+output:
+  html_document:
+    css:
+      - ../assets/styles.css
+      - ../assets/quiz.css
+    self_contained: true
+---
+
+Test your knowledge of the material on [logistic regression](../lectures/06-Logistic.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance. When you've answered all the questions, click on the Submit Quiz button
+to see how you've done, and perhaps get pointers to things you should review.
+
+<div class="quiz-container">
+
+<form id="quizForm">
+
+<div class="question" id="q1">
+<h3>1. Logistic regression is used when the response variable is:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a) Continuous and normally distributed</label></div>
+<div class="option"><input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b) Binary (0/1, success/failure, yes/no)</label></div>
+<div class="option"><input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c) Count data following a Poisson distribution</label></div>
+<div class="option"><input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">d) Categorical with more than two unordered categories</label></div>
+</div>
+<div class="explanation" id="exp1"></div>
+</div>
+
+<div class="question" id="q2">
+<h3>2. What is the main problem with using ordinary least squares (OLS) regression for a binary response?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a) OLS cannot handle categorical predictors</label></div>
+<div class="option"><input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b) OLS predictions can fall outside the [0, 1] range and violates homogeneity of variance</label></div>
+<div class="option"><input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c) OLS is too computationally intensive for binary data</label></div>
+<div class="option"><input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">d) OLS requires a larger sample size than logistic regression</label></div>
+</div>
+<div class="explanation" id="exp2"></div>
+</div>
+
+<div class="question" id="q3">
+<h3>3. The logit link function in logistic regression is defined as:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a) logit(π) = π / (1 - π)</label></div>
+<div class="option"><input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b) logit(π) = log[π / (1 - π)]</label></div>
+<div class="option"><input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c) logit(π) = 1 / (1 + exp(-π))</label></div>
+<div class="option"><input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">d) logit(π) = exp(π)</label></div>
+</div>
+<div class="explanation" id="exp3"></div>
+</div>
+
+<div class="question" id="q4">
+<h3>4. In a logistic regression model, the coefficient β for a predictor represents:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">a) The change in probability for a unit increase in the predictor</label></div>
+<div class="option"><input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">b) The change in log odds for a unit increase in the predictor</label></div>
+<div class="option"><input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">c) The odds ratio for the predictor</label></div>
+<div class="option"><input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">d) The correlation between the predictor and response</label></div>
+</div>
+<div class="explanation" id="exp4"></div>
+</div>
+
+<div class="question" id="q5">
+<h3>5. If a logistic regression coefficient is β = 0.5, the odds ratio (multiplicative effect on odds) is:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">a) 0.5</label></div>
+<div class="option"><input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">b) 1.5</label></div>
+<div class="option"><input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">c) exp(0.5) ≈ 1.65</label></div>
+<div class="option"><input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">d) log(0.5) ≈ -0.69</label></div>
+</div>
+<div class="explanation" id="exp5"></div>
+</div>
+
+<div class="question" id="q6">
+<h3>6. In R, how do you fit a logistic regression model for a binary response variable <code>outcome</code> with predictors <code>age</code> and <code>sex</code>?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q6" value="a" id="q6a"> <label for="q6a">a) <code>lm(outcome ~ age + sex)</code></label></div>
+<div class="option"><input type="radio" name="q6" value="b" id="q6b"> <label for="q6b">b) <code>glm(outcome ~ age + sex, family = binomial)</code></label></div>
+<div class="option"><input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c) <code>loglm(outcome ~ age + sex)</code></label></div>
+<div class="option"><input type="radio" name="q6" value="d" id="q6d"> <label for="q6d">d) <code>logit(outcome ~ age + sex)</code></label></div>
+</div>
+<div class="explanation" id="exp6"></div>
+</div>
+
+<div class="question" id="q7">
+<h3>7. Logistic regression models are typically fit using:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q7" value="a" id="q7a"> <label for="q7a">a) Ordinary least squares (OLS)</label></div>
+<div class="option"><input type="radio" name="q7" value="b" id="q7b"> <label for="q7b">b) Maximum likelihood estimation (MLE)</label></div>
+<div class="option"><input type="radio" name="q7" value="c" id="q7c"> <label for="q7c">c) Weighted least squares (WLS)</label></div>
+<div class="option"><input type="radio" name="q7" value="d" id="q7d"> <label for="q7d">d) Bayesian estimation with non-informative priors</label></div>
+</div>
+<div class="explanation" id="exp7"></div>
+</div>
+
+<div class="question" id="q8">
+<h3>8. In logistic regression, hypothesis tests for individual coefficients typically use:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q8" value="a" id="q8a"> <label for="q8a">a) F-tests</label></div>
+<div class="option"><input type="radio" name="q8" value="b" id="q8b"> <label for="q8b">b) Wald z-tests or χ² tests</label></div>
+<div class="option"><input type="radio" name="q8" value="c" id="q8c"> <label for="q8c">c) t-tests</label></div>
+<div class="option"><input type="radio" name="q8" value="d" id="q8d"> <label for="q8d">d) ANOVA F-tests</label></div>
+</div>
+<div class="explanation" id="exp8"></div>
+</div>
+
+<div class="question" id="q9">
+<h3>9. Effect plots from the <code>effects</code> package display predicted effects:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q9" value="a" id="q9a"> <label for="q9a">a) For each predictor separately, ignoring all other predictors</label></div>
+<div class="option"><input type="radio" name="q9" value="b" id="q9b"> <label for="q9b">b) For high-order terms in the model, averaged over (controlling for) other predictors</label></div>
+<div class="option"><input type="radio" name="q9" value="c" id="q9c"> <label for="q9c">c) Only for the intercept term</label></div>
+<div class="option"><input type="radio" name="q9" value="d" id="q9d"> <label for="q9d">d) Only for interaction terms</label></div>
+</div>
+<div class="explanation" id="exp9"></div>
+</div>
+
+<div class="question" id="q10">
+<h3>10. In model diagnostics for logistic regression, an influential observation is characterized by:</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q10" value="a" id="q10a"> <label for="q10a">a) High leverage only (unusual predictor values)</label></div>
+<div class="option"><input type="radio" name="q10" value="b" id="q10b"> <label for="q10b">b) Large residual only (poor fit)</label></div>
+<div class="option"><input type="radio" name="q10" value="c" id="q10c"> <label for="q10c">c) Both high leverage and large residual (unusual in X and Y)</label></div>
+<div class="option"><input type="radio" name="q10" value="d" id="q10d"> <label for="q10d">d) Small Cook's D statistic</label></div>
+</div>
+<div class="explanation" id="exp10"></div>
+</div>
+
+<button type="button" class="submit-btn" onclick="gradeQuiz()">Submit Quiz</button>
+<button type="button" class="reset-btn" onclick="resetQuiz()">Reset Quiz</button>
+
+</form>
+
+<div class="score-summary" id="scoreSummary"></div>
+
+</div>
+
+<script>
+// Correct answers
+const answers = {
+  q1: 'b',
+  q2: 'b',
+  q3: 'b',
+  q4: 'b',
+  q5: 'c',
+  q6: 'b',
+  q7: 'b',
+  q8: 'b',
+  q9: 'b',
+  q10: 'c'
+};
+
+// Explanations for each question
+const explanations = {
+  q1: {
+    correct: "Logistic regression is specifically designed for binary response variables (0/1, success/failure, yes/no). It models the probability that Y = 1 using the logistic function, which ensures predictions stay within [0, 1].",
+    incorrect: "Logistic regression is used for binary response variables, not continuous, count, or unordered polytomous responses. For continuous responses, use linear regression; for count data, use Poisson or negative binomial regression; for polytomous responses, use multinomial or ordinal logistic regression."
+  },
+  q2: {
+    correct: "OLS has two main problems with binary responses: (1) predicted values can fall outside the valid probability range of [0, 1], and (2) the variance is not constant—it equals π(1-π), which varies with the fitted values. This violates the homogeneity of variance assumption and makes hypothesis tests invalid.",
+    incorrect: "The main problems with OLS for binary data are that predictions can exceed [0, 1] and variance is non-constant (heteroscedastic), depending on π. OLS can handle categorical predictors using dummy variables, doesn't require more data, and isn't more computationally intensive than logistic regression."
+  },
+  q3: {
+    correct: "The logit link function is logit(π) = log[π/(1-π)], the natural logarithm of the odds. This transforms probabilities from the (0, 1) range to (-∞, +∞), allowing us to use a linear model. The inverse transformation π = 1/(1 + exp(-logit)) maps back to probabilities.",
+    incorrect: "The logit is the log of the odds: logit(π) = log[π/(1-π)]. Don't confuse this with the odds itself π/(1-π), the inverse logit 1/(1 + exp(-x)), or the exponential function. The logit transformation is fundamental to logistic regression."
+  },
+  q4: {
+    correct: "In logistic regression, the model is linear on the log-odds (logit) scale: logit(π) = α + βx. Therefore, β represents the change in log odds of Y = 1 for a one-unit increase in x. To get the effect on odds, exponentiate: odds multiply by e<sup>β</sup>.",
+    incorrect: "The coefficient β represents the change in log odds, not the change in probability (which varies depending on the baseline probability), not the odds ratio itself (that's e<sup>β</sup>), and not a correlation coefficient. Remember: logistic regression is linear in log odds."
+  },
+  q5: {
+    correct: "To convert a log odds coefficient to an odds ratio (the multiplicative effect on odds), exponentiate: e<sup>0.5</sup> ≈ 1.65. This means the odds of Y = 1 are multiplied by 1.65 (a 65% increase) for each unit increase in the predictor.",
+    incorrect: "The odds ratio is exp(β) = exp(0.5) ≈ 1.65, not β itself (0.5), β + 1 (1.5), or log(β). Remember to exponentiate coefficients to get odds ratios. In R, use exp(coef(model)) to obtain odds ratios from fitted coefficients."
+  },
+  q6: {
+    correct: "Use glm() with family = binomial to fit logistic regression: glm(outcome ~ age + sex, family = binomial). The 'binomial' family uses the logit link by default. You can also specify family = binomial(link = \"logit\") explicitly.",
+    incorrect: "Use glm() with family = binomial for logistic regression, not lm() (ordinary linear regression), loglm() (loglinear models for contingency tables), or logit() (not a standard R function). The family argument specifies the distribution and link function."
+  },
+  q7: {
+    correct: "Logistic regression uses maximum likelihood estimation (MLE), which finds parameter values that maximize the probability of observing the data. This is solved iteratively because there's no closed-form solution. MLE has better statistical properties than OLS for binary data.",
+    incorrect: "Logistic regression uses maximum likelihood estimation (MLE), not ordinary least squares (OLS). OLS minimizes sum of squared errors and is used for linear regression with normally distributed errors. Weighted least squares and Bayesian methods are alternatives but not the standard approach."
+  },
+  q8: {
+    correct: "Individual coefficients in logistic regression are tested using Wald z-tests (coefficient divided by its standard error) or equivalently χ² tests (z² follows a chi-square distribution with 1 df). The summary() output shows z values and p-values for each coefficient.",
+    incorrect: "Logistic regression uses Wald z-tests or χ² tests for individual coefficients, not F-tests or t-tests (which are used in ordinary linear regression/ANOVA). The test statistic is z = β̂/SE(β̂), which follows approximately a standard normal distribution under H₀."
+  },
+  q9: {
+    correct: "Effect plots show predicted effects for high-order terms (main effects, interactions) in the model, with other predictors held at typical values (means for continuous, proportions for factors). This allows you to visualize each term's effect while controlling for others.",
+    incorrect: "Effect plots from the effects package show high-order model terms averaged over other predictors, not ignoring them. They control for other predictors by fixing them at typical values. This differs from conditional plots, which subset the data, or simple marginal plots."
+  },
+  q10: {
+    correct: "Influential observations have both high leverage (unusual predictor values, far from X̄) AND large residuals (poor fit, Y far from ŷ). The heuristic formula is Influence ≈ Leverage × Residual². Cook's D measures this combined effect. High leverage alone or large residual alone is less problematic.",
+    incorrect: "Influential observations require BOTH high leverage and large residuals. High leverage alone (unusual X but well-fitted) or large residual alone (typical X but poorly fitted) have limited influence. Cook's D combines both factors—large Cook's D (not small) indicates high influence."
+  }
+};
+</script>
+
+<script src="../assets/quiz.js"></script>

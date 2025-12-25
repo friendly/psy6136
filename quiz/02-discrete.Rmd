@@ -1,0 +1,110 @@
+---
+title: "Quiz 1: Discrete Distributions 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [discrete distributions](../lectures/02-Discrete.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. What are the assumptions necessary for a variable to be distributed as a binomial distribution?**
+
+`r longmcq(c("The variable must be binary", 
+             "The variable must be discrete", 
+             "The variable must have a fixed number of trials", 
+             answer = "All of the above"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+A binomial distribution requires ALL of these assumptions: the variable must be binary (success/failure), discrete (counts), and have a fixed number of trials, along with independent trials and constant probability.
+</div>
+
+**2. How does the skewness of a binomial variable relate to its parameters *n* and *p*?**
+
+`r longmcq(c("Skewness = n p", 
+             "Skewness = n/p", 
+             answer = "Skewness = p (1-p) / n", 
+             "Skewness = p^2 / n"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The skewness of a binomial distribution is approximately p(1-p)/n. This shows that skewness decreases as n increases, and is minimized when p=0.5 (symmetric distribution).
+</div>
+
+**3. When would you use a negative binomial distribution over a Poisson distribution?**
+
+`r longmcq(c("When the number of trials is fixed",
+             answer = "When the variance exceeds the mean",
+             "When there are negative counts in the data",
+             "When the parameter p differs substantially from 0.5"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The key difference is overdispersion: use negative binomial when variance > mean. The Poisson distribution assumes mean = variance, which is often violated in real count data.
+</div>
+
+**4. How does the mean and variance of a Poisson distribution relate to its parameter λ?**
+
+`r longmcq(c(answer = "Mean = λ, Variance = λ",
+             "Mean = 1/λ, Variance = 1/λ^2",
+             "Mean = 1/λ, Variance = λ",
+             "Mean = λ, Variance = λ^2"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+For the Poisson distribution, both the mean and variance equal the parameter λ. This equidispersion property (mean = variance) is a key characteristic of the Poisson distribution.
+</div>
+
+**5. Which example is most likely to follow a log-series distribution?**
+
+`r longmcq(c("Number of accidents at a busy intersection",
+             answer = "Counts of occurrences of distinct words in the books written by Jane Austen",
+             "Number of births of males in Canadian families composed of 6 children",
+             "Number of tosses of a coin required to get the first head"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The log-series distribution is best for highly skewed count data where there are many low-frequency events and few high-frequency events, such as word frequencies in text (following Zipf's law). Option (a) would be Poisson, (c) would be binomial, and (d) would be geometric.
+</div>
+
+**6. Which of the following characterize the negative binomial distribution and the geometric distribution?**
+
+`r longmcq(c("The negative binomial distribution models the number of failures before a specified number of successes",
+             "The geometric distribution models the number of failures before the first success",
+             answer = "Both A and B",
+             "Neither A nor B"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Both statements are correct. The negative binomial distribution counts failures before achieving r successes, and the geometric distribution is the special case where r=1, counting failures before the first success.
+</div>
+
+**7. In what type of data might you use a negative binomial distribution?**
+
+`r longmcq(c(answer = "Count data",
+             "Binary data",
+             "Continuous data",
+             "Both A and B"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The negative binomial distribution is used for count data (non-negative integers), particularly when the data show overdispersion. It is not appropriate for binary data (that would be binomial or Bernoulli) or continuous data.
+</div>
+
+**8. What is the mean and variance of a variable distributed as a geometric distribution?**
+
+`r longmcq(c("Mean = λ, Variance = λ",
+             "Mean = 1/λ, Variance = 1/λ^2",
+             "Mean = 1/λ, Variance = λ",
+             answer = "Mean = λ, Variance = 1/λ^2"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+For the geometric distribution with parameter p, the mean is (1-p)/p and variance is (1-p)/p^2. Note: There are two parameterizations of the geometric; DDAR uses parameter p rather than λ. This question is problematic as noted in the original quiz.
+</div>

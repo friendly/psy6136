@@ -1,0 +1,111 @@
+---
+title: "Quiz 3: Two-way Tables 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [two-way tables](../lectures/03-Twoway1.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. What is the *best* way to test the significance of the association between two categorical variables in a two-way frequency table?**
+
+`r longmcq(c(answer = "Using a chi-square test",
+             "Using a t-test",
+             "Using a one-way ANOVA",
+             "Using a linear regression"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The chi-square test (either Pearson or likelihood ratio) is the standard test for assessing the statistical significance of association between two categorical variables in a two-way frequency table. T-tests, ANOVA, and linear regression are designed for continuous outcomes.
+</div>
+
+**2. What is the best measure used to quantify the *strength* of association between two categorical variables in a two-way frequency table?**
+
+`r longmcq(c("Chi-square test",
+             answer = "Cramer's V",
+             "Pearson's correlation coefficient",
+             "Odds ratio",
+             "None of the above"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Cramer's V is a measure of effect size that quantifies the strength of association between categorical variables, ranging from 0 (no association) to 1 (perfect association). The chi-square test only tests for significance, not strength. Pearson's correlation is for continuous variables, and odds ratios are typically used for 2×2 tables.
+</div>
+
+**3. What is the *null hypothesis* for a chi-square test of independence in a two-way frequency table?**
+
+`r longmcq(c(answer = "The two variables are independent",
+             "The two variables are dependent",
+             "The two variables are correlated",
+             "The two variables are not correlated"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The null hypothesis for a chi-square test of independence states that the two variables are independent (not associated). This means knowing the value of one variable provides no information about the other.
+</div>
+
+**4. What is the *alternative hypothesis* for a chi-square test for independence in a two-way frequency table?**
+
+`r longmcq(c("The two variables are independent",
+             answer = "The two variables are dependent",
+             "The two variables are uncorrelated",
+             "None of the above"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The alternative hypothesis is the complement of the null hypothesis. If the null is independence, then the alternative is that the two variables are dependent (associated).
+</div>
+
+**5. What are the assumptions for the validity of a chi-square test for independence in a two-way frequency table?**
+
+`r longmcq(c("The observations are independent and randomly sampled",
+             "The expected frequencies for each cell in the table are greater than 5",
+             "The variables are categorical",
+             answer = "All of the above"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+All three assumptions are necessary: (1) observations must be independent and randomly sampled, (2) expected frequencies should be ≥5 in each cell (to ensure validity of the chi-square approximation), and (3) the variables must be categorical.
+</div>
+
+**6. When interpreting the results of a chi-square test for independence in a two-way frequency table, what does a *p*-value of less than 0.05 indicate?**
+
+`r longmcq(c(answer = "There is evidence of association between the two variables",
+             "There is no evidence of association between the two variables",
+             "The variables are correlated",
+             "The variables are uncorrelated"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+A p-value less than 0.05 (the conventional significance level) provides evidence to reject the null hypothesis of independence, suggesting there is an association between the two variables.
+</div>
+
+**7. How do you interpret the *p*-value in a chi-squared test for independence in a two-way frequency table?**
+
+`r longmcq(c(answer = "A small p-value indicates evidence against the null hypothesis",
+             "A large p-value indicates evidence against the null hypothesis",
+             "A small p-value indicates evidence in favor of the null hypothesis",
+             "A large p-value indicates evidence in favor of the null hypothesis"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+A small p-value indicates that the observed data would be unlikely if the null hypothesis were true, thus providing evidence against the null hypothesis. Conversely, a large p-value suggests the data are consistent with the null hypothesis.
+</div>
+
+**8. When both variables are *ordered* in a two-way frequency table, the most focused test for association is:**
+
+`r longmcq(c("The Pearson chi-squared test",
+             "The Likelihood ratio chi-squared test",
+             "The CMH test for general association",
+             answer = "The CMH test for non-zero correlation"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The Cochran-Mantel-Haenszel (CMH) test for non-zero correlation takes advantage of the ordering in both variables and is more powerful than general association tests when both variables are ordinal. It tests for a linear trend in the association.
+</div>

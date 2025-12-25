@@ -1,0 +1,110 @@
+---
+title: "Quiz 4: Loglinear Models 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [loglinear models](../lectures/04-Loglin.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. What is a loglinear model for frequency tables in categorical data analysis?**
+
+`r longmcq(c("A linear regression model for categorical data",
+             "A logistic regression model for categorical data",
+             answer = "A statistical model for analyzing the relationship between categorical variables",
+             "A model for predicting binary outcomes from categorical predictors"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Loglinear models are statistical models that analyze relationships (associations) between categorical variables in frequency tables. They model the logarithm of expected cell frequencies as a linear function of the effects of the categorical variables and their interactions.
+</div>
+
+**2. How do you test for goodness of fit of a loglinear model for a two-way frequency table?**
+
+`r longmcq(c("By using a chi-squared test",
+             answer = "By using a likelihood ratio test",
+             "By using a Cochran-Mantel-Haenszel test",
+             "By using Cohen's kappa"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Goodness of fit for a loglinear model compares the fit of that model (like [A B][C]) to the saturated model [ABC] that fits perfectly. This is best described as a likelihood ratio test, although the test statistic has a chi-square distribution and can also be described as a 'chi-squared test'.
+</div>
+
+**3. What is the main difference between a `glm()` loglinear model and the chi-squared test for independence in two-way frequency tables?**
+
+`r longmcq(c(answer = "glm() models allow for different types of associations among variables while chi-squared test only tests for independence",
+             "glm() models allow for non-normal data while chi-squared tests do not",
+             "glm() models apply in small sample size while chi-squared tests require large sample size",
+             "glm() models allow for estimation of parameters for interactions among variables and also for non-normal data while chi-squared test only tests for independence"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+glm() models can accommodate allowing or avoiding any combinations of factors, similar to ANOVA designs. They can also handle special models for ordered factors. This flexibility allows modeling different types of associations, whereas the chi-square test only tests the null hypothesis of complete independence.
+</div>
+
+**4. How does a loglinear model differ from a logit model?**
+
+`r longmcq(c("Loglinear models are linear while logit models are non-linear",
+             answer = "Logit models handle only binary outcomes while loglinear models handle more than 2 outcomes",
+             "Loglinear models are used for continuous data while logit models are used for categorical data",
+             "Logit models estimate probabilities while loglinear models estimate frequencies"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Logit models are designed for binary (or categorical) response variables and model the probability of an outcome. Loglinear models treat all variables symmetrically and model the logarithm of expected frequencies in multi-way tables, handling any number of categorical variables without designating one as a response.
+</div>
+
+**5. What is the difference between a loglinear model fit by `loglm()` and one fit using `glm()`?**
+
+`r longmcq(c("loglm() requires large samples while glm() can be used for smaller samples",
+             answer = "loglm() only estimates fitted values while glm() estimates parameters",
+             "loglm() uses an iterative process while glm() provides an exact solution",
+             "loglm() gives the Pearson chi-square test while glm() gives the likelihood ratio test"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+loglm() from the MASS package primarily provides fitted values and goodness-of-fit statistics but doesn't directly estimate model parameters (coefficients). glm() estimates the actual regression coefficients (parameters) for each term in the model, allowing interpretation of effect sizes and significance tests for individual parameters.
+</div>
+
+**6. What are the advantages of a loglinear model fit using `glm()` over one fit using `loglm()`?**
+
+`r longmcq(c("glm() estimates parameters while loglm() estimates only fitted values",
+             "glm() can handle ordinal and quantitative predictors while loglm() cannot",
+             "glm() can accommodate over-dispersion while loglm() cannot",
+             answer = "All of the above"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+All three advantages are correct: glm() (a) provides parameter estimates with standard errors and significance tests, (b) can incorporate ordinal variables as linear/polynomial terms and quantitative predictors, and (c) can use quasi-Poisson or negative binomial families to handle over-dispersion. This makes glm() much more flexible than loglm().
+</div>
+
+**7. How can you extend a loglinear model for frequency tables to handle multi-way contingency tables?**
+
+`r longmcq(c(answer = "By adding association terms to the model",
+             "By fitting separate loglinear models for each combination of predictors",
+             "By using a multivariate linear regression model",
+             "By using a multinomial logistic regression model"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Multi-way contingency tables are modeled by adding higher-order association terms. For a three-way table with factors A, B, C, you can include two-way associations [AB], [AC], [BC] and even three-way associations [ABC]. The model formula specifies which associations to include.
+</div>
+
+**8. For a three-way frequency table, what is the interpretation of the model symbolized by `[A B] [A C]`?**
+
+`r longmcq(c("A and B are conditionally independent given C",
+             answer = "B and C are conditionally independent given A",
+             "A and B are mutually independent",
+             "The association between A and B is the same for all levels of C"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The model [A B][A C] includes the two-way associations A:B and A:C but not B:C. This means B and C are conditionally independent given A—there's no association between B and C after accounting for their relationships with A. The model allows A to be associated with both B and C.
+</div>

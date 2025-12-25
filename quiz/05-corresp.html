@@ -11,7 +11,7 @@
 
 
 
-<title>quiz2-twoway</title>
+<title>Quiz 5: Correspondence Analysis 📊</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -252,6 +252,111 @@ if (window.hljs) {
 
 
 
+<style type="text/css">:root {
+--incorrect: #983E82;
+--incorrect_alpha: #edaddd;
+--correct: #59935B;
+--correct_alpha: #c0edc2;
+--highlight: #467AAC;
+}
+.webex-check {}
+.webex-box {
+border: 2px solid var(--highlight);
+padding: 0.5em 0.25em;
+margin: 1em 0;
+border-radius: .25em;
+background-color: rgba(127, 127, 127, 0.05);
+}
+.webex-total_correct {
+margin-left: 1em;
+}
+.unchecked .webex-total_correct {
+display: none;
+}
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+border: 2px dotted grey !important;
+background-color: white !important;
+}
+
+.webex-select, input.webex-solveme,
+.unchecked .webex-radiogroup label.webex-incorrect,
+.unchecked .webex-radiogroup label.webex-correct{
+border: 2px dotted grey;
+background-color: white;
+border-radius: 0.25em;
+}
+.webex-incorrect,
+input.webex-solveme.webex-incorrect,
+.webex-radiogroup label.webex-incorrect {
+border: 2px dotted var(--incorrect);
+background-color: var(--incorrect_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.webex-correct,
+input.webex-solveme.webex-correct,
+.webex-radiogroup label.webex-correct {
+border: 2px solid var(--correct);
+background-color: var(--correct_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.unchecked .webex-incorrect span::before,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct span::before,
+.unchecked .webex-correct + .webex-icon::after {
+content: " ";
+}
+.webex-incorrect span::before,
+.webex-incorrect + .webex-icon::after {
+content: "\274C ";
+}
+.webex-correct span::before,
+.webex-correct + .webex-icon::after {
+content: "\2705 ";
+}
+
+.webex-solution {
+height: 2.5em;
+overflow-y: hidden;
+padding: 0.5em;
+margin-bottom: 10px;
+}
+.webex-solution.open {
+height: auto;
+border: 2px solid var(--highlight);
+border-radius: 5px;
+}
+.webex-solution button, .webex-check-button {
+height: 2em;
+margin-bottom: 0.5em;
+border-radius: 0.5em;
+background-color: var(--highlight);
+color: white;
+padding: 0 0.5em;
+}
+.webex-solution pre.sourceCode {
+border-color: var(--correct);
+}
+.webex-radiogroup label {
+margin-left: 2em;
+text-indent: -1em;
+padding-left: 0.5em;
+font-weight: 400;
+display: block;
+border: 2px solid rgba(255, 255, 255, 0);
+background-color: inherit;
+border-radius: 0.25em;
+}
+.webex-radiogroup label input {
+position: relative;
+left: -1em;
+}
+.webex-radiogroup {
+margin: 1em 0;
+}
+</style>
 
 
 
@@ -348,109 +453,440 @@ display: none;
 
 
 
+<h1 class="title toc-ignore">Quiz 5: Correspondence Analysis 📊</h1>
 
 </div>
 
 
-<div id="quiz-2-two-way-tables" class="section level1">
-<h1>Quiz 2: Two-way Tables</h1>
-<p>Test your knowledge of the material on <a href="../lectures/03-Twoway1.pdf">two-way tables</a> in the following
-quiz.</p>
-<ol style="list-style-type: decimal">
-<li><strong>What is the <em>best</em> way to test the significance of
-the association between two categorical variables in a two-way frequency
-table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Using a chi-square test</li>
-<li>Using a t-test</li>
-<li>Using a one-way ANOVA</li>
-<li>Using a linear regression</li>
-</ol>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>What is the best measure used to quantify the
-<em>strength</em> of association between two categorical variables in a
-two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Chi-square test</li>
-<li>Cramer’s <em>V</em></li>
-<li>Pearson’s correlation coefficient</li>
-<li>Odds ratio</li>
-<li>None of the above</li>
-</ol>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>What is the <em>null hypothesis</em> for a chi-square test
-of independence in a two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The two variables are independent</li>
-<li>The two variables are dependent</li>
-<li>The two variables are correlated</li>
-<li>The two variables are not correlated</li>
-</ol>
-<ol start="4" style="list-style-type: decimal">
-<li><strong>What is the <em>alternative hypothesis</em> for a chi-square
-test for independence in a two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The two variables are independent</li>
-<li>The two variables are dependent</li>
-<li>The two variables are uncorrelated</li>
-<li>None of the above</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li><strong>What are the assumptions for the validity of a chi-square
-test for independence in a two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The observations are independent and randomly sampled</li>
-<li>The expected frequencies for each cell in the table are greater than
-5</li>
-<li>The variable are categorical</li>
-<li>All of the above</li>
-</ol>
-<ol start="6" style="list-style-type: decimal">
-<li><strong>When interpreting the results of a chi-square test for
-independence in a two-way frequency table, what does a <em>p</em>-value
-of less than 0.05 indicate?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>There is evidence of association between the two variables</li>
-<li>There is no evidence of association between the two variables</li>
-<li>The variables are correlated</li>
-<li>The variables are uncorrelated</li>
-</ol>
-<ol start="7" style="list-style-type: decimal">
-<li><strong>How do you interpret the <em>p</em>-value in a chi-squared
-test for independence in a two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>A small <em>p</em>-value indicates evidence against the null
-hypothesis</li>
-<li>A large <em>p</em>-value indicates evidence against the null
-hypothesis</li>
-<li>A small <em>p</em>-value indicates evidence in favor of the null
-hypothesis</li>
-<li>A large <em>p</em>-value indicates evidence in favor of the null
-hypothesis.</li>
-</ol>
-<ol start="8" style="list-style-type: decimal">
-<li><strong>When both variables are <em>ordered</em> in a two-way
-frequency table, the most focused test for association is:</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The Pearson chi-squared test</li>
-<li>The Likelihood ratio chi-squared test</li>
-<li>The CMH test for general association</li>
-<li>The CMH test for non-zero correlation</li>
-</ol>
-<div id="answers" class="section level2">
-<h2>Answers</h2>
-<p>1: a; 2: b; 3: a; 4: b; 5: d; 6: a; 7: a; 8: d</p>
+<p>Test your knowledge of the material on <a href="../lectures/05-Corresp.pdf">correspondence analysis</a> in the
+following quiz to see how much you learned. This is <strong>entirely
+private for you</strong>---no records are kept of your performance.</p>
+<div id="questions" class="section level2">
+<h2>Questions</h2>
+<p><strong>1. Correspondence analysis (CA) is best described
+as:</strong></p>
+<div id="radio_LRTAOSFWXN" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LRTAOSFWXN" value="answer"></input>
+<span>The analog of principal component analysis (PCA) for frequency
+data</span></label><label><input type="radio" autocomplete="off" name="radio_LRTAOSFWXN" value></input>
+<span>A chi-square test for independence in contingency
+tables</span></label><label><input type="radio" autocomplete="off" name="radio_LRTAOSFWXN" value></input>
+<span>A regression method for categorical
+predictors</span></label><label><input type="radio" autocomplete="off" name="radio_LRTAOSFWXN" value></input>
+<span>A clustering algorithm for categorical data</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>CA is the analog of PCA for frequency data. Like PCA, it aims to
+account for the maximum amount of variation (χ² in this case) in a few
+dimensions and provides optimal scaling of row and column
+categories.</p>
+</div>
+<p><strong>2. Correspondence analysis uses which mathematical technique
+to find optimal row and column scores?</strong></p>
+<div id="radio_JPUQESGTPK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_JPUQESGTPK" value></input>
+<span>Maximum likelihood
+estimation</span></label><label><input type="radio" autocomplete="off" name="radio_JPUQESGTPK" value="answer"></input>
+<span>Singular value decomposition (SVD) of residuals from
+independence</span></label><label><input type="radio" autocomplete="off" name="radio_JPUQESGTPK" value></input>
+<span>Iterative proportional
+fitting</span></label><label><input type="radio" autocomplete="off" name="radio_JPUQESGTPK" value></input>
+<span>Principal component analysis</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>CA uses singular value decomposition (SVD) of the matrix of residuals
+from independence. This decomposes the residuals as D = XΛY<sup>T</sup>,
+where X and Y are the row and column scores, and Λ contains the singular
+values.</p>
+</div>
+<p><strong>3. The singular values (λ<sub>i</sub>) in correspondence
+analysis represent:</strong></p>
+<div id="radio_LWWUOJJWFW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_LWWUOJJWFW" value></input>
+<span>The variances of the principal
+components</span></label><label><input type="radio" autocomplete="off" name="radio_LWWUOJJWFW" value="answer"></input>
+<span>The correlations between row and column category scores on each
+dimension</span></label><label><input type="radio" autocomplete="off" name="radio_LWWUOJJWFW" value></input>
+<span>The chi-square statistics for each
+dimension</span></label><label><input type="radio" autocomplete="off" name="radio_LWWUOJJWFW" value></input>
+<span>The eigenvalues of the contingency table</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The singular values λ<sub>i</sub> are the (canonical) correlations
+between the row and column category scores on each dimension. For
+dimension 1, the scores are chosen to have the maximum possible
+correlation λ<sub>1</sub>, and so on for subsequent dimensions.</p>
+</div>
+<p><strong>4. For a two-way contingency table with <em>r</em> rows and
+<em>c</em> columns, the CA solution has at most how many
+dimensions?</strong></p>
+<div id="radio_QAHWRRDCVJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_QAHWRRDCVJ" value></input>
+<span>r +
+c</span></label><label><input type="radio" autocomplete="off" name="radio_QAHWRRDCVJ" value></input>
+<span>r ×
+c</span></label><label><input type="radio" autocomplete="off" name="radio_QAHWRRDCVJ" value="answer"></input>
+<span>min(r - 1, c -
+1)</span></label><label><input type="radio" autocomplete="off" name="radio_QAHWRRDCVJ" value></input>
+<span>max(r, c)</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The CA solution has at most min(r - 1, c - 1) dimensions. This is the
+rank of the matrix of residuals from independence, similar to how PCA
+has at most min(n - 1, p) dimensions for n observations and p
+variables.</p>
+</div>
+<p><strong>5. How does the Pearson chi-square statistic (χ²) relate to
+the inertia in CA?</strong></p>
+<div id="radio_VVRBKUDBRJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VVRBKUDBRJ" value="answer"></input>
+<span>χ² = n × Σλ²ᵢ, where n is the sample size and λᵢ are the singular
+values</span></label><label><input type="radio" autocomplete="off" name="radio_VVRBKUDBRJ" value></input>
+<span>χ² = Σλᵢ, the sum of singular
+values</span></label><label><input type="radio" autocomplete="off" name="radio_VVRBKUDBRJ" value></input>
+<span>χ² = n × λ₁, where λ₁ is the first singular
+value</span></label><label><input type="radio" autocomplete="off" name="radio_VVRBKUDBRJ" value></input>
+<span>There is no relationship between χ² and inertia</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The Pearson χ² statistic equals n times the sum of squared singular
+values: χ² = n × Σλ²<sub>i</sub>. The total inertia is Σλ²<sub>i</sub> =
+χ²/n, so the percentage of inertia explained by each dimension reflects
+the percentage of χ² accounted for.</p>
+</div>
+<p><strong>6. What does the term &quot;inertia&quot; mean in correspondence
+analysis?</strong></p>
+<div id="radio_KKOWVTFUOT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KKOWVTFUOT" value></input>
+<span>The total sample size in the contingency
+table</span></label><label><input type="radio" autocomplete="off" name="radio_KKOWVTFUOT" value="answer"></input>
+<span>The weighted variation or dispersion of row/column profiles from
+the
+centroid</span></label><label><input type="radio" autocomplete="off" name="radio_KKOWVTFUOT" value></input>
+<span>The number of dimensions needed for the
+analysis</span></label><label><input type="radio" autocomplete="off" name="radio_KKOWVTFUOT" value></input>
+<span>The correlation between rows and columns</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>Inertia refers to the weighted variation or dispersion of the profile
+points from their centroid (weighted average). The physical analogy is
+to mass × distance², hence the term &#39;inertia.&#39; Higher inertia indicates
+greater association between rows and columns.</p>
+</div>
+<p><strong>7. In the default &quot;symmetric&quot; CA map, what does it mean when
+a row point and column point are plotted near each other?</strong></p>
+<div id="radio_MTAFHTBIBM" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MTAFHTBIBM" value="answer"></input>
+<span>They have a positive association (residual from independence &gt;
+0)</span></label><label><input type="radio" autocomplete="off" name="radio_MTAFHTBIBM" value></input>
+<span>They are
+independent</span></label><label><input type="radio" autocomplete="off" name="radio_MTAFHTBIBM" value></input>
+<span>They have a negative
+association</span></label><label><input type="radio" autocomplete="off" name="radio_MTAFHTBIBM" value></input>
+<span>They have equal marginal frequencies</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>In a symmetric CA map, when a row point and column point are near
+each other, it indicates a positive association between them—the
+residual from independence (d<sub>ij</sub>) is positive. Proximity
+reflects similarity or attraction in the data.</p>
+</div>
+<p><strong>8. Which of the following is TRUE about CA
+solutions?</strong></p>
+<div id="radio_WULTCAQYWF" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WULTCAQYWF" value="answer"></input>
+<span>CA solutions are nested, similar to PCA (the first two dimensions
+of a 3D solution are identical to the 2D
+solution)</span></label><label><input type="radio" autocomplete="off" name="radio_WULTCAQYWF" value></input>
+<span>The centroid of row and column profiles is located at a corner of
+the
+plot</span></label><label><input type="radio" autocomplete="off" name="radio_WULTCAQYWF" value></input>
+<span>Distances in a CA plot use Euclidean distance, not chi-square
+distance</span></label><label><input type="radio" autocomplete="off" name="radio_WULTCAQYWF" value></input>
+<span>Different dimensions from a CA solution can be freely rotated like
+in factor analysis</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>CA solutions are nested, just like PCA. The first two dimensions of a
+3D solution are identical to the 2D solution. Additionally, the centroid
+(weighted average) of row and column profiles is at the origin, and
+distances reflect chi-square distances.</p>
+</div>
+<p><strong>9. Multiple correspondence analysis (MCA) differs from simple
+CA in that MCA:</strong></p>
+<div id="radio_IPBXYKIXNJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IPBXYKIXNJ" value="answer"></input>
+<span>Analyzes all pairwise bivariate associations among multiple
+categorical
+variables</span></label><label><input type="radio" autocomplete="off" name="radio_IPBXYKIXNJ" value></input>
+<span>Can only be used for binary
+variables</span></label><label><input type="radio" autocomplete="off" name="radio_IPBXYKIXNJ" value></input>
+<span>Uses a different mathematical technique than
+SVD</span></label><label><input type="radio" autocomplete="off" name="radio_IPBXYKIXNJ" value></input>
+<span>Cannot display all variables in a single plot</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>MCA extends CA to n-way tables and analyzes all pairwise bivariate
+associations among the categorical variables. It can plot all factors in
+a single display and provides an optimal scaling of category scores
+across all variables simultaneously.</p>
+</div>
+<p><strong>10. For MCA with <em>Q</em> categorical variables, the Burt
+matrix is:</strong></p>
+<div id="radio_ZXEYLAJUDJ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZXEYLAJUDJ" value></input>
+<span>A matrix of dummy variables with 0s and
+1s</span></label><label><input type="radio" autocomplete="off" name="radio_ZXEYLAJUDJ" value="answer"></input>
+<span>The product of the indicator matrix Z and its transpose, B = Z^T
+Z</span></label><label><input type="radio" autocomplete="off" name="radio_ZXEYLAJUDJ" value></input>
+<span>The original contingency
+table</span></label><label><input type="radio" autocomplete="off" name="radio_ZXEYLAJUDJ" value></input>
+<span>A diagonal matrix of singular values</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The Burt matrix is B = Z<sup>T</sup>Z, the product of the indicator
+matrix Z and its transpose. The diagonal blocks contain marginal
+frequencies for each variable, and the off-diagonal blocks contain the
+bivariate contingency tables for each pair of variables.</p>
 </div>
 </div>
 
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 
 
 

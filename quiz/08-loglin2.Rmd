@@ -1,0 +1,134 @@
+---
+title: "Quiz 8: Extending Loglinear Models 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [extending loglinear models](../lectures/08-Loglin2.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. When one table variable is a binary response, a logit model for that response is:**
+
+`r longmcq(c("More complex than the equivalent loglinear model",
+             answer = "Equivalent to a loglinear model",
+             "Unrelated to loglinear models",
+             "Only valid for continuous predictors"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Each logit model for a binary response C is equivalent to a loglinear model. The loglinear model must include the [AB] association of predictors. The logit model is simpler to interpret because it has fewer parameters and focuses on the effects on the response variable.
+</div>
+
+**2. The main advantage of the GLM (generalized linear model) approach to loglinear models is that GLM:**
+
+`r longmcq(c("Only works with categorical predictors",
+             "Requires larger sample sizes",
+             answer = "Allows quantitative predictors and can handle ordinal factors",
+             "Cannot handle overdispersion"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The GLM approach allows quantitative predictors and special ways of treating ordinal factors. It provides parameter estimates with standard errors and significance tests, can incorporate ordinal variables as linear/polynomial terms, and can handle overdispersion using quasi-Poisson or negative binomial families.
+</div>
+
+**3. The linear-by-linear (L × L) model for ordinal variables assumes:**
+
+`r longmcq(c("Different slopes for each category",
+             answer = "A constant local odds ratio for adjacent categories",
+             "No association between variables",
+             "Only main effects, no interaction"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The L × L model assumes log(m<sub>ij</sub>) = μ + λ<sub>i</sub><sup>A</sup> + λ<sub>j</sub><sup>B</sup> + γ a<sub>i</sub>b<sub>j</sub>, where γ is a constant local odds ratio. For integer scores, log(θ<sub>ij</sub>) = γ. This model uses only 1 more parameter than the independence model, making it very parsimonious.
+</div>
+
+**4. In models for ordered categories, the RC(1) model differs from the L × L model in that RC(1):**
+
+`r longmcq(c("Uses more degrees of freedom",
+             "Assumes independence",
+             answer = "Estimates optimal row and column scores from the data",
+             "Only applies to square tables"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The RC(1) row-and-column effects model estimates optimal category scores α<sub>i</sub> and β<sub>j</sub> as parameters: λ<sub>ij</sub><sup>AB</sup> = γ α<sub>i</sub>β<sub>j</sub>. Unlike L × L which assigns fixed integer scores, RC(1) finds the best-fitting scores. The ordering and spacing of categories is estimated from the data, similar to correspondence analysis.
+</div>
+
+**5. For a square table with the same row and column categories, the quasi-independence model:**
+
+`r longmcq(c("Assumes complete independence",
+             answer = "Fits diagonal cells perfectly and tests independence in off-diagonal cells",
+             "Requires equal marginal totals",
+             "Only works with 2×2 tables"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The quasi-independence model adds parameters δ<sub>i</sub> for each diagonal cell: log(m<sub>ij</sub>) = μ + λ<sub>i</sub><sup>A</sup> + λ<sub>j</sub><sup>B</sup> + δ<sub>i</sub>I(i=j). This fits the diagonal cells (where row = column) perfectly while testing for independence in the off-diagonal cells, which is useful for mobility tables and other square tables.
+</div>
+
+**6. The relationship between symmetry and quasi-symmetry models is:**
+
+`r longmcq(c("They are identical models",
+             "Symmetry is less restrictive than quasi-symmetry",
+             answer = "Symmetry = quasi-symmetry + marginal homogeneity",
+             "Quasi-symmetry always fits better than symmetry"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+For square tables, it can be shown that symmetry = quasi-symmetry + marginal homogeneity, and G²(S) = G²(QS) + G²(MH). The symmetry model assumes π<sub>ij</sub> = π<sub>ji</sub>, but this also implies marginal homogeneity (equal row and column totals). The quasi-symmetry model allows λ<sub>ij</sub> = λ<sub>ji</sub> without requiring equal margins.
+</div>
+
+**7. The gnm package in R is used to fit:**
+
+`r longmcq(c("Only standard loglinear models",
+             "Only logistic regression models",
+             answer = "Generalized nonlinear models including RC and UNIDIFF models",
+             "Only linear regression models"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The gnm package provides functions to fit generalized nonlinear models (GNMs). RC models are not loglinear—they contain multiplicative terms like γ α<sub>i</sub>β<sub>j</sub>. The gnm() function can fit these models using Mult(), Exp(), and other nonlinear functions. The package also provides Diag(), Symm(), and Topo() convenience functions.
+</div>
+
+**8. In the UNIDIFF (uniform difference) model for stratified tables, the layer coefficients γ<sub>k</sub> represent:**
+
+`r longmcq(c("The main effects of the layer variable",
+             answer = "Multiplicative effects showing how association strength varies across layers",
+             "The independence of layers",
+             "Only the diagonal associations"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The UNIDIFF model is log(m<sub>ijk</sub>) = μ + λ<sub>i</sub><sup>R</sup> + λ<sub>j</sub><sup>C</sup> + λ<sub>k</sub><sup>L</sup> + λ<sub>ik</sub><sup>RL</sup> + λ<sub>jk</sub><sup>CL</sup> + γ<sub>k</sub>δ<sub>ij</sub><sup>RC</sup>. The layer coefficients γ<sub>k</sub> are multipliers showing how the [RC] association varies across layers (e.g., across countries or time periods), with one layer fixed at 1.0 as reference.
+</div>
+
+**9. Compared to general association models, models for ordinal variables provide:**
+
+`r longmcq(c("Less statistical power",
+             "More parameters to estimate",
+             answer = "More focused tests with greater power and fewer degrees of freedom",
+             "Only categorical interpretation"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Models for ordinal variables give more focused tests → greater power to detect associations. They use fewer df → can fit different models between independence [A][B] and saturated [AB], have fewer parameters → easier interpretation and smaller standard errors. This is similar to using CMH tests or testing linear contrasts in ANOVA.
+</div>
+
+**10. When comparing multiple models using AIC and BIC, which statement is TRUE?**
+
+`r longmcq(c("AIC and BIC always select the same model",
+             "Lower values indicate worse fit",
+             answer = "BIC penalizes complexity more heavily than AIC, often preferring simpler models",
+             "Both criteria ignore degrees of freedom"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+BIC (Bayesian Information Criterion) penalizes model complexity more heavily than AIC (Akaike Information Criterion). BIC = -2*log-likelihood + log(n)*df, while AIC = -2*log-likelihood + 2*df. As a result, BIC often prefers more parsimonious models. Lower values of both criteria indicate better models, balancing goodness-of-fit against complexity.
+</div>

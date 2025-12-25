@@ -1,0 +1,134 @@
+---
+title: "Quiz 7: Logistic Regression Extensions 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [logistic regression extensions](../lectures/07-Logistic2.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. Which function in R allows you to fit a quadratic relationship between age and survival in logistic regression?**
+
+`r longmcq(c("age^2",
+             answer = "poly(age, 2)",
+             "ns(age, 2)",
+             "age + age2"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+In R, poly(age, 2) fits orthogonal polynomials for a quadratic relationship. You can also use ns(age, 2) for natural splines with 2 degrees of freedom, which provides more flexible shapes.
+</div>
+
+**2. When testing whether the relationship between age and survival differs for men and women, you should include:**
+
+`r longmcq(c("Separate models for each sex",
+             answer = "An interaction term: age * sex",
+             "Only main effects: age + sex",
+             "A quadratic term for age"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+To test whether the relationship differs by group, you need an interaction term (age * sex). This allows the slope for age to differ between men and women. You can then test the significance of the interaction using a likelihood ratio test.
+</div>
+
+**3. In the Donner Party example, which individuals were identified as influential observations?**
+
+`r longmcq(c("Young children who died",
+             answer = "Older men who survived and older women who died",
+             "All women regardless of outcome",
+             "Young women who survived"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Patrick Breen and James Reed (older men who survived) and Elizabeth Donner and Elizabeth Graves (older women who died) were influential because they had both high leverage (unusual predictor values) AND large residuals (poor fit). Influence ≈ Leverage × Residual².
+</div>
+
+**4. The proportional odds model for ordered categorical responses assumes:**
+
+`r longmcq(c("Different slopes and different intercepts for each logit",
+             "Different slopes but equal intercepts for each logit",
+             answer = "Equal slopes but different intercepts for each logit",
+             "Equal slopes and equal intercepts for all logits"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The proportional odds model assumes that the regression functions are parallel on the logit scale (i.e., β₁ = β₂). Only the intercepts (thresholds) vary for each adjacent-category comparison. This is why it's called "proportional odds."
+</div>
+
+**5. In R, the proportional odds model is fitted using which function?**
+
+`r longmcq(c("glm() with family = binomial",
+             answer = "MASS::polr()",
+             "nnet::multinom()",
+             "VGAM::vglm() with parallel = FALSE"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The proportional odds model is fitted using polr() from the MASS package. VGAM::vglm() can also fit it with parallel = TRUE, but polr() is the standard function. nnet::multinom() is for multinomial (unordered) logistic regression.
+</div>
+
+**6. To test the proportional odds assumption, you compare the proportional odds model to:**
+
+`r longmcq(c("A model with only main effects",
+             "A simpler model with fewer predictors",
+             answer = "A non-proportional odds (NPO) model that allows different slopes",
+             "A nested dichotomies model"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+You test the proportional odds assumption by comparing the PO model (parallel = TRUE) to a non-proportional odds model (parallel = FALSE) using a likelihood ratio test. If the test is not significant, the proportional odds assumption is reasonable.
+</div>
+
+**7. In a nested dichotomies approach for a 3-category response (None, Some, Marked), which logits are modeled?**
+
+`r longmcq(c("None vs. Some, Some vs. Marked",
+             answer = "None vs. (Some or Marked), Some vs. Marked",
+             "None vs. Some, None vs. Marked",
+             "All three categories vs. each other"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Nested dichotomies create a hierarchy of binary comparisons. For improvement categories, you might first model None vs. (Some or Marked), then among those with some improvement, model Some vs. Marked. The m - 1 models are statistically independent and their G² statistics are additive.
+</div>
+
+**8. In multinomial logistic regression with m response categories, how many logits are modeled?**
+
+`r longmcq(c("m logits",
+             answer = "m - 1 logits",
+             "m + 1 logits",
+             "m² logits"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Multinomial logistic regression models m - 1 logits, typically comparing each of the first m - 1 categories to the last (reference) category. For example, with 4 political parties, you would fit 3 logits: NDP vs. Tory, Liberal vs. Tory, and Green vs. Tory.
+</div>
+
+**9. In the multinomial logistic model, coefficients represent:**
+
+`r longmcq(c("Probabilities of each response category",
+             "Odds ratios between all pairs of categories",
+             answer = "Log odds of category j vs. the reference category m",
+             "The change in probability for a unit change in the predictor"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+In multinomial logistic regression, the coefficient βₕⱼ represents the change in log odds that the response is category j (vs. the reference category m) for a one-unit change in predictor xₕ. To get odds ratios, exponentiate: exp(βₕⱼ).
+</div>
+
+**10. The latent variable interpretation of the proportional odds model suggests:**
+
+`r longmcq(c("The response categories are random",
+             answer = "An unobserved continuous variable is cut into discrete categories by thresholds",
+             "The predictors are unmeasured",
+             "The model requires hidden variables to be estimated"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The proportional odds model can be motivated by imagining an unobserved continuous response ξ that is a linear function of predictors. The observed discrete response Y = i when the latent variable falls between thresholds αᵢ and αᵢ₊₁. The intercepts in the PO model correspond to these thresholds.
+</div>

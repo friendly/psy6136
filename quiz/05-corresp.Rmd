@@ -1,0 +1,134 @@
+---
+title: "Quiz 5: Correspondence Analysis 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [correspondence analysis](../lectures/05-Corresp.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. Correspondence analysis (CA) is best described as:**
+
+`r longmcq(c(answer = "The analog of principal component analysis (PCA) for frequency data",
+             "A chi-square test for independence in contingency tables",
+             "A regression method for categorical predictors",
+             "A clustering algorithm for categorical data"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+CA is the analog of PCA for frequency data. Like PCA, it aims to account for the maximum amount of variation (χ² in this case) in a few dimensions and provides optimal scaling of row and column categories.
+</div>
+
+**2. Correspondence analysis uses which mathematical technique to find optimal row and column scores?**
+
+`r longmcq(c("Maximum likelihood estimation",
+             answer = "Singular value decomposition (SVD) of residuals from independence",
+             "Iterative proportional fitting",
+             "Principal component analysis"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+CA uses singular value decomposition (SVD) of the matrix of residuals from independence. This decomposes the residuals as D = XΛY<sup>T</sup>, where X and Y are the row and column scores, and Λ contains the singular values.
+</div>
+
+**3. The singular values (λ<sub>i</sub>) in correspondence analysis represent:**
+
+`r longmcq(c("The variances of the principal components",
+             answer = "The correlations between row and column category scores on each dimension",
+             "The chi-square statistics for each dimension",
+             "The eigenvalues of the contingency table"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The singular values λ<sub>i</sub> are the (canonical) correlations between the row and column category scores on each dimension. For dimension 1, the scores are chosen to have the maximum possible correlation λ<sub>1</sub>, and so on for subsequent dimensions.
+</div>
+
+**4. For a two-way contingency table with *r* rows and *c* columns, the CA solution has at most how many dimensions?**
+
+`r longmcq(c("r + c",
+             "r × c",
+             answer = "min(r - 1, c - 1)",
+             "max(r, c)"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The CA solution has at most min(r - 1, c - 1) dimensions. This is the rank of the matrix of residuals from independence, similar to how PCA has at most min(n - 1, p) dimensions for n observations and p variables.
+</div>
+
+**5. How does the Pearson chi-square statistic (χ²) relate to the inertia in CA?**
+
+`r longmcq(c(answer = "χ² = n × Σλ²ᵢ, where n is the sample size and λᵢ are the singular values",
+             "χ² = Σλᵢ, the sum of singular values",
+             "χ² = n × λ₁, where λ₁ is the first singular value",
+             "There is no relationship between χ² and inertia"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The Pearson χ² statistic equals n times the sum of squared singular values: χ² = n × Σλ²<sub>i</sub>. The total inertia is Σλ²<sub>i</sub> = χ²/n, so the percentage of inertia explained by each dimension reflects the percentage of χ² accounted for.
+</div>
+
+**6. What does the term "inertia" mean in correspondence analysis?**
+
+`r longmcq(c("The total sample size in the contingency table",
+             answer = "The weighted variation or dispersion of row/column profiles from the centroid",
+             "The number of dimensions needed for the analysis",
+             "The correlation between rows and columns"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Inertia refers to the weighted variation or dispersion of the profile points from their centroid (weighted average). The physical analogy is to mass × distance², hence the term 'inertia.' Higher inertia indicates greater association between rows and columns.
+</div>
+
+**7. In the default "symmetric" CA map, what does it mean when a row point and column point are plotted near each other?**
+
+`r longmcq(c(answer = "They have a positive association (residual from independence > 0)",
+             "They are independent",
+             "They have a negative association",
+             "They have equal marginal frequencies"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+In a symmetric CA map, when a row point and column point are near each other, it indicates a positive association between them—the residual from independence (d<sub>ij</sub>) is positive. Proximity reflects similarity or attraction in the data.
+</div>
+
+**8. Which of the following is TRUE about CA solutions?**
+
+`r longmcq(c(answer = "CA solutions are nested, similar to PCA (the first two dimensions of a 3D solution are identical to the 2D solution)",
+             "The centroid of row and column profiles is located at a corner of the plot",
+             "Distances in a CA plot use Euclidean distance, not chi-square distance",
+             "Different dimensions from a CA solution can be freely rotated like in factor analysis"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+CA solutions are nested, just like PCA. The first two dimensions of a 3D solution are identical to the 2D solution. Additionally, the centroid (weighted average) of row and column profiles is at the origin, and distances reflect chi-square distances.
+</div>
+
+**9. Multiple correspondence analysis (MCA) differs from simple CA in that MCA:**
+
+`r longmcq(c(answer = "Analyzes all pairwise bivariate associations among multiple categorical variables",
+             "Can only be used for binary variables",
+             "Uses a different mathematical technique than SVD",
+             "Cannot display all variables in a single plot"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+MCA extends CA to n-way tables and analyzes all pairwise bivariate associations among the categorical variables. It can plot all factors in a single display and provides an optimal scaling of category scores across all variables simultaneously.
+</div>
+
+**10. For MCA with *Q* categorical variables, the Burt matrix is:**
+
+`r longmcq(c("A matrix of dummy variables with 0s and 1s",
+             answer = "The product of the indicator matrix Z and its transpose, B = Z^T Z",
+             "The original contingency table",
+             "A diagonal matrix of singular values"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The Burt matrix is B = Z<sup>T</sup>Z, the product of the indicator matrix Z and its transpose. The diagonal blocks contain marginal frequencies for each variable, and the off-diagonal blocks contain the bivariate contingency tables for each pair of variables.
+</div>
