@@ -1,0 +1,134 @@
+---
+title: "Quiz 9: GLMs for Count Data 📊"
+output: webexercises::webexercises_default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+Test your knowledge of the material on [GLMs for count data](../lectures/09-CountData.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance.
+
+## Questions
+
+**1. Count data models are typically used when the response variable is:**
+
+`r longmcq(c("Continuous and normally distributed",
+             "Binary (0/1, yes/no)",
+             answer = "A frequency or count (y = 0, 1, 2, ...) of some event",
+             "Categorical with unordered categories"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Count data models arise when the basic observation is a frequency, y = 0, 1, 2, ... of some event. Examples include number of articles published, number of parasites in blood samples, or number of satellite males. These counts typically follow a Poisson distribution.
+</div>
+
+**2. In Poisson regression for count data, the canonical link function is:**
+
+`r longmcq(c("Identity: η = μ",
+             answer = "Log: log(μ) = X β",
+             "Logit: log[μ/(1-μ)] = X β",
+             "Inverse: μ^(-1) = X β"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The canonical link function for Poisson regression is the log link: log(μ) = X β, or equivalently μ = exp(X β). This ensures that predicted counts are always positive and models the logarithm of expected cell frequencies as a linear function of the predictors.
+</div>
+
+**3. For the Poisson distribution, the relationship between the mean and variance is:**
+
+`r longmcq(c("Variance is constant (homoscedastic)",
+             answer = "Variance equals the mean: V(y) = μ",
+             "Variance is proportional to the square of the mean: V(y) = μ²",
+             "Variance is less than the mean: V(y) < μ"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+A key property of the Poisson distribution is that the variance equals the mean: V(y) = μ. This is called equidispersion. When this assumption is violated (variance > mean), we have overdispersion, which requires alternative models like quasi-Poisson or negative binomial.
+</div>
+
+**4. Overdispersion in count data models means that:**
+
+`r longmcq(c("The mean is greater than the variance",
+             answer = "The variance is greater than the mean",
+             "The data contains too many zero counts",
+             "The residuals are normally distributed"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Overdispersion occurs when V(y<sub>i</sub>) > μ<sub>i</sub>. This often results from correlated observations, non-constant probabilities, or unmeasured influences (unmodeled heterogeneity). Overdispersion makes standard errors optimistically small and Wald tests overly liberal if not corrected.
+</div>
+
+**5. GLMs are typically estimated using:**
+
+`r longmcq(c("Ordinary least squares (OLS)",
+             answer = "Maximum likelihood estimation (MLE)",
+             "Method of moments",
+             "Bayesian posterior sampling"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+GLMs are fit by maximum likelihood estimation (MLE), which finds parameter values that maximize the probability of observing the data. Unlike OLS which has an exact solution, MLEs are found by iteratively reweighted least squares (IRWLS) because there is no closed-form solution.
+</div>
+
+**6. The quasi-Poisson model differs from the standard Poisson model in that quasi-Poisson:**
+
+`r longmcq(c("Uses a different link function",
+             "Estimates different regression coefficients",
+             answer = "Allows the dispersion parameter φ to be estimated from the data",
+             "Uses a different distribution family"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The quasi-Poisson model allows the dispersion parameter φ to be estimated from the data rather than fixed at 1. The variance function becomes V(y<sub>i</sub>) = φ μ<sub>i</sub>. The regression coefficients β remain unchanged, but standard errors are multiplied by φ<sup>½</sup>, giving more appropriate inference when overdispersion is present.
+</div>
+
+**7. The negative binomial model for count data is most appropriate when:**
+
+`r longmcq(c("The variance equals the mean",
+             answer = "There is overdispersion (variance > mean)",
+             "The response is binary",
+             "There are no zero counts in the data"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The negative binomial model is a generalization of the Poisson that allows for overdispersion. Its variance function is V(y<sub>i</sub>) = μ<sub>i</sub> + μ<sub>i</sub>²/θ, which allows the variance to increase more rapidly than the mean. As θ → ∞, the negative binomial converges to the Poisson.
+</div>
+
+**8. Zero-inflated models (ZIP, ZINB) are appropriate when:**
+
+`r longmcq(c("All counts in the data are zero",
+             "The data has no zero counts",
+             answer = "There are more observed zeros than a standard Poisson or negative binomial model predicts",
+             "The variance equals the mean"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+Zero-inflated models are used when there are excess zero counts beyond what the standard count distribution predicts. The model assumes zeros arise from a mixture: structural zeros (always 0, with probability π<sub>i</sub>) and random zeros from the count distribution (with probability 1 - π<sub>i</sub>). A logistic regression models membership in the structural zero class.
+</div>
+
+**9. The key difference between zero-inflated and hurdle models is:**
+
+`r longmcq(c("Zero-inflated models cannot handle overdispersion",
+             answer = "In hurdle models all zeros come from one process; in zero-inflated models zeros come from two sources",
+             "Hurdle models use a different link function",
+             "Zero-inflated models cannot include predictors"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+In zero-inflated models, zeros arise from a mixture of structural (always zero) and random (from the count distribution) sources. In hurdle models, one process determines whether y<sub>i</sub> = 0 vs. y<sub>i</sub> > 0, and a second process (truncated count model) determines the distribution of positive counts. All zeros come from the first process in hurdle models.
+</div>
+
+**10. When comparing Poisson, quasi-Poisson, and negative binomial models for count data, which is TRUE?**
+
+`r longmcq(c("They all produce the same coefficient estimates and standard errors",
+             "The negative binomial always fits better than the Poisson",
+             answer = "Poisson and quasi-Poisson give identical coefficients, but quasi-Poisson adjusts standard errors for overdispersion",
+             "The quasi-Poisson has more parameters than the negative binomial"))`
+
+<div class="webex-solution">
+<button>Explanation</button>
+The Poisson and quasi-Poisson models produce identical coefficient estimates β̂, but quasi-Poisson adjusts the standard errors by multiplying by √φ̂ where φ̂ is the estimated dispersion parameter. The negative binomial estimates an additional parameter (θ or α = 1/θ) and can produce different coefficients. The choice among models depends on the data structure and model diagnostics.
+</div>

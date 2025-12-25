@@ -15,7 +15,10 @@ This is **entirely private for you**---no records are kept of your performance.
 
 **1. Which function in R allows you to fit a quadratic relationship between age and survival in logistic regression?**
 
-`r longmcq(c("age^2", answer = "poly(age, 2)", "ns(age, 2)", "age + age2"))`
+`r longmcq(c("age^2",
+             answer = "poly(age, 2)",
+             "ns(age, 2)",
+             "age + age2"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -24,7 +27,10 @@ In R, poly(age, 2) fits orthogonal polynomials for a quadratic relationship. You
 
 **2. When testing whether the relationship between age and survival differs for men and women, you should include:**
 
-`r longmcq(c("Separate models for each sex", answer = "An interaction term: age * sex", "Only main effects: age + sex", "A quadratic term for age"))`
+`r longmcq(c("Separate models for each sex",
+             answer = "An interaction term: age * sex",
+             "Only main effects: age + sex",
+             "A quadratic term for age"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -33,7 +39,10 @@ To test whether the relationship differs by group, you need an interaction term 
 
 **3. In the Donner Party example, which individuals were identified as influential observations?**
 
-`r longmcq(c("Young children who died", answer = "Older men who survived and older women who died", "All women regardless of outcome", "Young women who survived"))`
+`r longmcq(c("Young children who died",
+             answer = "Older men who survived and older women who died",
+             "All women regardless of outcome",
+             "Young women who survived"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -42,7 +51,10 @@ Patrick Breen and James Reed (older men who survived) and Elizabeth Donner and E
 
 **4. The proportional odds model for ordered categorical responses assumes:**
 
-`r longmcq(c("Different slopes and different intercepts for each logit", "Different slopes but equal intercepts for each logit", answer = "Equal slopes but different intercepts for each logit", "Equal slopes and equal intercepts for all logits"))`
+`r longmcq(c("Different slopes and different intercepts for each logit",
+             "Different slopes but equal intercepts for each logit",
+             answer = "Equal slopes but different intercepts for each logit",
+             "Equal slopes and equal intercepts for all logits"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -51,7 +63,10 @@ The proportional odds model assumes that the regression functions are parallel o
 
 **5. In R, the proportional odds model is fitted using which function?**
 
-`r longmcq(c("glm() with family = binomial", answer = "MASS::polr()", "nnet::multinom()", "VGAM::vglm() with parallel = FALSE"))`
+`r longmcq(c("glm() with family = binomial",
+             answer = "MASS::polr()",
+             "nnet::multinom()",
+             "VGAM::vglm() with parallel = FALSE"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -60,7 +75,10 @@ The proportional odds model is fitted using polr() from the MASS package. VGAM::
 
 **6. To test the proportional odds assumption, you compare the proportional odds model to:**
 
-`r longmcq(c("A model with only main effects", "A simpler model with fewer predictors", answer = "A non-proportional odds (NPO) model that allows different slopes", "A nested dichotomies model"))`
+`r longmcq(c("A model with only main effects",
+             "A simpler model with fewer predictors",
+             answer = "A non-proportional odds (NPO) model that allows different slopes",
+             "A nested dichotomies model"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -69,7 +87,10 @@ You test the proportional odds assumption by comparing the PO model (parallel = 
 
 **7. In a nested dichotomies approach for a 3-category response (None, Some, Marked), which logits are modeled?**
 
-`r longmcq(c("None vs. Some, Some vs. Marked", answer = "None vs. (Some or Marked), Some vs. Marked", "None vs. Some, None vs. Marked", "All three categories vs. each other"))`
+`r longmcq(c("None vs. Some, Some vs. Marked",
+             answer = "None vs. (Some or Marked), Some vs. Marked",
+             "None vs. Some, None vs. Marked",
+             "All three categories vs. each other"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -78,7 +99,10 @@ Nested dichotomies create a hierarchy of binary comparisons. For improvement cat
 
 **8. In multinomial logistic regression with m response categories, how many logits are modeled?**
 
-`r longmcq(c("m logits", answer = "m - 1 logits", "m + 1 logits", "m² logits"))`
+`r longmcq(c("m logits",
+             answer = "m - 1 logits",
+             "m + 1 logits",
+             "m² logits"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -87,7 +111,10 @@ Multinomial logistic regression models m - 1 logits, typically comparing each of
 
 **9. In the multinomial logistic model, coefficients represent:**
 
-`r longmcq(c("Probabilities of each response category", "Odds ratios between all pairs of categories", answer = "Log odds of category j vs. the reference category m", "The change in probability for a unit change in the predictor"))`
+`r longmcq(c("Probabilities of each response category",
+             "Odds ratios between all pairs of categories",
+             answer = "Log odds of category j vs. the reference category m",
+             "The change in probability for a unit change in the predictor"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -96,7 +123,10 @@ In multinomial logistic regression, the coefficient βₕⱼ represents the chan
 
 **10. The latent variable interpretation of the proportional odds model suggests:**
 
-`r longmcq(c("The response categories are random", answer = "An unobserved continuous variable is cut into discrete categories by thresholds", "The predictors are unmeasured", "The model requires hidden variables to be estimated"))`
+`r longmcq(c("The response categories are random",
+             answer = "An unobserved continuous variable is cut into discrete categories by thresholds",
+             "The predictors are unmeasured",
+             "The model requires hidden variables to be estimated"))`
 
 <div class="webex-solution">
 <button>Explanation</button>

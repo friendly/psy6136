@@ -1,0 +1,166 @@
+---
+title: "Quiz: Loglinear Models 📊"
+output:
+  html_document:
+    css:
+      - ../assets/styles.css
+      - ../assets/quiz.css
+    self_contained: true
+---
+
+Test your knowledge of the material on [loglinear models](../lectures/04-Loglin.pdf) in the following quiz to see how much you learned.
+This is **entirely private for you**---no records are kept of your performance. When you've answered all the questions, click on the Submit Quiz button
+to see how you've done, and perhaps get pointers to things you should review.
+
+<div class="quiz-container">
+
+<form id="quizForm">
+
+<div class="question" id="q1">
+<h3>1. What is a loglinear model for frequency tables in categorical data analysis?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q1" value="a" id="q1a"> <label for="q1a">a) A linear regression model for categorical data</label></div>
+<div class="option"><input type="radio" name="q1" value="b" id="q1b"> <label for="q1b">b) A logistic regression model for categorical data</label></div>
+<div class="option"><input type="radio" name="q1" value="c" id="q1c"> <label for="q1c">c) A statistical model for analyzing the relationship between categorical variables</label></div>
+<div class="option"><input type="radio" name="q1" value="d" id="q1d"> <label for="q1d">d) A model for predicting binary outcomes from categorical predictors</label></div>
+</div>
+<div class="explanation" id="exp1"></div>
+</div>
+
+<div class="question" id="q2">
+<h3>2. How do you test for goodness of fit of a loglinear model for a two-way frequency table?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q2" value="a" id="q2a"> <label for="q2a">a) By using a chi-squared test</label></div>
+<div class="option"><input type="radio" name="q2" value="b" id="q2b"> <label for="q2b">b) By using a likelihood ratio test</label></div>
+<div class="option"><input type="radio" name="q2" value="c" id="q2c"> <label for="q2c">c) By using a Cochran-Mantel-Haenszel test</label></div>
+<div class="option"><input type="radio" name="q2" value="d" id="q2d"> <label for="q2d">d) By using Cohen's kappa</label></div>
+</div>
+<div class="explanation" id="exp2"></div>
+</div>
+
+<div class="question" id="q3">
+<h3>3. What is the main difference between a <code>glm()</code> loglinear model and the chi-squared test for independence in two-way frequency tables?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q3" value="a" id="q3a"> <label for="q3a">a) <code>glm()</code> models allow for different types of associations among variables while chi-squared test only tests for independence</label></div>
+<div class="option"><input type="radio" name="q3" value="b" id="q3b"> <label for="q3b">b) <code>glm()</code> models allow for non-normal data while chi-squared tests do not</label></div>
+<div class="option"><input type="radio" name="q3" value="c" id="q3c"> <label for="q3c">c) <code>glm()</code> models apply in small sample size while chi-squared tests require large sample size</label></div>
+<div class="option"><input type="radio" name="q3" value="d" id="q3d"> <label for="q3d">d) <code>glm()</code> models allow for estimation of parameters for interactions among variables and also for non-normal data while chi-squared test only tests for independence</label></div>
+</div>
+<div class="explanation" id="exp3"></div>
+</div>
+
+<div class="question" id="q4">
+<h3>4. How does a loglinear model differ from a logit model?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q4" value="a" id="q4a"> <label for="q4a">a) Loglinear models are linear while logit models are non-linear</label></div>
+<div class="option"><input type="radio" name="q4" value="b" id="q4b"> <label for="q4b">b) Logit models handle only binary outcomes while loglinear models handle more than 2 outcomes</label></div>
+<div class="option"><input type="radio" name="q4" value="c" id="q4c"> <label for="q4c">c) Loglinear models are used for continuous data while logit models are used for categorical data</label></div>
+<div class="option"><input type="radio" name="q4" value="d" id="q4d"> <label for="q4d">d) Logit models estimate probabilities while loglinear models estimate frequencies</label></div>
+</div>
+<div class="explanation" id="exp4"></div>
+</div>
+
+<div class="question" id="q5">
+<h3>5. What is the difference between a loglinear model fit by <code>loglm()</code> and one fit using <code>glm()</code>?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q5" value="a" id="q5a"> <label for="q5a">a) <code>loglm()</code> requires large samples while <code>glm()</code> can be used for smaller samples</label></div>
+<div class="option"><input type="radio" name="q5" value="b" id="q5b"> <label for="q5b">b) <code>loglm()</code> only estimates fitted values while <code>glm()</code> estimates parameters</label></div>
+<div class="option"><input type="radio" name="q5" value="c" id="q5c"> <label for="q5c">c) <code>loglm()</code> uses an iterative process while <code>glm()</code> provides an exact solution</label></div>
+<div class="option"><input type="radio" name="q5" value="d" id="q5d"> <label for="q5d">d) <code>loglm()</code> gives the Pearson chi-square test while <code>glm()</code> gives the likelihood ratio test</label></div>
+</div>
+<div class="explanation" id="exp5"></div>
+</div>
+
+<div class="question" id="q6">
+<h3>6. What are the advantages of a loglinear model fit using <code>glm()</code> over one fit using <code>loglm()</code>?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q6" value="a" id="q6a"> <label for="q6a">a) <code>glm()</code> estimates parameters while <code>loglm()</code> estimates only fitted values</label></div>
+<div class="option"><input type="radio" name="q6" value="b" id="q6b"> <label for="q6b">b) <code>glm()</code> can handle ordinal and quantitative predictors while <code>loglm()</code> cannot</label></div>
+<div class="option"><input type="radio" name="q6" value="c" id="q6c"> <label for="q6c">c) <code>glm()</code> can accommodate over-dispersion while <code>loglm()</code> cannot</label></div>
+<div class="option"><input type="radio" name="q6" value="d" id="q6d"> <label for="q6d">d) All of the above</label></div>
+</div>
+<div class="explanation" id="exp6"></div>
+</div>
+
+<div class="question" id="q7">
+<h3>7. How can you extend a loglinear model for frequency tables to handle multi-way contingency tables?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q7" value="a" id="q7a"> <label for="q7a">a) By adding association terms to the model</label></div>
+<div class="option"><input type="radio" name="q7" value="b" id="q7b"> <label for="q7b">b) By fitting separate loglinear models for each combination of predictors</label></div>
+<div class="option"><input type="radio" name="q7" value="c" id="q7c"> <label for="q7c">c) By using a multivariate linear regression model</label></div>
+<div class="option"><input type="radio" name="q7" value="d" id="q7d"> <label for="q7d">d) By using a multinomial logistic regression model</label></div>
+</div>
+<div class="explanation" id="exp7"></div>
+</div>
+
+<div class="question" id="q8">
+<h3>8. For a three-way frequency table, what is the interpretation of the model symbolized by <code>[A B] [A C]</code>?</h3>
+<div class="options">
+<div class="option"><input type="radio" name="q8" value="a" id="q8a"> <label for="q8a">a) A and B are conditionally independent given C</label></div>
+<div class="option"><input type="radio" name="q8" value="b" id="q8b"> <label for="q8b">b) B and C are conditionally independent given A</label></div>
+<div class="option"><input type="radio" name="q8" value="c" id="q8c"> <label for="q8c">c) A and B are mutually independent</label></div>
+<div class="option"><input type="radio" name="q8" value="d" id="q8d"> <label for="q8d">d) The association between A and B is the same for all levels of C</label></div>
+</div>
+<div class="explanation" id="exp8"></div>
+</div>
+
+<button type="button" class="submit-btn" onclick="gradeQuiz()">Submit Quiz</button>
+<button type="button" class="reset-btn" onclick="resetQuiz()">Reset Quiz</button>
+
+</form>
+
+<div class="score-summary" id="scoreSummary"></div>
+
+</div>
+
+<script>
+// Correct answers
+const answers = {
+  q1: 'c',
+  q2: 'b',
+  q3: 'a',
+  q4: 'b',
+  q5: 'b',
+  q6: 'd',
+  q7: 'a',
+  q8: 'b'
+};
+
+// Explanations for each question
+const explanations = {
+  q1: {
+    correct: "Loglinear models are statistical models that analyze relationships (associations) between categorical variables in frequency tables. They model the logarithm of expected cell frequencies as a linear function of the effects of the categorical variables and their interactions.",
+    incorrect: "Loglinear models analyze relationships between categorical variables in frequency tables. They are not the same as linear regression (for continuous outcomes), logistic regression (for binary outcomes), or models for predicting binary outcomes."
+  },
+  q2: {
+    correct: "Goodness of fit for a loglinear model compares the fit of that model (like [A B][C]) to the saturated model [ABC] that fits perfectly. This is best described as a likelihood ratio test, although the test statistic has a chi-square distribution and can also be described as a 'chi-squared test'.",
+    incorrect: "The likelihood ratio test is the standard method for testing goodness of fit of loglinear models. While the test statistic follows a chi-square distribution, the specific test is called the likelihood ratio test (G²), not the Pearson chi-square test. CMH and Cohen's kappa are used for different purposes."
+  },
+  q3: {
+    correct: "glm() models can accommodate allowing or avoiding any combinations of factors, similar to ANOVA designs. They can also handle special models for ordered factors. This flexibility allows modeling different types of associations, whereas the chi-square test only tests the null hypothesis of complete independence.",
+    incorrect: "The main advantage of glm() is flexibility in model specification. You can fit models with different association patterns (main effects only, certain interactions, etc.), similar to how you specify different ANOVA models. The chi-square test only tests complete independence vs. any association."
+  },
+  q4: {
+    correct: "Logit models are designed for binary (or categorical) response variables and model the probability of an outcome. Loglinear models treat all variables symmetrically and model the logarithm of expected frequencies in multi-way tables, handling any number of categorical variables without designating one as a response.",
+    incorrect: "Both loglinear and logit models are non-linear on the original scale. The key difference is that logit models have a designated binary/categorical response variable and model probabilities, while loglinear models treat all variables symmetrically and model cell frequencies."
+  },
+  q5: {
+    correct: "loglm() from the MASS package primarily provides fitted values and goodness-of-fit statistics but doesn't directly estimate model parameters (coefficients). glm() estimates the actual regression coefficients (parameters) for each term in the model, allowing interpretation of effect sizes and significance tests for individual parameters.",
+    incorrect: "The key difference is that glm() estimates parameters (regression coefficients) that quantify the effects of variables and their interactions, while loglm() focuses on fitted frequencies and overall model fit. Both use iterative methods and provide likelihood ratio tests."
+  },
+  q6: {
+    correct: "All three advantages are correct: glm() (a) provides parameter estimates with standard errors and significance tests, (b) can incorporate ordinal variables as linear/polynomial terms and quantitative predictors, and (c) can use quasi-Poisson or negative binomial families to handle over-dispersion. This makes glm() much more flexible than loglm().",
+    incorrect: "glm() has multiple advantages over loglm(): it estimates interpretable parameters, can handle ordered and quantitative predictors elegantly, and can accommodate over-dispersion through quasi-likelihood or alternative families. All of these expand the modeling possibilities."
+  },
+  q7: {
+    correct: "Multi-way contingency tables are modeled by adding higher-order association terms. For a three-way table with factors A, B, C, you can include two-way associations [AB], [AC], [BC] and even three-way associations [ABC]. The model formula specifies which associations to include.",
+    incorrect: "Loglinear models for multi-way tables work by specifying which association terms (interactions) to include in the model. This is done within a single unified model, not by fitting separate models. The approach is similar to factorial ANOVA, where you specify main effects and interactions."
+  },
+  q8: {
+    correct: "The model [A B][A C] includes the two-way associations A:B and A:C but not B:C. This means B and C are conditionally independent given A—there's no association between B and C after accounting for their relationships with A. The model allows A to be associated with both B and C.",
+    incorrect: "In bracket notation, [A B][A C] indicates the model includes A:B and A:C associations but omits B:C. This means once you know A, B and C are independent of each other—they are conditionally independent given A. The brackets show which variables are associated in the model."
+  }
+};
+</script>
+
+<script src="../assets/quiz.js"></script>

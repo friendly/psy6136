@@ -11,7 +11,7 @@
 
 
 
-<title>quiz3-loglin</title>
+<title>Quiz 8: Extending Loglinear Models 📊</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -252,6 +252,111 @@ if (window.hljs) {
 
 
 
+<style type="text/css">:root {
+--incorrect: #983E82;
+--incorrect_alpha: #edaddd;
+--correct: #59935B;
+--correct_alpha: #c0edc2;
+--highlight: #467AAC;
+}
+.webex-check {}
+.webex-box {
+border: 2px solid var(--highlight);
+padding: 0.5em 0.25em;
+margin: 1em 0;
+border-radius: .25em;
+background-color: rgba(127, 127, 127, 0.05);
+}
+.webex-total_correct {
+margin-left: 1em;
+}
+.unchecked .webex-total_correct {
+display: none;
+}
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+border: 2px dotted grey !important;
+background-color: white !important;
+}
+
+.webex-select, input.webex-solveme,
+.unchecked .webex-radiogroup label.webex-incorrect,
+.unchecked .webex-radiogroup label.webex-correct{
+border: 2px dotted grey;
+background-color: white;
+border-radius: 0.25em;
+}
+.webex-incorrect,
+input.webex-solveme.webex-incorrect,
+.webex-radiogroup label.webex-incorrect {
+border: 2px dotted var(--incorrect);
+background-color: var(--incorrect_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.webex-correct,
+input.webex-solveme.webex-correct,
+.webex-radiogroup label.webex-correct {
+border: 2px solid var(--correct);
+background-color: var(--correct_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.unchecked .webex-incorrect span::before,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct span::before,
+.unchecked .webex-correct + .webex-icon::after {
+content: " ";
+}
+.webex-incorrect span::before,
+.webex-incorrect + .webex-icon::after {
+content: "\274C ";
+}
+.webex-correct span::before,
+.webex-correct + .webex-icon::after {
+content: "\2705 ";
+}
+
+.webex-solution {
+height: 2.5em;
+overflow-y: hidden;
+padding: 0.5em;
+margin-bottom: 10px;
+}
+.webex-solution.open {
+height: auto;
+border: 2px solid var(--highlight);
+border-radius: 5px;
+}
+.webex-solution button, .webex-check-button {
+height: 2em;
+margin-bottom: 0.5em;
+border-radius: 0.5em;
+background-color: var(--highlight);
+color: white;
+padding: 0 0.5em;
+}
+.webex-solution pre.sourceCode {
+border-color: var(--correct);
+}
+.webex-radiogroup label {
+margin-left: 2em;
+text-indent: -1em;
+padding-left: 0.5em;
+font-weight: 400;
+display: block;
+border: 2px solid rgba(255, 255, 255, 0);
+background-color: inherit;
+border-radius: 0.25em;
+}
+.webex-radiogroup label input {
+position: relative;
+left: -1em;
+}
+.webex-radiogroup {
+margin: 1em 0;
+}
+</style>
 
 
 
@@ -348,115 +453,452 @@ display: none;
 
 
 
+<h1 class="title toc-ignore">Quiz 8: Extending Loglinear Models 📊</h1>
 
 </div>
 
 
-<div id="quiz-3-loglinear-models" class="section level1">
-<h1>Quiz 3: Loglinear models</h1>
-<p>Test your knowledge of the material on <a href="../lectures/04-Loglin.pdf">loglinear models</a> in the following
-quiz.</p>
-<ol style="list-style-type: decimal">
-<li><strong>What is a loglinear model for frequency tables in
-categorical data analysis?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>A linear regression model for categorical data</li>
-<li>A logistic regression model for categorical data</li>
-<li>A statistical model for analyzing the relationship between
-categorical variables</li>
-<li>A model for predicting binary outcomes from categorical
-predictors</li>
-</ol>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>How do you test for goodness of fit of a loglinear model for
-a two-way frequency table?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>By using a chi-squared test</li>
-<li>By using a likelihood ratio test</li>
-<li>By using a Cochran-Mantel-Haenszel test</li>
-<li>By using Cohen’s kappa.</li>
-</ol>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>What is the main difference between a <code>glm()</code>
-loglinear model and the chi-squared test for independence in two-way
-frequency tables?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li><code>glm()</code> models allow for different types of associations
-among variables while chi-squared test only tests for independence</li>
-<li><code>glm()</code> models allow for non-normal data while
-chi-squared test do not</li>
-<li><code>glm()</code> models apply in small sample size while
-chi-squared test require large sample size</li>
-<li><code>glm()</code> models allow for estimation of parameters for
-interactions among variables and also for non-normal data while
-chi-squared test only tests for independence</li>
-</ol>
-<ol start="4" style="list-style-type: decimal">
-<li><strong>How does a loglinear model differ from a logit
-model?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Loglinear models are linear while logit models are non-linear</li>
-<li>Logit models handle only binary outcomes while loglinear models
-handle more than 2 outcomes</li>
-<li>Loglinear models are used for continuous data while logit models are
-used for categorical data</li>
-<li>Logit models estimate probabilities while loglinear models estimate
-frequencies</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li><strong>What is the difference between a loglinear model fit by
-<code>loglm()</code> and one fit using <code>glm()</code>?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li><code>loglm()</code> requires large samples while <code>glm()</code>
-can be used for smaller samples</li>
-<li><code>loglm()</code> only estimates fitted values while
-<code>glm()</code> estimates parameters</li>
-<li><code>loglm()</code> uses an interative process while
-<code>glm()</code> provides an exact solution</li>
-<li><code>loglm()</code> gives the Pearson chi-square test while
-<code>glm()</code> gives the likelihood ratio test</li>
-</ol>
-<ol start="6" style="list-style-type: decimal">
-<li><strong>What are the advantages of a loglinear model fit using
-<code>glm()</code> over one fit using <code>loglm()</code></strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li><code>glm()</code> estimates parameters while <code>loglm()</code>
-estimates only fitted values</li>
-<li><code>glm()</code> can handle ordinal and quantitative predictors
-while <code>loglm()</code> cannot</li>
-<li><code>glm()</code> can accommodate over-dispersion while
-<code>loglm()</code> cannot</li>
-<li>All of the above</li>
-</ol>
-<ol start="7" style="list-style-type: decimal">
-<li><strong>How can you extend a loglinear model for frequency tables to
-handle multi-way contingency tables?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>By adding association terms to the model</li>
-<li>By fitting separate loglinear models for each combination of
-predictors</li>
-<li>By using a multivariate linear regression model</li>
-<li>By using a multinomial logistic regression model</li>
-</ol>
-<ol start="8" style="list-style-type: decimal">
-<li><strong>For a three-way frequency table what is the interpretation
-of the model symbolized by <code>[A B] [A C]</code></strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>A and B are conditionally independent given C</li>
-<li>B and C are conditionally independent given A</li>
-<li>A and B are mutually independent</li>
-<li>The association between A and B is the same for all levels of C</li>
-</ol>
+<p>Test your knowledge of the material on <a href="../lectures/08-Loglin2.pdf">extending loglinear models</a> in the
+following quiz to see how much you learned. This is <strong>entirely
+private for you</strong>---no records are kept of your performance.</p>
+<div id="questions" class="section level2">
+<h2>Questions</h2>
+<p><strong>1. When one table variable is a binary response, a logit
+model for that response is:</strong></p>
+<div id="radio_VWBEHYFKNO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VWBEHYFKNO" value></input>
+<span>More complex than the equivalent loglinear
+model</span></label><label><input type="radio" autocomplete="off" name="radio_VWBEHYFKNO" value="answer"></input>
+<span>Equivalent to a loglinear
+model</span></label><label><input type="radio" autocomplete="off" name="radio_VWBEHYFKNO" value></input>
+<span>Unrelated to loglinear
+models</span></label><label><input type="radio" autocomplete="off" name="radio_VWBEHYFKNO" value></input>
+<span>Only valid for continuous predictors</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>Each logit model for a binary response C is equivalent to a loglinear
+model. The loglinear model must include the [AB] association of
+predictors. The logit model is simpler to interpret because it has fewer
+parameters and focuses on the effects on the response variable.</p>
+</div>
+<p><strong>2. The main advantage of the GLM (generalized linear model)
+approach to loglinear models is that GLM:</strong></p>
+<div id="radio_KNWZBPOLEY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KNWZBPOLEY" value></input>
+<span>Only works with categorical
+predictors</span></label><label><input type="radio" autocomplete="off" name="radio_KNWZBPOLEY" value></input>
+<span>Requires larger sample
+sizes</span></label><label><input type="radio" autocomplete="off" name="radio_KNWZBPOLEY" value="answer"></input>
+<span>Allows quantitative predictors and can handle ordinal
+factors</span></label><label><input type="radio" autocomplete="off" name="radio_KNWZBPOLEY" value></input>
+<span>Cannot handle overdispersion</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The GLM approach allows quantitative predictors and special ways of
+treating ordinal factors. It provides parameter estimates with standard
+errors and significance tests, can incorporate ordinal variables as
+linear/polynomial terms, and can handle overdispersion using
+quasi-Poisson or negative binomial families.</p>
+</div>
+<p><strong>3. The linear-by-linear (L × L) model for ordinal variables
+assumes:</strong></p>
+<div id="radio_YVUIXIYTRE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_YVUIXIYTRE" value></input>
+<span>Different slopes for each
+category</span></label><label><input type="radio" autocomplete="off" name="radio_YVUIXIYTRE" value="answer"></input>
+<span>A constant local odds ratio for adjacent
+categories</span></label><label><input type="radio" autocomplete="off" name="radio_YVUIXIYTRE" value></input>
+<span>No association between
+variables</span></label><label><input type="radio" autocomplete="off" name="radio_YVUIXIYTRE" value></input>
+<span>Only main effects, no interaction</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The L × L model assumes log(m<sub>ij</sub>) = μ +
+λ<sub>i</sub><sup>A</sup> + λ<sub>j</sub><sup>B</sup> + γ
+a<sub>i</sub>b<sub>j</sub>, where γ is a constant local odds ratio. For
+integer scores, log(θ<sub>ij</sub>) = γ. This model uses only 1 more
+parameter than the independence model, making it very parsimonious.</p>
+</div>
+<p><strong>4. In models for ordered categories, the RC(1) model differs
+from the L × L model in that RC(1):</strong></p>
+<div id="radio_GACEBLIDHI" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GACEBLIDHI" value></input>
+<span>Uses more degrees of
+freedom</span></label><label><input type="radio" autocomplete="off" name="radio_GACEBLIDHI" value></input>
+<span>Assumes
+independence</span></label><label><input type="radio" autocomplete="off" name="radio_GACEBLIDHI" value="answer"></input>
+<span>Estimates optimal row and column scores from the
+data</span></label><label><input type="radio" autocomplete="off" name="radio_GACEBLIDHI" value></input>
+<span>Only applies to square tables</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The RC(1) row-and-column effects model estimates optimal category
+scores α<sub>i</sub> and β<sub>j</sub> as parameters:
+λ<sub>ij</sub><sup>AB</sup> = γ α<sub>i</sub>β<sub>j</sub>. Unlike L × L
+which assigns fixed integer scores, RC(1) finds the best-fitting scores.
+The ordering and spacing of categories is estimated from the data,
+similar to correspondence analysis.</p>
+</div>
+<p><strong>5. For a square table with the same row and column
+categories, the quasi-independence model:</strong></p>
+<div id="radio_VZFCSTTVCK" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_VZFCSTTVCK" value></input>
+<span>Assumes complete
+independence</span></label><label><input type="radio" autocomplete="off" name="radio_VZFCSTTVCK" value="answer"></input>
+<span>Fits diagonal cells perfectly and tests independence in
+off-diagonal
+cells</span></label><label><input type="radio" autocomplete="off" name="radio_VZFCSTTVCK" value></input>
+<span>Requires equal marginal
+totals</span></label><label><input type="radio" autocomplete="off" name="radio_VZFCSTTVCK" value></input>
+<span>Only works with 2×2 tables</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The quasi-independence model adds parameters δ<sub>i</sub> for each
+diagonal cell: log(m<sub>ij</sub>) = μ + λ<sub>i</sub><sup>A</sup> +
+λ<sub>j</sub><sup>B</sup> + δ<sub>i</sub>I(i=j). This fits the diagonal
+cells (where row = column) perfectly while testing for independence in
+the off-diagonal cells, which is useful for mobility tables and other
+square tables.</p>
+</div>
+<p><strong>6. The relationship between symmetry and quasi-symmetry
+models is:</strong></p>
+<div id="radio_ADFAPPZHZL" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ADFAPPZHZL" value></input>
+<span>They are identical
+models</span></label><label><input type="radio" autocomplete="off" name="radio_ADFAPPZHZL" value></input>
+<span>Symmetry is less restrictive than
+quasi-symmetry</span></label><label><input type="radio" autocomplete="off" name="radio_ADFAPPZHZL" value="answer"></input>
+<span>Symmetry = quasi-symmetry + marginal
+homogeneity</span></label><label><input type="radio" autocomplete="off" name="radio_ADFAPPZHZL" value></input>
+<span>Quasi-symmetry always fits better than symmetry</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>For square tables, it can be shown that symmetry = quasi-symmetry +
+marginal homogeneity, and G²(S) = G²(QS) + G²(MH). The symmetry model
+assumes π<sub>ij</sub> = π<sub>ji</sub>, but this also implies marginal
+homogeneity (equal row and column totals). The quasi-symmetry model
+allows λ<sub>ij</sub> = λ<sub>ji</sub> without requiring equal
+margins.</p>
+</div>
+<p><strong>7. The gnm package in R is used to fit:</strong></p>
+<div id="radio_KRBHIRUSVG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_KRBHIRUSVG" value></input>
+<span>Only standard loglinear
+models</span></label><label><input type="radio" autocomplete="off" name="radio_KRBHIRUSVG" value></input>
+<span>Only logistic regression
+models</span></label><label><input type="radio" autocomplete="off" name="radio_KRBHIRUSVG" value="answer"></input>
+<span>Generalized nonlinear models including RC and UNIDIFF
+models</span></label><label><input type="radio" autocomplete="off" name="radio_KRBHIRUSVG" value></input>
+<span>Only linear regression models</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The gnm package provides functions to fit generalized nonlinear
+models (GNMs). RC models are not loglinear—they contain multiplicative
+terms like γ α<sub>i</sub>β<sub>j</sub>. The gnm() function can fit
+these models using Mult(), Exp(), and other nonlinear functions. The
+package also provides Diag(), Symm(), and Topo() convenience
+functions.</p>
+</div>
+<p><strong>8. In the UNIDIFF (uniform difference) model for stratified
+tables, the layer coefficients γ<sub>k</sub> represent:</strong></p>
+<div id="radio_IWETMUMJXZ" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IWETMUMJXZ" value></input>
+<span>The main effects of the layer
+variable</span></label><label><input type="radio" autocomplete="off" name="radio_IWETMUMJXZ" value="answer"></input>
+<span>Multiplicative effects showing how association strength varies
+across
+layers</span></label><label><input type="radio" autocomplete="off" name="radio_IWETMUMJXZ" value></input>
+<span>The independence of
+layers</span></label><label><input type="radio" autocomplete="off" name="radio_IWETMUMJXZ" value></input>
+<span>Only the diagonal associations</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The UNIDIFF model is log(m<sub>ijk</sub>) = μ +
+λ<sub>i</sub><sup>R</sup> + λ<sub>j</sub><sup>C</sup> +
+λ<sub>k</sub><sup>L</sup> + λ<sub>ik</sub><sup>RL</sup> +
+λ<sub>jk</sub><sup>CL</sup> + γ<sub>k</sub>δ<sub>ij</sub><sup>RC</sup>.
+The layer coefficients γ<sub>k</sub> are multipliers showing how the
+[RC] association varies across layers (e.g., across countries or time
+periods), with one layer fixed at 1.0 as reference.</p>
+</div>
+<p><strong>9. Compared to general association models, models for ordinal
+variables provide:</strong></p>
+<div id="radio_MHUZLNWHTY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_MHUZLNWHTY" value></input>
+<span>Less statistical
+power</span></label><label><input type="radio" autocomplete="off" name="radio_MHUZLNWHTY" value></input>
+<span>More parameters to
+estimate</span></label><label><input type="radio" autocomplete="off" name="radio_MHUZLNWHTY" value="answer"></input>
+<span>More focused tests with greater power and fewer degrees of
+freedom</span></label><label><input type="radio" autocomplete="off" name="radio_MHUZLNWHTY" value></input>
+<span>Only categorical interpretation</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>Models for ordinal variables give more focused tests → greater power
+to detect associations. They use fewer df → can fit different models
+between independence [A][B] and saturated [AB], have fewer parameters →
+easier interpretation and smaller standard errors. This is similar to
+using CMH tests or testing linear contrasts in ANOVA.</p>
+</div>
+<p><strong>10. When comparing multiple models using AIC and BIC, which
+statement is TRUE?</strong></p>
+<div id="radio_FTRZCBMSOH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_FTRZCBMSOH" value></input>
+<span>AIC and BIC always select the same
+model</span></label><label><input type="radio" autocomplete="off" name="radio_FTRZCBMSOH" value></input>
+<span>Lower values indicate worse
+fit</span></label><label><input type="radio" autocomplete="off" name="radio_FTRZCBMSOH" value="answer"></input>
+<span>BIC penalizes complexity more heavily than AIC, often preferring
+simpler
+models</span></label><label><input type="radio" autocomplete="off" name="radio_FTRZCBMSOH" value></input>
+<span>Both criteria ignore degrees of freedom</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>BIC (Bayesian Information Criterion) penalizes model complexity more
+heavily than AIC (Akaike Information Criterion). BIC =
+-2<em>log-likelihood + log(n)</em>df, while AIC = -2<em>log-likelihood +
+2</em>df. As a result, BIC often prefers more parsimonious models. Lower
+values of both criteria indicate better models, balancing
+goodness-of-fit against complexity.</p>
+</div>
 </div>
 
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 
 
 

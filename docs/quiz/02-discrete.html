@@ -11,7 +11,7 @@
 
 
 
-<title>quiz1-discrete</title>
+<title>Quiz 1: Discrete Distributions 📊</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -252,6 +252,111 @@ if (window.hljs) {
 
 
 
+<style type="text/css">:root {
+--incorrect: #983E82;
+--incorrect_alpha: #edaddd;
+--correct: #59935B;
+--correct_alpha: #c0edc2;
+--highlight: #467AAC;
+}
+.webex-check {}
+.webex-box {
+border: 2px solid var(--highlight);
+padding: 0.5em 0.25em;
+margin: 1em 0;
+border-radius: .25em;
+background-color: rgba(127, 127, 127, 0.05);
+}
+.webex-total_correct {
+margin-left: 1em;
+}
+.unchecked .webex-total_correct {
+display: none;
+}
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+border: 2px dotted grey !important;
+background-color: white !important;
+}
+
+.webex-select, input.webex-solveme,
+.unchecked .webex-radiogroup label.webex-incorrect,
+.unchecked .webex-radiogroup label.webex-correct{
+border: 2px dotted grey;
+background-color: white;
+border-radius: 0.25em;
+}
+.webex-incorrect,
+input.webex-solveme.webex-incorrect,
+.webex-radiogroup label.webex-incorrect {
+border: 2px dotted var(--incorrect);
+background-color: var(--incorrect_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.webex-correct,
+input.webex-solveme.webex-correct,
+.webex-radiogroup label.webex-correct {
+border: 2px solid var(--correct);
+background-color: var(--correct_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.unchecked .webex-incorrect span::before,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct span::before,
+.unchecked .webex-correct + .webex-icon::after {
+content: " ";
+}
+.webex-incorrect span::before,
+.webex-incorrect + .webex-icon::after {
+content: "\274C ";
+}
+.webex-correct span::before,
+.webex-correct + .webex-icon::after {
+content: "\2705 ";
+}
+
+.webex-solution {
+height: 2.5em;
+overflow-y: hidden;
+padding: 0.5em;
+margin-bottom: 10px;
+}
+.webex-solution.open {
+height: auto;
+border: 2px solid var(--highlight);
+border-radius: 5px;
+}
+.webex-solution button, .webex-check-button {
+height: 2em;
+margin-bottom: 0.5em;
+border-radius: 0.5em;
+background-color: var(--highlight);
+color: white;
+padding: 0 0.5em;
+}
+.webex-solution pre.sourceCode {
+border-color: var(--correct);
+}
+.webex-radiogroup label {
+margin-left: 2em;
+text-indent: -1em;
+padding-left: 0.5em;
+font-weight: 400;
+display: block;
+border: 2px solid rgba(255, 255, 255, 0);
+background-color: inherit;
+border-radius: 0.25em;
+}
+.webex-radiogroup label input {
+position: relative;
+left: -1em;
+}
+.webex-radiogroup {
+margin: 1em 0;
+}
+</style>
 
 
 
@@ -348,106 +453,393 @@ display: none;
 
 
 
+<h1 class="title toc-ignore">Quiz 1: Discrete Distributions 📊</h1>
 
 </div>
 
 
-<div id="quiz-1-discrete-distributions" class="section level1">
-<h1>Quiz 1: Discrete Distributions</h1>
 <p>Test your knowledge of the material on <a href="../lectures/02-Discrete.pdf">discrete distributions</a> in the
-following quiz.</p>
-<ol style="list-style-type: decimal">
-<li><strong>What are the assumptions necessary for a variable to be
-distributed as a binomial distribution?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The variable must be binary</li>
-<li>The variable must be discrete</li>
-<li>The variable must have a fixed number of trials</li>
-<li>All of the above</li>
-</ol>
-<ol start="2" style="list-style-type: decimal">
-<li><strong>How does the skewness of a binomial variable relate to its
-parameters <em>n</em> and <em>p</em>?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Skewness = n p</li>
-<li>Skewness = n/p</li>
-<li>Skewness = p (1-p) / n</li>
-<li>Skewness = p^2 / n</li>
-</ol>
-<ol start="3" style="list-style-type: decimal">
-<li><strong>When would you use a negative binomial distribution over a
-Poisson distribution?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>When the number of trials is fixed</li>
-<li>When the variance exceeds the mean</li>
-<li>When there are negative counts in the data</li>
-<li>When the parameter p differs substantially from 0.5</li>
-</ol>
-<ol start="4" style="list-style-type: decimal">
-<li><strong>How does the mean and variance of a Poisson distribution
-relate to its parameter λ?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Mean = λ, Variance = λ</li>
-<li>Mean = 1/λ, Variance = 1/λ^2</li>
-<li>Mean = 1/λ, Variance = λ</li>
-<li>Mean = λ, Variance = λ^2</li>
-</ol>
-<ol start="5" style="list-style-type: decimal">
-<li><strong>Which example is most likely to follow a log-series
-distribution?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Number of accidents at a busy intersection</li>
-<li>Counts of occurrences of distinct words in the books written by Jane
-Austin</li>
-<li>Number of births of males in Canadian families composed of 6
-children</li>
-<li>Number of tosses of a coin required to get the first head.</li>
-</ol>
-<ol start="6" style="list-style-type: decimal">
-<li>**Which of the following characterize the negative binomial
-distribution and the geometric distribution?</li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>The negative binomial distribution models the number of failures
-before a specified number of successes</li>
-<li>The geometric distribution models the number of failures before the
-first success</li>
-<li>Both A and B</li>
-<li>Neither A nor B</li>
-</ol>
-<ol start="7" style="list-style-type: decimal">
-<li><strong>In what type of data might you use a negative binomial
-distribution?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Count data</li>
-<li>Binary data</li>
-<li>Continuous data</li>
-<li>Both A and B</li>
-</ol>
-<ol start="8" style="list-style-type: decimal">
-<li><strong>What is the mean and variance of a variable distributed as a
-geometric distribution?</strong></li>
-</ol>
-<ol style="list-style-type: lower-alpha">
-<li>Mean = λ, Variance = λ</li>
-<li>Mean = 1/λ, Variance = 1/λ^2</li>
-<li>Mean = 1/λ, Variance = λ</li>
-<li>Mean = λ, Variance = 1/λ^2</li>
-</ol>
-<div id="answers" class="section level2">
-<h2>Answers</h2>
-<p>1: d; 2: c; 3: b; 4: a; 5: b; 6: c; 7: b (bad question– DDAR defines
-the geometric distribution in terms of the parameter <em>p</em>); 8:
-d</p>
+following quiz to see how much you learned. This is <strong>entirely
+private for you</strong>---no records are kept of your performance.</p>
+<div id="questions" class="section level2">
+<h2>Questions</h2>
+<p><strong>1. What are the assumptions necessary for a variable to be
+distributed as a binomial distribution?</strong></p>
+<div id="radio_OCVILZZWWC" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OCVILZZWWC" value></input>
+<span>The variable must be
+binary</span></label><label><input type="radio" autocomplete="off" name="radio_OCVILZZWWC" value></input>
+<span>The variable must be
+discrete</span></label><label><input type="radio" autocomplete="off" name="radio_OCVILZZWWC" value></input>
+<span>The variable must have a fixed number of
+trials</span></label><label><input type="radio" autocomplete="off" name="radio_OCVILZZWWC" value="answer"></input>
+<span>All of the above</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>A binomial distribution requires ALL of these assumptions: the
+variable must be binary (success/failure), discrete (counts), and have a
+fixed number of trials, along with independent trials and constant
+probability.</p>
+</div>
+<p><strong>2. How does the skewness of a binomial variable relate to its
+parameters <em>n</em> and <em>p</em>?</strong></p>
+<div id="radio_WLBNAOFBAO" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WLBNAOFBAO" value></input>
+<span>Skewness = n
+p</span></label><label><input type="radio" autocomplete="off" name="radio_WLBNAOFBAO" value></input>
+<span>Skewness =
+n/p</span></label><label><input type="radio" autocomplete="off" name="radio_WLBNAOFBAO" value="answer"></input>
+<span>Skewness = p (1-p) /
+n</span></label><label><input type="radio" autocomplete="off" name="radio_WLBNAOFBAO" value></input>
+<span>Skewness = p^2 / n</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The skewness of a binomial distribution is approximately p(1-p)/n.
+This shows that skewness decreases as n increases, and is minimized when
+p=0.5 (symmetric distribution).</p>
+</div>
+<p><strong>3. When would you use a negative binomial distribution over a
+Poisson distribution?</strong></p>
+<div id="radio_ZIEZRBSAID" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_ZIEZRBSAID" value></input>
+<span>When the number of trials is
+fixed</span></label><label><input type="radio" autocomplete="off" name="radio_ZIEZRBSAID" value="answer"></input>
+<span>When the variance exceeds the
+mean</span></label><label><input type="radio" autocomplete="off" name="radio_ZIEZRBSAID" value></input>
+<span>When there are negative counts in the
+data</span></label><label><input type="radio" autocomplete="off" name="radio_ZIEZRBSAID" value></input>
+<span>When the parameter p differs substantially from 0.5</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The key difference is overdispersion: use negative binomial when
+variance &gt; mean. The Poisson distribution assumes mean = variance,
+which is often violated in real count data.</p>
+</div>
+<p><strong>4. How does the mean and variance of a Poisson distribution
+relate to its parameter λ?</strong></p>
+<div id="radio_UDPOHQUHND" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_UDPOHQUHND" value="answer"></input>
+<span>Mean = λ, Variance =
+λ</span></label><label><input type="radio" autocomplete="off" name="radio_UDPOHQUHND" value></input>
+<span>Mean = 1/λ, Variance =
+1/λ^2</span></label><label><input type="radio" autocomplete="off" name="radio_UDPOHQUHND" value></input>
+<span>Mean = 1/λ, Variance =
+λ</span></label><label><input type="radio" autocomplete="off" name="radio_UDPOHQUHND" value></input>
+<span>Mean = λ, Variance = λ^2</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>For the Poisson distribution, both the mean and variance equal the
+parameter λ. This equidispersion property (mean = variance) is a key
+characteristic of the Poisson distribution.</p>
+</div>
+<p><strong>5. Which example is most likely to follow a log-series
+distribution?</strong></p>
+<div id="radio_CMKEAYNCIT" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CMKEAYNCIT" value></input>
+<span>Number of accidents at a busy
+intersection</span></label><label><input type="radio" autocomplete="off" name="radio_CMKEAYNCIT" value="answer"></input>
+<span>Counts of occurrences of distinct words in the books written by
+Jane
+Austen</span></label><label><input type="radio" autocomplete="off" name="radio_CMKEAYNCIT" value></input>
+<span>Number of births of males in Canadian families composed of 6
+children</span></label><label><input type="radio" autocomplete="off" name="radio_CMKEAYNCIT" value></input>
+<span>Number of tosses of a coin required to get the first
+head</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The log-series distribution is best for highly skewed count data
+where there are many low-frequency events and few high-frequency events,
+such as word frequencies in text (following Zipf&#39;s law). Option (a)
+would be Poisson, (c) would be binomial, and (d) would be geometric.</p>
+</div>
+<p><strong>6. Which of the following characterize the negative binomial
+distribution and the geometric distribution?</strong></p>
+<div id="radio_PADVRNCXAY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_PADVRNCXAY" value></input>
+<span>The negative binomial distribution models the number of failures
+before a specified number of
+successes</span></label><label><input type="radio" autocomplete="off" name="radio_PADVRNCXAY" value></input>
+<span>The geometric distribution models the number of failures before
+the first
+success</span></label><label><input type="radio" autocomplete="off" name="radio_PADVRNCXAY" value="answer"></input>
+<span>Both A and
+B</span></label><label><input type="radio" autocomplete="off" name="radio_PADVRNCXAY" value></input>
+<span>Neither A nor B</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>Both statements are correct. The negative binomial distribution
+counts failures before achieving r successes, and the geometric
+distribution is the special case where r=1, counting failures before the
+first success.</p>
+</div>
+<p><strong>7. In what type of data might you use a negative binomial
+distribution?</strong></p>
+<div id="radio_HLPGEFDIWR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_HLPGEFDIWR" value="answer"></input>
+<span>Count
+data</span></label><label><input type="radio" autocomplete="off" name="radio_HLPGEFDIWR" value></input>
+<span>Binary
+data</span></label><label><input type="radio" autocomplete="off" name="radio_HLPGEFDIWR" value></input>
+<span>Continuous
+data</span></label><label><input type="radio" autocomplete="off" name="radio_HLPGEFDIWR" value></input>
+<span>Both A and B</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>The negative binomial distribution is used for count data
+(non-negative integers), particularly when the data show overdispersion.
+It is not appropriate for binary data (that would be binomial or
+Bernoulli) or continuous data.</p>
+</div>
+<p><strong>8. What is the mean and variance of a variable distributed as
+a geometric distribution?</strong></p>
+<div id="radio_DVWHLWUIPG" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_DVWHLWUIPG" value></input>
+<span>Mean = λ, Variance =
+λ</span></label><label><input type="radio" autocomplete="off" name="radio_DVWHLWUIPG" value></input>
+<span>Mean = 1/λ, Variance =
+1/λ^2</span></label><label><input type="radio" autocomplete="off" name="radio_DVWHLWUIPG" value></input>
+<span>Mean = 1/λ, Variance =
+λ</span></label><label><input type="radio" autocomplete="off" name="radio_DVWHLWUIPG" value="answer"></input>
+<span>Mean = λ, Variance = 1/λ^2</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explanation
+</button>
+<p>For the geometric distribution with parameter p, the mean is (1-p)/p
+and variance is (1-p)/p^2. Note: There are two parameterizations of the
+geometric; DDAR uses parameter p rather than λ. This question is
+problematic as noted in the original quiz.</p>
 </div>
 </div>
 
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Hide Answers";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Show Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 
 
 
