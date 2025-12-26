@@ -343,17 +343,17 @@ div_heading("readings")
 ```
 -->
 
-```{r quiz5, results='asis', echo=FALSE}
-div_heading("quiz")
-```
-
-- [Quiz 5 - Correspondence analysis](quiz/quiz5-corresp.html)
 
 
 #### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 6](VCDR/chapter06.pdf)
 
+```{r quiz5, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 5 - Correspondence analysis](quiz/quiz5-corresp.html)
 
 ## Logistic regression
 
@@ -496,6 +496,13 @@ div_heading("lecture")
 
 - **DDAR**: [Ch 10](VCDR/chapter10.pdf)
 
+```{r quiz8, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 8 - Extending Loglinear Models](quiz/quiz8-loglin2.html)
+
+
 ## GLMs for count data
 
 Here we consider generalized linear models more broadly, with emphasis on those for 
@@ -537,6 +544,13 @@ div_heading("lecture")
 #### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 11](VCDR/chapter11.pdf)
+
+```{r quiz9, results='asis', echo=FALSE}
+div_heading("quiz")
+```
+
+- [Quiz 9 - GLMs for Count Data](quiz/quiz9-countdata.html)
+
 
 
 ## Models and graphs for log odds and log odds ratios

@@ -15,10 +15,7 @@ This is **entirely private for you**---no records are kept of your performance.
 
 **1. Logistic regression is used when the response variable is:**
 
-`r longmcq(c("Continuous and normally distributed",
-             answer = "Binary (0/1, success/failure, yes/no)",
-             "Count data following a Poisson distribution",
-             "Categorical with more than two unordered categories"))`
+`r longmcq(c("Continuous and normally distributed", answer = "Binary (0/1, success/failure, yes/no)", "Count data following a Poisson distribution", "Categorical with more than two unordered categories"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -27,10 +24,7 @@ Logistic regression is specifically designed for binary response variables (0/1,
 
 **2. What is the main problem with using ordinary least squares (OLS) regression for a binary response?**
 
-`r longmcq(c("OLS cannot handle categorical predictors",
-             answer = "OLS predictions can fall outside the [0, 1] range and violates homogeneity of variance",
-             "OLS is too computationally intensive for binary data",
-             "OLS requires a larger sample size than logistic regression"))`
+`r longmcq(c("OLS cannot handle categorical predictors", answer = "OLS predictions can fall outside the [0, 1] range and violates homogeneity of variance", "OLS is too computationally intensive for binary data", "OLS requires a larger sample size than logistic regression"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -39,10 +33,7 @@ OLS has two main problems with binary responses: (1) predicted values can fall o
 
 **3. The logit link function in logistic regression is defined as:**
 
-`r longmcq(c("logit(π) = π / (1 - π)",
-             answer = "logit(π) = log[π / (1 - π)]",
-             "logit(π) = 1 / (1 + exp(-π))",
-             "logit(π) = exp(π)"))`
+`r longmcq(c("logit(π) = π / (1 - π)", answer = "logit(π) = log[π / (1 - π)]", "logit(π) = 1 / (1 + exp(-π))", "logit(π) = exp(π)"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -51,10 +42,7 @@ The logit link function is logit(π) = log[π/(1-π)], the natural logarithm of 
 
 **4. In a logistic regression model, the coefficient β for a predictor represents:**
 
-`r longmcq(c("The change in probability for a unit increase in the predictor",
-             answer = "The change in log odds for a unit increase in the predictor",
-             "The odds ratio for the predictor",
-             "The correlation between the predictor and response"))`
+`r longmcq(c("The change in probability for a unit increase in the predictor", answer = "The change in log odds for a unit increase in the predictor", "The odds ratio for the predictor", "The correlation between the predictor and response"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -63,10 +51,7 @@ In logistic regression, the model is linear on the log-odds (logit) scale: logit
 
 **5. If a logistic regression coefficient is β = 0.5, the odds ratio (multiplicative effect on odds) is:**
 
-`r longmcq(c("0.5",
-             "1.5",
-             answer = "exp(0.5) ≈ 1.65",
-             "log(0.5) ≈ -0.69"))`
+`r longmcq(c("0.5", "1.5", answer = "exp(0.5) ≈ 1.65", "log(0.5) ≈ -0.69"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -75,10 +60,7 @@ To convert a log odds coefficient to an odds ratio (the multiplicative effect on
 
 **6. In R, how do you fit a logistic regression model for a binary response variable `outcome` with predictors `age` and `sex`?**
 
-`r longmcq(c("lm(outcome ~ age + sex)",
-             answer = "glm(outcome ~ age + sex, family = binomial)",
-             "loglm(outcome ~ age + sex)",
-             "logit(outcome ~ age + sex)"))`
+`r longmcq(c("lm(outcome ~ age + sex)", answer = "glm(outcome ~ age + sex, family = binomial)", "loglm(outcome ~ age + sex)", "logit(outcome ~ age + sex)"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -87,10 +69,7 @@ Use glm() with family = binomial to fit logistic regression: glm(outcome ~ age +
 
 **7. Logistic regression models are typically fit using:**
 
-`r longmcq(c("Ordinary least squares (OLS)",
-             answer = "Maximum likelihood estimation (MLE)",
-             "Weighted least squares (WLS)",
-             "Bayesian estimation with non-informative priors"))`
+`r longmcq(c("Ordinary least squares (OLS)", answer = "Maximum likelihood estimation (MLE)", "Weighted least squares (WLS)", "Bayesian estimation with non-informative priors"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -99,10 +78,7 @@ Logistic regression uses maximum likelihood estimation (MLE), which finds parame
 
 **8. In logistic regression, hypothesis tests for individual coefficients typically use:**
 
-`r longmcq(c("F-tests",
-             answer = "Wald z-tests or χ² tests",
-             "t-tests",
-             "ANOVA F-tests"))`
+`r longmcq(c("F-tests", answer = "Wald z-tests or χ² tests", "t-tests", "ANOVA F-tests"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -111,10 +87,7 @@ Individual coefficients in logistic regression are tested using Wald z-tests (co
 
 **9. Effect plots from the `effects` package display predicted effects:**
 
-`r longmcq(c("For each predictor separately, ignoring all other predictors",
-             answer = "For high-order terms in the model, averaged over (controlling for) other predictors",
-             "Only for the intercept term",
-             "Only for interaction terms"))`
+`r longmcq(c("For each predictor separately, ignoring all other predictors", answer = "For high-order terms in the model, averaged over (controlling for) other predictors", "Only for the intercept term", "Only for interaction terms"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -123,10 +96,7 @@ Effect plots show predicted effects for high-order terms (main effects, interact
 
 **10. In model diagnostics for logistic regression, an influential observation is characterized by:**
 
-`r longmcq(c("High leverage only (unusual predictor values)",
-             "Large residual only (poor fit)",
-             answer = "Both high leverage and large residual (unusual in X and Y)",
-             "Small Cook's D statistic"))`
+`r longmcq(c("High leverage only (unusual predictor values)", "Large residual only (poor fit)", answer = "Both high leverage and large residual (unusual in X and Y)", "Small Cook's D statistic"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
