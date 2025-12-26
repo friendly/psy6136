@@ -25,7 +25,7 @@ for you. And, it is a totally different experience for you to think, “How can 
 
 It is also important that you:
 
-* **Understand any code** produced by AI, so that you would be able to do something similar youself without any assistance. That might mean looking up the documentation for functions used and understanding the arguments that control the output.
+* **Understand any code** produced by AI, so that you would be able to do something similar yourself without any assistance. That might mean looking up the documentation for functions used and understanding the arguments that control the output.
 
 * **Be able to verify** that an AI-assisted result actually works and is correct for the problem at hand. AI often refers to packages that don't or no longer exist, or writes truly ugly code, or gives solutions that don't quite answer the question given.
 
@@ -50,6 +50,8 @@ You may **NOT** use AI tools to:
 - Write interpretations of statistical results
 - Create your discussion of findings or implications
 - Draft answers to conceptual or theoretical questions
+
+An exception is if, for a project you want to explicitly study AI itself. 
 
 ### Rationale
 

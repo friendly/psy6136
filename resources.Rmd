@@ -158,7 +158,7 @@ perspective of models and visualization for log odds and log odds ratios.
 ## Weekly Resources
 I'll post here other things of interest for the topic of the week.
 
-### Week 1 {#week1}
+### Week 1: Introduction to R {#week1}
 
 * [A (very) short introduction to R](http://cran.r-project.org/doc/contrib/Torfs+Brauer-Short-R-Intro.pdf) covers the basics of installing R and [RStudio](https://posit.co/download/rstudio-desktop/), the R Studio window layout, and an overview of R commands, data structures and functions.  If you haven’t already installed R and R Studio, do so now, and work through some of the examples.
 
@@ -166,7 +166,7 @@ McNamara & Horton (2017), [Wrangling categorical data in R](https://doi.org/10.7
 
 * The vcdExtra vignette, [Creating and manipulating frequency tables](https://friendly.github.io/vcdExtra/articles/a1-creating.html) covers a lot of the material from DDAR, Ch 2
 
-### Week 2 {#week2}
+### Week 2: Discrete Distributions {#week2}
 
 * See the [DDAR web site, Chapter 3: Fitting and Graphing Discrete Distributions](http://ddar.datavis.ca/pages/chapters/ch03/) for the R code for figures in this chapter.
 
@@ -180,25 +180,285 @@ others for discrete distributions: "geometric", "negative binomial", "Poisson". 
 
   * The [`discretefit` package](https://cran.r-project.org/package=discretefit) in implements fast Monte Carlo simulations for goodness-of-fit (GOF) tests for discrete distributions. See the [package vignette](https://cran.r-project.org/web/packages/discretefit/vignettes/package_introduction.html)
 
-### Week 3 {#week3}
+### Week 3: Two-way Contingency Tables {#week3}
 
 * See the [DDAR web site, Chapter 4: Two-Way Contingency Tables](http://ddar.datavis.ca/pages/chapters/ch04/) for the R code for figures in this chapter.
 
 * [How To Build 2-Way and 3-Way Tables In R](https://medium.com/@ai.mlresearcher/how-to-build-2-way-and-3-way-tables-in-r-2b980e733b82)
 
-### Week 4 {#week4}
+### Week 4: Loglinear Models and Mosaic Displays {#week4}
 
-### Week 5 {#week5}
+Friendly, M. (1992). [Mosaic Displays for Loglinear Models](https://www.datavis.ca/papers/asa92.html). ASA, _Proceedings of the Statistical Graphics Section_, 61–68.
 
-### Week 6 {#week6}
+Friendly, M. (1994). [Mosaic Displays for Multi-way Contingency Tables](https://www.datavis.ca/papers/jasa94-mosaics.pdf). _Journal of the American Statistical Association_, 89, 190–200.
 
-### Week 7 {#week7}
+Friendly, M. (1999). [Extending Mosaic Displays: Marginal, Conditional, and Partial Views of Categorical Data](https://www.datavis.ca/papers/jcgs-extending.pdf). _Journal of Computational and Graphical Statistics_, 8(3), 373–395
 
-### Week 8 {#week8}
+#### R Tutorials and Examples
 
-### Week 9 {#week9}
+* Newsom, J. [Loglinear Models Tutorial](https://web.pdx.edu/~newsomj/cdaclass/ho_loglinear.pdf). Portland State University. Clear tutorial with practical examples including political voting data analysis.
+
+<!--
+* Brunner, J. [Log-linear Models Notes](http://utstat.utoronto.ca/brunner/oldclass/442s04/notes/LoglinearNotes.pdf). University of Toronto. Comprehensive notes covering conditional independence models and likelihood ratio testing.
+-->
+
+* Clay Ford. [Introduction to Loglinear Models](https://data.library.virginia.edu/an-introduction-to-loglinear-models/). UVA Library. Modern tutorial demonstrating the use of `glm()` for loglinear modeling with substance use data examples.
+
+* [Loglinear Models vignette](https://cran.r-project.org/web/packages/vcdExtra/vignettes/a3-loglinear.html). vcdExtra package. Practical examples using `loglm()` in R with interpretations using independence notation.
+
+* [Mosaic Plots vignette](https://cran.r-project.org/web/packages/vcdExtra/vignettes/a4-mosaics.html). vcdExtra package. Comprehensive guide to creating and customizing mosaic plots using the `vcd` package.
+
+#### Visualization Resources
+
+* [Visualizing Multivariate Categorical Data](https://www.sthda.com/english/articles/32-r-graphics-essentials/129-visualizing-multivariate-categorical-data/). STHDA. Practical guide to visualizing categorical data with examples using `ggplot2` and the `vcd` package.
+
+* [Comparative Study of vcd::mosaic and geom_mosaic](https://jtr13.github.io/cc19/comparative-study-of-vcdmosaic-and-geom-mosaic.html). Community contributions for EDAV. Compares traditional `vcd::mosaic()` with the newer `ggmosaic` approach, with examples using Titanic data.
+
+#### Research Applications
+
+* Rosenfeld, M. [Interpreting Coefficients of Loglinear Models](https://web.stanford.edu/~mrosenfe/soc_388_notes/soc_388_2002/Interpreting%20the%20coefficients%20of%20loglinear%20models.pdf). Stanford University. Sociology application focusing on interpreting loglinear model coefficients in social science research.
+
+### Week 5: Correspondence Analysis {#week5}
+
+#### R Tutorials and Examples
+
+* [CA - Correspondence Analysis in R: Essentials](https://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/113-ca-correspondence-analysis-in-r-essentials/). STHDA. Comprehensive tutorial demonstrating how to compute and visualize CA using the `ca` and `factoextra` packages, with examples using contingency tables.
+
+* [Correspondence Analysis in R](https://www.statmethods.net/advstats/ca.html). Quick R (StatMethods). Concise tutorial showing how to use the `ca` package with basic code examples for fitting and plotting CA.
+
+* Sanchez, G. [5 Functions to do Correspondence Analysis in R](https://www.gastonsanchez.com/visually-enforced/how-to/2012/07/19/Correspondence-Analysis/). Compares five different R packages for conducting CA, helping you choose the best approach for your needs.
+
+* [Correspondence Analysis for Historical Research with R](https://programminghistorian.org/en/lessons/correspondence-analysis-in-R). Programming Historian. Step-by-step tutorial showing how CA can be applied to historical data, with complete worked examples.
+
+* [MCA - Multiple Correspondence Analysis in R: Essentials](https://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/114-mca-multiple-correspondence-analysis-in-r-essentials/). STHDA. Complete guide to computing and visualizing MCA using `FactoMineR` and `factoextra`, extending CA to more than two categorical variables.
+
+* Swiebold, T. [Multiple Correspondence Analysis](https://bookdown.org/teddyswiebold/multivariate_statistical_analysis_using_r/multiple-correspondence-analysis.html). Multivariate Statistical Analysis using R. Chapter on MCA with detailed R code examples and interpretation.
+
+#### Interpretation and Visualization Guides
+
+* [How to Interpret Correspondence Analysis Plots (It Probably Isn't the Way You Think)](https://www.displayr.com/interpret-correspondence-analysis-plots-probably-isnt-way-think/). Displayr. Essential reading on common misconceptions about interpreting CA plots and the correct way to read distances and angles.
+
+* [How Correspondence Analysis Works (With Examples)](https://www.displayr.com/how-correspondence-analysis-works/). Displayr. Clear explanation of the mathematics and logic behind CA, with worked examples showing how to interpret results.
+
+* Sourial, N., et al. (2010). [Correspondence analysis is a useful tool to uncover the relationships among categorical variables](https://pmc.ncbi.nlm.nih.gov/articles/PMC3718710/). _Journal of Clinical Epidemiology_, 63(6), 638-646. Tutorial paper demonstrating CA with medical research examples.
+
+#### Research Applications
+
+* Clausen, S-E. (1998). [Social Research Update 7: Correspondence Analysis](https://sru.soc.surrey.ac.uk/SRU7.html). University of Surrey. Overview of CA applications in sociological research, explaining its value for exploring categorical data relationships.
+
+* Souza, A.C., et al. (2014). [Correspondence Analysis applied to psychological research](https://www.researchgate.net/publication/266032797_Correspondence_Analysis_applied_to_psychological_research). Tutorial on applying CA to psychology research with SPSS and R examples.
+
+* [Understanding Correspondence Analysis: Exploring Relationships between Categorical Variables in Sociology](https://easysociology.com/research-methods/understanding-correspondence-analysis-exploring-relationships-between-categorical-variables-in-sociology/). Overview of CA's applications in studying segregation patterns, social status classification, and other sociological phenomena.
+
+#### Books and Comprehensive Guides
+
+* Greenacre, M. (2017). [_Correspondence Analysis in Practice_](http://ndl.ethernet.edu.et/bitstream/123456789/32491/1/Michael%20Greenacre_2007.pdf), 3rd Edition. CRC Press. The definitive practical guide to CA with applications across social, environmental and health sciences. Includes R code in appendices.
+
+### Week 6: Logistic Regression {#week6}
+
+#### R Tutorials and Examples
+
+* [Logit Regression Tutorial](https://stats.oarc.ucla.edu/r/dae/logit-regression/). UCLA Statistical Consulting. Comprehensive tutorial showing how to fit logistic regression using `glm()` with `family = "binomial"`, including interpretation of coefficients and odds ratios.
+
+* [Logistic Regression in R](https://www.datacamp.com/tutorial/logistic-regression-R). DataCamp. Modern tutorial covering both base R and tidymodels approaches, with practical examples and interpretation guidance.
+
+* [Logistic Regression Essentials in R](https://www.sthda.com/english/articles/36-classification-methods-essentials/151-logistic-regression-essentials-in-r/). STHDA. Complete guide to fitting, evaluating and interpreting logistic regression models with working code examples.
+
+* [Binary Logistic Regression in R](https://statsandr.com/blog/binary-logistic-regression-in-r/). Stats and R. Step-by-step tutorial with a real dataset, covering model fitting, interpretation, and prediction.
+
+* Boehmke, B. & Greenwell, B. [Logistic Regression](https://bradleyboehmke.github.io/HOML/logistic-regression.html). Hands-On Machine Learning with R. Advanced chapter covering variable importance, partial dependence plots, and model tuning.
+
+#### Effect Plots and Visualization
+
+* Clay Ford. [Visualizing the Effects of Logistic Regression](https://data.library.virginia.edu/visualizing-the-effects-of-logistic-regression/). UVA Library. Tutorial on using the `effects` package to create effect displays that show how predictors relate to probability of success.
+
+* [Predictor Effects Graphics Gallery](https://cran.r-project.org/web/packages/effects/vignettes/predictor-effects-gallery.pdf). Effects package vignette. Gallery of effect plots for various models including logistic regression, showing both link and response scales.
+
+* [Visualizing Regression Results in R](https://sscc.wisc.edu/sscc/pubs/Rmisc/margins.html). SSCC Wisconsin. Demonstrates the `margins` and `ggeffects` packages for creating marginal effects plots.
+
+* [Plotting Estimates of Regression Models](https://cran.r-project.org/web/packages/sjPlot/vignettes/plot_model_estimates.html). sjPlot package vignette. Shows how to create forest plots and coefficient visualizations for logistic regression results.
+
+* [Plotting Your Logistic Regression Models](https://blogs.uoregon.edu/rclub/2016/04/05/plotting-your-logistic-regression-models/). University of Oregon R Club. Practical guide to visualizing logistic regression predictions and effects using base R and ggplot2.
+
+#### Model Diagnostics
+
+* [Logistic Regression Assumptions and Diagnostics in R](https://www.sthda.com/english/articles/36-classification-methods-essentials/148-logistic-regression-assumptions-and-diagnostics-in-r/). STHDA. Complete guide to checking assumptions and identifying influential observations using standardized residuals, leverage, and Cook's distance.
+
+* [Model Diagnostics for Logistic Regression](https://online.stat.psu.edu/stat504/lesson/7/7.2). Penn State STAT 504. Detailed coverage of residuals, leverage, and influence measures with interpretation guidelines.
+
+* Zhang, Z. (2016). [Residuals and regression diagnostics: focusing on logistic regression](https://pmc.ncbi.nlm.nih.gov/articles/PMC4885900/). _Annals of Translational Medicine_, 4(10). Tutorial paper explaining outliers, leverage, and influence with R examples using the `car` package.
+
+* Newsom, J. [Diagnostics for Logistic Regression](https://web.pdx.edu/~newsomj/cdaclass/ho_diagnostics.pdf). Portland State University. Handout covering residuals, influential observations, and diagnostic plots for logistic regression.
+
+#### Interpreting Odds Ratios
+
+* [FAQ: How do I interpret odds ratios in logistic regression?](https://stats.oarc.ucla.edu/other/mult-pkg/faq/general/faq-how-do-i-interpret-odds-ratios-in-logistic-regression/) UCLA Statistical Consulting. Clear explanation with worked examples showing how odds ratios relate to regression coefficients.
+
+* Nahhas, R.W. [Interpretation of Logistic Regression Coefficients](https://www.bookdown.org/rwnahhas/RMPH/blr-interp.html). Introduction to Regression Methods for Public Health Using R. Chapter on interpreting coefficients, odds ratios, and probability predictions.
+
+* Park, H.A. (2013). [An Introduction to Logistic Regression: From Basic Concepts to Interpretation with Particular Attention to Nursing Domain](https://pmc.ncbi.nlm.nih.gov/articles/PMC3936971/). _Journal of Korean Academy of Nursing_, 43(2), 154-164. Tutorial emphasizing interpretation of odds ratios in health research.
+
+#### Research Applications
+
+* Kayri, M. [Predicting Social Trust with Binary Logistic Regression](https://files.eric.ed.gov/fulltext/EJ1056177.pdf). Educational Sciences. Application of logistic regression to predict social trust using personality and demographic variables.
+
+* Liu, Y., et al. (2022). [Multiple Logistic Regression Analysis of Smartphone Use in University Students](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2022.821345/full). _Frontiers in Psychology_. Research using logistic regression to examine relationships between smartphone use, sleep quality, and health.
+
+### Week 7: Logistic Regression: Extensions {#week7}
+
+#### R Tutorials and Examples
+
+* [Ordinal Logistic Regression](https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/). UCLA Statistical Consulting. Comprehensive tutorial on using `polr()` from the MASS package for proportional odds models, with interpretation of coefficients as proportional odds ratios.
+
+* Nahhas, R.W. [Ordinal Logistic Regression](https://www.bookdown.org/rwnahhas/RMPH/blr-ordinal.html). Introduction to Regression Methods for Public Health Using R. Chapter covering ordered categorical responses with examples using `polr()`.
+
+* Keith McNulty. [Proportional Odds Logistic Regression for Ordered Category Outcomes](https://peopleanalytics-regression-book.org/ord-reg.html). Handbook of Regression Modeling in People Analytics. Emphasizes the proportional odds assumption and how to test it.
+
+* Barlaz, M. [Ordinal Logistic Regression in R](https://marissabarlaz.github.io/portfolio/ols/). Tutorial with examples using both MASS and VGAM packages for ordinal regression.
+
+* Clay Ford. [Fitting and Interpreting a Proportional Odds Model](https://data.library.virginia.edu/articles/fitting-and-interpreting-a-proportional-odds-model/). UVA Library. Step-by-step guide to fitting and interpreting proportional odds models using `polr()`.
+
+* [Multinomial Logistic Regression](https://stats.oarc.ucla.edu/r/dae/multinomial-logistic-regression/). UCLA Statistical Consulting. Tutorial on using `multinom()` from the nnet package for unordered categorical responses.
+
+* Keith McNulty. [Multinomial Logistic Regression for Nominal Category Outcomes](https://peopleanalytics-regression-book.org/multinomial-logistic-regression-for-nominal-category-outcomes.html). Handbook of Regression Modeling in People Analytics. Covers when to use multinomial logit and how to interpret results.
+
+* Clay Ford. [Getting Started with Multinomial Logit Models](https://data.library.virginia.edu/articles/getting-started-with-multinomial-logit-models/). UVA Library. Introduction to multinomial regression using the `nnet` package with practical examples.
+
+* [Multinomial Regression in R](http://r-statistics.co/Multinomial-Regression-With-R.html). R-statistics.co. Tutorial with contraceptive choice example showing model fitting and interpretation.
+
+#### Advanced Methods with VGAM
+
+* Agresti, A. [Examples of Using R for Modeling Ordinal Data](https://users.stat.ufl.edu/~aa/ordinal/R_examples.pdf). Comprehensive examples using VGAM for various ordinal regression models including proportional odds and partial proportional odds.
+
+* [VGAM Package for Ordinal Regression](https://rpubs.com/kaz_yos/VGAM). RPubs tutorial. Unified approach to ordinal and polytomous regressions using `vglm()` with various link functions.
+
+* [Ordinal Regression with VGAM](http://dwoll.de/rexrepos/posts/regressionOrdinal.html). Practical tutorial on using `vglm()` from VGAM package for cumulative logit models.
+
+#### Testing Assumptions
+
+* [The Proportional Odds Assumption](https://online.stat.psu.edu/stat504/lesson/8/8.4). Penn State STAT 504. Explains the proportional odds assumption and how it relates to a latent continuous variable framework.
+
+* [Understanding the Proportional Odds Assumption in Clinical Trials](https://www.quanticate.com/blog/understanding-the-proportional-odds-assumption-in-clinical-trials). Quanticate. Practical guide to testing and interpreting the proportional odds assumption.
+
+#### Research Applications
+
+* [Multinomial Logit Model Applications](https://www.sciencedirect.com/topics/computer-science/multinomial-logit-model). ScienceDirect. Overview of applications in transportation, consumer behavior, occupational choice, and e-commerce.
+
+* Torres-Reyna, O. [Logit, Probit, and Multinomial Logit Models in R](https://www.princeton.edu/~otorres/LogitR101.pdf). Princeton University. Tutorial covering binary, ordinal, and multinomial models with social science examples.
+
+### Week 8: Extending Loglinear Models {#week8}
+
+#### The gnm Package: Generalized Nonlinear Models
+
+* Turner, H. & Firth, D. [Generalized Nonlinear Models in R: An Overview of the gnm Package](https://cran.r-project.org/web/packages/gnm/vignettes/gnmOverview.pdf). CRAN vignette. Comprehensive introduction to the gnm package, covering multiplicative terms, RC models, UNIDIFF, and diagonal reference models.
+
+* [Introduction to Generalized Nonlinear Models in R](https://www.r-project.org/conferences/useR-2009/tutorials/gnmCourse-3up.pdf). useR! 2009 Tutorial. Detailed tutorial with examples of fitting models with `Mult()`, `MultHomog()`, and `Diag()` functions.
+
+* Turner, H. [gnm: An R Package for Generalized Nonlinear Models](https://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/gnmTalk.pdf). Presentation covering gnm functionality with practical examples of RC models and specialized nonlinear terms.
+
+* [gnm Package Documentation](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/gnm/). University of Warwick. Official gnm package page with resources, papers, and development information.
+
+#### RC Models and Association Models
+
+* [Fitting Row-Column Association Models](https://rdrr.io/cran/logmult/man/rc.html). logmult package documentation. Details on fitting Goodman's RC(M) association models using the `rc()` function with automatic selection of starting values.
+
+* [logmult Package: Log-Multiplicative Models](https://cran.r-project.org/web/packages/logmult/index.html). CRAN page for logmult package. Fits log-multiplicative models including RC(M) row-column association models with convenient printing, plots, and bootstrap standard errors.
+
+* [Short Reference for logmult](https://cran.r-project.org/web/packages/logmult/vignettes/logmult.html). logmult vignette. Tutorial on fitting association models with one or several dimensions, including layer effects for stratified tables.
+
+#### Models for Square Tables
+
+* [Mobility Tables](https://cran.r-project.org/web/packages/vcdExtra/vignettes/mobility.html). vcdExtra package vignette. Extensive examples of models for square tables including symmetry, quasi-symmetry, and diagonal reference models using social mobility data.
+
+* [Diagonal Reference Models with Dref](https://rdrr.io/cran/gnm/man/Dref.html). gnm package documentation. Details on specifying diagonal reference terms as introduced by Sobel (1981, 1985) for square tables with the form µ_ij = w γ_i + (1 - w) γ_j.
+
+* [Quasi-Symmetry Model](https://online.stat.psu.edu/stat504/lesson/11/11.3/11.3.2). Penn State STAT 504. Explanation of quasi-symmetry models for square contingency tables, contrasted with symmetry and marginal homogeneity.
+
+* Agresti, A. (1983). [A Simple Diagonals-Parameter Symmetry and Quasi-Symmetry Model](https://users.stat.ufl.edu/~aa/articles/agresti_1983_spl.pdf). Statistics & Probability Letters. Classic paper on diagonal-parameter models for square tables.
+
+#### Specialized Models and Applications
+
+* Tomizawa, S., et al. (2022). [Advances in Quasi-Symmetry for Square Contingency Tables](https://www.mdpi.com/2073-8994/14/5/1051). _Symmetry_, 14(5), 1051. Review of recent developments in quasi-symmetry models including ordinal QS and association-based models.
+
+* Kateri, M., et al. (2022). [Quasi Association Models for Square Contingency Tables with Ordinal Categories](https://www.mdpi.com/2073-8994/14/4/805). _Symmetry_, 14(4), 805. Parsimonious QS-type models for ordinal classifications based on local odds ratios.
+
+* Goodman, L.A. (1979). Simple Models for the Analysis of Association in Cross-Classifications having Ordered Categories. _Journal of the American Statistical Association_, 74(367), 537-552. Foundational paper on association models for ordered categorical data.
+
+#### Research Applications
+
+* Wong, R.S-K. (1995). [Extensions in the Use of Log-Multiplicative Scaled Association Models in Multiway Contingency Tables](https://journals.sagepub.com/doi/10.1177/0049124195023004005). _Sociological Methods & Research_, 23(4), 507-538. Applications of association models to social science research with multiway tables.
+
+* Becker, M.P. & Clogg, C.C. (1989). Analysis of Sets of Two-Way Contingency Tables Using Association Models. _Journal of the American Statistical Association_, 84(405), 142-151. Methods for analyzing multiple contingency tables using association models.
+
+### Week 9: GLMs for Count Data {#week9}
+
+#### GLM Families and Link Functions
+
+* Helwig, N. [Generalized Linear Models in R](http://users.stat.umn.edu/~helwig/notes/generalized-linear-models.html). University of Minnesota. Comprehensive tutorial covering exponential family distributions, link functions, and the three components of GLMs.
+
+* [Introduction to GLMs](https://online.stat.psu.edu/stat504/lesson/6/6.1). Penn State STAT 504. Introduction to generalized linear models explaining the relationship between random and systematic components through link functions.
+
+* Turner, H. [Introduction to Generalized Linear Models](https://statmath.wu.ac.at/courses/heather_turner/glmCourse_001.pdf). Practical introduction to GLMs with R, covering exponential families and canonical link functions.
+
+* [Generalized Linear Models in R](https://www.statmethods.net/advstats/glm.html). Quick-R (StatMethods). Concise reference for fitting logistic regression and Poisson regression using `glm()` with different family functions.
+
+#### Poisson Regression Tutorials
+
+* [Poisson Regression](https://stats.oarc.ucla.edu/r/dae/poisson-regression/). UCLA Statistical Consulting. Comprehensive tutorial demonstrating Poisson regression using `glm()` with `family="poisson"`, including interpretation of coefficients and model diagnostics.
+
+* [R - Poisson Regression Model for Count Data](https://online.stat.psu.edu/stat504/lesson/9/9.2). Penn State STAT 504. Tutorial with crab data example showing how to specify Poisson distribution with `family=poisson` and `link=log`.
+
+* [Poisson Regression: A Way to Model Count Data](https://www.datacamp.com/tutorial/poisson-regression). DataCamp. Practical tutorial covering Poisson regression for count outcomes, including quasi-Poisson models for overdispersion.
+
+* [Learn to Use Poisson Regression in R](https://www.dataquest.io/blog/tutorial-poisson-regression-in-r/). Dataquest. Tutorial covering both count and rate data with Poisson models, including how to get accurate standard errors using quasipoisson.
+
+* Buonaccorsi, V. [Poisson Regression: Models for Count Data](https://r-resources.massey.ac.nz/161331/ELMER/PoissonGLM.html). ELMER: Extensions to the Linear Model using Examples in R. Chapter on Poisson regression with practical R examples.
+
+#### Overdispersion and Negative Binomial Models
+
+* Ver Hoef, J.M. & Boveng, P.L. (2007). [Quasi-Poisson vs. Negative Binomial Regression: How Should We Model Overdispersed Count Data?](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/07-0043.1). _Ecology_, 88(11), 2766-2772. Influential comparison of two approaches for handling overdispersion in count data.
+
+* [Count Data and Overdispersion](https://cran.r-project.org/web/packages/GlmSimulatoR/vignettes/count_data_and_overdispersion.html). GlmSimulatoR vignette. Explains variance-mean relationships for Poisson (σ²=μ) versus negative binomial (σ²=μ+μ²/θ) distributions.
+
+* [Negative Binomial Regression](https://stats.oarc.ucla.edu/r/dae/negative-binomial-regression/). UCLA Statistical Consulting. Tutorial using `glm.nb()` from MASS package to estimate negative binomial regression for over-dispersed count data.
+
+* Clay Ford. [Getting Started with Negative Binomial Regression Modeling](https://data.library.virginia.edu/getting-started-with-negative-binomial-regression-modeling/). UVA Library. Explains when variance differs from mean and how negative binomial addresses this limitation of Poisson.
+
+* Rodríguez, G. [Models for Over-Dispersed Count Data](https://grodri.github.io/glms/r/overdispersion). Princeton University. Tutorial comparing Poisson and negative binomial models using `glm.nb()` from MASS package.
+
+* Lindén, A. & Mäntyniemi, S. (2011). [Using the Negative Binomial Distribution to Model Overdispersion in Ecological Count Data](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/10-1831.1). _Ecology_, 92(7), 1414-1421. Practical guide to negative binomial models in ecology.
+
+#### Zero-Inflated and Hurdle Models
+
+* [Zero-Inflated Poisson Regression](https://stats.oarc.ucla.edu/r/dae/zip/). UCLA Statistical Consulting. Tutorial using `zeroinfl()` from pscl package, including bootstrapping and confidence intervals.
+
+* Clay Ford. [Getting Started with Hurdle Models](https://data.library.virginia.edu/articles/getting-started-with-hurdle-models/). UVA Library. Introduction to hurdle models using `hurdle()` from pscl package for handling excess zeros and overdispersion.
+
+* [Zero-Inflated and Hurdle Models for Count Data in R](https://stats.oarc.ucla.edu/r/seminars/zero-inflated-and-hurdle-models-for-count-data-in-r/). UCLA OARC Workshop. Comprehensive introduction to two-part models for excess zeros using pscl package.
+
+* Zeileis, A., Kleiber, C., & Jackman, S. (2008). [Regression Models for Count Data in R](https://cran.r-project.org/web/packages/pscl/vignettes/countreg.pdf). _Journal of Statistical Software_, 27(8). Comprehensive comparison of Poisson, negative binomial, hurdle, and zero-inflated models.
+
+* [Models for Excess Zeros using pscl Package](https://rpubs.com/nirmal/MCA_in_R). RPubs tutorial. Practical examples of hurdle and zero-inflated regression models with interpretation guidance.
+
+#### Model Diagnostics
+
+* Horvath, B. [Generalized Linear Models: Residuals and Diagnostics](https://rpubs.com/benhorvath/glm_diagnostics). RPubs. Tutorial on GLM diagnostics including deviance residuals, Pearson residuals, and diagnostic plots.
+
+* García Portugués, E. [Model Diagnostics for GLMs](https://bookdown.org/egarpor/PM-UC3M/glm-diagnostics.html). Notes for Predictive Modeling. Chapter covering residual analysis and diagnostic measures for count data models.
+
+* Clay Ford. [Understanding Deviance Residuals](https://data.library.virginia.edu/articles/understanding-deviance-residuals/). UVA Library. Explains deviance residuals as diagnostic measures for assessing GLM fit to individual observations.
+
+* [GLM Residuals Distributions](https://polkas.github.io/posts/glm_residuals/). Agile Data Science. Comparison of different residual types for GLMs with guidance on when to use Pearson vs. deviance residuals for count data.
+
+#### Research Applications
+
+* Too, L.S., et al. (2025). [Modelling Count Data in Psychological Research: An Applied Tutorial](https://pmc.ncbi.nlm.nih.gov/articles/PMC11807933/). _International Journal of Psychology_. Recent tutorial covering GLMs and zero-augmented models for count data in psychology (panic attacks, store visits, friendships).
+
+* Coxe, S., West, S.G., & Aiken, L.S. (2009). [The Analysis of Count Data: A Gentle Introduction to Poisson Regression and Its Alternatives](https://www.tandfonline.com/doi/abs/10.1080/00223890802634175). _Journal of Personality Assessment_, 91(2), 121-136. Introduction to count models for psychological researchers.
+
+* Vives, J., Losilla, J-M., & Rodrigo, M-F. (2006). [Count Data in Psychological Applied Research](https://journals.sagepub.com/doi/10.2466/pr0.98.3.821-835). _Psychological Reports_, 98(3), 821-835. Overview of count data analysis methods in applied psychology.
+
+* Lynch, H.J., et al. (2014). [Dealing with Under‐ and Over‐dispersed Count Data in Life History, Spatial, and Community Ecology](https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1912.1). _Ecology_, 95(11), 3173-3180. Practical guidance for ecologists on choosing among count data models.
 
 ### Week 10 {#week10}
-
-### Week 11 {#week11}
 
