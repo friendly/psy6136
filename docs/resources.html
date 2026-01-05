@@ -671,19 +671,24 @@ To Build 2-Way and 3-Way Tables In R</a></p></li>
 </div>
 <div id="week4" class="section level3">
 <h3>Week 4: Loglinear Models and Mosaic Displays</h3>
-<p>Friendly, M. (1992). <a
+<div id="foundations" class="section level4">
+<h4>Foundations</h4>
+<ul>
+<li><p>Friendly, M. (1992). <a
 href="https://www.datavis.ca/papers/asa92.html">Mosaic Displays for
 Loglinear Models</a>. ASA, <em>Proceedings of the Statistical Graphics
-Section</em>, 61–68.</p>
-<p>Friendly, M. (1994). <a
+Section</em>, 61–68.</p></li>
+<li><p>Friendly, M. (1994). <a
 href="https://www.datavis.ca/papers/jasa94-mosaics.pdf">Mosaic Displays
 for Multi-way Contingency Tables</a>. <em>Journal of the American
-Statistical Association</em>, 89, 190–200.</p>
-<p>Friendly, M. (1999). <a
+Statistical Association</em>, 89, 190–200.</p></li>
+<li><p>Friendly, M. (1999). <a
 href="https://www.datavis.ca/papers/jcgs-extending.pdf">Extending Mosaic
 Displays: Marginal, Conditional, and Partial Views of Categorical
 Data</a>. <em>Journal of Computational and Graphical Statistics</em>,
-8(3), 373–395</p>
+8(3), 373–395</p></li>
+</ul>
+</div>
 <div id="r-tutorials-and-examples" class="section level4">
 <h4>R Tutorials and Examples</h4>
 <ul>
@@ -1060,16 +1065,290 @@ examples.</p></li>
 </div>
 </div>
 <div id="week8" class="section level3">
-<h3>Week 8</h3>
+<h3>Week 8: Extending Loglinear Models</h3>
+<div id="the-gnm-package-generalized-nonlinear-models"
+class="section level4">
+<h4>The gnm Package: Generalized Nonlinear Models</h4>
+<ul>
+<li><p>Turner, H. &amp; Firth, D. <a
+href="https://cran.r-project.org/web/packages/gnm/vignettes/gnmOverview.pdf">Generalized
+Nonlinear Models in R: An Overview of the gnm Package</a>. CRAN
+vignette. Comprehensive introduction to the gnm package, covering
+multiplicative terms, RC models, UNIDIFF, and diagonal reference
+models.</p></li>
+<li><p><a
+href="https://www.r-project.org/conferences/useR-2009/tutorials/gnmCourse-3up.pdf">Introduction
+to Generalized Nonlinear Models in R</a>. useR! 2009 Tutorial. Detailed
+tutorial with examples of fitting models with <code>Mult()</code>,
+<code>MultHomog()</code>, and <code>Diag()</code> functions.</p></li>
+<li><p>Turner, H. <a
+href="https://statmath.wu.ac.at/research/friday/resources_WS0708_SS08/gnmTalk.pdf">gnm:
+An R Package for Generalized Nonlinear Models</a>. Presentation covering
+gnm functionality with practical examples of RC models and specialized
+nonlinear terms.</p></li>
+<li><p><a
+href="https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/firth/software/gnm/">gnm
+Package Documentation</a>. University of Warwick. Official gnm package
+page with resources, papers, and development information.</p></li>
+</ul>
+</div>
+<div id="rc-models-and-association-models" class="section level4">
+<h4>RC Models and Association Models</h4>
+<ul>
+<li><p><a href="https://rdrr.io/cran/logmult/man/rc.html">Fitting
+Row-Column Association Models</a>. logmult package documentation.
+Details on fitting Goodman’s RC(M) association models using the
+<code>rc()</code> function with automatic selection of starting
+values.</p></li>
+<li><p><a
+href="https://cran.r-project.org/web/packages/logmult/index.html">logmult
+Package: Log-Multiplicative Models</a>. CRAN page for logmult package.
+Fits log-multiplicative models including RC(M) row-column association
+models with convenient printing, plots, and bootstrap standard
+errors.</p></li>
+<li><p><a
+href="https://cran.r-project.org/web/packages/logmult/vignettes/logmult.html">Short
+Reference for logmult</a>. logmult vignette. Tutorial on fitting
+association models with one or several dimensions, including layer
+effects for stratified tables.</p></li>
+</ul>
+</div>
+<div id="models-for-square-tables" class="section level4">
+<h4>Models for Square Tables</h4>
+<ul>
+<li><p><a
+href="https://cran.r-project.org/web/packages/vcdExtra/vignettes/mobility.html">Mobility
+Tables</a>. vcdExtra package vignette. Extensive examples of models for
+square tables including symmetry, quasi-symmetry, and diagonal reference
+models using social mobility data.</p></li>
+<li><p><a href="https://rdrr.io/cran/gnm/man/Dref.html">Diagonal
+Reference Models with Dref</a>. gnm package documentation. Details on
+specifying diagonal reference terms as introduced by Sobel (1981, 1985)
+for square tables with the form µ_ij = w γ_i + (1 - w) γ_j.</p></li>
+<li><p><a
+href="https://online.stat.psu.edu/stat504/lesson/11/11.3/11.3.2">Quasi-Symmetry
+Model</a>. Penn State STAT 504. Explanation of quasi-symmetry models for
+square contingency tables, contrasted with symmetry and marginal
+homogeneity.</p></li>
+<li><p>Agresti, A. (1983). <a
+href="https://users.stat.ufl.edu/~aa/articles/agresti_1983_spl.pdf">A
+Simple Diagonals-Parameter Symmetry and Quasi-Symmetry Model</a>.
+Statistics &amp; Probability Letters. Classic paper on
+diagonal-parameter models for square tables.</p></li>
+</ul>
+</div>
+<div id="specialized-models-and-applications" class="section level4">
+<h4>Specialized Models and Applications</h4>
+<ul>
+<li><p>Tomizawa, S., et al. (2022). <a
+href="https://www.mdpi.com/2073-8994/14/5/1051">Advances in
+Quasi-Symmetry for Square Contingency Tables</a>. <em>Symmetry</em>,
+14(5), 1051. Review of recent developments in quasi-symmetry models
+including ordinal QS and association-based models.</p></li>
+<li><p>Kateri, M., et al. (2022). <a
+href="https://www.mdpi.com/2073-8994/14/4/805">Quasi Association Models
+for Square Contingency Tables with Ordinal Categories</a>.
+<em>Symmetry</em>, 14(4), 805. Parsimonious QS-type models for ordinal
+classifications based on local odds ratios.</p></li>
+<li><p>Goodman, L.A. (1979). Simple Models for the Analysis of
+Association in Cross-Classifications having Ordered Categories.
+<em>Journal of the American Statistical Association</em>, 74(367),
+537-552. Foundational paper on association models for ordered
+categorical data.</p></li>
+</ul>
+</div>
+<div id="research-applications-4" class="section level4">
+<h4>Research Applications</h4>
+<ul>
+<li><p>Wong, R.S-K. (1995). <a
+href="https://journals.sagepub.com/doi/10.1177/0049124195023004005">Extensions
+in the Use of Log-Multiplicative Scaled Association Models in Multiway
+Contingency Tables</a>. <em>Sociological Methods &amp; Research</em>,
+23(4), 507-538. Applications of association models to social science
+research with multiway tables.</p></li>
+<li><p>Becker, M.P. &amp; Clogg, C.C. (1989). Analysis of Sets of
+Two-Way Contingency Tables Using Association Models. <em>Journal of the
+American Statistical Association</em>, 84(405), 142-151. Methods for
+analyzing multiple contingency tables using association models.</p></li>
+</ul>
+</div>
 </div>
 <div id="week9" class="section level3">
-<h3>Week 9</h3>
+<h3>Week 9: GLMs for Count Data</h3>
+<div id="glm-families-and-link-functions" class="section level4">
+<h4>GLM Families and Link Functions</h4>
+<ul>
+<li><p>Helwig, N. <a
+href="http://users.stat.umn.edu/~helwig/notes/generalized-linear-models.html">Generalized
+Linear Models in R</a>. University of Minnesota. Comprehensive tutorial
+covering exponential family distributions, link functions, and the three
+components of GLMs.</p></li>
+<li><p><a
+href="https://online.stat.psu.edu/stat504/lesson/6/6.1">Introduction to
+GLMs</a>. Penn State STAT 504. Introduction to generalized linear models
+explaining the relationship between random and systematic components
+through link functions.</p></li>
+<li><p>Turner, H. <a
+href="https://statmath.wu.ac.at/courses/heather_turner/glmCourse_001.pdf">Introduction
+to Generalized Linear Models</a>. Practical introduction to GLMs with R,
+covering exponential families and canonical link functions.</p></li>
+<li><p><a
+href="https://www.statmethods.net/advstats/glm.html">Generalized Linear
+Models in R</a>. Quick-R (StatMethods). Concise reference for fitting
+logistic regression and Poisson regression using <code>glm()</code> with
+different family functions.</p></li>
+</ul>
+</div>
+<div id="poisson-regression-tutorials" class="section level4">
+<h4>Poisson Regression Tutorials</h4>
+<ul>
+<li><p><a
+href="https://stats.oarc.ucla.edu/r/dae/poisson-regression/">Poisson
+Regression</a>. UCLA Statistical Consulting. Comprehensive tutorial
+demonstrating Poisson regression using <code>glm()</code> with
+<code>family="poisson"</code>, including interpretation of coefficients
+and model diagnostics.</p></li>
+<li><p><a href="https://online.stat.psu.edu/stat504/lesson/9/9.2">R -
+Poisson Regression Model for Count Data</a>. Penn State STAT 504.
+Tutorial with crab data example showing how to specify Poisson
+distribution with <code>family=poisson</code> and
+<code>link=log</code>.</p></li>
+<li><p><a
+href="https://www.datacamp.com/tutorial/poisson-regression">Poisson
+Regression: A Way to Model Count Data</a>. DataCamp. Practical tutorial
+covering Poisson regression for count outcomes, including quasi-Poisson
+models for overdispersion.</p></li>
+<li><p><a
+href="https://www.dataquest.io/blog/tutorial-poisson-regression-in-r/">Learn
+to Use Poisson Regression in R</a>. Dataquest. Tutorial covering both
+count and rate data with Poisson models, including how to get accurate
+standard errors using quasipoisson.</p></li>
+<li><p>Buonaccorsi, V. <a
+href="https://r-resources.massey.ac.nz/161331/ELMER/PoissonGLM.html">Poisson
+Regression: Models for Count Data</a>. ELMER: Extensions to the Linear
+Model using Examples in R. Chapter on Poisson regression with practical
+R examples.</p></li>
+</ul>
+</div>
+<div id="overdispersion-and-negative-binomial-models"
+class="section level4">
+<h4>Overdispersion and Negative Binomial Models</h4>
+<ul>
+<li><p>Ver Hoef, J.M. &amp; Boveng, P.L. (2007). <a
+href="https://esajournals.onlinelibrary.wiley.com/doi/10.1890/07-0043.1">Quasi-Poisson
+vs. Negative Binomial Regression: How Should We Model Overdispersed
+Count Data?</a>. <em>Ecology</em>, 88(11), 2766-2772. Influential
+comparison of two approaches for handling overdispersion in count
+data.</p></li>
+<li><p><a
+href="https://cran.r-project.org/web/packages/GlmSimulatoR/vignettes/count_data_and_overdispersion.html">Count
+Data and Overdispersion</a>. GlmSimulatoR vignette. Explains
+variance-mean relationships for Poisson (σ²=μ) versus negative binomial
+(σ²=μ+μ²/θ) distributions.</p></li>
+<li><p><a
+href="https://stats.oarc.ucla.edu/r/dae/negative-binomial-regression/">Negative
+Binomial Regression</a>. UCLA Statistical Consulting. Tutorial using
+<code>glm.nb()</code> from MASS package to estimate negative binomial
+regression for over-dispersed count data.</p></li>
+<li><p>Clay Ford. <a
+href="https://data.library.virginia.edu/getting-started-with-negative-binomial-regression-modeling/">Getting
+Started with Negative Binomial Regression Modeling</a>. UVA Library.
+Explains when variance differs from mean and how negative binomial
+addresses this limitation of Poisson.</p></li>
+<li><p>Rodríguez, G. <a
+href="https://grodri.github.io/glms/r/overdispersion">Models for
+Over-Dispersed Count Data</a>. Princeton University. Tutorial comparing
+Poisson and negative binomial models using <code>glm.nb()</code> from
+MASS package.</p></li>
+<li><p>Lindén, A. &amp; Mäntyniemi, S. (2011). <a
+href="https://esajournals.onlinelibrary.wiley.com/doi/10.1890/10-1831.1">Using
+the Negative Binomial Distribution to Model Overdispersion in Ecological
+Count Data</a>. <em>Ecology</em>, 92(7), 1414-1421. Practical guide to
+negative binomial models in ecology.</p></li>
+</ul>
+</div>
+<div id="zero-inflated-and-hurdle-models" class="section level4">
+<h4>Zero-Inflated and Hurdle Models</h4>
+<ul>
+<li><p><a href="https://stats.oarc.ucla.edu/r/dae/zip/">Zero-Inflated
+Poisson Regression</a>. UCLA Statistical Consulting. Tutorial using
+<code>zeroinfl()</code> from pscl package, including bootstrapping and
+confidence intervals.</p></li>
+<li><p>Clay Ford. <a
+href="https://data.library.virginia.edu/articles/getting-started-with-hurdle-models/">Getting
+Started with Hurdle Models</a>. UVA Library. Introduction to hurdle
+models using <code>hurdle()</code> from pscl package for handling excess
+zeros and overdispersion.</p></li>
+<li><p><a
+href="https://stats.oarc.ucla.edu/r/seminars/zero-inflated-and-hurdle-models-for-count-data-in-r/">Zero-Inflated
+and Hurdle Models for Count Data in R</a>. UCLA OARC Workshop.
+Comprehensive introduction to two-part models for excess zeros using
+pscl package.</p></li>
+<li><p>Zeileis, A., Kleiber, C., &amp; Jackman, S. (2008). <a
+href="https://cran.r-project.org/web/packages/pscl/vignettes/countreg.pdf">Regression
+Models for Count Data in R</a>. <em>Journal of Statistical
+Software</em>, 27(8). Comprehensive comparison of Poisson, negative
+binomial, hurdle, and zero-inflated models.</p></li>
+<li><p><a href="https://rpubs.com/nirmal/MCA_in_R">Models for Excess
+Zeros using pscl Package</a>. RPubs tutorial. Practical examples of
+hurdle and zero-inflated regression models with interpretation
+guidance.</p></li>
+</ul>
+</div>
+<div id="model-diagnostics-1" class="section level4">
+<h4>Model Diagnostics</h4>
+<ul>
+<li><p>Horvath, B. <a
+href="https://rpubs.com/benhorvath/glm_diagnostics">Generalized Linear
+Models: Residuals and Diagnostics</a>. RPubs. Tutorial on GLM
+diagnostics including deviance residuals, Pearson residuals, and
+diagnostic plots.</p></li>
+<li><p>García Portugués, E. <a
+href="https://bookdown.org/egarpor/PM-UC3M/glm-diagnostics.html">Model
+Diagnostics for GLMs</a>. Notes for Predictive Modeling. Chapter
+covering residual analysis and diagnostic measures for count data
+models.</p></li>
+<li><p>Clay Ford. <a
+href="https://data.library.virginia.edu/articles/understanding-deviance-residuals/">Understanding
+Deviance Residuals</a>. UVA Library. Explains deviance residuals as
+diagnostic measures for assessing GLM fit to individual
+observations.</p></li>
+<li><p><a href="https://polkas.github.io/posts/glm_residuals/">GLM
+Residuals Distributions</a>. Agile Data Science. Comparison of different
+residual types for GLMs with guidance on when to use Pearson
+vs. deviance residuals for count data.</p></li>
+</ul>
+</div>
+<div id="research-applications-5" class="section level4">
+<h4>Research Applications</h4>
+<ul>
+<li><p>Too, L.S., et al. (2025). <a
+href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11807933/">Modelling
+Count Data in Psychological Research: An Applied Tutorial</a>.
+<em>International Journal of Psychology</em>. Recent tutorial covering
+GLMs and zero-augmented models for count data in psychology (panic
+attacks, store visits, friendships).</p></li>
+<li><p>Coxe, S., West, S.G., &amp; Aiken, L.S. (2009). <a
+href="https://www.tandfonline.com/doi/abs/10.1080/00223890802634175">The
+Analysis of Count Data: A Gentle Introduction to Poisson Regression and
+Its Alternatives</a>. <em>Journal of Personality Assessment</em>, 91(2),
+121-136. Introduction to count models for psychological
+researchers.</p></li>
+<li><p>Vives, J., Losilla, J-M., &amp; Rodrigo, M-F. (2006). <a
+href="https://journals.sagepub.com/doi/10.2466/pr0.98.3.821-835">Count
+Data in Psychological Applied Research</a>. <em>Psychological
+Reports</em>, 98(3), 821-835. Overview of count data analysis methods in
+applied psychology.</p></li>
+<li><p>Lynch, H.J., et al. (2014). <a
+href="https://esajournals.onlinelibrary.wiley.com/doi/10.1890/13-1912.1">Dealing
+with Under‐ and Over‐dispersed Count Data in Life History, Spatial, and
+Community Ecology</a>. <em>Ecology</em>, 95(11), 3173-3180. Practical
+guidance for ecologists on choosing among count data models.</p></li>
+</ul>
+</div>
 </div>
 <div id="week10" class="section level3">
 <h3>Week 10</h3>
-</div>
-<div id="week11" class="section level3">
-<h3>Week 11</h3>
 </div>
 </div>
 

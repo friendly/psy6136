@@ -188,11 +188,13 @@ others for discrete distributions: "geometric", "negative binomial", "Poisson". 
 
 ### Week 4: Loglinear Models and Mosaic Displays {#week4}
 
-Friendly, M. (1992). [Mosaic Displays for Loglinear Models](https://www.datavis.ca/papers/asa92.html). ASA, _Proceedings of the Statistical Graphics Section_, 61–68.
+#### Foundations
 
-Friendly, M. (1994). [Mosaic Displays for Multi-way Contingency Tables](https://www.datavis.ca/papers/jasa94-mosaics.pdf). _Journal of the American Statistical Association_, 89, 190–200.
+* Friendly, M. (1992). [Mosaic Displays for Loglinear Models](https://www.datavis.ca/papers/asa92.html). ASA, _Proceedings of the Statistical Graphics Section_, 61–68.
 
-Friendly, M. (1999). [Extending Mosaic Displays: Marginal, Conditional, and Partial Views of Categorical Data](https://www.datavis.ca/papers/jcgs-extending.pdf). _Journal of Computational and Graphical Statistics_, 8(3), 373–395
+* Friendly, M. (1994). [Mosaic Displays for Multi-way Contingency Tables](https://www.datavis.ca/papers/jasa94-mosaics.pdf). _Journal of the American Statistical Association_, 89, 190–200.
+
+* Friendly, M. (1999). [Extending Mosaic Displays: Marginal, Conditional, and Partial Views of Categorical Data](https://www.datavis.ca/papers/jcgs-extending.pdf). _Journal of Computational and Graphical Statistics_, 8(3), 373–395
 
 #### R Tutorials and Examples
 

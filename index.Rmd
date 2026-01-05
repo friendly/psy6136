@@ -286,6 +286,7 @@ div_heading("readings")
 
 - **DDAR**: [Ch 5](VCDR/chapter05.pdf)
 - **Agresti, 2.7; Ch 7**
+- See [Supplementary resources](resources.html#week4) for this week.
 
  
 ```{r quiz3, results='asis', echo=FALSE}
@@ -348,6 +349,7 @@ div_heading("readings")
 #### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 6](VCDR/chapter06.pdf)
+- See [Supplementary resources](resources.html#week5) for this week.
 
 ```{r quiz5, results='asis', echo=FALSE}
 div_heading("quiz")
@@ -398,6 +400,7 @@ div_heading("lecture")
 #### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 7](VCDR/chapter07.pdf)
+- See [Supplementary resources](resources.html#week6) for this week.
 
 ```{r quiz6, results='asis', echo=FALSE}
 div_heading("quiz")
@@ -448,6 +451,7 @@ div_heading("lecture")
 #### <img src="icons/book.png" height=20> Readings: 
 
 - **DDAR**: [Ch 8](VCDR/chapter07.pdf)
+- See [Supplementary resources](resources.html#week7) for this week.
 
 ```{r quiz7, results='asis', echo=FALSE}
 div_heading("quiz")
