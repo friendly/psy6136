@@ -310,6 +310,8 @@ others for discrete distributions: "geometric", "negative binomial", "Poisson". 
 
 #### R Tutorials and Examples
 
+* Friendly & Fox [nestedLogit package](https://friendly.github.io/nestedLogit/). Provides functions for fitting nested dichotomy logistic regression models for a polytomous response. Also see the vignette [Plotting nestedLogit models with ggplot2](https://friendly.github.io/nestedLogit/articles/plotting-ggplot.html).
+
 * [Ordinal Logistic Regression](https://stats.oarc.ucla.edu/r/dae/ordinal-logistic-regression/). UCLA Statistical Consulting. Comprehensive tutorial on using `polr()` from the MASS package for proportional odds models, with interpretation of coefficients as proportional odds ratios.
 
 * Nahhas, R.W. [Ordinal Logistic Regression](https://www.bookdown.org/rwnahhas/RMPH/blr-ordinal.html). Introduction to Regression Methods for Public Health Using R. Chapter covering ordered categorical responses with examples using `polr()`.
