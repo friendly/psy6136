@@ -81,6 +81,10 @@ formatting R exercises are described in [Assignment 1](assign/assign1.pdf).
 See [Render an R script to a report](https://bookdown.org/yihui/rmarkdown-cookbook/spin.html),
 which describes how to compile HTML, PDF, or MS Word notebooks from R scripts for further details.
 
+Here's a [template for an R script](assign/RScript-template.R) that shows how you add headings
+and text to produce readable output in Word, HTML, ... Here is the [result, when you "knit"](assign/RScript-template.html) the script to HTML.
+
+
 Please submit your assignments to me by email, as a PDF, Word, or HTML attachment
 (together with the associated R or Rmd file),
 with

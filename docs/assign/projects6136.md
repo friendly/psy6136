@@ -27,7 +27,7 @@ this section, and sufficient text description to give an overview of this
 topic. Taking it further, something like this might be publishable, or
 certainly a nice blog post.
 
-## Tidy CDA <img src="https://github.com/friendly/vcdExtra/blob/master/vignettes/fig/tidyCat-logo.png" height=80>
+## Tidy CDA <img src="https://raw.githubusercontent.com/friendly/vcdExtra/master/vignettes/fig/tidyCat-logo.png" height=80>
 
 Categorical data simple for some purposes, but notoriously "untidy" --
 `table()`, `matrix()`, `array()`, `xtabs()`, ... and many functions for analysis
