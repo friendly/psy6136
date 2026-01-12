@@ -38,8 +38,8 @@ output:
 
 ## Class meetings {#meetings}
 
-* Thursday, 11:30 am - 2:30 pm, Rm 203 BSB.
-As might be useful, some classes might meet in the Hebb Lab, 159 BSB
+* Thursday, 11:30 am - 2:30 pm, ~~Rm 203 BSB~~ .
+We will meet in the Hebb Lab, **159 BSB**
 
 <!--
 ## Class discussion forum
