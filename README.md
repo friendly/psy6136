@@ -2,7 +2,7 @@
 **Categorical Data Analysis**
 
 <!-- badges: start -->
-[![](https://img.shields.io/website?color=0ab9e6&style=flat-square&up_message=datavis.ca&url=https%3A%2F%2Fwww.datavis.ca)](https://www.datavis.ca)
+[![](https://img.shields.io/website?color=0ab9e6&style=flat-square&up_message=psy6136&url=https%3A%2F%2Ffriendly.github.io/psy6136)](https://friendly.github.io/psy6136)
 <!-- badges: end -->
 
 
