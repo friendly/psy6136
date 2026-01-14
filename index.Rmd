@@ -162,11 +162,11 @@ div_heading("lecture")
 
 <!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
 
-```{r quiz1, results='asis', echo=FALSE}
+```{r quiz2, results='asis', echo=FALSE}
 div_heading("quiz")
 ```
 
-- [Quiz 1 - Discrete distributions](quiz/quiz1-discrete.html)
+- [Quiz 2 - Discrete distributions](quiz/quiz02-discrete.html)
 
 
 ## Two-way Tables {#twoway}
@@ -224,11 +224,11 @@ div_heading("lecture")
 - **Agresti, Ch 2**
 - See [Supplementary resources](resources.html#week3) for this week.
 
-```{r quiz2, results='asis', echo=FALSE}
+```{r quiz3, results='asis', echo=FALSE}
 div_heading("quiz")
 ```
 
-- [Quiz 2 - Two-way tables](quiz/quiz2-twoway.html)
+- [Quiz 3 - Two-way tables](quiz/quiz03-twoway.html)
 
 
 
@@ -289,11 +289,11 @@ div_heading("readings")
 - See [Supplementary resources](resources.html#week4) for this week.
 
  
-```{r quiz3, results='asis', echo=FALSE}
+```{r quiz4, results='asis', echo=FALSE}
 div_heading("quiz")
 ```
 
-- [Quiz 3 - Loglinear models](quiz/quiz3-loglin.html)
+- [Quiz 4 - Loglinear models](quiz/quiz04-loglin.html)
 
 
 ## Correspondence Analysis {#corresp}
@@ -355,7 +355,7 @@ div_heading("readings")
 div_heading("quiz")
 ```
 
-- [Quiz 5 - Correspondence analysis](quiz/quiz5-corresp.html)
+- [Quiz 5 - Correspondence analysis](quiz/quiz05-corresp.html)
 
 ## Logistic regression
 
@@ -406,7 +406,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 6 - Logistic regression](quiz/quiz6-logistic.html)
+- [Quiz 6 - Logistic regression](quiz/quiz06-logistic.html)
 
 ## Logistic regression: Extensions
 
@@ -457,7 +457,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 7 - Logistic regression: Extensions](quiz/quiz7-logistic2.html)
+- [Quiz 7 - Logistic regression: Extensions](quiz/quiz07-logistic2.html)
 
 ## Extending loglinear models
 
@@ -504,7 +504,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 8 - Extending Loglinear Models](quiz/quiz8-loglin2.html)
+- [Quiz 8 - Extending Loglinear Models](quiz/quiz08-loglin2.html)
 
 
 ## GLMs for count data
@@ -553,7 +553,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 9 - GLMs for Count Data](quiz/quiz9-countdata.html)
+- [Quiz 9 - GLMs for Count Data](quiz/quiz09-countdata.html)
 
 
 
