@@ -9,8 +9,8 @@ Please speak to me or, better yet, send me an email by the end of Reading Week w
 
 You can work on one of these individually or with one partner. I would expect something more substantial for a team project than an individual one. 
 
-**Use of AI**: I haven't quite decided on a policy for this, but will do so shortly. However, I will require you to cite as sources any assistance
-you obtained from AI agents.
+**Use of AI**: I describe a general policy for responsible [Use of AI tools](assign/AI-use.html) in this course. Please read
+this and ask me questions where this is unclear in relation to what you want to do. A main requirement is that you to cite as sources any assistance you obtained from AI agents.
 
 ## Recent developments in Categorical Data Analysis
 
@@ -59,6 +59,16 @@ These include:
 * `vcd` and `vcdExtra` documentation. A big part of developing software is to provide sufficient documentation, examples, tutorials, etc. to allow people to actually **use** what you've developed. It's what I've tried to do for all my packages. I describe some ways you could contribute to the effort 
 in [Extending Categorical Data Analysis](https://github.com/friendly/vcdExtra/blob/master/issues/vcd-extensions.html)
 
+## Mosaic displays with `ggplot2`
+
+The main software I use for mosaic displays is in `vcd` and `vcdExtra` packages. There was also an attempt to do some of
+this using `ggplot2` in a [`ggmosaic` package](https://github.com/haleyjeppson/ggmosaic), but that seems to have been
+abandoned by its' maintainer.
+
+In this regard, you might be interested in this [Comparative Study of vcd::mosaic and geom_mosaic](https://jtr13.github.io/cc19/comparative-study-of-vcdmosaic-and-geom-mosaic.html). 
+
+I have forked the `ggmosaic` project as [friendly/ggmosaic](https://github.com/friendly/ggmosaic),
+and may use this as a new package, **ggmosaic2**. Anyone is welcome to work on this for a course project.
 
 ## Interactive apps
 
