@@ -1,5 +1,5 @@
 ---
-title: "Quiz 1: Discrete Distributions 📊"
+title: "Quiz 2: Discrete Distributions 📊"
 output: webexercises::webexercises_default
 ---
 

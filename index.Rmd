@@ -166,7 +166,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 2 - Discrete distributions](quiz/quiz02-discrete.html)
+- [Quiz 2 - Discrete distributions](quiz/02-discrete.html)
 
 
 ## Two-way Tables {#twoway}
@@ -228,7 +228,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 3 - Two-way tables](quiz/quiz03-twoway.html)
+- [Quiz 3 - Two-way tables](quiz/03-twoway.html)
 
 
 
@@ -293,7 +293,7 @@ div_heading("readings")
 div_heading("quiz")
 ```
 
-- [Quiz 4 - Loglinear models](quiz/quiz04-loglin.html)
+- [Quiz 4 - Loglinear models](quiz/04-loglin.html)
 
 
 ## Correspondence Analysis {#corresp}
@@ -355,7 +355,7 @@ div_heading("readings")
 div_heading("quiz")
 ```
 
-- [Quiz 5 - Correspondence analysis](quiz/quiz05-corresp.html)
+- [Quiz 5 - Correspondence analysis](quiz/05-corresp.html)
 
 ## Logistic regression
 
@@ -406,7 +406,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 6 - Logistic regression](quiz/quiz06-logistic.html)
+- [Quiz 6 - Logistic regression](quiz/06-logistic.html)
 
 ## Logistic regression: Extensions
 
@@ -457,7 +457,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 7 - Logistic regression: Extensions](quiz/quiz07-logistic2.html)
+- [Quiz 7 - Logistic regression: Extensions](quiz/07-logistic2.html)
 
 ## Extending loglinear models
 
@@ -504,7 +504,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 8 - Extending Loglinear Models](quiz/quiz08-loglin2.html)
+- [Quiz 8 - Extending Loglinear Models](quiz/08-loglin2.html)
 
 
 ## GLMs for count data
@@ -553,7 +553,7 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
-- [Quiz 9 - GLMs for Count Data](quiz/quiz09-countdata.html)
+- [Quiz 9 - GLMs for Count Data](quiz/09-countdata.html)
 
 
 
