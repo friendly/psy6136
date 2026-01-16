@@ -51,7 +51,10 @@ The key difference is overdispersion: use negative binomial when variance > mean
 
 **4. How does the mean and variance of a Poisson distribution relate to its parameter λ?**
 
-`r longmcq(c(answer = "Mean = λ, Variance = λ", "Mean = 1/λ, Variance = 1/λ^2", "Mean = 1/λ, Variance = λ", "Mean = λ, Variance = λ^2"))`
+`r longmcq(c(answer = "Mean = λ, Variance = λ", 
+             "Mean = 1/λ, Variance = 1/λ^2", 
+             "Mean = 1/λ, Variance = λ", 
+             "Mean = λ, Variance = λ^2"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -60,7 +63,10 @@ For the Poisson distribution, both the mean and variance equal the parameter λ.
 
 **5. Which example is most likely to follow a log-series distribution?**
 
-`r longmcq(c("Number of accidents at a busy intersection", answer = "Counts of occurrences of distinct words in the books written by Jane Austen", "Number of births of males in Canadian families composed of 6 children", "Number of tosses of a coin required to get the first head"))`
+`r longmcq(c("Number of accidents at a busy intersection", 
+              answer = "Counts of occurrences of distinct words in the books written by Jane Austen", 
+              "Number of births of males in Canadian families composed of 6 children", 
+              "Number of tosses of a coin required to get the first head"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -69,7 +75,10 @@ The log-series distribution is best for highly skewed count data where there are
 
 **6. Which of the following characterize the negative binomial distribution and the geometric distribution?**
 
-`r longmcq(c("The negative binomial distribution models the number of failures before a specified number of successes", "The geometric distribution models the number of failures before the first success", answer = "Both A and B", "Neither A nor B"))`
+`r longmcq(c("The negative binomial distribution models the number of failures before a specified number of successes", 
+             "The geometric distribution models the number of failures before the first success", 
+             answer = "Both A and B", 
+             "Neither A nor B"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
@@ -87,7 +96,10 @@ The negative binomial distribution is used for count data (non-negative integers
 
 **8. What is the mean and variance of a variable distributed as a geometric distribution?**
 
-`r longmcq(c("Mean = λ, Variance = λ", "Mean = 1/λ, Variance = 1/λ^2", "Mean = 1/λ, Variance = λ", answer = "Mean = λ, Variance = 1/λ^2"))`
+`r longmcq(c("Mean = λ, Variance = λ", 
+             "Mean = 1/λ, Variance = 1/λ^2", 
+             "Mean = 1/λ, Variance = λ", 
+             answer = "Mean = λ, Variance = 1/λ^2"))`
 
 <div class="webex-solution">
 <button>Explanation</button>
