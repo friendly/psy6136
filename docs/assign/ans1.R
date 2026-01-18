@@ -8,6 +8,7 @@
 #'     code_download: true
 #' ---
 
+#' Here, I just provide some of the steps I would do to to find answers to these questions with R.
 
 #' ## Exercise 2.2
 
@@ -20,9 +21,13 @@ str(Abortion)
 
 #' ## (b) Caesarian Births: Caesar
 data(Caesar, package = "vcdExtra")
+str(Caesar)
 
-#' `Infection` is a 3-level response variable; the explanatory variables are
-#' `Risk` (a two-level nominal variable), whether `Antibiotics` were used (a two-level nominal variable), and whether the Caesarian section was `Planned` or not (a two-level nominal variable). 
+#' `Infection` is a 3-level response variable; the explanatory variables are:
+#' * `Risk` (a two-level nominal variable), 
+#' * whether `Antibiotics` were used (a two-level nominal variable), and 
+#' *  whether the Caesarian section was `Planned` or not (a two-level nominal variable). 
+#'  
 #' Q: How antibiotics, risk, and whether the operation was planned are associated with infection type (or no infection)?
 
 #' Similarly for the other two datasets
@@ -35,9 +40,11 @@ str(DanishWelfare)
 sum(DanishWelfare$Freq)  # total cases
 
 #' ### Ordering Alcohol and Income
+#' First, examine the levels of the factor. Then, use `ordered()` to assign labels to the ordered levels of `Alcohol`
 levels(DanishWelfare$Alcohol)
 DanishWelfare$Alcohol <- ordered(DanishWelfare$Alcohol, levels=c("<1", "1-2", ">2"))
 
+#' Do the same for `Income`
 levels(DanishWelfare$Income)
 DanishWelfare$Income <- ordered(DanishWelfare$Income, levels=c("0-50","50-100","100-150",">150"))
 
@@ -69,12 +76,12 @@ structable(Alcohol ~ Urban+Status+Income,  Danish.tab2)
 
 
 #'  ## Exercise 2.5
-
+#' The dataset `UKSoccer` is a square table of goals scored by Home/Away teams 
 data(UKSoccer, package="vcd")
-# total games
+# (a) total games
 sum(UKSoccer)
 
-# marginal totals
+# (b) marginal totals
 addmargins(UKSoccer)
 # or
 rowSums(UKSoccer)
@@ -83,7 +90,7 @@ colSums(UKSoccer)
 home <- margin.table(UKSoccer, 1)
 away <- margin.table(UKSoccer, 2)
 
-# proportions
+# (c) proportions
 prop.table(margin.table(UKSoccer,1))
 prop.table(margin.table(UKSoccer,2))
 

@@ -15,8 +15,8 @@ output:
 
 
 <center>
-<img src="icons/psy6136-highres.png" width="120px" style="margin-left: 2em;">
-<img src="icons/psy6136-qr.png" width="120px"/>
+<img src="icons/psy6136-highres.png" width="120px" style="margin-right: 2em;">
+<img src="icons/psy6136-qr.png" width="120px" style="margin-left: 2em;"/>
 </center>
 
 ```{r setup, echo=FALSE}
@@ -55,7 +55,6 @@ of graphical methods in understanding and communicating results.
 
 ![](images/headers/bertifier.png)
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
 <!--
 ```{r topics1, results='asis', echo=FALSE}
@@ -66,8 +65,6 @@ div_heading("topics")
 <!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
 #### <span class="emoji">📌</span> Topics:
-
-
 
 - Course outline, books, R
 - What is categorical data?
@@ -121,8 +118,6 @@ and understanding why a given one might not fit well.
 
 ![](images/headers/dpois-xyplot.png)
 
-<!-- #### Topics: `r icon::fa("list", color="darkgreen")`  -->
-
 <!--
 ```{r topics2, results='asis', echo=FALSE}
 div_heading("topics")
@@ -160,7 +155,11 @@ div_heading("lecture")
 - **DDAR**: [Ch 3](VCDR/chapter03.pdf)
 - See [Supplementary resources](resources.html#week2) for this week.
 
-<!-- #### Quiz: `r icon::fa("building", color="brown")`  -->
+```{r asn2, results='asis', echo=FALSE}
+div_heading("assign")
+```
+- [Assignment 2](assign/assign2.pdf)
+
 
 ```{r quiz2, results='asis', echo=FALSE}
 div_heading("quiz")
@@ -228,6 +227,11 @@ div_heading("lecture")
 div_heading("quiz")
 ```
 
+```{r asn3, results='asis', echo=FALSE}
+div_heading("assign")
+```
+- [Assignment 3](assign/assign3.pdf)
+ 
 - [Quiz 3 - Two-way tables](quiz/03-twoway.html)
 
 
@@ -247,7 +251,6 @@ div_heading("quiz")
 
 ![](images/headers/loglin.png)
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
 <!--
 ```{r topics4, results='asis', echo=FALSE}
@@ -288,7 +291,12 @@ div_heading("readings")
 - **Agresti, 2.7; Ch 7**
 - See [Supplementary resources](resources.html#week4) for this week.
 
+```{r asn4, results='asis', echo=FALSE}
+div_heading("assign")
+```
+- [Assignment 4](assign/assign4.pdf)
  
+
 ```{r quiz4, results='asis', echo=FALSE}
 div_heading("quiz")
 ```
@@ -308,8 +316,6 @@ They can be used to permute the categories in mosaic displays to make the patter
 as clear as possible.
 
 ![](images/headers/corresp.png)
-
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
 <!--
 ```{r topics5, results='asis', echo=FALSE}
@@ -365,8 +371,6 @@ binary outcome, but more importantly, allow graphs of a fitted outcome together
 with confidence bands representing uncertainty,
 
 ![](images/headers/logistic.png)
-
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 
 <!--
 ```{r topics6, results='asis', echo=FALSE}
@@ -518,7 +522,6 @@ and _negative binomial_ model.  When the data exhibits a greater frequency of
 ![](images/headers/countdata.png)
 
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 <!--
 ```{r topics9, results='asis', echo=FALSE}
 div_heading("topics")
@@ -568,7 +571,6 @@ ratios provide a new way to look at their associations in a structured way.
 
 ![](images/headers/log-odds.png)
 
-<!-- #### Topics:  `r icon::fa("list", color="darkgreen")` -->
 <!--
 ```{r topics10, results='asis', echo=FALSE}
 div_heading("topics")
