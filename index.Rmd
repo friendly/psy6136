@@ -454,7 +454,7 @@ div_heading("lecture")
 
 #### <img src="icons/book.png" height=20> Readings: 
 
-- **DDAR**: [Ch 8](VCDR/chapter07.pdf)
+- **DDAR**: [Ch 8](VCDR/chapter08.pdf)
 - See [Supplementary resources](resources.html#week7) for this week.
 
 ```{r quiz7, results='asis', echo=FALSE}

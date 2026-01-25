@@ -31,19 +31,17 @@ fourfold(Fungicide, p_adjust_method="none")
 assocstats(Fungicide)
 
 
-oddsratio(Fungicide) |>
-  summary()
-
-loddsratio(Fungicide) |>
-  summary()
-
+fung.lor <- oddsratio(Fungicide) 
 
 summary(fung.lor)
 
 plot(fung.lor)
 
 #' ## Homogeneity of association
-#' Woolf test only only handles 2 x 2 x k tables
+
 woolf_test(Fungicide)
+
+woolf_test(Fungicide, decompose = TRUE)
+
 
 
