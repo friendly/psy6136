@@ -29,7 +29,7 @@ navbar:
     - text: "R examples"
       icon: fa-code 
       href: R/index.html
-    - text: "R functions"
+    - text: "R CDA functions"
       icon: fa-list
       href: R-functions.html
     - text: "Students"

@@ -19,6 +19,12 @@ This document provides a reference guide to R functions for statistical tests, m
 - R functions and packages
 - Visualization methods
 
+<img src="icons/construction.png" height=20> **Note:** This web page is a work-in-progress, in the hope that it can be generally useful as a guide to finding the R tools useful for categorical data analysis.
+If you find something that is confusing, or could be replaced by something better or more recent, 
+[please let me know by filing an issue](https://github.com/friendly/psy6136/issues).
+
+**Jump to:** [Discrete Distributions](#discrete) || [Two-Way Tables](#twoway) || [Loglinear Models](#loglinear) || [Correspondence Analysis](#corresp) || [Logistic Regression](#logistic) || [Polytomous Models](#polytomous) || [Extended Loglinear](#extended) || [Count Data GLMs](#countdata) || [Visualization Tools](#visualization) || [Packages](#packages) || [Quick Reference](#quickref)
+
 ---
 
 ## 1. Discrete Distributions {#discrete}

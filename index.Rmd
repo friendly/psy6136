@@ -64,7 +64,7 @@ div_heading("topics")
 
 <!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Course outline, books, R
 - What is categorical data?
@@ -126,7 +126,7 @@ div_heading("topics")
 
 <!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 
 - Discrete distributions: Basic ideas
@@ -186,9 +186,8 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Overview: $2 \times 2$, $r \times c$, ordered tables
 - Independence
@@ -258,9 +257,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Mosaic displays: Basic ideas
 - Loglinear models
@@ -323,9 +320,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - CA: Basic ideas
 - Singular value decomposition (SVD)
@@ -378,9 +373,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 
 - Model-based methods: Overview
@@ -433,7 +426,7 @@ div_heading("topics")
 
 <!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Case study: Survival in the Donner party
 - Polytomous response models
@@ -481,7 +474,7 @@ div_heading("topics")
 
 <!-- #### <img src="icons/list.png" height=20> Topics:   -->
 
-#### <span class="emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Logit models for response variables
 - Models for ordinal factors
@@ -528,8 +521,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-#### <span class="icon-emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Generalized linear models: Families & links
 - GLMs for count data
@@ -577,9 +569,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-
-#### <span class="icon-emoji">📌</span> Topics:
+#### 📌 Topics:
 
 - Logit models -> log odds models
 - Generalized log odds ratios
@@ -615,9 +605,7 @@ div_heading("topics")
 ```
 -->
 
-<!-- #### <img src="icons/list.png" height=20> Topics:   -->
-
-#### <span class="icon-emoji">📌</span> Topics:
+#### 📌 Topics:
 
 
 - Course goals
