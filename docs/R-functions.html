@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>R Functions for Categorical Data Analysis</title>
+
+<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link rel="shortcut icon" href="icons/favicon_io/favicon-32x32.png" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="assets/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Psy 6136: Categorical Data Analysis</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="schedule.html">
+    <span class="fa fa-calendar"></span>
+     
+    Schedule
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-file"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="resources.html">
+    <span class="fa fa-book"></span>
+     
+    Resources
+  </a>
+</li>
+<li>
+  <a href="R/index.html">
+    <span class="fa fa-code"></span>
+     
+    R examples
+  </a>
+</li>
+<li>
+  <a href="R-functions.html">
+    <span class="fa fa-list"></span>
+     
+    R functions
+  </a>
+</li>
+<li>
+  <a href="students.html">
+    <span class="fa fa-users"></span>
+     
+    Students
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/friendly/psy6136">
+    <span class="fab fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">R Functions for Categorical Data
+Analysis</h1>
+
+</div>
+
+
+<p>This document provides a reference guide to R functions for
+statistical tests, models, and visualization methods used in Psy 6136:
+Categorical Data Analysis.</p>
+<p><strong>Organization:</strong> Topics follow the course sequence.
+Each section covers:</p>
+<ul>
+<li>Statistical tests and models</li>
+<li>R functions and packages</li>
+<li>Visualization methods</li>
+</ul>
+<hr />
+<div id="discrete" class="section level2">
+<h2>1. Discrete Distributions</h2>
+<div id="fitting-distributions" class="section level3">
+<h3>Fitting Distributions</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Goodness-of-fit test</td>
+<td><code>chisq.test()</code></td>
+<td>stats</td>
+<td>Chi-square test for discrete distributions</td>
+</tr>
+<tr class="even">
+<td>Goodness-of-fit test</td>
+<td><code>goodfit()</code></td>
+<td>vcd</td>
+<td>Fit and test discrete distributions (Poisson, binomial, negative
+binomial)</td>
+</tr>
+<tr class="odd">
+<td>Maximum likelihood</td>
+<td><code>fitdistr()</code></td>
+<td>MASS</td>
+<td>ML fitting for various distributions</td>
+</tr>
+<tr class="even">
+<td>Distribution fitting</td>
+<td><code>fitdist()</code></td>
+<td>fitdistrplus</td>
+<td>Comprehensive fitting with multiple methods</td>
+</tr>
+<tr class="odd">
+<td>Monte Carlo GOF</td>
+<td><code>chisq_test()</code></td>
+<td>discretefit</td>
+<td>Fast MC simulations for GOF tests</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="distribution-functions" class="section level3">
+<h3>Distribution Functions</h3>
+<table>
+<colgroup>
+<col width="41%" />
+<col width="32%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Distribution</th>
+<th>Functions</th>
+<th>Package</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Binomial</td>
+<td><code>dbinom()</code>, <code>pbinom()</code>, <code>qbinom()</code>,
+<code>rbinom()</code></td>
+<td>stats</td>
+</tr>
+<tr class="even">
+<td>Poisson</td>
+<td><code>dpois()</code>, <code>ppois()</code>, <code>qpois()</code>,
+<code>rpois()</code></td>
+<td>stats</td>
+</tr>
+<tr class="odd">
+<td>Negative Binomial</td>
+<td><code>dnbinom()</code>, <code>pnbinom()</code>,
+<code>qnbinom()</code>, <code>rnbinom()</code></td>
+<td>stats</td>
+</tr>
+<tr class="even">
+<td>Geometric</td>
+<td><code>dgeom()</code>, <code>pgeom()</code>, <code>qgeom()</code>,
+<code>rgeom()</code></td>
+<td>stats</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rootogram</td>
+<td><code>rootogram()</code></td>
+<td>vcd</td>
+<td>Compare observed vs fitted frequencies</td>
+</tr>
+<tr class="even">
+<td>Ord plot</td>
+<td><code>Ord_plot()</code></td>
+<td>vcd</td>
+<td>Diagnose distribution type</td>
+</tr>
+<tr class="odd">
+<td>Distplot</td>
+<td><code>distplot()</code></td>
+<td>vcd</td>
+<td>Diagnostic plot for count distributions</td>
+</tr>
+<tr class="even">
+<td>Hanging rootogram</td>
+<td><code>rootogram(..., type="hanging")</code></td>
+<td>vcd</td>
+<td>Deviations hang from fitted curve</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(vcd)
+data(HorseKicks)
+gf &lt;- goodfit(HorseKicks, type = &quot;poisson&quot;)
+summary(gf)       # GOF test
+rootogram(gf)     # Visual comparison
+Ord_plot(HorseKicks)  # Distribution diagnosis</code></pre>
+<hr />
+</div>
+</div>
+<div id="twoway" class="section level2">
+<h2>2. Two-Way Contingency Tables</h2>
+<div id="tests-of-independence" class="section level3">
+<h3>Tests of Independence</h3>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="26%" />
+<col width="23%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Test</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pearson chi-square</td>
+<td><code>chisq.test()</code></td>
+<td>stats</td>
+<td>Test of independence</td>
+</tr>
+<tr class="even">
+<td>Likelihood ratio</td>
+<td><code>loglm()</code></td>
+<td>MASS</td>
+<td>G² test via loglinear model</td>
+</tr>
+<tr class="odd">
+<td>Fisher exact test</td>
+<td><code>fisher.test()</code></td>
+<td>stats</td>
+<td>Exact test for small samples</td>
+</tr>
+<tr class="even">
+<td>Cochran-Mantel-Haenszel</td>
+<td><code>mantelhaen.test()</code></td>
+<td>stats</td>
+<td>Stratified 2×2 tables</td>
+</tr>
+<tr class="odd">
+<td>CMH tests</td>
+<td><code>CMHtest()</code></td>
+<td>vcdExtra</td>
+<td>Extended CMH tests for ordinal data</td>
+</tr>
+<tr class="even">
+<td>Woolf test</td>
+<td><code>woolf_test()</code></td>
+<td>vcd</td>
+<td>Test homogeneity of odds ratios</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="measures-of-association" class="section level3">
+<h3>Measures of Association</h3>
+<table>
+<colgroup>
+<col width="21%" />
+<col width="24%" />
+<col width="21%" />
+<col width="31%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Measure</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Odds ratio</td>
+<td><code>oddsratio()</code></td>
+<td>vcd</td>
+<td>Odds ratio with CI</td>
+</tr>
+<tr class="even">
+<td>Odds ratio</td>
+<td><code>OddsRatio()</code></td>
+<td>DescTools</td>
+<td>Alternative implementation</td>
+</tr>
+<tr class="odd">
+<td>Relative risk</td>
+<td><code>relrisk()</code></td>
+<td>vcd</td>
+<td>Relative risk for 2×2 tables</td>
+</tr>
+<tr class="even">
+<td>Cramer’s V</td>
+<td><code>assocstats()</code></td>
+<td>vcd</td>
+<td>Returns V, phi, contingency coef</td>
+</tr>
+<tr class="odd">
+<td>Cohen’s kappa</td>
+<td><code>Kappa()</code></td>
+<td>vcd</td>
+<td>Inter-rater agreement</td>
+</tr>
+<tr class="even">
+<td>Cohen’s kappa</td>
+<td><code>cohen.kappa()</code></td>
+<td>psych</td>
+<td>With weighted options</td>
+</tr>
+<tr class="odd">
+<td>Bangdiwala’s B</td>
+<td><code>Bangdiwala()</code></td>
+<td>vcdExtra</td>
+<td>Observer agreement measure</td>
+</tr>
+<tr class="even">
+<td>Gamma</td>
+<td><code>GoodmanKruskalGamma()</code></td>
+<td>DescTools</td>
+<td>Ordinal association</td>
+</tr>
+<tr class="odd">
+<td>Kendall’s tau-b</td>
+<td><code>KendallTauB()</code></td>
+<td>DescTools</td>
+<td>Ordinal association</td>
+</tr>
+<tr class="even">
+<td>Uncertainty coefficient</td>
+<td><code>assocstats()</code></td>
+<td>vcd</td>
+<td>Included in output</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-1" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fourfold display</td>
+<td><code>fourfold()</code></td>
+<td>vcd</td>
+<td>Visualize 2×2 tables, odds ratios</td>
+</tr>
+<tr class="even">
+<td>Sieve diagram</td>
+<td><code>sieve()</code></td>
+<td>vcd</td>
+<td>Visualize deviations from independence</td>
+</tr>
+<tr class="odd">
+<td>Association plot</td>
+<td><code>assoc()</code></td>
+<td>vcd</td>
+<td>Pearson residuals as rectangles</td>
+</tr>
+<tr class="even">
+<td>Spine plot</td>
+<td><code>spine()</code></td>
+<td>vcd</td>
+<td>Conditional proportions</td>
+</tr>
+<tr class="odd">
+<td>Spine plot</td>
+<td><code>spineplot()</code></td>
+<td>graphics</td>
+<td>Base R version</td>
+</tr>
+<tr class="even">
+<td>Mosaic plot</td>
+<td><code>mosaic()</code></td>
+<td>vcd</td>
+<td>Multi-way tables (see Section 3)</td>
+</tr>
+<tr class="odd">
+<td>Doubledecker</td>
+<td><code>doubledecker()</code></td>
+<td>vcd</td>
+<td>Highlight one response variable</td>
+</tr>
+<tr class="even">
+<td>Agreement plot</td>
+<td><code>agreementplot()</code></td>
+<td>vcd</td>
+<td>Visualize observer agreement</td>
+</tr>
+<tr class="odd">
+<td>Bangdiwala plot</td>
+<td><code>Bangdiwala()</code></td>
+<td>vcdExtra</td>
+<td>Agreement visualization</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(vcd)
+data(UCBAdmissions)
+ucb &lt;- margin.table(UCBAdmissions, c(1,2))
+
+# Tests
+chisq.test(ucb)
+assocstats(ucb)
+
+# Visualization
+fourfold(UCBAdmissions)
+sieve(ucb, shade = TRUE)
+assoc(ucb, shade = TRUE)</code></pre>
+<hr />
+</div>
+</div>
+<div id="loglinear" class="section level2">
+<h2>3. Loglinear Models</h2>
+<div id="model-fitting" class="section level3">
+<h3>Model Fitting</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Loglinear model</td>
+<td><code>loglm()</code></td>
+<td>MASS</td>
+<td>Fit loglinear models (uses formula with <code>~</code>)</td>
+</tr>
+<tr class="even">
+<td>GLM approach</td>
+<td><code>glm(..., family=poisson)</code></td>
+<td>stats</td>
+<td>Loglinear via GLM framework</td>
+</tr>
+<tr class="odd">
+<td>Model comparison</td>
+<td><code>anova()</code></td>
+<td>stats</td>
+<td>Compare nested models</td>
+</tr>
+<tr class="even">
+<td>LR test</td>
+<td><code>LRtest()</code></td>
+<td>vcdExtra</td>
+<td>Likelihood ratio tests</td>
+</tr>
+<tr class="odd">
+<td>Model summary</td>
+<td><code>mosaic.glm()</code></td>
+<td>vcdExtra</td>
+<td>Mosaic for glm objects</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="model-notation" class="section level3">
+<h3>Model Notation</h3>
+<pre class="r"><code># Independence: [A][B]
+loglm(~ A + B, data = tab)
+
+# Joint independence: [AB][C]
+loglm(~ A*B + C, data = tab)
+
+# Conditional independence: [AC][BC]
+loglm(~ A*C + B*C, data = tab)
+
+# Homogeneous association: [AB][AC][BC]
+loglm(~ A*B + A*C + B*C, data = tab)
+
+# Saturated: [ABC]
+loglm(~ A*B*C, data = tab)</code></pre>
+</div>
+<div id="visualization-2" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mosaic display</td>
+<td><code>mosaic()</code></td>
+<td>vcd</td>
+<td>Visualize loglinear model fit</td>
+</tr>
+<tr class="even">
+<td>Mosaic (formula)</td>
+<td><code>mosaic(~ A + B + C)</code></td>
+<td>vcd</td>
+<td>Using formula interface</td>
+</tr>
+<tr class="odd">
+<td>Mosaic (glm)</td>
+<td><code>mosaic.glm()</code></td>
+<td>vcdExtra</td>
+<td>Mosaic for fitted glm</td>
+</tr>
+<tr class="even">
+<td>Strucplot</td>
+<td><code>strucplot()</code></td>
+<td>vcd</td>
+<td>General structure plot</td>
+</tr>
+<tr class="odd">
+<td>ggplot mosaic</td>
+<td><code>geom_mosaic()</code></td>
+<td>ggmosaic</td>
+<td>ggplot2 implementation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="residuals-and-shading" class="section level3">
+<h3>Residuals and Shading</h3>
+<pre class="r"><code># Mosaic with model residuals
+mosaic(~ Admit + Gender + Dept, data = UCBAdmissions,
+       shade = TRUE,                    # Color by residuals
+       expected = ~ Gender * Dept + Admit * Dept,  # Model to test
+       legend = TRUE)
+
+# Shading schemes
+mosaic(..., gp = shading_hcl)      # HCL color shading
+mosaic(..., gp = shading_Friendly) # Friendly scheme
+mosaic(..., gp = shading_max)      # Maximum shading</code></pre>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(vcd)
+library(MASS)
+data(Titanic)
+
+# Fit loglinear model
+mod &lt;- loglm(~ Class * Age * Sex + Survived * (Class + Age + Sex),
+             data = Titanic)
+summary(mod)
+
+# Visualize
+mosaic(Titanic, shade = TRUE,
+       expected = ~ Class * Age * Sex + Survived * (Class + Age + Sex))</code></pre>
+<hr />
+</div>
+</div>
+<div id="corresp" class="section level2">
+<h2>4. Correspondence Analysis</h2>
+<div id="simple-correspondence-analysis-ca" class="section level3">
+<h3>Simple Correspondence Analysis (CA)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CA</td>
+<td><code>ca()</code></td>
+<td>ca</td>
+<td>Correspondence analysis</td>
+</tr>
+<tr class="even">
+<td>CA</td>
+<td><code>CA()</code></td>
+<td>FactoMineR</td>
+<td>Alternative with more output</td>
+</tr>
+<tr class="odd">
+<td>CA</td>
+<td><code>corresp()</code></td>
+<td>MASS</td>
+<td>Simple CA</td>
+</tr>
+<tr class="even">
+<td>Summary</td>
+<td><code>summary.ca()</code></td>
+<td>ca</td>
+<td>Detailed CA summary</td>
+</tr>
+<tr class="odd">
+<td>Scores</td>
+<td><code>cacoord()</code></td>
+<td>ca</td>
+<td>Extract coordinates</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="multiple-correspondence-analysis-mca" class="section level3">
+<h3>Multiple Correspondence Analysis (MCA)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MCA</td>
+<td><code>mjca()</code></td>
+<td>ca</td>
+<td>Multiple/joint CA</td>
+</tr>
+<tr class="even">
+<td>MCA</td>
+<td><code>MCA()</code></td>
+<td>FactoMineR</td>
+<td>MCA with graphics</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-3" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CA biplot</td>
+<td><code>plot.ca()</code></td>
+<td>ca</td>
+<td>Symmetric or asymmetric maps</td>
+</tr>
+<tr class="even">
+<td>CA map</td>
+<td><code>fviz_ca_biplot()</code></td>
+<td>factoextra</td>
+<td>ggplot2-based CA plot</td>
+</tr>
+<tr class="odd">
+<td>Row plot</td>
+<td><code>fviz_ca_row()</code></td>
+<td>factoextra</td>
+<td>Plot row points</td>
+</tr>
+<tr class="even">
+<td>Column plot</td>
+<td><code>fviz_ca_col()</code></td>
+<td>factoextra</td>
+<td>Plot column points</td>
+</tr>
+<tr class="odd">
+<td>Eigenvalues</td>
+<td><code>fviz_screeplot()</code></td>
+<td>factoextra</td>
+<td>Scree plot of dimensions</td>
+</tr>
+<tr class="even">
+<td>Contributions</td>
+<td><code>fviz_contrib()</code></td>
+<td>factoextra</td>
+<td>Variable contributions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(ca)
+data(smoke)
+smoke.ca &lt;- ca(smoke)
+summary(smoke.ca)
+
+# Plots
+plot(smoke.ca)                        # Standard biplot
+plot(smoke.ca, map = &quot;rowprincipal&quot;)  # Asymmetric
+
+library(factoextra)
+fviz_ca_biplot(smoke.ca, repel = TRUE)</code></pre>
+<hr />
+</div>
+</div>
+<div id="logistic" class="section level2">
+<h2>5. Logistic Regression</h2>
+<div id="model-fitting-1" class="section level3">
+<h3>Model Fitting</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Logistic regression</td>
+<td><code>glm(..., family=binomial)</code></td>
+<td>stats</td>
+<td>Binary logistic regression</td>
+</tr>
+<tr class="even">
+<td>Probit regression</td>
+<td><code>glm(..., family=binomial(link="probit"))</code></td>
+<td>stats</td>
+<td>Probit link</td>
+</tr>
+<tr class="odd">
+<td>Coefficients</td>
+<td><code>coef()</code>, <code>summary()</code></td>
+<td>stats</td>
+<td>Model coefficients</td>
+</tr>
+<tr class="even">
+<td>Odds ratios</td>
+<td><code>exp(coef())</code></td>
+<td>stats</td>
+<td>Exponentiate for OR</td>
+</tr>
+<tr class="odd">
+<td>Confidence intervals</td>
+<td><code>confint()</code></td>
+<td>stats</td>
+<td>Profile likelihood CI</td>
+</tr>
+<tr class="even">
+<td>Wald CI</td>
+<td><code>confint.default()</code></td>
+<td>stats</td>
+<td>Wald-based CI</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="model-comparison-and-testing" class="section level3">
+<h3>Model Comparison and Testing</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Likelihood ratio test</td>
+<td><code>anova(..., test="Chisq")</code></td>
+<td>stats</td>
+<td>Compare nested models</td>
+</tr>
+<tr class="even">
+<td>Wald test</td>
+<td><code>Anova()</code></td>
+<td>car</td>
+<td>Type II/III tests</td>
+</tr>
+<tr class="odd">
+<td>Hosmer-Lemeshow</td>
+<td><code>hoslem.test()</code></td>
+<td>ResourceSelection</td>
+<td>GOF test</td>
+</tr>
+<tr class="even">
+<td>ROC/AUC</td>
+<td><code>roc()</code>, <code>auc()</code></td>
+<td>pROC</td>
+<td>Model discrimination</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="effect-displays" class="section level3">
+<h3>Effect Displays</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>All effects</td>
+<td><code>allEffects()</code></td>
+<td>effects</td>
+<td>Compute all effects</td>
+</tr>
+<tr class="even">
+<td>Effect plot</td>
+<td><code>plot(allEffects())</code></td>
+<td>effects</td>
+<td>Plot effects</td>
+</tr>
+<tr class="odd">
+<td>Specific effect</td>
+<td><code>Effect()</code></td>
+<td>effects</td>
+<td>One predictor effect</td>
+</tr>
+<tr class="even">
+<td>Marginal effects</td>
+<td><code>ggpredict()</code></td>
+<td>ggeffects</td>
+<td>Marginal means/predictions</td>
+</tr>
+<tr class="odd">
+<td>Marginal effects</td>
+<td><code>ggeffect()</code></td>
+<td>ggeffects</td>
+<td>Average marginal effects</td>
+</tr>
+<tr class="even">
+<td>Margins</td>
+<td><code>margins()</code></td>
+<td>margins</td>
+<td>Marginal effects (Stata-like)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-4" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Effect plot</td>
+<td><code>plot(Effect())</code></td>
+<td>effects</td>
+<td>Predicted probabilities</td>
+</tr>
+<tr class="even">
+<td>Coefficient plot</td>
+<td><code>plot_model(..., type="est")</code></td>
+<td>sjPlot</td>
+<td>Forest plot of ORs</td>
+</tr>
+<tr class="odd">
+<td>Predicted probs</td>
+<td><code>plot_model(..., type="pred")</code></td>
+<td>sjPlot</td>
+<td>Predicted probabilities</td>
+</tr>
+<tr class="even">
+<td>Marginal effects</td>
+<td><code>plot(ggpredict())</code></td>
+<td>ggeffects</td>
+<td>ggplot2 marginal effects</td>
+</tr>
+<tr class="odd">
+<td>Component+residual</td>
+<td><code>crPlots()</code></td>
+<td>car</td>
+<td>Partial residual plots</td>
+</tr>
+<tr class="even">
+<td>Influence plot</td>
+<td><code>influencePlot()</code></td>
+<td>car</td>
+<td>Influence diagnostics</td>
+</tr>
+<tr class="odd">
+<td>Residual plots</td>
+<td><code>residualPlots()</code></td>
+<td>car</td>
+<td>Various residual plots</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diagnostics" class="section level3">
+<h3>Diagnostics</h3>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="22%" />
+<col width="20%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Diagnostic</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deviance residuals</td>
+<td><code>residuals(..., type="deviance")</code></td>
+<td>stats</td>
+<td>Deviance residuals</td>
+</tr>
+<tr class="even">
+<td>Pearson residuals</td>
+<td><code>residuals(..., type="pearson")</code></td>
+<td>stats</td>
+<td>Pearson residuals</td>
+</tr>
+<tr class="odd">
+<td>Hat values</td>
+<td><code>hatvalues()</code></td>
+<td>stats</td>
+<td>Leverage</td>
+</tr>
+<tr class="even">
+<td>Cook’s distance</td>
+<td><code>cooks.distance()</code></td>
+<td>stats</td>
+<td>Influence measure</td>
+</tr>
+<tr class="odd">
+<td>DFBETAS</td>
+<td><code>dfbetas()</code></td>
+<td>stats</td>
+<td>Coefficient influence</td>
+</tr>
+<tr class="even">
+<td>VIF</td>
+<td><code>vif()</code></td>
+<td>car</td>
+<td>Multicollinearity</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(effects)
+library(car)
+
+# Fit model
+data(Arthritis, package = &quot;vcd&quot;)
+arth.glm &lt;- glm(Improved ~ Treatment + Sex + Age,
+                data = Arthritis, family = binomial)
+
+# Summary with odds ratios
+exp(cbind(OR = coef(arth.glm), confint(arth.glm)))
+
+# Effect plots
+plot(allEffects(arth.glm))
+
+# Diagnostics
+influencePlot(arth.glm)
+vif(arth.glm)</code></pre>
+<hr />
+</div>
+</div>
+<div id="polytomous" class="section level2">
+<h2>6. Polytomous Response Models</h2>
+<div id="ordinal-response-proportional-odds" class="section level3">
+<h3>Ordinal Response (Proportional Odds)</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Proportional odds</td>
+<td><code>polr()</code></td>
+<td>MASS</td>
+<td>Cumulative logit model</td>
+</tr>
+<tr class="even">
+<td>Ordinal regression</td>
+<td><code>clm()</code></td>
+<td>ordinal</td>
+<td>Cumulative link models</td>
+</tr>
+<tr class="odd">
+<td>Ordinal regression</td>
+<td><code>vglm(..., cumulative())</code></td>
+<td>VGAM</td>
+<td>Flexible ordinal models</td>
+</tr>
+<tr class="even">
+<td>Test prop. odds</td>
+<td><code>poTest()</code></td>
+<td>car</td>
+<td>Test proportional odds</td>
+</tr>
+<tr class="odd">
+<td>Partial prop. odds</td>
+<td><code>clm2()</code></td>
+<td>ordinal</td>
+<td>Relaxed proportional odds</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="multinomial-response" class="section level3">
+<h3>Multinomial Response</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Multinomial logit</td>
+<td><code>multinom()</code></td>
+<td>nnet</td>
+<td>Unordered categories</td>
+</tr>
+<tr class="even">
+<td>Multinomial logit</td>
+<td><code>vglm(..., multinomial())</code></td>
+<td>VGAM</td>
+<td>Alternative implementation</td>
+</tr>
+<tr class="odd">
+<td>Baseline-category</td>
+<td><code>vglm(..., multinomial(refLevel=1))</code></td>
+<td>VGAM</td>
+<td>Specify reference</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="nested-dichotomies" class="section level3">
+<h3>Nested Dichotomies</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nested logit</td>
+<td><code>nestedLogit()</code></td>
+<td>nestedLogit</td>
+<td>Fit nested dichotomies</td>
+</tr>
+<tr class="even">
+<td>Dichotomies</td>
+<td><code>dichotomy()</code></td>
+<td>nestedLogit</td>
+<td>Define dichotomies</td>
+</tr>
+<tr class="odd">
+<td>Continue</td>
+<td><code>continueLast()</code></td>
+<td>nestedLogit</td>
+<td>Continue previous split</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-5" class="section level3">
+<h3>Visualization</h3>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="23%" />
+<col width="20%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Effect plot (polr)</td>
+<td><code>plot(Effect())</code></td>
+<td>effects</td>
+<td>Works with polr objects</td>
+</tr>
+<tr class="even">
+<td>Effect plot (multinom)</td>
+<td><code>plot(Effect())</code></td>
+<td>effects</td>
+<td>Works with multinom</td>
+</tr>
+<tr class="odd">
+<td>Nested logit plot</td>
+<td><code>plot()</code></td>
+<td>nestedLogit</td>
+<td>Plot nested model</td>
+</tr>
+<tr class="even">
+<td>ggplot nested</td>
+<td><code>ggeffects::ggpredict()</code></td>
+<td>ggeffects</td>
+<td>For nested models</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code># Proportional odds
+library(MASS)
+data(housing, package = &quot;MASS&quot;)
+house.polr &lt;- polr(Sat ~ Infl + Type + Cont, data = housing, weights = Freq)
+summary(house.polr)
+
+# Effects
+library(effects)
+plot(Effect(&quot;Infl&quot;, house.polr))
+
+# Multinomial
+library(nnet)
+house.multi &lt;- multinom(Sat ~ Infl + Type + Cont, data = housing, weights = Freq)</code></pre>
+<hr />
+</div>
+</div>
+<div id="extended" class="section level2">
+<h2>7. Extended Loglinear Models</h2>
+<div id="models-for-ordinal-data" class="section level3">
+<h3>Models for Ordinal Data</h3>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="25%" />
+<col width="22%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Linear-by-linear</td>
+<td><code>glm()</code> with scores</td>
+<td>stats</td>
+<td>Assign numeric scores</td>
+</tr>
+<tr class="even">
+<td>RC association</td>
+<td><code>rc()</code></td>
+<td>logmult</td>
+<td>Row-column association</td>
+</tr>
+<tr class="odd">
+<td>RC(M) models</td>
+<td><code>rc(..., nd=M)</code></td>
+<td>logmult</td>
+<td>M-dimensional RC</td>
+</tr>
+<tr class="even">
+<td>Uniform association</td>
+<td>Create contrast in <code>glm()</code></td>
+<td>stats</td>
+<td>Single association param</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="generalized-nonlinear-models-gnm" class="section level3">
+<h3>Generalized Nonlinear Models (gnm)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GNM</td>
+<td><code>gnm()</code></td>
+<td>gnm</td>
+<td>Generalized nonlinear models</td>
+</tr>
+<tr class="even">
+<td>Multiplicative</td>
+<td><code>Mult()</code></td>
+<td>gnm</td>
+<td>Multiplicative interaction</td>
+</tr>
+<tr class="odd">
+<td>Homogeneous mult.</td>
+<td><code>MultHomog()</code></td>
+<td>gnm</td>
+<td>Same scores for rows/cols</td>
+</tr>
+<tr class="even">
+<td>Diagonal</td>
+<td><code>Diag()</code></td>
+<td>gnm</td>
+<td>Diagonal parameters</td>
+</tr>
+<tr class="odd">
+<td>Diagonal reference</td>
+<td><code>Dref()</code></td>
+<td>gnm</td>
+<td>Diagonal reference model</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="models-for-square-tables" class="section level3">
+<h3>Models for Square Tables</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Implementation</th>
+<th>Package</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Independence</td>
+<td><code>glm(~ R + C)</code></td>
+<td>stats</td>
+</tr>
+<tr class="even">
+<td>Quasi-independence</td>
+<td><code>glm(~ R + C + Diag(R,C))</code></td>
+<td>gnm</td>
+</tr>
+<tr class="odd">
+<td>Symmetry</td>
+<td><code>glm()</code> with symmetry coding</td>
+<td>stats</td>
+</tr>
+<tr class="even">
+<td>Quasi-symmetry</td>
+<td><code>glm(~ R + C + Symm(R,C))</code></td>
+<td>gnm</td>
+</tr>
+<tr class="odd">
+<td>Marginal homogeneity</td>
+<td>Test via quasi-symmetry</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-6" class="section level3">
+<h3>Visualization</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mosaic</td>
+<td><code>mosaic()</code></td>
+<td>vcd</td>
+<td>With expected model</td>
+</tr>
+<tr class="even">
+<td>RC plot</td>
+<td><code>plot.rc()</code></td>
+<td>logmult</td>
+<td>Plot RC scores</td>
+</tr>
+<tr class="odd">
+<td>Score plot</td>
+<td>Custom with <code>ggplot2</code></td>
+<td>-</td>
+<td>Plot estimated scores</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(gnm)
+library(vcdExtra)
+data(Yamaguchi87)
+
+# Quasi-independence
+quasi.indep &lt;- gnm(Freq ~ origin + destination + Diag(origin, destination),
+                   family = poisson, data = Yamaguchi87)
+
+# Quasi-symmetry
+quasi.symm &lt;- gnm(Freq ~ origin + destination + Symm(origin, destination),
+                  family = poisson, data = Yamaguchi87)
+
+# RC association model
+library(logmult)
+rc1 &lt;- rc(Yamaguchi87, nd = 1, weighting = &quot;marginal&quot;)
+plot(rc1)</code></pre>
+<hr />
+</div>
+</div>
+<div id="countdata" class="section level2">
+<h2>8. GLMs for Count Data</h2>
+<div id="basic-count-models" class="section level3">
+<h3>Basic Count Models</h3>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="23%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Poisson</td>
+<td><code>glm(..., family=poisson)</code></td>
+<td>stats</td>
+<td>Standard count model</td>
+</tr>
+<tr class="even">
+<td>Quasi-Poisson</td>
+<td><code>glm(..., family=quasipoisson)</code></td>
+<td>stats</td>
+<td>Handles overdispersion</td>
+</tr>
+<tr class="odd">
+<td>Negative binomial</td>
+<td><code>glm.nb()</code></td>
+<td>MASS</td>
+<td>Overdispersed counts</td>
+</tr>
+<tr class="even">
+<td>Negative binomial</td>
+<td><code>glm(..., family=negative.binomial())</code></td>
+<td>MASS</td>
+<td>Alternative syntax</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="zero-inflated-models" class="section level3">
+<h3>Zero-Inflated Models</h3>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="25%" />
+<col width="23%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Model</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Zero-inflated Poisson</td>
+<td><code>zeroinfl(..., dist="poisson")</code></td>
+<td>pscl</td>
+<td>ZIP model</td>
+</tr>
+<tr class="even">
+<td>Zero-inflated NB</td>
+<td><code>zeroinfl(..., dist="negbin")</code></td>
+<td>pscl</td>
+<td>ZINB model</td>
+</tr>
+<tr class="odd">
+<td>Hurdle Poisson</td>
+<td><code>hurdle(..., dist="poisson")</code></td>
+<td>pscl</td>
+<td>Hurdle model</td>
+</tr>
+<tr class="even">
+<td>Hurdle NB</td>
+<td><code>hurdle(..., dist="negbin")</code></td>
+<td>pscl</td>
+<td>NB hurdle</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="model-selection-and-comparison" class="section level3">
+<h3>Model Selection and Comparison</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>AIC</td>
+<td><code>AIC()</code></td>
+<td>stats</td>
+<td>Akaike IC</td>
+</tr>
+<tr class="even">
+<td>BIC</td>
+<td><code>BIC()</code></td>
+<td>stats</td>
+<td>Bayesian IC</td>
+</tr>
+<tr class="odd">
+<td>Vuong test</td>
+<td><code>vuong()</code></td>
+<td>pscl</td>
+<td>Compare non-nested models</td>
+</tr>
+<tr class="even">
+<td>LR test</td>
+<td><code>lrtest()</code></td>
+<td>lmtest</td>
+<td>Likelihood ratio test</td>
+</tr>
+<tr class="odd">
+<td>Dispersion test</td>
+<td><code>dispersiontest()</code></td>
+<td>AER</td>
+<td>Test for overdispersion</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="diagnostics-1" class="section level3">
+<h3>Diagnostics</h3>
+<table>
+<colgroup>
+<col width="27%" />
+<col width="22%" />
+<col width="20%" />
+<col width="29%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Diagnostic</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Deviance/df</td>
+<td><code>sum(residuals(m, type="deviance")^2)/df</code></td>
+<td>stats</td>
+<td>Overdispersion check</td>
+</tr>
+<tr class="even">
+<td>Rootogram</td>
+<td><code>rootogram()</code></td>
+<td>countreg, vcd</td>
+<td>Observed vs fitted</td>
+</tr>
+<tr class="odd">
+<td>Residual plot</td>
+<td><code>residualPlots()</code></td>
+<td>car</td>
+<td>Multiple residual plots</td>
+</tr>
+<tr class="even">
+<td>Influence</td>
+<td><code>influencePlot()</code></td>
+<td>car</td>
+<td>Influence diagnostics</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="visualization-7" class="section level3">
+<h3>Visualization</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Plot Type</th>
+<th>Function</th>
+<th>Package</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Rootogram</td>
+<td><code>rootogram()</code></td>
+<td>countreg</td>
+<td>Compare observed/expected</td>
+</tr>
+<tr class="even">
+<td>Effect plot</td>
+<td><code>plot(allEffects())</code></td>
+<td>effects</td>
+<td>Predicted counts</td>
+</tr>
+<tr class="odd">
+<td>Coefficient plot</td>
+<td><code>coefplot()</code></td>
+<td>arm</td>
+<td>Plot coefficients</td>
+</tr>
+<tr class="even">
+<td>Predicted counts</td>
+<td><code>ggpredict()</code></td>
+<td>ggeffects</td>
+<td>Marginal predictions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<pre class="r"><code>library(MASS)
+library(pscl)
+
+# Poisson
+pois.mod &lt;- glm(art ~ fem + mar + kid5 + phd + ment,
+                family = poisson, data = bioChemists)
+
+# Check overdispersion
+sum(residuals(pois.mod, type = &quot;pearson&quot;)^2) / pois.mod$df.residual
+
+# Negative binomial
+nb.mod &lt;- glm.nb(art ~ fem + mar + kid5 + phd + ment, data = bioChemists)
+
+# Zero-inflated
+zip.mod &lt;- zeroinfl(art ~ fem + mar + kid5 + phd + ment | ment,
+                    data = bioChemists)
+
+# Compare
+AIC(pois.mod, nb.mod)
+vuong(pois.mod, zip.mod)</code></pre>
+<hr />
+</div>
+</div>
+<div id="visualization" class="section level2">
+<h2>9. General Visualization Tools</h2>
+<div id="vcd-package-core-functions" class="section level3">
+<h3>vcd Package Core Functions</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mosaic()</code></td>
+<td>Mosaic displays for n-way tables</td>
+</tr>
+<tr class="even">
+<td><code>assoc()</code></td>
+<td>Association plots</td>
+</tr>
+<tr class="odd">
+<td><code>sieve()</code></td>
+<td>Sieve diagrams</td>
+</tr>
+<tr class="even">
+<td><code>fourfold()</code></td>
+<td>Fourfold displays for 2×2×k</td>
+</tr>
+<tr class="odd">
+<td><code>spine()</code></td>
+<td>Spineplots</td>
+</tr>
+<tr class="even">
+<td><code>doubledecker()</code></td>
+<td>Doubledecker plots</td>
+</tr>
+<tr class="odd">
+<td><code>strucplot()</code></td>
+<td>General structure plots</td>
+</tr>
+<tr class="even">
+<td><code>cotabplot()</code></td>
+<td>Conditioning plots for tables</td>
+</tr>
+<tr class="odd">
+<td><code>pairs.table()</code></td>
+<td>Pairs plot for multi-way tables</td>
+</tr>
+<tr class="even">
+<td><code>labeling_border()</code></td>
+<td>Labeling for strucplots</td>
+</tr>
+<tr class="odd">
+<td><code>shading_hcl()</code></td>
+<td>HCL-based shading</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="vcdextra-package-extensions" class="section level3">
+<h3>vcdExtra Package Extensions</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>mosaic.glm()</code></td>
+<td>Mosaic for glm objects</td>
+</tr>
+<tr class="even">
+<td><code>mosaic3d()</code></td>
+<td>3D mosaic displays</td>
+</tr>
+<tr class="odd">
+<td><code>Kway()</code></td>
+<td>K-way marginal tables</td>
+</tr>
+<tr class="even">
+<td><code>LRstats()</code></td>
+<td>LR statistics for model list</td>
+</tr>
+<tr class="odd">
+<td><code>CMHtest()</code></td>
+<td>CMH tests for ordinal data</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ggplot2-extensions" class="section level3">
+<h3>ggplot2 Extensions</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ggmosaic</td>
+<td><code>geom_mosaic()</code></td>
+<td>Mosaic in ggplot2</td>
+</tr>
+<tr class="even">
+<td>ggstats</td>
+<td><code>ggcoef_model()</code></td>
+<td>Coefficient plots</td>
+</tr>
+<tr class="odd">
+<td>sjPlot</td>
+<td><code>plot_model()</code></td>
+<td>Model visualization</td>
+</tr>
+<tr class="even">
+<td>ggeffects</td>
+<td><code>ggpredict()</code>, <code>plot()</code></td>
+<td>Effect displays</td>
+</tr>
+<tr class="odd">
+<td>GGally</td>
+<td><code>ggpairs()</code></td>
+<td>Pairs plots</td>
+</tr>
+<tr class="even">
+<td>ggalluvial</td>
+<td><code>geom_alluvium()</code></td>
+<td>Alluvial diagrams</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="model-agnostic-visualization" class="section level3">
+<h3>Model-Agnostic Visualization</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Package</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>effects</td>
+<td>Effect displays for many model types</td>
+</tr>
+<tr class="even">
+<td>ggeffects</td>
+<td>ggplot2-based marginal effects</td>
+</tr>
+<tr class="odd">
+<td>margins</td>
+<td>Stata-style marginal effects</td>
+</tr>
+<tr class="even">
+<td>sjPlot</td>
+<td>Publication-ready model tables and plots</td>
+</tr>
+<tr class="odd">
+<td>broom</td>
+<td>Tidy model outputs for plotting</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+</div>
+<div id="packages" class="section level2">
+<h2>Package Installation</h2>
+<pre class="r"><code># Core packages
+install.packages(c(&quot;vcd&quot;, &quot;vcdExtra&quot;, &quot;MASS&quot;, &quot;ca&quot;))
+
+# Extended modeling
+install.packages(c(&quot;gnm&quot;, &quot;logmult&quot;, &quot;nnet&quot;, &quot;ordinal&quot;, &quot;VGAM&quot;, &quot;pscl&quot;))
+
+# Visualization
+install.packages(c(&quot;effects&quot;, &quot;ggeffects&quot;, &quot;sjPlot&quot;, &quot;ggmosaic&quot;, &quot;factoextra&quot;))
+
+# Diagnostics
+install.packages(c(&quot;car&quot;, &quot;lmtest&quot;, &quot;ResourceSelection&quot;, &quot;pROC&quot;))
+
+# Utilities
+install.packages(c(&quot;DescTools&quot;, &quot;broom&quot;, &quot;psych&quot;))
+
+# From GitHub
+# install.packages(&quot;remotes&quot;)
+# remotes::install_github(&quot;friendly/nestedLogit&quot;)
+# remotes::install_github(&quot;friendly/vcdExtra&quot;)</code></pre>
+<hr />
+</div>
+<div id="quickref" class="section level2">
+<h2>Quick Reference by Analysis Goal</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="30%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Goal</th>
+<th>Methods</th>
+<th>Key Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fit discrete distribution</td>
+<td>Goodness-of-fit</td>
+<td><code>goodfit()</code>, <code>rootogram()</code></td>
+</tr>
+<tr class="even">
+<td>Test independence (2-way)</td>
+<td>Chi-square, Fisher</td>
+<td><code>chisq.test()</code>, <code>assocstats()</code></td>
+</tr>
+<tr class="odd">
+<td>Measure association</td>
+<td>OR, RR, V, kappa</td>
+<td><code>oddsratio()</code>, <code>Kappa()</code></td>
+</tr>
+<tr class="even">
+<td>Visualize 2-way table</td>
+<td>Mosaic, sieve, fourfold</td>
+<td><code>mosaic()</code>, <code>sieve()</code>,
+<code>fourfold()</code></td>
+</tr>
+<tr class="odd">
+<td>Fit loglinear model</td>
+<td>Poisson GLM</td>
+<td><code>loglm()</code>, <code>glm(family=poisson)</code></td>
+</tr>
+<tr class="even">
+<td>Explore CA structure</td>
+<td>Correspondence analysis</td>
+<td><code>ca()</code>, <code>plot.ca()</code></td>
+</tr>
+<tr class="odd">
+<td>Binary outcome</td>
+<td>Logistic regression</td>
+<td><code>glm(family=binomial)</code></td>
+</tr>
+<tr class="even">
+<td>Ordinal outcome</td>
+<td>Proportional odds</td>
+<td><code>polr()</code>, <code>clm()</code></td>
+</tr>
+<tr class="odd">
+<td>Nominal outcome</td>
+<td>Multinomial logit</td>
+<td><code>multinom()</code></td>
+</tr>
+<tr class="even">
+<td>Count outcome</td>
+<td>Poisson/NB</td>
+<td><code>glm()</code>, <code>glm.nb()</code></td>
+</tr>
+<tr class="odd">
+<td>Excess zeros</td>
+<td>ZIP, Hurdle</td>
+<td><code>zeroinfl()</code>, <code>hurdle()</code></td>
+</tr>
+<tr class="even">
+<td>Model effects</td>
+<td>Effect displays</td>
+<td><code>allEffects()</code>, <code>ggpredict()</code></td>
+</tr>
+<tr class="odd">
+<td>Model comparison</td>
+<td>LR test, AIC</td>
+<td><code>anova()</code>, <code>AIC()</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Last updated: January 2026</em></p>
+</div>
+
+&nbsp;
+<hr />
+<p style="text-align: center;">Copyright &copy; 2018 Michael Friendly. All rights reserved. ||
+  lastModified : 
+  <script>document.write( document.lastModified );</script>
+</p>
+<p style="text-align: center;"><span style="color: #808080;"><em>friendly AT yorku DOT ca</em></span></p>
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="http://www.datavis.ca" class="fa fa-firefox"></a>&nbsp; &nbsp; &nbsp;
+    <a href="https://twitter.com/datavisFriendly?lang=en" class="fa fa-twitter"></a>&nbsp; &nbsp; &nbsp;
+    <a href="https://github.com/friendly/" class="fa fa-github"></a>&nbsp; &nbsp; &nbsp;
+    <a itemprop="sameAs" content="https://orcid.org/0000-0002-3237-0941" href="https://orcid.org/0000-0002-3237-0941" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" style="width:1em;margin-right:.5em;" alt="ORCID iD icon">orcid.org/0000-0002-3237-0941</a>
+</p>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

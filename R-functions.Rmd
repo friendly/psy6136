@@ -1,0 +1,614 @@
+---
+title: "R Functions for Categorical Data Analysis"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: yes
+    css: assets/styles.css
+    includes:
+      after_body: footer.html
+      in_header: header.html
+---
+
+This document provides a reference guide to R functions for statistical tests, models, and visualization methods used in Psy 6136: Categorical Data Analysis.
+
+**Organization:** Topics follow the course sequence. Each section covers:
+
+- Statistical tests and models
+- R functions and packages
+- Visualization methods
+
+---
+
+## 1. Discrete Distributions {#discrete}
+
+### Fitting Distributions
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Goodness-of-fit test | `chisq.test()` | stats | Chi-square test for discrete distributions |
+| Goodness-of-fit test | `goodfit()` | vcd | Fit and test discrete distributions (Poisson, binomial, negative binomial) |
+| Maximum likelihood | `fitdistr()` | MASS | ML fitting for various distributions |
+| Distribution fitting | `fitdist()` | fitdistrplus | Comprehensive fitting with multiple methods |
+| Monte Carlo GOF | `chisq_test()` | discretefit | Fast MC simulations for GOF tests |
+
+### Distribution Functions
+
+| Distribution | Functions | Package |
+|--------------|-----------|---------|
+| Binomial | `dbinom()`, `pbinom()`, `qbinom()`, `rbinom()` | stats |
+| Poisson | `dpois()`, `ppois()`, `qpois()`, `rpois()` | stats |
+| Negative Binomial | `dnbinom()`, `pnbinom()`, `qnbinom()`, `rnbinom()` | stats |
+| Geometric | `dgeom()`, `pgeom()`, `qgeom()`, `rgeom()` | stats |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Rootogram | `rootogram()` | vcd | Compare observed vs fitted frequencies |
+| Ord plot | `Ord_plot()` | vcd | Diagnose distribution type |
+| Distplot | `distplot()` | vcd | Diagnostic plot for count distributions |
+| Hanging rootogram | `rootogram(..., type="hanging")` | vcd | Deviations hang from fitted curve |
+
+**Example:**
+```{r discrete-example, eval=FALSE}
+library(vcd)
+data(HorseKicks)
+gf <- goodfit(HorseKicks, type = "poisson")
+summary(gf)       # GOF test
+rootogram(gf)     # Visual comparison
+Ord_plot(HorseKicks)  # Distribution diagnosis
+```
+
+---
+
+## 2. Two-Way Contingency Tables {#twoway}
+
+### Tests of Independence
+
+| Test | Function | Package | Description |
+|------|----------|---------|-------------|
+| Pearson chi-square | `chisq.test()` | stats | Test of independence |
+| Likelihood ratio | `loglm()` | MASS | G² test via loglinear model |
+| Fisher exact test | `fisher.test()` | stats | Exact test for small samples |
+| Cochran-Mantel-Haenszel | `mantelhaen.test()` | stats | Stratified 2×2 tables |
+| CMH tests | `CMHtest()` | vcdExtra | Extended CMH tests for ordinal data |
+| Woolf test | `woolf_test()` | vcd | Test homogeneity of odds ratios |
+
+### Measures of Association
+
+| Measure | Function | Package | Description |
+|---------|----------|---------|-------------|
+| Odds ratio | `oddsratio()` | vcd | Odds ratio with CI |
+| Odds ratio | `OddsRatio()` | DescTools | Alternative implementation |
+| Relative risk | `relrisk()` | vcd | Relative risk for 2×2 tables |
+| Cramer's V | `assocstats()` | vcd | Returns V, phi, contingency coef |
+| Cohen's kappa | `Kappa()` | vcd | Inter-rater agreement |
+| Cohen's kappa | `cohen.kappa()` | psych | With weighted options |
+| Bangdiwala's B | `Bangdiwala()` | vcdExtra | Observer agreement measure |
+| Gamma | `GoodmanKruskalGamma()` | DescTools | Ordinal association |
+| Kendall's tau-b | `KendallTauB()` | DescTools | Ordinal association |
+| Uncertainty coefficient | `assocstats()` | vcd | Included in output |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Fourfold display | `fourfold()` | vcd | Visualize 2×2 tables, odds ratios |
+| Sieve diagram | `sieve()` | vcd | Visualize deviations from independence |
+| Association plot | `assoc()` | vcd | Pearson residuals as rectangles |
+| Spine plot | `spine()` | vcd | Conditional proportions |
+| Spine plot | `spineplot()` | graphics | Base R version |
+| Mosaic plot | `mosaic()` | vcd | Multi-way tables (see Section 3) |
+| Doubledecker | `doubledecker()` | vcd | Highlight one response variable |
+| Agreement plot | `agreementplot()` | vcd | Visualize observer agreement |
+| Bangdiwala plot | `Bangdiwala()` | vcdExtra | Agreement visualization |
+
+**Example:**
+```{r twoway-example, eval=FALSE}
+library(vcd)
+data(UCBAdmissions)
+ucb <- margin.table(UCBAdmissions, c(1,2))
+
+# Tests
+chisq.test(ucb)
+assocstats(ucb)
+
+# Visualization
+fourfold(UCBAdmissions)
+sieve(ucb, shade = TRUE)
+assoc(ucb, shade = TRUE)
+```
+
+---
+
+## 3. Loglinear Models {#loglinear}
+
+### Model Fitting
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Loglinear model | `loglm()` | MASS | Fit loglinear models (uses formula with `~`) |
+| GLM approach | `glm(..., family=poisson)` | stats | Loglinear via GLM framework |
+| Model comparison | `anova()` | stats | Compare nested models |
+| LR test | `LRtest()` | vcdExtra | Likelihood ratio tests |
+| Model summary | `mosaic.glm()` | vcdExtra | Mosaic for glm objects |
+
+### Model Notation
+
+```{r loglin-notation, eval=FALSE}
+# Independence: [A][B]
+loglm(~ A + B, data = tab)
+
+# Joint independence: [AB][C]
+loglm(~ A*B + C, data = tab)
+
+# Conditional independence: [AC][BC]
+loglm(~ A*C + B*C, data = tab)
+
+# Homogeneous association: [AB][AC][BC]
+loglm(~ A*B + A*C + B*C, data = tab)
+
+# Saturated: [ABC]
+loglm(~ A*B*C, data = tab)
+```
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Mosaic display | `mosaic()` | vcd | Visualize loglinear model fit |
+| Mosaic (formula) | `mosaic(~ A + B + C)` | vcd | Using formula interface |
+| Mosaic (glm) | `mosaic.glm()` | vcdExtra | Mosaic for fitted glm |
+| Strucplot | `strucplot()` | vcd | General structure plot |
+| ggplot mosaic | `geom_mosaic()` | ggmosaic | ggplot2 implementation |
+
+### Residuals and Shading
+
+```{r shading, eval=FALSE}
+# Mosaic with model residuals
+mosaic(~ Admit + Gender + Dept, data = UCBAdmissions,
+       shade = TRUE,                    # Color by residuals
+       expected = ~ Gender * Dept + Admit * Dept,  # Model to test
+       legend = TRUE)
+
+# Shading schemes
+mosaic(..., gp = shading_hcl)      # HCL color shading
+mosaic(..., gp = shading_Friendly) # Friendly scheme
+mosaic(..., gp = shading_max)      # Maximum shading
+```
+
+**Example:**
+```{r loglin-example, eval=FALSE}
+library(vcd)
+library(MASS)
+data(Titanic)
+
+# Fit loglinear model
+mod <- loglm(~ Class * Age * Sex + Survived * (Class + Age + Sex),
+             data = Titanic)
+summary(mod)
+
+# Visualize
+mosaic(Titanic, shade = TRUE,
+       expected = ~ Class * Age * Sex + Survived * (Class + Age + Sex))
+```
+
+---
+
+## 4. Correspondence Analysis {#corresp}
+
+### Simple Correspondence Analysis (CA)
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| CA | `ca()` | ca | Correspondence analysis |
+| CA | `CA()` | FactoMineR | Alternative with more output |
+| CA | `corresp()` | MASS | Simple CA |
+| Summary | `summary.ca()` | ca | Detailed CA summary |
+| Scores | `cacoord()` | ca | Extract coordinates |
+
+### Multiple Correspondence Analysis (MCA)
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| MCA | `mjca()` | ca | Multiple/joint CA |
+| MCA | `MCA()` | FactoMineR | MCA with graphics |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| CA biplot | `plot.ca()` | ca | Symmetric or asymmetric maps |
+| CA map | `fviz_ca_biplot()` | factoextra | ggplot2-based CA plot |
+| Row plot | `fviz_ca_row()` | factoextra | Plot row points |
+| Column plot | `fviz_ca_col()` | factoextra | Plot column points |
+| Eigenvalues | `fviz_screeplot()` | factoextra | Scree plot of dimensions |
+| Contributions | `fviz_contrib()` | factoextra | Variable contributions |
+
+**Example:**
+```{r ca-example, eval=FALSE}
+library(ca)
+data(smoke)
+smoke.ca <- ca(smoke)
+summary(smoke.ca)
+
+# Plots
+plot(smoke.ca)                        # Standard biplot
+plot(smoke.ca, map = "rowprincipal")  # Asymmetric
+
+library(factoextra)
+fviz_ca_biplot(smoke.ca, repel = TRUE)
+```
+
+---
+
+## 5. Logistic Regression {#logistic}
+
+### Model Fitting
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Logistic regression | `glm(..., family=binomial)` | stats | Binary logistic regression |
+| Probit regression | `glm(..., family=binomial(link="probit"))` | stats | Probit link |
+| Coefficients | `coef()`, `summary()` | stats | Model coefficients |
+| Odds ratios | `exp(coef())` | stats | Exponentiate for OR |
+| Confidence intervals | `confint()` | stats | Profile likelihood CI |
+| Wald CI | `confint.default()` | stats | Wald-based CI |
+
+### Model Comparison and Testing
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Likelihood ratio test | `anova(..., test="Chisq")` | stats | Compare nested models |
+| Wald test | `Anova()` | car | Type II/III tests |
+| Hosmer-Lemeshow | `hoslem.test()` | ResourceSelection | GOF test |
+| ROC/AUC | `roc()`, `auc()` | pROC | Model discrimination |
+
+### Effect Displays
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| All effects | `allEffects()` | effects | Compute all effects |
+| Effect plot | `plot(allEffects())` | effects | Plot effects |
+| Specific effect | `Effect()` | effects | One predictor effect |
+| Marginal effects | `ggpredict()` | ggeffects | Marginal means/predictions |
+| Marginal effects | `ggeffect()` | ggeffects | Average marginal effects |
+| Margins | `margins()` | margins | Marginal effects (Stata-like) |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Effect plot | `plot(Effect())` | effects | Predicted probabilities |
+| Coefficient plot | `plot_model(..., type="est")` | sjPlot | Forest plot of ORs |
+| Predicted probs | `plot_model(..., type="pred")` | sjPlot | Predicted probabilities |
+| Marginal effects | `plot(ggpredict())` | ggeffects | ggplot2 marginal effects |
+| Component+residual | `crPlots()` | car | Partial residual plots |
+| Influence plot | `influencePlot()` | car | Influence diagnostics |
+| Residual plots | `residualPlots()` | car | Various residual plots |
+
+### Diagnostics
+
+| Diagnostic | Function | Package | Description |
+|------------|----------|---------|-------------|
+| Deviance residuals | `residuals(..., type="deviance")` | stats | Deviance residuals |
+| Pearson residuals | `residuals(..., type="pearson")` | stats | Pearson residuals |
+| Hat values | `hatvalues()` | stats | Leverage |
+| Cook's distance | `cooks.distance()` | stats | Influence measure |
+| DFBETAS | `dfbetas()` | stats | Coefficient influence |
+| VIF | `vif()` | car | Multicollinearity |
+
+**Example:**
+```{r logistic-example, eval=FALSE}
+library(effects)
+library(car)
+
+# Fit model
+data(Arthritis, package = "vcd")
+arth.glm <- glm(Improved ~ Treatment + Sex + Age,
+                data = Arthritis, family = binomial)
+
+# Summary with odds ratios
+exp(cbind(OR = coef(arth.glm), confint(arth.glm)))
+
+# Effect plots
+plot(allEffects(arth.glm))
+
+# Diagnostics
+influencePlot(arth.glm)
+vif(arth.glm)
+```
+
+---
+
+## 6. Polytomous Response Models {#polytomous}
+
+### Ordinal Response (Proportional Odds)
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Proportional odds | `polr()` | MASS | Cumulative logit model |
+| Ordinal regression | `clm()` | ordinal | Cumulative link models |
+| Ordinal regression | `vglm(..., cumulative())` | VGAM | Flexible ordinal models |
+| Test prop. odds | `poTest()` | car | Test proportional odds |
+| Partial prop. odds | `clm2()` | ordinal | Relaxed proportional odds |
+
+### Multinomial Response
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Multinomial logit | `multinom()` | nnet | Unordered categories |
+| Multinomial logit | `vglm(..., multinomial())` | VGAM | Alternative implementation |
+| Baseline-category | `vglm(..., multinomial(refLevel=1))` | VGAM | Specify reference |
+
+### Nested Dichotomies
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Nested logit | `nestedLogit()` | nestedLogit | Fit nested dichotomies |
+| Dichotomies | `dichotomy()` | nestedLogit | Define dichotomies |
+| Continue | `continueLast()` | nestedLogit | Continue previous split |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Effect plot (polr) | `plot(Effect())` | effects | Works with polr objects |
+| Effect plot (multinom) | `plot(Effect())` | effects | Works with multinom |
+| Nested logit plot | `plot()` | nestedLogit | Plot nested model |
+| ggplot nested | `ggeffects::ggpredict()` | ggeffects | For nested models |
+
+**Example:**
+```{r polytomous-example, eval=FALSE}
+# Proportional odds
+library(MASS)
+data(housing, package = "MASS")
+house.polr <- polr(Sat ~ Infl + Type + Cont, data = housing, weights = Freq)
+summary(house.polr)
+
+# Effects
+library(effects)
+plot(Effect("Infl", house.polr))
+
+# Multinomial
+library(nnet)
+house.multi <- multinom(Sat ~ Infl + Type + Cont, data = housing, weights = Freq)
+```
+
+---
+
+## 7. Extended Loglinear Models {#extended}
+
+### Models for Ordinal Data
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| Linear-by-linear | `glm()` with scores | stats | Assign numeric scores |
+| RC association | `rc()` | logmult | Row-column association |
+| RC(M) models | `rc(..., nd=M)` | logmult | M-dimensional RC |
+| Uniform association | Create contrast in `glm()` | stats | Single association param |
+
+### Generalized Nonlinear Models (gnm)
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| GNM | `gnm()` | gnm | Generalized nonlinear models |
+| Multiplicative | `Mult()` | gnm | Multiplicative interaction |
+| Homogeneous mult. | `MultHomog()` | gnm | Same scores for rows/cols |
+| Diagonal | `Diag()` | gnm | Diagonal parameters |
+| Diagonal reference | `Dref()` | gnm | Diagonal reference model |
+
+### Models for Square Tables
+
+| Model | Implementation | Package |
+|-------|----------------|---------|
+| Independence | `glm(~ R + C)` | stats |
+| Quasi-independence | `glm(~ R + C + Diag(R,C))` | gnm |
+| Symmetry | `glm()` with symmetry coding | stats |
+| Quasi-symmetry | `glm(~ R + C + Symm(R,C))` | gnm |
+| Marginal homogeneity | Test via quasi-symmetry | - |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Mosaic | `mosaic()` | vcd | With expected model |
+| RC plot | `plot.rc()` | logmult | Plot RC scores |
+| Score plot | Custom with `ggplot2` | - | Plot estimated scores |
+
+**Example:**
+```{r extended-example, eval=FALSE}
+library(gnm)
+library(vcdExtra)
+data(Yamaguchi87)
+
+# Quasi-independence
+quasi.indep <- gnm(Freq ~ origin + destination + Diag(origin, destination),
+                   family = poisson, data = Yamaguchi87)
+
+# Quasi-symmetry
+quasi.symm <- gnm(Freq ~ origin + destination + Symm(origin, destination),
+                  family = poisson, data = Yamaguchi87)
+
+# RC association model
+library(logmult)
+rc1 <- rc(Yamaguchi87, nd = 1, weighting = "marginal")
+plot(rc1)
+```
+
+---
+
+## 8. GLMs for Count Data {#countdata}
+
+### Basic Count Models
+
+| Model | Function | Package | Description |
+|-------|----------|---------|-------------|
+| Poisson | `glm(..., family=poisson)` | stats | Standard count model |
+| Quasi-Poisson | `glm(..., family=quasipoisson)` | stats | Handles overdispersion |
+| Negative binomial | `glm.nb()` | MASS | Overdispersed counts |
+| Negative binomial | `glm(..., family=negative.binomial())` | MASS | Alternative syntax |
+
+### Zero-Inflated Models
+
+| Model | Function | Package | Description |
+|-------|----------|---------|-------------|
+| Zero-inflated Poisson | `zeroinfl(..., dist="poisson")` | pscl | ZIP model |
+| Zero-inflated NB | `zeroinfl(..., dist="negbin")` | pscl | ZINB model |
+| Hurdle Poisson | `hurdle(..., dist="poisson")` | pscl | Hurdle model |
+| Hurdle NB | `hurdle(..., dist="negbin")` | pscl | NB hurdle |
+
+### Model Selection and Comparison
+
+| Method | Function | Package | Description |
+|--------|----------|---------|-------------|
+| AIC | `AIC()` | stats | Akaike IC |
+| BIC | `BIC()` | stats | Bayesian IC |
+| Vuong test | `vuong()` | pscl | Compare non-nested models |
+| LR test | `lrtest()` | lmtest | Likelihood ratio test |
+| Dispersion test | `dispersiontest()` | AER | Test for overdispersion |
+
+### Diagnostics
+
+| Diagnostic | Function | Package | Description |
+|------------|----------|---------|-------------|
+| Deviance/df | `sum(residuals(m, type="deviance")^2)/df` | stats | Overdispersion check |
+| Rootogram | `rootogram()` | countreg, vcd | Observed vs fitted |
+| Residual plot | `residualPlots()` | car | Multiple residual plots |
+| Influence | `influencePlot()` | car | Influence diagnostics |
+
+### Visualization
+
+| Plot Type | Function | Package | Description |
+|-----------|----------|---------|-------------|
+| Rootogram | `rootogram()` | countreg | Compare observed/expected |
+| Effect plot | `plot(allEffects())` | effects | Predicted counts |
+| Coefficient plot | `coefplot()` | arm | Plot coefficients |
+| Predicted counts | `ggpredict()` | ggeffects | Marginal predictions |
+
+**Example:**
+```{r countdata-example, eval=FALSE}
+library(MASS)
+library(pscl)
+
+# Poisson
+pois.mod <- glm(art ~ fem + mar + kid5 + phd + ment,
+                family = poisson, data = bioChemists)
+
+# Check overdispersion
+sum(residuals(pois.mod, type = "pearson")^2) / pois.mod$df.residual
+
+# Negative binomial
+nb.mod <- glm.nb(art ~ fem + mar + kid5 + phd + ment, data = bioChemists)
+
+# Zero-inflated
+zip.mod <- zeroinfl(art ~ fem + mar + kid5 + phd + ment | ment,
+                    data = bioChemists)
+
+# Compare
+AIC(pois.mod, nb.mod)
+vuong(pois.mod, zip.mod)
+```
+
+---
+
+## 9. General Visualization Tools {#visualization}
+
+### vcd Package Core Functions
+
+| Function | Description |
+|----------|-------------|
+| `mosaic()` | Mosaic displays for n-way tables |
+| `assoc()` | Association plots |
+| `sieve()` | Sieve diagrams |
+| `fourfold()` | Fourfold displays for 2×2×k |
+| `spine()` | Spineplots |
+| `doubledecker()` | Doubledecker plots |
+| `strucplot()` | General structure plots |
+| `cotabplot()` | Conditioning plots for tables |
+| `pairs.table()` | Pairs plot for multi-way tables |
+| `labeling_border()` | Labeling for strucplots |
+| `shading_hcl()` | HCL-based shading |
+
+### vcdExtra Package Extensions
+
+| Function | Description |
+|----------|-------------|
+| `mosaic.glm()` | Mosaic for glm objects |
+| `mosaic3d()` | 3D mosaic displays |
+| `Kway()` | K-way marginal tables |
+| `LRstats()` | LR statistics for model list |
+| `CMHtest()` | CMH tests for ordinal data |
+
+### ggplot2 Extensions
+
+| Package | Function | Description |
+|---------|----------|-------------|
+| ggmosaic | `geom_mosaic()` | Mosaic in ggplot2 |
+| ggstats | `ggcoef_model()` | Coefficient plots |
+| sjPlot | `plot_model()` | Model visualization |
+| ggeffects | `ggpredict()`, `plot()` | Effect displays |
+| GGally | `ggpairs()` | Pairs plots |
+| ggalluvial | `geom_alluvium()` | Alluvial diagrams |
+
+### Model-Agnostic Visualization
+
+| Package | Use Case |
+|---------|----------|
+| effects | Effect displays for many model types |
+| ggeffects | ggplot2-based marginal effects |
+| margins | Stata-style marginal effects |
+| sjPlot | Publication-ready model tables and plots |
+| broom | Tidy model outputs for plotting |
+
+---
+
+## Package Installation {#packages}
+
+```{r install-packages, eval=FALSE}
+# Core packages
+install.packages(c("vcd", "vcdExtra", "MASS", "ca"))
+
+# Extended modeling
+install.packages(c("gnm", "logmult", "nnet", "ordinal", "VGAM", "pscl"))
+
+# Visualization
+install.packages(c("effects", "ggeffects", "sjPlot", "ggmosaic", "factoextra"))
+
+# Diagnostics
+install.packages(c("car", "lmtest", "ResourceSelection", "pROC"))
+
+# Utilities
+install.packages(c("DescTools", "broom", "psych"))
+
+# From GitHub
+# install.packages("remotes")
+# remotes::install_github("friendly/nestedLogit")
+# remotes::install_github("friendly/vcdExtra")
+```
+
+---
+
+## Quick Reference by Analysis Goal {#quickref}
+
+| Goal | Methods | Key Functions |
+|------|---------|---------------|
+| Fit discrete distribution | Goodness-of-fit | `goodfit()`, `rootogram()` |
+| Test independence (2-way) | Chi-square, Fisher | `chisq.test()`, `assocstats()` |
+| Measure association | OR, RR, V, kappa | `oddsratio()`, `Kappa()` |
+| Visualize 2-way table | Mosaic, sieve, fourfold | `mosaic()`, `sieve()`, `fourfold()` |
+| Fit loglinear model | Poisson GLM | `loglm()`, `glm(family=poisson)` |
+| Explore CA structure | Correspondence analysis | `ca()`, `plot.ca()` |
+| Binary outcome | Logistic regression | `glm(family=binomial)` |
+| Ordinal outcome | Proportional odds | `polr()`, `clm()` |
+| Nominal outcome | Multinomial logit | `multinom()` |
+| Count outcome | Poisson/NB | `glm()`, `glm.nb()` |
+| Excess zeros | ZIP, Hurdle | `zeroinfl()`, `hurdle()` |
+| Model effects | Effect displays | `allEffects()`, `ggpredict()` |
+| Model comparison | LR test, AIC | `anova()`, `AIC()` |
+
+---
+
+*Last updated: `r format(Sys.Date(), "%B %Y")`*

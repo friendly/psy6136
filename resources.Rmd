@@ -115,6 +115,8 @@ my6136
   + [Mosaic plots](https://friendly.github.io/vcdExtra/articles/mosaics.html)
   + [Loglinear models](https://friendly.github.io/vcdExtra/articles/loglinear.html)
 
+* [R Functions for Categorical Data Analysis](R-functions.html) - A reference guide to R functions for statistical tests, models, and visualization methods organized by course topic.
+
 * Short [Making tables in R](tutorials/tables.html) tutorial. Also: Udi's [Psy3136 Tables](tutorials/Tables-brief.html) tutorial on making tables with the `rempsyc` and `apaTables` packages.
   
 ### Making plots with ggplot2 {#ggplot}

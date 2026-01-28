@@ -29,6 +29,9 @@ navbar:
     - text: "R examples"
       icon: fa-code 
       href: R/index.html
+    - text: "R functions"
+      icon: fa-list
+      href: R-functions.html
     - text: "Students"
       href: students.html
       icon: fa-users
