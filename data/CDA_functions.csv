@@ -2,7 +2,7 @@ Topic,Method,Tag,Function,Package,Description,Link
 Discrete Distributions,Fitting,Method,chisq.test(),stats,Chi-square test for discrete distributions,https://rdrr.io/r/stats/chisq.test.html
 Discrete Distributions,Fitting,Method,goodfit(),vcd,Fit and test discrete distributions (Poisson binomial negative binomial),https://rdrr.io/cran/vcd/man/goodfit.html
 Discrete Distributions,Fitting,Method,fitdistr(),MASS,ML fitting for various distributions,https://rdrr.io/cran/MASS/man/fitdistr.html
-Discrete Distributions,Fitting,Method,fitdist(),fitdistrplus,Comprehensive fitting with multiple methods,https://rdrr.io/cran/fitdistrplus/man/fitdist.html
+Discrete Distributions,Fitting,Method,fitdist(),fitdistrplus,Comprehensive fitting with multiple methods,https://lbbe-software.github.io/fitdistrplus/reference/fitdist.html
 Discrete Distributions,Fitting,Method,chisq_test(),discretefit,Fast MC simulations for GOF tests,https://rdrr.io/cran/discretefit/man/chisq_test.html
 Discrete Distributions,Distribution,Distribution,"dbinom(), pbinom(), qbinom(), rbinom()",stats,Binomial distribution functions,https://rdrr.io/r/stats/Binomial.html
 Discrete Distributions,Distribution,Distribution,"dpois(), ppois(), qpois(), rpois()",stats,Poisson distribution functions,https://rdrr.io/r/stats/Poisson.html
@@ -15,17 +15,17 @@ Two-Way Contingency Tables,Testing,Test,chisq.test(),stats,Test of independence,
 Two-Way Contingency Tables,Testing,Test,loglm(),MASS,G² test via loglinear model,https://rdrr.io/cran/MASS/man/loglm.html
 Two-Way Contingency Tables,Testing,Test,fisher.test(),stats,Exact test for small samples,https://rdrr.io/r/stats/fisher.test.html
 Two-Way Contingency Tables,Testing,Test,mantelhaen.test(),stats,Stratified 2×2 tables,https://rdrr.io/r/stats/mantelhaen.test.html
-Two-Way Contingency Tables,Testing,Test,CMHtest(),vcdExtra,Extended CMH tests for ordinal data,https://rdrr.io/cran/vcdExtra/man/CMHtest.html
+Two-Way Contingency Tables,Testing,Test,CMHtest(),vcdExtra,Extended CMH tests for ordinal data,https://friendly.github.io/vcdExtra/reference/CMHtest.html
 Two-Way Contingency Tables,Testing,Test,woolf_test(),vcd,Test homogeneity of odds ratios,https://rdrr.io/cran/vcd/man/woolf_test.html
 Two-Way Contingency Tables,Association,Measure,oddsratio(),vcd,Odds ratio with CI,https://rdrr.io/cran/vcd/man/oddsratio.html
-Two-Way Contingency Tables,Association,Measure,OddsRatio(),DescTools,Alternative implementation,https://rdrr.io/cran/DescTools/man/OddsRatio.html
+Two-Way Contingency Tables,Association,Measure,OddsRatio(),DescTools,Alternative implementation,https://andrisignorell.github.io/DescTools/reference/OddsRatio.html
 Two-Way Contingency Tables,Association,Measure,relrisk(),vcd,Relative risk for 2×2 tables,https://rdrr.io/cran/vcd/man/relrisk.html
 Two-Way Contingency Tables,Association,Measure,assocstats(),vcd,"Returns V, phi, contingency coef",https://rdrr.io/cran/vcd/man/assocstats.html
 Two-Way Contingency Tables,Association,Measure,Kappa(),vcd,Inter-rater agreement,https://rdrr.io/cran/vcd/man/Kappa.html
 Two-Way Contingency Tables,Association,Measure,cohen.kappa(),psych,With weighted options,https://rdrr.io/cran/psych/man/cohen.kappa.html
-Two-Way Contingency Tables,Association,Measure,Bangdiwala(),vcdExtra,Observer agreement measure,https://rdrr.io/cran/vcdExtra/man/Bangdiwala.html
-Two-Way Contingency Tables,Association,Measure,GoodmanKruskalGamma(),DescTools,Ordinal association,https://rdrr.io/cran/DescTools/man/GoodmanKruskalGamma.html
-Two-Way Contingency Tables,Association,Measure,KendallTauB(),DescTools,Ordinal association,https://rdrr.io/cran/DescTools/man/KendallTauB.html
+Two-Way Contingency Tables,Association,Measure,Bangdiwala(),vcdExtra,Observer agreement measure,https://friendly.github.io/vcdExtra/reference/Bangdiwala.html
+Two-Way Contingency Tables,Association,Measure,GoodmanKruskalGamma(),DescTools,Ordinal association,https://andrisignorell.github.io/DescTools/reference/GoodmanKruskalGamma.html
+Two-Way Contingency Tables,Association,Measure,KendallTauB(),DescTools,Ordinal association,https://andrisignorell.github.io/DescTools/reference/KendallTauB.html
 Two-Way Contingency Tables,Visualization,Plot Type,fourfold(),vcd,"Visualize 2×2 tables, odds ratios",https://rdrr.io/cran/vcd/man/fourfold.html
 Two-Way Contingency Tables,Visualization,Plot Type,sieve(),vcd,Visualize deviations from independence,https://rdrr.io/cran/vcd/man/sieve.html
 Two-Way Contingency Tables,Visualization,Plot Type,assoc(),vcd,Pearson residuals as rectangles,https://rdrr.io/cran/vcd/man/assoc.html
@@ -37,11 +37,11 @@ Two-Way Contingency Tables,Visualization,Plot Type,agreementplot(),vcd,Visualize
 Loglinear Models,Fitting,Method,loglm(),MASS,Fit loglinear models (uses formula with ~),https://rdrr.io/cran/MASS/man/loglm.html
 Loglinear Models,Fitting,Method,glm(),stats,Loglinear via GLM framework,https://rdrr.io/r/stats/glm.html
 Loglinear Models,Fitting,Method,anova(),stats,Compare nested models,https://rdrr.io/r/stats/anova.html
-Loglinear Models,Fitting,Method,LRtest(),vcdExtra,Likelihood ratio tests,https://rdrr.io/cran/vcdExtra/man/LRtest.html
-Loglinear Models,Fitting,Method,mosaic.glm(),vcdExtra,Mosaic for glm objects,https://rdrr.io/cran/vcdExtra/man/mosaic.glm.html
+Loglinear Models,Fitting,Method,LRtest(),vcdExtra,Likelihood ratio tests,https://friendly.github.io/vcdExtra/reference/LRtest.html
+Loglinear Models,Fitting,Method,mosaic.glm(),vcdExtra,Mosaic for glm objects,https://friendly.github.io/vcdExtra/reference/mosaic.glm.html
 Loglinear Models,Visualization,Plot Type,mosaic(),vcd,Visualize loglinear model fit,https://rdrr.io/cran/vcd/man/mosaic.html
 Loglinear Models,Visualization,Plot Type,strucplot(),vcd,General structure plot,https://rdrr.io/cran/vcd/man/strucplot.html
-Loglinear Models,Visualization,Plot Type,geom_mosaic(),ggmosaic,ggplot2 implementation,https://rdrr.io/cran/ggmosaic/man/geom_mosaic.html
+Loglinear Models,Visualization,Plot Type,geom_mosaic(),ggmosaic,ggplot2 implementation,https://haleyjeppson.github.io/ggmosaic/reference/geom_mosaic.html
 Correspondence Analysis,Fitting,Method,ca(),ca,Correspondence analysis,https://rdrr.io/cran/ca/man/ca.html
 Correspondence Analysis,Fitting,Method,CA(),FactoMineR,Alternative with more output,https://rdrr.io/cran/FactoMineR/man/CA.html
 Correspondence Analysis,Fitting,Method,corresp(),MASS,Simple CA,https://rdrr.io/cran/MASS/man/corresp.html
@@ -63,16 +63,16 @@ Logistic Regression,Fitting,Method,confint.default(),stats,Wald-based CI,https:/
 Logistic Regression,Testing,Method,anova(),stats,Compare nested models (LR test),https://rdrr.io/r/stats/anova.html
 Logistic Regression,Testing,Method,Anova(),car,Type II/III tests,https://rdrr.io/cran/car/man/Anova.html
 Logistic Regression,Testing,Method,hoslem.test(),ResourceSelection,GOF test,https://rdrr.io/cran/ResourceSelection/man/hoslem.test.html
-Logistic Regression,Testing,Method,"roc(), auc()",pROC,Model discrimination,https://rdrr.io/cran/pROC/man/roc.html
+Logistic Regression,Testing,Method,"roc(), auc()",pROC,Model discrimination,https://xrobin.github.io/pROC/reference/roc.html
 Logistic Regression,Effect Display,Method,allEffects(),effects,Compute all effects,https://rdrr.io/cran/effects/man/allEffects.html
 Logistic Regression,Effect Display,Method,plot(allEffects()),effects,Plot effects,https://rdrr.io/cran/effects/man/allEffects.html
 Logistic Regression,Effect Display,Method,Effect(),effects,One predictor effect,https://rdrr.io/cran/effects/man/Effect.html
-Logistic Regression,Effect Display,Method,ggpredict(),ggeffects,Marginal means/predictions,https://rdrr.io/cran/ggeffects/man/ggpredict.html
-Logistic Regression,Effect Display,Method,ggeffect(),ggeffects,Average marginal effects,https://rdrr.io/cran/ggeffects/man/ggeffect.html
+Logistic Regression,Effect Display,Method,ggpredict(),ggeffects,Marginal means/predictions,https://strengejacke.github.io/ggeffects/reference/ggpredict.html
+Logistic Regression,Effect Display,Method,ggeffect(),ggeffects,Average marginal effects,https://strengejacke.github.io/ggeffects/reference/ggeffect.html
 Logistic Regression,Effect Display,Method,margins(),margins,Marginal effects (Stata-like),https://rdrr.io/cran/margins/man/margins.html
 Logistic Regression,Visualization,Plot Type,plot(Effect()),effects,Predicted probabilities,https://rdrr.io/cran/effects/man/Effect.html
-Logistic Regression,Visualization,Plot Type,plot_model(),sjPlot,Forest plot of ORs,https://rdrr.io/cran/sjPlot/man/plot_model.html
-Logistic Regression,Visualization,Plot Type,plot(ggpredict()),ggeffects,ggplot2 marginal effects,https://rdrr.io/cran/ggeffects/man/ggpredict.html
+Logistic Regression,Visualization,Plot Type,plot_model(),sjPlot,Forest plot of ORs,https://strengejacke.github.io/sjPlot/reference/plot_model.html
+Logistic Regression,Visualization,Plot Type,plot(ggpredict()),ggeffects,ggplot2 marginal effects,https://strengejacke.github.io/ggeffects/reference/ggpredict.html
 Logistic Regression,Visualization,Plot Type,crPlots(),car,Partial residual plots,https://rdrr.io/cran/car/man/crPlots.html
 Logistic Regression,Visualization,Plot Type,influencePlot(),car,Influence diagnostics,https://rdrr.io/cran/car/man/influencePlot.html
 Logistic Regression,Visualization,Plot Type,residualPlots(),car,Various residual plots,https://rdrr.io/cran/car/man/residualPlots.html
@@ -87,11 +87,11 @@ Polytomous Response Models,Fitting,Method,vglm(),VGAM,Flexible ordinal models,ht
 Polytomous Response Models,Testing,Method,poTest(),car,Test proportional odds,https://rdrr.io/cran/car/man/poTest.html
 Polytomous Response Models,Fitting,Method,clm2(),ordinal,Relaxed proportional odds,https://rdrr.io/cran/ordinal/man/clm2.html
 Polytomous Response Models,Fitting,Method,multinom(),nnet,Unordered categories,https://rdrr.io/cran/nnet/man/multinom.html
-Polytomous Response Models,Fitting,Method,nestedLogit(),nestedLogit,Fit nested dichotomies,https://rdrr.io/cran/nestedLogit/man/nestedLogit.html
-Polytomous Response Models,Fitting,Method,dichotomy(),nestedLogit,Define dichotomies,https://rdrr.io/cran/nestedLogit/man/dichotomy.html
-Polytomous Response Models,Fitting,Method,continueLast(),nestedLogit,Continue previous split,https://rdrr.io/cran/nestedLogit/man/continueLast.html
+Polytomous Response Models,Fitting,Method,nestedLogit(),nestedLogit,Fit nested dichotomies,https://friendly.github.io/nestedLogit/reference/nestedLogit.html
+Polytomous Response Models,Fitting,Method,dichotomy(),nestedLogit,Define dichotomies,https://friendly.github.io/nestedLogit/reference/dichotomy.html
+Polytomous Response Models,Fitting,Method,continueLast(),nestedLogit,Continue previous split,https://friendly.github.io/nestedLogit/reference/continueLast.html
 Polytomous Response Models,Visualization,Plot Type,plot(Effect()),effects,Works with polr objects,https://rdrr.io/cran/effects/man/Effect.html
-Polytomous Response Models,Visualization,Plot Type,plot(),nestedLogit,Plot nested model,https://rdrr.io/cran/nestedLogit/man/plot.nestedLogit.html
+Polytomous Response Models,Visualization,Plot Type,plot(),nestedLogit,Plot nested model,https://friendly.github.io/nestedLogit/reference/plot.nestedLogit.html
 Extended Loglinear Models,Fitting,Method,glm(),stats,Linear-by-linear with scores,https://rdrr.io/r/stats/glm.html
 Extended Loglinear Models,Fitting,Method,rc(),logmult,Row-column association,https://rdrr.io/cran/logmult/man/rc.html
 Extended Loglinear Models,Fitting,Method,gnm(),gnm,Generalized nonlinear models,https://rdrr.io/cran/gnm/man/gnm.html
@@ -112,7 +112,7 @@ GLMs for Count Data,Testing,Method,lrtest(),lmtest,Likelihood ratio test,https:/
 GLMs for Count Data,Testing,Method,dispersiontest(),AER,Test for overdispersion,https://rdrr.io/cran/AER/man/dispersiontest.html
 GLMs for Count Data,Diagnostic,Diagnostic,rootogram(),countreg,Observed vs fitted,https://rdrr.io/cran/countreg/man/rootogram.html
 GLMs for Count Data,Visualization,Plot Type,coefplot(),arm,Plot coefficients,https://rdrr.io/cran/arm/man/coefplot.html
-GLMs for Count Data,Visualization,Plot Type,ggpredict(),ggeffects,Marginal predictions,https://rdrr.io/cran/ggeffects/man/ggpredict.html
+GLMs for Count Data,Visualization,Plot Type,ggpredict(),ggeffects,Marginal predictions,https://strengejacke.github.io/ggeffects/reference/ggpredict.html
 General Visualization Tools,Visualization,,mosaic(),vcd,Mosaic displays for n-way tables,https://rdrr.io/cran/vcd/man/mosaic.html
 General Visualization Tools,Visualization,,assoc(),vcd,Association plots,https://rdrr.io/cran/vcd/man/assoc.html
 General Visualization Tools,Visualization,,sieve(),vcd,Sieve diagrams,https://rdrr.io/cran/vcd/man/sieve.html
@@ -124,14 +124,14 @@ General Visualization Tools,Visualization,,cotabplot(),vcd,Conditioning plots fo
 General Visualization Tools,Visualization,,pairs.table(),vcd,Pairs plot for multi-way tables,https://rdrr.io/cran/vcd/man/pairs.table.html
 General Visualization Tools,Visualization,,labeling_border(),vcd,Labeling for strucplots,https://rdrr.io/cran/vcd/man/labeling_border.html
 General Visualization Tools,Visualization,,shading_hcl(),vcd,HCL-based shading,https://rdrr.io/cran/vcd/man/shading_hcl.html
-General Visualization Tools,Visualization,,mosaic.glm(),vcdExtra,Mosaic for glm objects,https://rdrr.io/cran/vcdExtra/man/mosaic.glm.html
-General Visualization Tools,Visualization,,mosaic3d(),vcdExtra,3D mosaic displays,https://rdrr.io/cran/vcdExtra/man/mosaic3d.html
-General Visualization Tools,Visualization,,Kway(),vcdExtra,K-way marginal tables,https://rdrr.io/cran/vcdExtra/man/Kway.html
-General Visualization Tools,Visualization,,LRstats(),vcdExtra,LR statistics for model list,https://rdrr.io/cran/vcdExtra/man/LRstats.html
-General Visualization Tools,Visualization,,CMHtest(),vcdExtra,CMH tests for ordinal data,https://rdrr.io/cran/vcdExtra/man/CMHtest.html
-General Visualization Tools,Visualization,,geom_mosaic(),ggmosaic,Mosaic in ggplot2,https://rdrr.io/cran/ggmosaic/man/geom_mosaic.html
-General Visualization Tools,Visualization,,ggcoef_model(),ggstats,Coefficient plots,https://rdrr.io/cran/ggstats/man/ggcoef_model.html
-General Visualization Tools,Visualization,,plot_model(),sjPlot,Model visualization,https://rdrr.io/cran/sjPlot/man/plot_model.html
-General Visualization Tools,Visualization,,"ggpredict(), plot()",ggeffects,Effect displays,https://rdrr.io/cran/ggeffects/man/ggpredict.html
-General Visualization Tools,Visualization,,ggpairs(),GGally,Pairs plots,https://rdrr.io/cran/GGally/man/ggpairs.html
-General Visualization Tools,Visualization,,geom_alluvium(),ggalluvial,Alluvial diagrams,https://rdrr.io/cran/ggalluvial/man/geom_alluvium.html
+General Visualization Tools,Visualization,,mosaic.glm(),vcdExtra,Mosaic for glm objects,https://friendly.github.io/vcdExtra/reference/mosaic.glm.html
+General Visualization Tools,Visualization,,mosaic3d(),vcdExtra,3D mosaic displays,https://friendly.github.io/vcdExtra/reference/mosaic3d.html
+General Visualization Tools,Visualization,,Kway(),vcdExtra,K-way marginal tables,https://friendly.github.io/vcdExtra/reference/Kway.html
+General Visualization Tools,Visualization,,LRstats(),vcdExtra,LR statistics for model list,https://friendly.github.io/vcdExtra/reference/LRstats.html
+General Visualization Tools,Visualization,,CMHtest(),vcdExtra,CMH tests for ordinal data,https://friendly.github.io/vcdExtra/reference/CMHtest.html
+General Visualization Tools,Visualization,,geom_mosaic(),ggmosaic,Mosaic in ggplot2,https://haleyjeppson.github.io/ggmosaic/reference/geom_mosaic.html
+General Visualization Tools,Visualization,,ggcoef_model(),ggstats,Coefficient plots,https://larmarange.github.io/ggstats/reference/ggcoef_model.html
+General Visualization Tools,Visualization,,plot_model(),sjPlot,Model visualization,https://strengejacke.github.io/sjPlot/reference/plot_model.html
+General Visualization Tools,Visualization,,"ggpredict(), plot()",ggeffects,Effect displays,https://strengejacke.github.io/ggeffects/reference/ggpredict.html
+General Visualization Tools,Visualization,,ggpairs(),GGally,Pairs plots,https://ggobi.github.io/ggally/reference/ggpairs.html
+General Visualization Tools,Visualization,,geom_alluvium(),ggalluvial,Alluvial diagrams,https://corybrunson.github.io/ggalluvial/reference/geom_alluvium.html

@@ -1,0 +1,36 @@
+Package,URL_Field,URL_Type,PkgdownSite,Notes
+AER,NA,none,,No URL in DESCRIPTION
+arm,https://CRAN.R-project.org/package=arm,cran,,Just CRAN link
+broom,https://broom.tidymodels.org/,pkgdown,https://broom.tidymodels.org/reference/,tidymodels site
+ca,http://www.carme-n.org/,project,,CARME-N project site (not pkgdown)
+car,https://r-forge.r-project.org/projects/car/,project,,R-Forge project
+countreg,NA,none,,Not installed / no URL
+DescTools,https://andrisignorell.github.io/DescTools/,pkgdown,https://andrisignorell.github.io/DescTools/reference/,pkgdown site
+discretefit,NA,not_installed,,Not installed
+effects,https://cran.r-project.org/package=effects,cran,,Just CRAN link
+factoextra,http://www.sthda.com/english/rpkgs/factoextra,project,,STHDA tutorial site
+FactoMineR,http://factominer.free.fr,project,,Project homepage
+fitdistrplus,https://lbbe-software.github.io/fitdistrplus/,pkgdown,https://lbbe-software.github.io/fitdistrplus/reference/,pkgdown site
+GGally,https://ggobi.github.io/ggally/,pkgdown,https://ggobi.github.io/ggally/reference/,pkgdown site
+ggalluvial,NA,not_installed,,Not installed
+ggeffects,https://strengejacke.github.io/ggeffects/,pkgdown,https://strengejacke.github.io/ggeffects/reference/,pkgdown site
+ggmosaic,https://haleyjeppson.github.io/ggmosaic/,pkgdown,https://haleyjeppson.github.io/ggmosaic/reference/,pkgdown site
+ggstats,https://larmarange.github.io/ggstats/,pkgdown,https://larmarange.github.io/ggstats/reference/,pkgdown site
+gnm,https://github.com/hturner/gnm,github,,GitHub only - check for pkgdown
+graphics,NA,base_r,,Base R package
+lmtest,NA,none,,No URL in DESCRIPTION
+logmult,https://github.com/nalimilan/logmult,github,,GitHub only
+margins,NA,not_installed,,Not installed
+MASS,http://www.stats.ox.ac.uk/pub/MASS4/,project,,MASS book companion site
+nestedLogit,https://github.com/friendly/nestedLogit,github,https://friendly.github.io/nestedLogit/reference/,Has pkgdown (not in URL field)
+nnet,http://www.stats.ox.ac.uk/pub/MASS4/,project,,MASS book companion site
+ordinal,https://github.com/runehaubo/ordinal,github,,GitHub only
+pROC,https://xrobin.github.io/pROC/,pkgdown,https://xrobin.github.io/pROC/reference/,pkgdown site
+pscl,https://github.com/atahk/pscl,github,,GitHub only
+psych,https://personality-project.org/r/psych/,project,,William Revelle's site
+ResourceSelection,NA,not_installed,,Not installed
+sjPlot,NA,not_installed,,Not installed - likely has pkgdown
+stats,NA,base_r,,Base R package
+vcd,NA,none,https://friendly.github.io/vcd/reference/,Has pkgdown (not in URL field)
+vcdExtra,https://friendly.github.io/vcdExtra/,pkgdown,https://friendly.github.io/vcdExtra/reference/,pkgdown site
+VGAM,https://www.stat.auckland.ac.nz/~yee/VGAM/,project,,Thomas Yee's site
