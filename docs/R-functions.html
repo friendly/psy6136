@@ -621,7 +621,7 @@ Ord_plot(HorseKicks)  # Distribution diagnosis</code></pre>
 <td>CMH tests</td>
 <td><code>CMHtest()</code></td>
 <td>vcdExtra</td>
-<td>Extended CMH tests for ordinal data</td>
+<td>CMH tests for ordinal data</td>
 </tr>
 <tr class="even">
 <td>Woolf test</td>
@@ -705,10 +705,10 @@ Ord_plot(HorseKicks)  # Distribution diagnosis</code></pre>
 <td>Ordinal association</td>
 </tr>
 <tr class="even">
-<td>Uncertainty coefficient</td>
+<td>Cramer’s V, phi,…</td>
 <td><code>assocstats()</code></td>
-<td>vcd</td>
-<td>Included in output</td>
+<td>Various association stats</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -825,15 +825,27 @@ assoc(ucb, shade = TRUE)</code></pre>
 <tbody>
 <tr class="odd">
 <td>Loglinear model</td>
-<td><code>loglm()</code></td>
-<td>MASS</td>
-<td>Fit loglinear models (uses formula with <code>~</code>)</td>
+<td><code>loglin()</code></td>
+<td>stats</td>
+<td>Fit loglinear models by IPF</td>
 </tr>
 <tr class="even">
+<td>Loglinear model</td>
+<td><code>loglm()</code></td>
+<td>MASS</td>
+<td>Fit loglinear models with formula</td>
+</tr>
+<tr class="odd">
 <td>GLM approach</td>
 <td><code>glm(..., family=poisson)</code></td>
 <td>stats</td>
 <td>Loglinear via GLM framework</td>
+</tr>
+<tr class="even">
+<td>GNM approach</td>
+<td><code>gnm()</code></td>
+<td>gnm</td>
+<td>Generalized Nonlinear Models</td>
 </tr>
 <tr class="odd">
 <td>Model comparison</td>
@@ -846,12 +858,6 @@ assoc(ucb, shade = TRUE)</code></pre>
 <td><code>LRtest()</code></td>
 <td>vcdExtra</td>
 <td>Likelihood ratio tests</td>
-</tr>
-<tr class="odd">
-<td>Model summary</td>
-<td><code>mosaic.glm()</code></td>
-<td>vcdExtra</td>
-<td>Mosaic for glm objects</td>
 </tr>
 </tbody>
 </table>
@@ -1079,6 +1085,18 @@ mosaic(Titanic, shade = TRUE,
 <td><code>fviz_contrib()</code></td>
 <td>factoextra</td>
 <td>Variable contributions</td>
+</tr>
+<tr class="odd">
+<td>MCA biplot</td>
+<td><code>plot.mjca()</code></td>
+<td>ca</td>
+<td>2D plots for MCA</td>
+</tr>
+<tr class="even">
+<td>MCA biplot</td>
+<td><code>mcaplot()</code></td>
+<td>vcdExtra</td>
+<td>Enhanced MCA plots</td>
 </tr>
 </tbody>
 </table>

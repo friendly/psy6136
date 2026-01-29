@@ -79,7 +79,7 @@ Ord_plot(HorseKicks)  # Distribution diagnosis
 | Likelihood ratio | `loglm()` | MASS | G² test via loglinear model |
 | Fisher exact test | `fisher.test()` | stats | Exact test for small samples |
 | Cochran-Mantel-Haenszel | `mantelhaen.test()` | stats | Stratified 2×2 tables |
-| CMH tests | `CMHtest()` | vcdExtra | Extended CMH tests for ordinal data |
+| CMH tests | `CMHtest()` | vcdExtra | CMH tests for ordinal data |
 | Woolf test | `woolf_test()` | vcd | Test homogeneity of odds ratios |
 
 ### Measures of Association
@@ -95,7 +95,7 @@ Ord_plot(HorseKicks)  # Distribution diagnosis
 | Bangdiwala's B | `Bangdiwala()` | vcdExtra | Observer agreement measure |
 | Gamma | `GoodmanKruskalGamma()` | DescTools | Ordinal association |
 | Kendall's tau-b | `KendallTauB()` | DescTools | Ordinal association |
-| Uncertainty coefficient | `assocstats()` | vcd | Included in output |
+| Cramer's V, phi,... | `assocstats()` | Various association stats   |
 
 ### Visualization
 
@@ -135,11 +135,12 @@ assoc(ucb, shade = TRUE)
 
 | Method | Function | Package | Description |
 |--------|----------|---------|-------------|
-| Loglinear model | `loglm()` | MASS | Fit loglinear models (uses formula with `~`) |
+| Loglinear model | `loglin()` | stats | Fit loglinear models by IPF  |
+| Loglinear model | `loglm()` | MASS | Fit loglinear models with formula   |
 | GLM approach | `glm(..., family=poisson)` | stats | Loglinear via GLM framework |
+| GNM approach | `gnm()` | gnm | Generalized Nonlinear Models |
 | Model comparison | `anova()` | stats | Compare nested models |
 | LR test | `LRtest()` | vcdExtra | Likelihood ratio tests |
-| Model summary | `mosaic.glm()` | vcdExtra | Mosaic for glm objects |
 
 ### Model Notation
 
@@ -232,6 +233,8 @@ mosaic(Titanic, shade = TRUE,
 | Column plot | `fviz_ca_col()` | factoextra | Plot column points |
 | Eigenvalues | `fviz_screeplot()` | factoextra | Scree plot of dimensions |
 | Contributions | `fviz_contrib()` | factoextra | Variable contributions |
+| MCA biplot | `plot.mjca()` | ca | 2D plots for MCA |
+| MCA biplot | `mcaplot()` | vcdExtra | Enhanced MCA plots |
 
 **Example:**
 ```{r ca-example, eval=FALSE}
