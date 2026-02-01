@@ -303,6 +303,15 @@ div_heading("quiz")
 
 ## Correspondence Analysis {#corresp}
 
+```
+༄˖°.🍂࿔*:･
+  Benzécri brought data mystique
+  With his elegant SVD technique.
+    So I've got the hots
+    For correspondence plots
+  Where profiles show what the rows seek.
+```
+
 Correspondence analysis (CA) is one of the first things I think of when I meet a new frequency table and
 want to get a quick look at the relations among the row and column categories.
 Very much like PCA for quantitative data, think of CA as a **multivariate juicer** that takes a 
@@ -359,6 +368,15 @@ div_heading("quiz")
 - [Quiz 5 - Correspondence analysis](quiz/05-corresp.html)
 
 ## Logistic regression
+
+```
+༄˖°.🍂࿔*:･
+ For responses that come just in two,
+  Linear models just will not do.
+    With glm() and a smile
+    In binomial style,
+  The S-curve reveals what is true.
+```
 
 Logistic regression provides an entry to model-based methods for categorical data
 analysis. These provide estimates and tests for predictor variables of a

@@ -6,6 +6,7 @@
 #'   html_document:
 #'     theme: readable
 #'     code_download: true
+#'   pdf_document: default
 #' ---
 
 #+ echo=FALSE
@@ -33,8 +34,9 @@ titanic.mod2
 plot(titanic.mod2,  main="Model [AGC][AS][GS][CS]")
 
 #' ## update() is a simpler way:
-update(titanic.mod1, . ~ .+ Survived*(Class+Age+Sex))
+update(titanic.mod1, . ~ .+ Survived*(Class + Age + Sex))
 
+#' ## Add 3-way term: AGS
 titanic.mod3 <- loglm(~ (Class * Age * Sex) + Survived*(Class + Age * Sex), data=Titanic)
 titanic.mod3
 plot(titanic.mod3, main="Model [AGC][AS][GS][CS][AGS]")
