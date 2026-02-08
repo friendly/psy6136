@@ -1,11 +1,13 @@
 #' ---
-#' title: housetasks: Correspondence analysis
+#' title: housetasks-- Correspondence analysis
 #' author: "Michael Friendly"
 #' date: "`r format(Sys.Date())`"
 #' output:
 #'   html_document:
 #'     theme: readable
 #'     code_download: true
+#'   pdf_document: default
+#'   word_document: default
 #' ---
 
 #+ echo=FALSE
