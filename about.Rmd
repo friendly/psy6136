@@ -98,9 +98,9 @@ To help me keep them straight, it would be most convenient to name them in a con
 * [Assignment 1](assign/assign1.pdf) 
   || Some answers: [ans1.R](assign/ans1.R) | [ans1.html](assign/ans1.html)
 * [Assignment 2](assign/assign2.pdf) 
-  <!-- || Some answers: [ans2.R](assign/ans2.R) | [ans2.html](assign/ans2.html)  -->
+  || Some answers: [ans2.R](assign/ans2.R) | [ans2.html](assign/ans2.html)
 * [Assignment 3](assign/assign3.pdf) 
-  <!-- || Some answers: [asn3.R](assign/ans3.R) | [ans3.html](assign/ans3.html) -->
+  || Some answers: [asn3.R](assign/ans3.R) | [ans3.html](assign/ans3.html)
 * [Assignment 4](assign/assign4.pdf) 
   <!-- [Answers](assign/ans4.R) -->
 
