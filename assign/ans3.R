@@ -1,5 +1,5 @@
 #' ---
-#' title: "Assignment 2: Some solutions"
+#' title: "Assignment 3: Some solutions"
 #' author: "Michael Friendly"
 #' date: "`r format(Sys.Date())`"
 #' output:
