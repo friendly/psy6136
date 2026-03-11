@@ -557,6 +557,7 @@ div_heading("lecture")
 #### <img src="icons/PDF_icon.png" height=20> Lecture notes   
 
 - [1up PDF](lectures/09-CountData.pdf) || [4up PDF](lectures/09-CountData-2x2.pdf)
+- [Notes on Negative Binomial: Interpreting the overdispersion parameter](notes/09-negbin.html)
 
 #### <img src="icons/book.png" height=20> Readings: 
 
