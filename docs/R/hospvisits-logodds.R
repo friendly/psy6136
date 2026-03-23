@@ -1,7 +1,21 @@
 #' ---
-#' title: Hospital visits: Log-odds analysis
+#' title: Hospital visits-- Log-odds analysis
+#' author: "Michael Friendly"
+#' date: "`r format(Sys.Date())`"
+#' output:
+#'   html_document:
+#'     theme: readable
+#'     code_download: true
 #' ---
 
+#+ echo=FALSE
+knitr::opts_chunk$set(
+  warning = FALSE,   # avoid warnings and messages in the output
+  message = FALSE
+)
+
+#' ## Load packages & the data
+#' 
 library(vcd)
 library(vcdExtra)
 library(ggplot2)
@@ -50,7 +64,22 @@ gg <- ggplot(hosp.lodds, aes(x=visit, y=logodds,
   scale_colour_manual(values=c("blue", "red"), 
                       name = "Length of stay")
 
-gg + geom_line(size=1.2, linetype="dotted") 
+# connect the dots ...
+gg + geom_line(linewidth=1.2, linetype="dotted")
+
+# add error bars, use labels rather than legend
+
+library(directlabels)
+gg1 <- gg + 
+  geom_line(linewidth=1.2, linetype="dotted") +
+  geom_errorbar(aes(ymin = logodds - ASE,
+                       ymax = logodds + ASE), 
+                   width = 0.2, position = "dodge", linewidth = 1)
+
+direct.label(gg1, method= "last.qp") +
+  annotate(geom="text", label = "Length of stay\ncomparison",
+           x = 3, y = 1, size = 5) +
+  labs(caption = "Error bars show +- 1 ASE of log odds")
 
 #' ## showing model fits
 grid <- hosp.lodds[,1:2]
