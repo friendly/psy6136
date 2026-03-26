@@ -18,8 +18,10 @@ Don't even think about it.
 ### Team 6136
 Students in Psych 6136, Winter, 2026
 
-<!-- ![](images/team6136.png) -->
-<img src="images/Team6136-names.png" width="70%" align="center">
+<img src="images/class2026/Team6136-named.png" width="70%" align="center">
+
+### Final Projects
+
 
 ## 2023 {#2023}
 
