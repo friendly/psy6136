@@ -22,6 +22,16 @@ Students in Psych 6136, Winter, 2026
 
 ### Final Projects
 
+WIP! Some of the abstracts submitted are in [Psy6136 Final Project Abstracts](students/Psy6136 Final Project Abstracts.docx)
+
+* Kyra Farrelly, _Latent Class Analysis Tutorial: Understanding Cannabis and Other Drug Usage Patterns_
+* Gavin Klorfine, _Steps Toward Tidy Categorical Data Analysis in R_
+* Felicia Tassone & Nathaniel Goldstein, _Using Categorical Data Methods to Quantify Reaching and Grasping Kinematics_ [Video presentation](https://drive.google.com/file/d/1-QuXonkUZdS_vbCebbFfN4SO490bkcyz/view?usp=sharing)
+* Riya Trikha, _Exploring Free Association_
+* Haley Bernusky, _LCA for categorical substance use data_
+* Gabriel Crone & Naomi Martinez Gutierrez, _Shiny Mosaics app_
+
+
 
 ## 2023 {#2023}
 
