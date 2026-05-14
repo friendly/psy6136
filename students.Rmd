@@ -22,17 +22,28 @@ Students in Psych 6136, Winter, 2026
 
 ### Final Projects
 
-WIP! Some of the abstracts submitted are in [Psy6136 Final Project Abstracts](students/Psy6136 Final Project Abstracts.docx)
+
+<!-- WIP! Some of the abstracts submitted are in [Psy6136 Final Project Abstracts](students/Psy6136 Final Project Abstracts.docx) -->
+
+<img src="images/JCDA2026-cover.png" width="35%" align="right">
 
 * Vanessa Basurto, [_Crime in an Analytical World: An Overview of Categorical Data Analysis in Criminology_](students/Basurto-FinalProject.pdf)
+
 * Haley Bernusky, [_Latent Class Analysis of Substance Use Patterns: A Tutorial Using NSDUH Data_](students/Bernusky-LCA-Tutorial.pdf)
+
 * Kiran Bumra, [_Clearing Up Confusion: A Categorical Data Analysis Approach to Confusion Matrices_](students/Bumra-Final-Project.pdf)
+
 * Sarah Campbell, [_IRT Tutorial: 2PL, Graded Response, and Bifactor Models_](students/Campbell-IRT-Tutorial.pdf)
+
 * Gabriel Crone & Naomi Martinez Gutierrez, _Shiny Mosaics: A Shiny Implementation of Interactive Mosaic Displays_ -- [App](https://fohpsyc.shinyapps.io/psyc6136_app/) | [Writeup](https://gcrone14.github.io/App-Writeup/)
+
 * Kyra Farrelly, [_Latent Class Analysis Tutorial: Understanding Cannabis and Other Drug Usage Patterns_](students/Farrelly-Final-Project.pdf) | [Video tutorial](https://drive.google.com/file/d/18heWRW27oEO_Lzwx2VBtAGovk_k0-xY1/view?usp=sharing)
+
 * Gavin Klorfine, [_Steps Toward Tidy Categorical Data Analysis in R_](https://friendly.github.io/vcdExtra/articles/a1a-convert-collapse.html)
 * Ryley Nathaniel, [_Real-Time Categorical Data Analysis_](students/Nathaniel-Project03.pdf)
+
 * Felicia Tassone & Nathaniel Goldstein, [_Utilizing Categorical Data Analysis Methods to Quantify Grasping Kinematics_](students/Tassone-Goldstein-Final-Writeup.pdf) | [Video presentation](https://drive.google.com/file/d/1-QuXonkUZdS_vbCebbFfN4SO490bkcyz/view?usp=sharing)
+
 * Riya Trikha, [_Exploring Free Associations_](students/Trikha-FinalProject.pdf)
 
 
