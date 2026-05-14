@@ -20,12 +20,27 @@ Students in Psych 6136, Winter, 2026
 
 <img src="images/class2026/Team6136-named.png" width="70%" align="center">
 
-### Final Projects
+### Final Projects {#2026-projects}
 
-
-<!-- WIP! Some of the abstracts submitted are in [Psy6136 Final Project Abstracts](students/Psy6136 Final Project Abstracts.docx) -->
 
 <img src="images/JCDA2026-cover.png" width="35%" align="right">
+
+The capstone in this course is a Final Project--- a research review paper, a new or unrecognized application area, novel re-framing of methods,
+extensions of graphical or computational methods--- nearly anything extending the scope of CDA in some useful or interesting way.
+
+The **Team 6136**, 2026 cohort in Psy6136 produced a remarkable collection of final projects spanning a wide territory: latent class analysis of substance/cannabis use patterns; item response theory as a CDA extension; real-time streaming of categorical data; confusion matrices re-framed as contingency tables; history of CDA aspects in criminology; semantic similarity analyzed via MCA and PCA; grasping kinematics in stroke patients, and new tools for tidy categorical data analysis. The breadth and quality of this work reflects both the versatility of categorical data analysis as a field and the inventiveness of this group of students. (**Applause here**)
+
+Two projects went beyond the usual scope--- building software that the broader R community can use today: Gavin Klorfine contributed six new functions to the `vcdExtra` package with important _Steps Toward Tidy CDA_ and a new vignette. Gabriel Crone & Naomi Martinez Gutierrez deployed a fully functional [Shiny application](https://fohpsyc.shinyapps.io/psyc6136_app/) for interactive mosaic displays. Several other papers have been identified as prime candidates for publication in peer-reviewed journals. (**Applause here**)
+
+
+All projects listed below are of sufficient quality for inclusion in Volume 2, Number 1 of the **fictitious** _Journal of Categorical Data Analysis_ (Spring, 2026). They are listed here, with their links so that they can cite this work, and others can find it.
+
+<!--
+Very daring students could cite their work roughly as follows:
+
+> Lastname, F. (2026). Title of paper. _Journal of Categorical Data Analysis_, 2(1). Department of Psychology, York University. https://friendly.github.io/psy6136/students.html
+-->
+
 
 * Vanessa Basurto, [_Crime in an Analytical World: An Overview of Categorical Data Analysis in Criminology_](students/Basurto-FinalProject.pdf)
 
